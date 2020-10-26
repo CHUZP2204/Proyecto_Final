@@ -171,6 +171,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Clases\PRUEBA.cs" />
     <Compile Include="CLASES\Prueba2.cs" />
+    <Compile Include="Clases\Prueba3.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
