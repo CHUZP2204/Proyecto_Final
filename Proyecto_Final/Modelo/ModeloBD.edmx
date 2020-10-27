@@ -1,0 +1,727 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="proyectoprograModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Adicciones">
+          <Key>
+            <PropertyRef Name="IdAdicciones" />
+          </Key>
+          <Property Name="IdAdicciones" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AdiccionesXUsu">
+          <Key>
+            <PropertyRef Name="IdIdentificador" />
+          </Key>
+          <Property Name="IdIdentificador" Type="int" Nullable="false" />
+          <Property Name="IdAdicciones" Type="int" Nullable="false" />
+          <Property Name="IdUsuario" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BienesInmuebles">
+          <Key>
+            <PropertyRef Name="IdBienes" />
+          </Key>
+          <Property Name="IdBienes" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumeroCasa" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Provincia" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdSeguro" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CoberturaPolizas">
+          <Key>
+            <PropertyRef Name="IdCobertura" />
+          </Key>
+          <Property Name="IdCobertura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Procentaje" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RegistroPoliza">
+          <Key>
+            <PropertyRef Name="IdRegistro" />
+          </Key>
+          <Property Name="IdRegistro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MontoAsegurado" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PorcentajeCobertura" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NumeroAdicciones" Type="int" Nullable="false" />
+          <Property Name="MontoAdicciones" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrimaAntesImpu" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Impuestos" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrimaFinal" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdSeguro" Type="int" Nullable="false" />
+          <Property Name="IdUsuario" Type="int" Nullable="false" />
+          <Property Name="IdCobertura" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SegurosDeVida">
+          <Key>
+            <PropertyRef Name="IdSeguroVida" />
+          </Key>
+          <Property Name="IdSeguroVida" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdSeguro" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoSeguro">
+          <Key>
+            <PropertyRef Name="IdSeguro" />
+          </Key>
+          <Property Name="IdSeguro" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cedula" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Genero" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="date" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrimerApellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SegundoApellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TelefonoPrincipal" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TelefonoSecundario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Correo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TipoUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vehiculo">
+          <Key>
+            <PropertyRef Name="IdVehiculo" />
+          </Key>
+          <Property Name="IdVehiculo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marca" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Placa" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdSeguro" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AdiccionesXUsu_Adicciones">
+          <End Role="Adicciones" Type="Self.Adicciones" Multiplicity="1" />
+          <End Role="AdiccionesXUsu" Type="Self.AdiccionesXUsu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adicciones">
+              <PropertyRef Name="IdAdicciones" />
+            </Principal>
+            <Dependent Role="AdiccionesXUsu">
+              <PropertyRef Name="IdAdicciones" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdiccionesXUsu_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="AdiccionesXUsu" Type="Self.AdiccionesXUsu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="AdiccionesXUsu">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BienesInmuebles_TipoSeguro">
+          <End Role="TipoSeguro" Type="Self.TipoSeguro" Multiplicity="1" />
+          <End Role="BienesInmuebles" Type="Self.BienesInmuebles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoSeguro">
+              <PropertyRef Name="IdSeguro" />
+            </Principal>
+            <Dependent Role="BienesInmuebles">
+              <PropertyRef Name="IdSeguro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RegistroPoliza_CoberturaPolizas">
+          <End Role="CoberturaPolizas" Type="Self.CoberturaPolizas" Multiplicity="1" />
+          <End Role="RegistroPoliza" Type="Self.RegistroPoliza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoberturaPolizas">
+              <PropertyRef Name="IdCobertura" />
+            </Principal>
+            <Dependent Role="RegistroPoliza">
+              <PropertyRef Name="IdCobertura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RegistroPoliza_TipoSeguro">
+          <End Role="TipoSeguro" Type="Self.TipoSeguro" Multiplicity="1" />
+          <End Role="RegistroPoliza" Type="Self.RegistroPoliza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoSeguro">
+              <PropertyRef Name="IdSeguro" />
+            </Principal>
+            <Dependent Role="RegistroPoliza">
+              <PropertyRef Name="IdSeguro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RegistroPoliza_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="RegistroPoliza" Type="Self.RegistroPoliza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="RegistroPoliza">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SegurosDeVida_TipoSeguro">
+          <End Role="TipoSeguro" Type="Self.TipoSeguro" Multiplicity="1" />
+          <End Role="SegurosDeVida" Type="Self.SegurosDeVida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoSeguro">
+              <PropertyRef Name="IdSeguro" />
+            </Principal>
+            <Dependent Role="SegurosDeVida">
+              <PropertyRef Name="IdSeguro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vehiculo_TipoSeguro">
+          <End Role="TipoSeguro" Type="Self.TipoSeguro" Multiplicity="1" />
+          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoSeguro">
+              <PropertyRef Name="IdSeguro" />
+            </Principal>
+            <Dependent Role="Vehiculo">
+              <PropertyRef Name="IdSeguro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="sp_CoberturaSeguros" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="sp.CoberturaSeguros">
+          <Parameter Name="idSeguro" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_PolizaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="sp.PolizaUsuario">
+          <Parameter Name="Cedula" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spEliminaAdicciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idAdicciones" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spEliminaTipoSeguro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idTipoSeguro" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spInsertaAdicciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="codigo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spInsertaTipoSeguro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idTipoSeguro" Type="int" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spModificaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdUsuario" Type="int" Mode="In" />
+          <Parameter Name="Cedula" Type="varchar" Mode="In" />
+          <Parameter Name="Genero" Type="varchar" Mode="In" />
+          <Parameter Name="Fecha" Type="date" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="PrimerApellido" Type="varchar" Mode="In" />
+          <Parameter Name="SegundoApellido" Type="varchar" Mode="In" />
+          <Parameter Name="Direccion" Type="varchar" Mode="In" />
+          <Parameter Name="TelefonoPrincipal" Type="varchar" Mode="In" />
+          <Parameter Name="TelefonoSecundario" Type="varchar" Mode="In" />
+          <Parameter Name="Correo" Type="varchar" Mode="In" />
+          <Parameter Name="TipoUsuario" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spModificaVehiculo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdVehiculo" Type="int" Mode="In" />
+          <Parameter Name="Placa" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="proyectoprograModelStoreContainer">
+          <EntitySet Name="Adicciones" EntityType="Self.Adicciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdiccionesXUsu" EntityType="Self.AdiccionesXUsu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BienesInmuebles" EntityType="Self.BienesInmuebles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoberturaPolizas" EntityType="Self.CoberturaPolizas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RegistroPoliza" EntityType="Self.RegistroPoliza" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SegurosDeVida" EntityType="Self.SegurosDeVida" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoSeguro" EntityType="Self.TipoSeguro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AdiccionesXUsu_Adicciones" Association="Self.FK_AdiccionesXUsu_Adicciones">
+            <End Role="Adicciones" EntitySet="Adicciones" />
+            <End Role="AdiccionesXUsu" EntitySet="AdiccionesXUsu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdiccionesXUsu_Usuarios" Association="Self.FK_AdiccionesXUsu_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="AdiccionesXUsu" EntitySet="AdiccionesXUsu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BienesInmuebles_TipoSeguro" Association="Self.FK_BienesInmuebles_TipoSeguro">
+            <End Role="TipoSeguro" EntitySet="TipoSeguro" />
+            <End Role="BienesInmuebles" EntitySet="BienesInmuebles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RegistroPoliza_CoberturaPolizas" Association="Self.FK_RegistroPoliza_CoberturaPolizas">
+            <End Role="CoberturaPolizas" EntitySet="CoberturaPolizas" />
+            <End Role="RegistroPoliza" EntitySet="RegistroPoliza" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RegistroPoliza_TipoSeguro" Association="Self.FK_RegistroPoliza_TipoSeguro">
+            <End Role="TipoSeguro" EntitySet="TipoSeguro" />
+            <End Role="RegistroPoliza" EntitySet="RegistroPoliza" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RegistroPoliza_Usuarios" Association="Self.FK_RegistroPoliza_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="RegistroPoliza" EntitySet="RegistroPoliza" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SegurosDeVida_TipoSeguro" Association="Self.FK_SegurosDeVida_TipoSeguro">
+            <End Role="TipoSeguro" EntitySet="TipoSeguro" />
+            <End Role="SegurosDeVida" EntitySet="SegurosDeVida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vehiculo_TipoSeguro" Association="Self.FK_Vehiculo_TipoSeguro">
+            <End Role="TipoSeguro" EntitySet="TipoSeguro" />
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="proyectoprograModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Adicciones">
+          <Key>
+            <PropertyRef Name="IdAdicciones" />
+          </Key>
+          <Property Name="IdAdicciones" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AdiccionesXUsu" Relationship="Self.FK_AdiccionesXUsu_Adicciones" FromRole="Adicciones" ToRole="AdiccionesXUsu" />
+        </EntityType>
+        <EntityType Name="AdiccionesXUsu">
+          <Key>
+            <PropertyRef Name="IdIdentificador" />
+          </Key>
+          <Property Name="IdIdentificador" Type="Int32" Nullable="false" />
+          <Property Name="IdAdicciones" Type="Int32" Nullable="false" />
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Adicciones" Relationship="Self.FK_AdiccionesXUsu_Adicciones" FromRole="AdiccionesXUsu" ToRole="Adicciones" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_AdiccionesXUsu_Usuarios" FromRole="AdiccionesXUsu" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="BienesInmuebles">
+          <Key>
+            <PropertyRef Name="IdBienes" />
+          </Key>
+          <Property Name="IdBienes" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumeroCasa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Provincia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdSeguro" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TipoSeguro" Relationship="Self.FK_BienesInmuebles_TipoSeguro" FromRole="BienesInmuebles" ToRole="TipoSeguro" />
+        </EntityType>
+        <EntityType Name="CoberturaPolizas">
+          <Key>
+            <PropertyRef Name="IdCobertura" />
+          </Key>
+          <Property Name="IdCobertura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Procentaje" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="RegistroPoliza" Relationship="Self.FK_RegistroPoliza_CoberturaPolizas" FromRole="CoberturaPolizas" ToRole="RegistroPoliza" />
+        </EntityType>
+        <EntityType Name="RegistroPoliza">
+          <Key>
+            <PropertyRef Name="IdRegistro" />
+          </Key>
+          <Property Name="IdRegistro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MontoAsegurado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PorcentajeCobertura" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NumeroAdicciones" Type="Int32" Nullable="false" />
+          <Property Name="MontoAdicciones" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrimaAntesImpu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Impuestos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrimaFinal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdSeguro" Type="Int32" Nullable="false" />
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+          <Property Name="IdCobertura" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CoberturaPolizas" Relationship="Self.FK_RegistroPoliza_CoberturaPolizas" FromRole="RegistroPoliza" ToRole="CoberturaPolizas" />
+          <NavigationProperty Name="TipoSeguro" Relationship="Self.FK_RegistroPoliza_TipoSeguro" FromRole="RegistroPoliza" ToRole="TipoSeguro" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_RegistroPoliza_Usuarios" FromRole="RegistroPoliza" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="SegurosDeVida">
+          <Key>
+            <PropertyRef Name="IdSeguroVida" />
+          </Key>
+          <Property Name="IdSeguroVida" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdSeguro" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TipoSeguro" Relationship="Self.FK_SegurosDeVida_TipoSeguro" FromRole="SegurosDeVida" ToRole="TipoSeguro" />
+        </EntityType>
+        <EntityType Name="TipoSeguro">
+          <Key>
+            <PropertyRef Name="IdSeguro" />
+          </Key>
+          <Property Name="IdSeguro" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="BienesInmuebles" Relationship="Self.FK_BienesInmuebles_TipoSeguro" FromRole="TipoSeguro" ToRole="BienesInmuebles" />
+          <NavigationProperty Name="RegistroPoliza" Relationship="Self.FK_RegistroPoliza_TipoSeguro" FromRole="TipoSeguro" ToRole="RegistroPoliza" />
+          <NavigationProperty Name="SegurosDeVida" Relationship="Self.FK_SegurosDeVida_TipoSeguro" FromRole="TipoSeguro" ToRole="SegurosDeVida" />
+          <NavigationProperty Name="Vehiculo" Relationship="Self.FK_Vehiculo_TipoSeguro" FromRole="TipoSeguro" ToRole="Vehiculo" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+          </Key>
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cedula" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Genero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrimerApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SegundoApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TelefonoPrincipal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TelefonoSecundario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TipoUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AdiccionesXUsu" Relationship="Self.FK_AdiccionesXUsu_Usuarios" FromRole="Usuarios" ToRole="AdiccionesXUsu" />
+          <NavigationProperty Name="RegistroPoliza" Relationship="Self.FK_RegistroPoliza_Usuarios" FromRole="Usuarios" ToRole="RegistroPoliza" />
+        </EntityType>
+        <EntityType Name="Vehiculo">
+          <Key>
+            <PropertyRef Name="IdVehiculo" />
+          </Key>
+          <Property Name="IdVehiculo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Placa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdSeguro" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TipoSeguro" Relationship="Self.FK_Vehiculo_TipoSeguro" FromRole="Vehiculo" ToRole="TipoSeguro" />
+        </EntityType>
+        <Association Name="FK_AdiccionesXUsu_Adicciones">
+          <End Role="Adicciones" Type="Self.Adicciones" Multiplicity="1" />
+          <End Role="AdiccionesXUsu" Type="Self.AdiccionesXUsu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adicciones">
+              <PropertyRef Name="IdAdicciones" />
+            </Principal>
+            <Dependent Role="AdiccionesXUsu">
+              <PropertyRef Name="IdAdicciones" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdiccionesXUsu_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="AdiccionesXUsu" Type="Self.AdiccionesXUsu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="AdiccionesXUsu">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BienesInmuebles_TipoSeguro">
+          <End Role="TipoSeguro" Type="Self.TipoSeguro" Multiplicity="1" />
+          <End Role="BienesInmuebles" Type="Self.BienesInmuebles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoSeguro">
+              <PropertyRef Name="IdSeguro" />
+            </Principal>
+            <Dependent Role="BienesInmuebles">
+              <PropertyRef Name="IdSeguro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RegistroPoliza_CoberturaPolizas">
+          <End Role="CoberturaPolizas" Type="Self.CoberturaPolizas" Multiplicity="1" />
+          <End Role="RegistroPoliza" Type="Self.RegistroPoliza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoberturaPolizas">
+              <PropertyRef Name="IdCobertura" />
+            </Principal>
+            <Dependent Role="RegistroPoliza">
+              <PropertyRef Name="IdCobertura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RegistroPoliza_TipoSeguro">
+          <End Role="TipoSeguro" Type="Self.TipoSeguro" Multiplicity="1" />
+          <End Role="RegistroPoliza" Type="Self.RegistroPoliza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoSeguro">
+              <PropertyRef Name="IdSeguro" />
+            </Principal>
+            <Dependent Role="RegistroPoliza">
+              <PropertyRef Name="IdSeguro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RegistroPoliza_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="RegistroPoliza" Type="Self.RegistroPoliza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="IdUsuario" />
+            </Principal>
+            <Dependent Role="RegistroPoliza">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SegurosDeVida_TipoSeguro">
+          <End Role="TipoSeguro" Type="Self.TipoSeguro" Multiplicity="1" />
+          <End Role="SegurosDeVida" Type="Self.SegurosDeVida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoSeguro">
+              <PropertyRef Name="IdSeguro" />
+            </Principal>
+            <Dependent Role="SegurosDeVida">
+              <PropertyRef Name="IdSeguro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vehiculo_TipoSeguro">
+          <End Role="TipoSeguro" Type="Self.TipoSeguro" Multiplicity="1" />
+          <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoSeguro">
+              <PropertyRef Name="IdSeguro" />
+            </Principal>
+            <Dependent Role="Vehiculo">
+              <PropertyRef Name="IdSeguro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="proyectoprograEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Adicciones" EntityType="Self.Adicciones" />
+          <EntitySet Name="AdiccionesXUsu" EntityType="Self.AdiccionesXUsu" />
+          <EntitySet Name="BienesInmuebles" EntityType="Self.BienesInmuebles" />
+          <EntitySet Name="CoberturaPolizas" EntityType="Self.CoberturaPolizas" />
+          <EntitySet Name="RegistroPoliza" EntityType="Self.RegistroPoliza" />
+          <EntitySet Name="SegurosDeVida" EntityType="Self.SegurosDeVida" />
+          <EntitySet Name="TipoSeguro" EntityType="Self.TipoSeguro" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+          <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" />
+          <AssociationSet Name="FK_AdiccionesXUsu_Adicciones" Association="Self.FK_AdiccionesXUsu_Adicciones">
+            <End Role="Adicciones" EntitySet="Adicciones" />
+            <End Role="AdiccionesXUsu" EntitySet="AdiccionesXUsu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdiccionesXUsu_Usuarios" Association="Self.FK_AdiccionesXUsu_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="AdiccionesXUsu" EntitySet="AdiccionesXUsu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BienesInmuebles_TipoSeguro" Association="Self.FK_BienesInmuebles_TipoSeguro">
+            <End Role="TipoSeguro" EntitySet="TipoSeguro" />
+            <End Role="BienesInmuebles" EntitySet="BienesInmuebles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RegistroPoliza_CoberturaPolizas" Association="Self.FK_RegistroPoliza_CoberturaPolizas">
+            <End Role="CoberturaPolizas" EntitySet="CoberturaPolizas" />
+            <End Role="RegistroPoliza" EntitySet="RegistroPoliza" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RegistroPoliza_TipoSeguro" Association="Self.FK_RegistroPoliza_TipoSeguro">
+            <End Role="TipoSeguro" EntitySet="TipoSeguro" />
+            <End Role="RegistroPoliza" EntitySet="RegistroPoliza" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RegistroPoliza_Usuarios" Association="Self.FK_RegistroPoliza_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="RegistroPoliza" EntitySet="RegistroPoliza" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SegurosDeVida_TipoSeguro" Association="Self.FK_SegurosDeVida_TipoSeguro">
+            <End Role="TipoSeguro" EntitySet="TipoSeguro" />
+            <End Role="SegurosDeVida" EntitySet="SegurosDeVida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vehiculo_TipoSeguro" Association="Self.FK_Vehiculo_TipoSeguro">
+            <End Role="TipoSeguro" EntitySet="TipoSeguro" />
+            <End Role="Vehiculo" EntitySet="Vehiculo" />
+          </AssociationSet>
+          <FunctionImport Name="sp_CoberturaSeguros" ReturnType="Collection(proyectoprograModel.sp_CoberturaSeguros_Result)">
+            <Parameter Name="idSeguro" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_PolizaUsuario" ReturnType="Collection(proyectoprograModel.sp_PolizaUsuario_Result)">
+            <Parameter Name="Cedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spEliminaAdicciones">
+            <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spEliminaTipoSeguro">
+            <Parameter Name="idTipoSeguro" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spInsertaAdicciones">
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spInsertaTipoSeguro">
+            <Parameter Name="idTipoSeguro" Mode="In" Type="Int32" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spModificaUsuario">
+            <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
+            <Parameter Name="Cedula" Mode="In" Type="String" />
+            <Parameter Name="Genero" Mode="In" Type="String" />
+            <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="PrimerApellido" Mode="In" Type="String" />
+            <Parameter Name="SegundoApellido" Mode="In" Type="String" />
+            <Parameter Name="Direccion" Mode="In" Type="String" />
+            <Parameter Name="TelefonoPrincipal" Mode="In" Type="String" />
+            <Parameter Name="TelefonoSecundario" Mode="In" Type="String" />
+            <Parameter Name="Correo" Mode="In" Type="String" />
+            <Parameter Name="TipoUsuario" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spModificaVehiculo">
+            <Parameter Name="IdVehiculo" Mode="In" Type="Int32" />
+            <Parameter Name="Placa" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_CoberturaSeguros_Result">
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PorcentajeCobertura" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_PolizaUsuario_Result">
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Cedula" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PrimaFinal" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MontoAsegurado" Nullable="false" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="proyectoprograModelStoreContainer" CdmEntityContainer="proyectoprograEntities">
+          <EntitySetMapping Name="Adicciones">
+            <EntityTypeMapping TypeName="proyectoprograModel.Adicciones">
+              <MappingFragment StoreEntitySet="Adicciones">
+                <ScalarProperty Name="IdAdicciones" ColumnName="IdAdicciones" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdiccionesXUsu">
+            <EntityTypeMapping TypeName="proyectoprograModel.AdiccionesXUsu">
+              <MappingFragment StoreEntitySet="AdiccionesXUsu">
+                <ScalarProperty Name="IdIdentificador" ColumnName="IdIdentificador" />
+                <ScalarProperty Name="IdAdicciones" ColumnName="IdAdicciones" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BienesInmuebles">
+            <EntityTypeMapping TypeName="proyectoprograModel.BienesInmuebles">
+              <MappingFragment StoreEntitySet="BienesInmuebles">
+                <ScalarProperty Name="IdBienes" ColumnName="IdBienes" />
+                <ScalarProperty Name="NumeroCasa" ColumnName="NumeroCasa" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="IdSeguro" ColumnName="IdSeguro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoberturaPolizas">
+            <EntityTypeMapping TypeName="proyectoprograModel.CoberturaPolizas">
+              <MappingFragment StoreEntitySet="CoberturaPolizas">
+                <ScalarProperty Name="IdCobertura" ColumnName="IdCobertura" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Procentaje" ColumnName="Procentaje" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegistroPoliza">
+            <EntityTypeMapping TypeName="proyectoprograModel.RegistroPoliza">
+              <MappingFragment StoreEntitySet="RegistroPoliza">
+                <ScalarProperty Name="IdRegistro" ColumnName="IdRegistro" />
+                <ScalarProperty Name="MontoAsegurado" ColumnName="MontoAsegurado" />
+                <ScalarProperty Name="PorcentajeCobertura" ColumnName="PorcentajeCobertura" />
+                <ScalarProperty Name="NumeroAdicciones" ColumnName="NumeroAdicciones" />
+                <ScalarProperty Name="MontoAdicciones" ColumnName="MontoAdicciones" />
+                <ScalarProperty Name="PrimaAntesImpu" ColumnName="PrimaAntesImpu" />
+                <ScalarProperty Name="Impuestos" ColumnName="Impuestos" />
+                <ScalarProperty Name="PrimaFinal" ColumnName="PrimaFinal" />
+                <ScalarProperty Name="IdSeguro" ColumnName="IdSeguro" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="IdCobertura" ColumnName="IdCobertura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SegurosDeVida">
+            <EntityTypeMapping TypeName="proyectoprograModel.SegurosDeVida">
+              <MappingFragment StoreEntitySet="SegurosDeVida">
+                <ScalarProperty Name="IdSeguroVida" ColumnName="IdSeguroVida" />
+                <ScalarProperty Name="IdSeguro" ColumnName="IdSeguro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoSeguro">
+            <EntityTypeMapping TypeName="proyectoprograModel.TipoSeguro">
+              <MappingFragment StoreEntitySet="TipoSeguro">
+                <ScalarProperty Name="IdSeguro" ColumnName="IdSeguro" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="proyectoprograModel.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Genero" ColumnName="Genero" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="TelefonoPrincipal" ColumnName="TelefonoPrincipal" />
+                <ScalarProperty Name="TelefonoSecundario" ColumnName="TelefonoSecundario" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="TipoUsuario" ColumnName="TipoUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehiculo">
+            <EntityTypeMapping TypeName="proyectoprograModel.Vehiculo">
+              <MappingFragment StoreEntitySet="Vehiculo">
+                <ScalarProperty Name="IdVehiculo" ColumnName="IdVehiculo" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Placa" ColumnName="Placa" />
+                <ScalarProperty Name="IdSeguro" ColumnName="IdSeguro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_CoberturaSeguros" FunctionName="proyectoprograModel.Store.sp_CoberturaSeguros">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="proyectoprograModel.sp_CoberturaSeguros_Result">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PorcentajeCobertura" ColumnName="PorcentajeCobertura" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_PolizaUsuario" FunctionName="proyectoprograModel.Store.sp_PolizaUsuario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="proyectoprograModel.sp_PolizaUsuario_Result">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="PrimaFinal" ColumnName="PrimaFinal" />
+                <ScalarProperty Name="MontoAsegurado" ColumnName="MontoAsegurado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spEliminaAdicciones" FunctionName="proyectoprograModel.Store.spEliminaAdicciones" />
+          <FunctionImportMapping FunctionImportName="spEliminaTipoSeguro" FunctionName="proyectoprograModel.Store.spEliminaTipoSeguro" />
+          <FunctionImportMapping FunctionImportName="spInsertaAdicciones" FunctionName="proyectoprograModel.Store.spInsertaAdicciones" />
+          <FunctionImportMapping FunctionImportName="spInsertaTipoSeguro" FunctionName="proyectoprograModel.Store.spInsertaTipoSeguro" />
+          <FunctionImportMapping FunctionImportName="spModificaUsuario" FunctionName="proyectoprograModel.Store.spModificaUsuario" />
+          <FunctionImportMapping FunctionImportName="spModificaVehiculo" FunctionName="proyectoprograModel.Store.spModificaVehiculo" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
