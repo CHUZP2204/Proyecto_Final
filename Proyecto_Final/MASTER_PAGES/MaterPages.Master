@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MaterPages.master.cs" Inherits="Proyecto_Final.MASTER_PAGES.MaterPages" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <%--Definiciones de hojas de estilos para todas las paginas--%>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />
+
+
+    <%--Content folder holper para que las paginas que usen la
+      plantilla incluyan hojas de estilos propios--%>
+     <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <header> Este es el encabezado de todas las paginas</header>
+            <%--Content folder holper para que las paginas que usen la
+                      plantilla incluyan el formulario--%>
+            <asp:ContentPlaceHolder ID="ContenidoPrincipal" runat="server">
+            </asp:ContentPlaceHolder>
+
+    <%--Definiciones de script para todas las paginas--%>
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+   
+    <%--Content folder holper para que las paginas que usen la
+                      plantilla incluyan los script propios--%>
+   
+    <asp:ContentPlaceHolder ID="scriptspersonalizados" runat="server">
+</asp:ContentPlaceHolder>
+    <footer> Todos los derechos resevados<%:DateTime.Now.Year %></footer>
+
+</body>
+</html>
