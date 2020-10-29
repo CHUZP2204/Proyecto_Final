@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SegurosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SegurosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Adicciones">
           <Key>
             <PropertyRef Name="IdAdicciones" />
@@ -197,6 +197,24 @@
         <Function Name="sp_PolizaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="sp.PolizaUsuario">
           <Parameter Name="Cedula" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="sp_InsertaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdUsuario" Type="int" Mode="In" />
+          <Parameter Name="Cedula" Type="varchar" Mode="In" />
+          <Parameter Name="Genero" Type="varchar" Mode="In" />
+          <Parameter Name="FechaNacimiento" Type="date" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="PrimerApellido" Type="varchar" Mode="In" />
+          <Parameter Name="SegundoApellido" Type="varchar" Mode="In" />
+          <Parameter Name="Direccion" Type="varchar" Mode="In" />
+          <Parameter Name="TelefonoPrincipal" Type="varchar" Mode="In" />
+          <Parameter Name="TelefonoSecundario" Type="varchar" Mode="In" />
+          <Parameter Name="Correo" Type="varchar" Mode="In" />
+          <Parameter Name="TipoUsuario" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_RetornaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="primerApellido" Type="varchar" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="spEliminaAdicciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idAdicciones" Type="int" Mode="In" />
         </Function>
@@ -272,8 +290,7 @@
             <End Role="Vehiculo" EntitySet="Vehiculo" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SegurosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -522,16 +539,16 @@
             <End Role="Vehiculo" EntitySet="Vehiculo" />
           </AssociationSet>
           <FunctionImport Name="sp_CoberturaSeguros" ReturnType="Collection(SegurosModel.sp_CoberturaSeguros_Result)">
-            <Parameter Name="idSeguro" Mode="In" Type="Int32" />
+          <Parameter Name="idSeguro" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_PolizaUsuario" ReturnType="Collection(SegurosModel.sp_PolizaUsuario_Result)">
-            <Parameter Name="Cedula" Mode="In" Type="String" />
+          <Parameter Name="Cedula" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="spEliminaAdicciones">
-            <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
+          <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spEliminaTipoSeguro">
-            <Parameter Name="idTipoSeguro" Mode="In" Type="Int32" />
+          <Parameter Name="idTipoSeguro" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spInsertaAdicciones">
             <Parameter Name="Nombre" Mode="In" Type="String" />
@@ -559,6 +576,24 @@
             <Parameter Name="IdVehiculo" Mode="In" Type="Int32" />
             <Parameter Name="Placa" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="sp_InsertaUsuario">
+            <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
+            <Parameter Name="Cedula" Mode="In" Type="String" />
+            <Parameter Name="Genero" Mode="In" Type="String" />
+            <Parameter Name="FechaNacimiento" Mode="In" Type="DateTime" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="PrimerApellido" Mode="In" Type="String" />
+            <Parameter Name="SegundoApellido" Mode="In" Type="String" />
+            <Parameter Name="Direccion" Mode="In" Type="String" />
+            <Parameter Name="TelefonoPrincipal" Mode="In" Type="String" />
+            <Parameter Name="TelefonoSecundario" Mode="In" Type="String" />
+            <Parameter Name="Correo" Mode="In" Type="String" />
+            <Parameter Name="TipoUsuario" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_RetornaUsuario" ReturnType="Collection(SegurosModel.sp_RetornaUsuario_Result)">
+            <Parameter Name="primerApellido" Mode="In" Type="String" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_CoberturaSeguros_Result">
           <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
@@ -570,6 +605,20 @@
           <Property Type="String" Name="Cedula" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="PrimaFinal" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="MontoAsegurado" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_RetornaUsuario_Result">
+          <Property Type="Int32" Name="IdUsuario" Nullable="false" />
+          <Property Type="String" Name="Cedula" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Genero" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="FechaNacimiento" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PrimerApellido" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="SegundoApellido" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Direccion" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TelefonoPrincipal" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TelefonoSecundario" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Correo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TipoUsuario" Nullable="false" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -701,6 +750,25 @@
           <FunctionImportMapping FunctionImportName="spInsertaTipoSeguro" FunctionName="SegurosModel.Store.spInsertaTipoSeguro" />
           <FunctionImportMapping FunctionImportName="spModificaUsuario" FunctionName="SegurosModel.Store.spModificaUsuario" />
           <FunctionImportMapping FunctionImportName="spModificaVehiculo" FunctionName="SegurosModel.Store.spModificaVehiculo" />
+          <FunctionImportMapping FunctionImportName="sp_InsertaUsuario" FunctionName="SegurosModel.Store.sp_InsertaUsuario" />
+          <FunctionImportMapping FunctionImportName="sp_RetornaUsuario" FunctionName="SegurosModel.Store.sp_RetornaUsuario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SegurosModel.sp_RetornaUsuario_Result">
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Genero" ColumnName="Genero" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="TelefonoPrincipal" ColumnName="TelefonoPrincipal" />
+                <ScalarProperty Name="TelefonoSecundario" ColumnName="TelefonoSecundario" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="TipoUsuario" ColumnName="TipoUsuario" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
