@@ -10,8 +10,48 @@ namespace Proyecto_Final.BL
 {
     public class BLusuarios
     {
+        /// <summary>
+        /// Modelo De Entity Framework
+        ///  segurosEntities1 es el modelo Base Datos
+        ///  y el Objeto modeloBD
+        /// </summary>
         segurosEntities1 modeloBD = new segurosEntities1();
+
+        /// <summary>
+        /// Metodo Que Invoca El Store Procedure Que Retorna Los Usuarios
+        /// Pasando Dos Parametros Como Busqueda
+        /// </summary>
+        /// <param name="pNombre"></param>
+        /// <param name="pPrimerApellido"></param>
+        /// <returns></returns>
+        public List<sp_RetornaUsuario_Result> retornaUsuario (string pNombre, string pPrimerApellido)
+        {
+            ///Se Crea La Variable Que Retorna
+            List<sp_RetornaUsuario_Result> resultado = new List<sp_RetornaUsuario_Result>();
+            /// Se Invoca El Store Procedure y Se Le Pasan Los Parametros
+            resultado = this.modeloBD.sp_RetornaUsuario(pPrimerApellido, pNombre).ToList();
+
+            return resultado;
+        }
         
+
+        /// <summary>
+        /// Metodod Booleano Que Modifica Un Usuario
+        /// </summary>
+        /// <param name="pIdUsuario">Parametro Principal Por El Cual Se 
+        /// Editara Un Usuario En Especifico</param>
+        /// <param name="pCedula"></param>
+        /// <param name="pGenero"></param>
+        /// <param name="pFecha"></param>
+        /// <param name="pNombre"></param>
+        /// <param name="pPrimerApellido"></param>
+        /// <param name="pSegundoApellido"></param>
+        /// <param name="pDireccion"></param>
+        /// <param name="pTelefono1"></param>
+        /// <param name="pTelefono2"></param>
+        /// <param name="pCorreo"></param>
+        /// <param name="pTipoUsuario"></param>
+        /// <returns></returns>
        public bool ModificaUsuario
             (int pIdUsuario,
              string pCedula,
@@ -28,7 +68,7 @@ namespace Proyecto_Final.BL
         {
             ///Crear La variable Que Se Retornara
             int resultado = 0;
-            ///Asignar A La Variable El Resultado Del LLamado Al Procedimineto Almacenado
+            ///Asignar A La Variable El Resultado Del LLamado Al Procedimiento Almacenado
             resultado = this.modeloBD.spModificaUsuario(
                 pIdUsuario, 
                 pCedula,
@@ -43,9 +83,10 @@ namespace Proyecto_Final.BL
                 pCorreo,
                 pTipoUsuario);
             ///Retornar El Valor 
+            ///Si Se Ingreso Datos o No
             if (resultado > 0) 
             {
-                return true;
+                return true; 
             }
             else
             {
