@@ -121,6 +121,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Formularios\WebForm1.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -130,24 +131,24 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <EntityDeploy Include="Modelo\ModeloBD.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModeloBD.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Modelo\ModeloBD.edmx.diagram">
-      <DependentUpon>ModeloBD.edmx</DependentUpon>
-    </Content>
     <Content Include="MASTER_PAGES\MaterPages.Master" />
-    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Modelo\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-      <DependentUpon>ModeloBD.edmx</DependentUpon>
+    <EntityDeploy Include="Modelo\ModeloProyecto.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloProyecto.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Modelo\ModeloProyecto.edmx.diagram">
+      <DependentUpon>ModeloProyecto.edmx</DependentUpon>
     </Content>
-    <Content Include="Modelo\Model1.tt">
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Modelo\ModeloProyecto.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModeloBD.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
+      <DependentUpon>ModeloProyecto.edmx</DependentUpon>
+      <LastGenOutput>ModeloProyecto.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Modelo\ModeloProyecto.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloProyecto.edmx</DependentUpon>
+      <LastGenOutput>ModeloProyecto.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -193,6 +194,7 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BL\BLusuarios.cs" />
     <Compile Include="Clases\PRUEBA.cs" />
     <Compile Include="CLASES\Prueba2.cs" />
     <Compile Include="Clases\Prueba3.cs" />
@@ -210,62 +212,70 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="MASTER_PAGES\MaterPages.Master.cs">
       <DependentUpon>MaterPages.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MASTER_PAGES\MaterPages.Master.designer.cs">
       <DependentUpon>MaterPages.Master</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Adicciones.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\AdiccionesXUsu.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\BienesInmuebles.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\CoberturaPolizas.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\Model1.Context.cs">
+    <Compile Include="Modelo\ModeloProyecto.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
+      <DependentUpon>ModeloProyecto.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\Model1.cs">
+    <Compile Include="Modelo\ModeloProyecto.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\ModeloBD.Designer.cs">
+    <Compile Include="Modelo\ModeloProyecto.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloBD.edmx</DependentUpon>
+      <DependentUpon>ModeloProyecto.edmx</DependentUpon>
     </Compile>
     <Compile Include="Modelo\RegistroPoliza.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\SegurosDeVida.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\sp_CoberturaSeguros_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\sp_PolizaUsuario_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\TipoSeguro.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Usuarios.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Vehiculo.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

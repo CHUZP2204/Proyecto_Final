@@ -16,10 +16,10 @@ namespace Proyecto_Final.Modelo
     using System.Data.Objects.DataClasses;
     using System.Linq;
     
-    public partial class proyectoprograEntities : DbContext
+    public partial class segurosEntities1 : DbContext
     {
-        public proyectoprograEntities()
-            : base("name=proyectoprograEntities")
+        public segurosEntities1()
+            : base("name=segurosEntities1")
         {
         }
     

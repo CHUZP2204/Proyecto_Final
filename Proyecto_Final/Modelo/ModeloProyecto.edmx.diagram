@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b93b117c44a8458fa99afeb598f8fef3" Name="Diagram1">
+        <EntityTypeShape EntityType="SegurosModel.Adicciones" Width="1.5" PointX="3.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SegurosModel.AdiccionesXUsu" Width="1.5" PointX="6" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SegurosModel.BienesInmuebles" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SegurosModel.CoberturaPolizas" Width="1.5" PointX="3.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="SegurosModel.RegistroPoliza" Width="1.5" PointX="6" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SegurosModel.SegurosDeVida" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SegurosModel.TipoSeguro" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SegurosModel.Usuarios" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SegurosModel.Vehiculo" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <AssociationConnector Association="SegurosModel.FK_AdiccionesXUsu_Adicciones" ManuallyRouted="false" />
+        <AssociationConnector Association="SegurosModel.FK_AdiccionesXUsu_Usuarios" ManuallyRouted="false" />
+        <AssociationConnector Association="SegurosModel.FK_BienesInmuebles_TipoSeguro" ManuallyRouted="false" />
+        <AssociationConnector Association="SegurosModel.FK_RegistroPoliza_CoberturaPolizas" ManuallyRouted="false" />
+        <AssociationConnector Association="SegurosModel.FK_RegistroPoliza_TipoSeguro" ManuallyRouted="false" />
+        <AssociationConnector Association="SegurosModel.FK_RegistroPoliza_Usuarios" ManuallyRouted="false" />
+        <AssociationConnector Association="SegurosModel.FK_SegurosDeVida_TipoSeguro" ManuallyRouted="false" />
+        <AssociationConnector Association="SegurosModel.FK_Vehiculo_TipoSeguro" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

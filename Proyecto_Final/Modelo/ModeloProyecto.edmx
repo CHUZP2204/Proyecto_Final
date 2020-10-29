@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="proyectoprograModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="SegurosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Adicciones">
           <Key>
             <PropertyRef Name="IdAdicciones" />
@@ -229,7 +229,7 @@
           <Parameter Name="IdVehiculo" Type="int" Mode="In" />
           <Parameter Name="Placa" Type="varchar" Mode="In" />
         </Function>
-        <EntityContainer Name="proyectoprograModelStoreContainer">
+        <EntityContainer Name="SegurosModelStoreContainer">
           <EntitySet Name="Adicciones" EntityType="Self.Adicciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AdiccionesXUsu" EntityType="Self.AdiccionesXUsu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BienesInmuebles" EntityType="Self.BienesInmuebles" Schema="dbo" store:Type="Tables" />
@@ -276,7 +276,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="proyectoprograModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="SegurosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Adicciones">
           <Key>
             <PropertyRef Name="IdAdicciones" />
@@ -479,7 +479,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="proyectoprograEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="segurosEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Adicciones" EntityType="Self.Adicciones" />
           <EntitySet Name="AdiccionesXUsu" EntityType="Self.AdiccionesXUsu" />
           <EntitySet Name="BienesInmuebles" EntityType="Self.BienesInmuebles" />
@@ -521,10 +521,10 @@
             <End Role="TipoSeguro" EntitySet="TipoSeguro" />
             <End Role="Vehiculo" EntitySet="Vehiculo" />
           </AssociationSet>
-          <FunctionImport Name="sp_CoberturaSeguros" ReturnType="Collection(proyectoprograModel.sp_CoberturaSeguros_Result)">
+          <FunctionImport Name="sp_CoberturaSeguros" ReturnType="Collection(SegurosModel.sp_CoberturaSeguros_Result)">
             <Parameter Name="idSeguro" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_PolizaUsuario" ReturnType="Collection(proyectoprograModel.sp_PolizaUsuario_Result)">
+          <FunctionImport Name="sp_PolizaUsuario" ReturnType="Collection(SegurosModel.sp_PolizaUsuario_Result)">
             <Parameter Name="Cedula" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="spEliminaAdicciones">
@@ -576,9 +576,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="proyectoprograModelStoreContainer" CdmEntityContainer="proyectoprograEntities">
+        <EntityContainerMapping StorageEntityContainer="SegurosModelStoreContainer" CdmEntityContainer="segurosEntities1">
           <EntitySetMapping Name="Adicciones">
-            <EntityTypeMapping TypeName="proyectoprograModel.Adicciones">
+            <EntityTypeMapping TypeName="SegurosModel.Adicciones">
               <MappingFragment StoreEntitySet="Adicciones">
                 <ScalarProperty Name="IdAdicciones" ColumnName="IdAdicciones" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -587,7 +587,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AdiccionesXUsu">
-            <EntityTypeMapping TypeName="proyectoprograModel.AdiccionesXUsu">
+            <EntityTypeMapping TypeName="SegurosModel.AdiccionesXUsu">
               <MappingFragment StoreEntitySet="AdiccionesXUsu">
                 <ScalarProperty Name="IdIdentificador" ColumnName="IdIdentificador" />
                 <ScalarProperty Name="IdAdicciones" ColumnName="IdAdicciones" />
@@ -596,7 +596,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BienesInmuebles">
-            <EntityTypeMapping TypeName="proyectoprograModel.BienesInmuebles">
+            <EntityTypeMapping TypeName="SegurosModel.BienesInmuebles">
               <MappingFragment StoreEntitySet="BienesInmuebles">
                 <ScalarProperty Name="IdBienes" ColumnName="IdBienes" />
                 <ScalarProperty Name="NumeroCasa" ColumnName="NumeroCasa" />
@@ -606,7 +606,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CoberturaPolizas">
-            <EntityTypeMapping TypeName="proyectoprograModel.CoberturaPolizas">
+            <EntityTypeMapping TypeName="SegurosModel.CoberturaPolizas">
               <MappingFragment StoreEntitySet="CoberturaPolizas">
                 <ScalarProperty Name="IdCobertura" ColumnName="IdCobertura" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -616,7 +616,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RegistroPoliza">
-            <EntityTypeMapping TypeName="proyectoprograModel.RegistroPoliza">
+            <EntityTypeMapping TypeName="SegurosModel.RegistroPoliza">
               <MappingFragment StoreEntitySet="RegistroPoliza">
                 <ScalarProperty Name="IdRegistro" ColumnName="IdRegistro" />
                 <ScalarProperty Name="MontoAsegurado" ColumnName="MontoAsegurado" />
@@ -633,7 +633,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SegurosDeVida">
-            <EntityTypeMapping TypeName="proyectoprograModel.SegurosDeVida">
+            <EntityTypeMapping TypeName="SegurosModel.SegurosDeVida">
               <MappingFragment StoreEntitySet="SegurosDeVida">
                 <ScalarProperty Name="IdSeguroVida" ColumnName="IdSeguroVida" />
                 <ScalarProperty Name="IdSeguro" ColumnName="IdSeguro" />
@@ -641,7 +641,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TipoSeguro">
-            <EntityTypeMapping TypeName="proyectoprograModel.TipoSeguro">
+            <EntityTypeMapping TypeName="SegurosModel.TipoSeguro">
               <MappingFragment StoreEntitySet="TipoSeguro">
                 <ScalarProperty Name="IdSeguro" ColumnName="IdSeguro" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -649,7 +649,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Usuarios">
-            <EntityTypeMapping TypeName="proyectoprograModel.Usuarios">
+            <EntityTypeMapping TypeName="SegurosModel.Usuarios">
               <MappingFragment StoreEntitySet="Usuarios">
                 <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
                 <ScalarProperty Name="Cedula" ColumnName="Cedula" />
@@ -667,7 +667,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Vehiculo">
-            <EntityTypeMapping TypeName="proyectoprograModel.Vehiculo">
+            <EntityTypeMapping TypeName="SegurosModel.Vehiculo">
               <MappingFragment StoreEntitySet="Vehiculo">
                 <ScalarProperty Name="IdVehiculo" ColumnName="IdVehiculo" />
                 <ScalarProperty Name="Marca" ColumnName="Marca" />
@@ -676,18 +676,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_CoberturaSeguros" FunctionName="proyectoprograModel.Store.sp_CoberturaSeguros">
+          <FunctionImportMapping FunctionImportName="sp_CoberturaSeguros" FunctionName="SegurosModel.Store.sp_CoberturaSeguros">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="proyectoprograModel.sp_CoberturaSeguros_Result">
+              <ComplexTypeMapping TypeName="SegurosModel.sp_CoberturaSeguros_Result">
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="PorcentajeCobertura" ColumnName="PorcentajeCobertura" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_PolizaUsuario" FunctionName="proyectoprograModel.Store.sp_PolizaUsuario">
+          <FunctionImportMapping FunctionImportName="sp_PolizaUsuario" FunctionName="SegurosModel.Store.sp_PolizaUsuario">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="proyectoprograModel.sp_PolizaUsuario_Result">
+              <ComplexTypeMapping TypeName="SegurosModel.sp_PolizaUsuario_Result">
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Cedula" ColumnName="Cedula" />
                 <ScalarProperty Name="PrimaFinal" ColumnName="PrimaFinal" />
@@ -695,12 +695,12 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="spEliminaAdicciones" FunctionName="proyectoprograModel.Store.spEliminaAdicciones" />
-          <FunctionImportMapping FunctionImportName="spEliminaTipoSeguro" FunctionName="proyectoprograModel.Store.spEliminaTipoSeguro" />
-          <FunctionImportMapping FunctionImportName="spInsertaAdicciones" FunctionName="proyectoprograModel.Store.spInsertaAdicciones" />
-          <FunctionImportMapping FunctionImportName="spInsertaTipoSeguro" FunctionName="proyectoprograModel.Store.spInsertaTipoSeguro" />
-          <FunctionImportMapping FunctionImportName="spModificaUsuario" FunctionName="proyectoprograModel.Store.spModificaUsuario" />
-          <FunctionImportMapping FunctionImportName="spModificaVehiculo" FunctionName="proyectoprograModel.Store.spModificaVehiculo" />
+          <FunctionImportMapping FunctionImportName="spEliminaAdicciones" FunctionName="SegurosModel.Store.spEliminaAdicciones" />
+          <FunctionImportMapping FunctionImportName="spEliminaTipoSeguro" FunctionName="SegurosModel.Store.spEliminaTipoSeguro" />
+          <FunctionImportMapping FunctionImportName="spInsertaAdicciones" FunctionName="SegurosModel.Store.spInsertaAdicciones" />
+          <FunctionImportMapping FunctionImportName="spInsertaTipoSeguro" FunctionName="SegurosModel.Store.spInsertaTipoSeguro" />
+          <FunctionImportMapping FunctionImportName="spModificaUsuario" FunctionName="SegurosModel.Store.spModificaUsuario" />
+          <FunctionImportMapping FunctionImportName="spModificaVehiculo" FunctionName="SegurosModel.Store.spModificaVehiculo" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
