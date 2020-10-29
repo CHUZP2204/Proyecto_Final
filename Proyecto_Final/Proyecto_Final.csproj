@@ -121,6 +121,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Formularios\frmInsertUsuario.aspx" />
     <Content Include="Formularios\WebForm1.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -211,6 +212,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmInsertUsuario.aspx.cs">
+      <DependentUpon>frmInsertUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmInsertUsuario.aspx.designer.cs">
+      <DependentUpon>frmInsertUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
