@@ -24,7 +24,7 @@ namespace Proyecto_Final.BL
         /// <param name="pNombre"></param>
         /// <param name="pPrimerApellido"></param>
         /// <returns></returns>
-        public List<sp_RetornaUsuario_Result> retornaUsuario (string pNombre, string pPrimerApellido)
+        public List<sp_RetornaUsuario_Result> retornaUsuario (string pNombre = null, string pPrimerApellido = null)
         {
             ///Se Crea La Variable Que Retorna
             List<sp_RetornaUsuario_Result> resultado = new List<sp_RetornaUsuario_Result>();
@@ -93,6 +93,12 @@ namespace Proyecto_Final.BL
                 return false;
             }
         }
+
+     /*   public List<sp_RetornaUsuario_Result> retornaUsuarios(string pNombre,string apel)
+        {
+
+        } 
+     */
         
     }
 }
