@@ -1759,6 +1759,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Formularios\frmInicioSesion.aspx" />
+    <Content Include="Formularios\frmInsertUsuario.aspx" />
     <Content Include="Formularios\frmUsuarios.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1913,6 +1914,12 @@
     </Compile>
     <Compile Include="Formularios\frmInicioSesion.aspx.designer.cs">
       <DependentUpon>frmInicioSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmInsertUsuario.aspx.cs">
+      <DependentUpon>frmInsertUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmInsertUsuario.aspx.designer.cs">
+      <DependentUpon>frmInsertUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmUsuarios.aspx.cs">
       <DependentUpon>frmUsuarios.aspx</DependentUpon>

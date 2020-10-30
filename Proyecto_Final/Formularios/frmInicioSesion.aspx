@@ -14,11 +14,14 @@
         .modal-footer {
             background-color: #f9f9f9;
         }
+        .auto-style1 {
+            color: #0066FF;
+        }
     </style>
     <div class="container">
-        <h2>Inicia Sesion O Registrate</h2>
+        <h2 class="auto-style1"><strong>Inicia Sesion O Registrate</strong></h2>
         <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
+        <button type="button" class="btn btn-default btn-lg" id="myBtn"><strong>Login</strong></button>
 
         <!-- Modal -->
         <div class="modal fade" data-backdrop='static' id="myModal" role="dialog">

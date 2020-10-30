@@ -1,9 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MASTER_PAGES/MaterPages.Master" AutoEventWireup="true" CodeBehind="frmInsertUsuario.aspx.cs" Inherits="Proyecto_Final.Formularios.frmInsertUsuario" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
-  <form id="frmInsertUsuario" runat="server" class="form-inline">      
+      <form id="frmInsertUsuario" runat="server" class="form-inline">      
       <h1 class="auto-style1">Ingresar Nuevo Usuario</h1>       
 
        <div class="form-group">
@@ -16,6 +15,7 @@
               <asp:DropDownList ID="ddlgenero" runat="server"  CssClass="form-control" DataTextField="nombre" DataValueField="Genero" Height="35px" Width="115px">
                   <asp:ListItem>Masculino</asp:ListItem>
                   <asp:ListItem>Femenino</asp:ListItem>
+                 
            </asp:DropDownList>
            <asp:RequiredFieldValidator ID="rqvgenero" runat="server"  ControlToValidate="ddlgenero" ErrorMessage="Debe seleccionar el genero" ForeColor="Red" Display="None"></asp:RequiredFieldValidator>
        </div> 
@@ -34,7 +34,7 @@
           <asp:TextBox ID="txtPrimerApellido" runat="server" CssClass="form-control"></asp:TextBox>
           <asp:RequiredFieldValidator ID="rqvPrimerApellido" runat="server"  ControlToValidate="txtPrimerApellido" ErrorMessage="Debe ingresar el primer apellido" ForeColor="Red" Display="None"></asp:RequiredFieldValidator>
        </div>
-           
+
        <div class="form-group">
            <asp:Label ID="Label8" runat="server" Text="Segundo Apellido"></asp:Label>                 
            <asp:TextBox ID="txtSegundoApellido" runat="server" CssClass="form-control"></asp:TextBox>
@@ -50,7 +50,7 @@
           <asp:TextBox ID="txtTelefonoprincipal" runat="server" CssClass="form-control"></asp:TextBox>
            <asp:RequiredFieldValidator ID="rqvtxtTelefonoprincipal" runat="server" ControlToValidate="txtTelefonoprincipal" CssClass="form-control" ErrorMessage="Debe ingresar el teléfono principal" ForeColor="Red" Display="None"></asp:RequiredFieldValidator>
        </div>
-      
+
        <div class="form-group">
           <asp:Label ID="Label7" runat="server" Text="Teléfono Secundario"></asp:Label>
           <asp:TextBox ID="txtTelefonosecundario" runat="server" CssClass="form-control"></asp:TextBox>
@@ -61,7 +61,7 @@
           <asp:TextBox ID="txtcorreo" runat="server" CssClass="form-control"></asp:TextBox>
         <asp:RequiredFieldValidator ID="rqvtxtcorreo" runat="server"  ControlToValidate="txtcorreo" ErrorMessage="Debe ingresar su correo" ForeColor="Red" Display="None"></asp:RequiredFieldValidator>
         </div>
-    
+
        <div class="form-group">
           <asp:Label ID="Label2" runat="server" Text="Tipo Usuario"></asp:Label> 
            <asp:ListBox ID="LstTipoUsuario" runat="server" CssClass="form-control" DataTextField="nombre" DataValueField="tipousuario" Height="42px" Width="126px">
@@ -74,18 +74,16 @@
        </div>
 
        <div class="form-group">
-           <asp:Button ID="btAceptar" runat="server"  Text="Guardar" CssClass="btn-success" OnClick="btAceptar_Click" BackColor="#66CCFF" BorderColor="Black" BorderStyle="Double" ForeColor="Black" Height="42px" Width="162px" />           
-      
+           <asp:Button ID="btAceptar" runat="server"  Text="Guardar" CssClass="btn-success" OnClick="btAceptar_Click" BackColor="White" BorderColor="Black" BorderStyle="Double" ForeColor="Black" Height="42px" Width="162px" />           
+
           <%-- <asp:HyperLink ID="hpRegresarLista" runat="server" CssClass="text-info" NavigateUrl="~/FORMULARIO.BASE.DATOS/frmClientesLista.aspx">Regresar Lista</asp:HyperLink>--%>
-      
+
            </div>      
-                                                                  
+
       <br />
       <asp:ValidationSummary ID="vsRegistroUsuario" runat="server" ShowMessageBox="True" ShowSummary="False" />
-        
+
     </form>
-
 </asp:Content>
-
 <asp:Content ID="Content3" ContentPlaceHolderID="scriptspersonalizados" runat="server">
 </asp:Content>

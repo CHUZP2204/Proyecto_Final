@@ -13,5 +13,10 @@ namespace Proyecto_Final.Formularios
         {
 
         }
+
+        protected void btAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
