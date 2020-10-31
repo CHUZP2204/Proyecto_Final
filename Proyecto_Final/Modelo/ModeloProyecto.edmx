@@ -198,7 +198,6 @@
           <Parameter Name="Cedula" Type="varchar" Mode="In" />
         </Function>
         <Function Name="sp_InsertaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="IdUsuario" Type="int" Mode="In" />
           <Parameter Name="Cedula" Type="varchar" Mode="In" />
           <Parameter Name="Genero" Type="varchar" Mode="In" />
           <Parameter Name="FechaNacimiento" Type="date" Mode="In" />
@@ -577,7 +576,6 @@
             <Parameter Name="Placa" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_InsertaUsuario">
-            <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
             <Parameter Name="Cedula" Mode="In" Type="String" />
             <Parameter Name="Genero" Mode="In" Type="String" />
             <Parameter Name="FechaNacimiento" Mode="In" Type="DateTime" />

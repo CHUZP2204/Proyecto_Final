@@ -42,10 +42,11 @@ namespace Proyecto_Final.BL
             ///registros afectados debe ser mayor a 0
 
             int registrosAfectados = 0;
-
+            
             /// invocar al procedimiento almacenado
             registrosAfectados =
                 this.modeloBD.sp_InsertaUsuario(
+                    
                     pCedula,
                     pGenero,
                     pFecha,

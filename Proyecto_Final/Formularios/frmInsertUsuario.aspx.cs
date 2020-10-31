@@ -31,7 +31,7 @@ namespace Proyecto_Final.Formularios
                     ///obtener los valores seleccionados por el usuario
                     ///se toma de la propiedad datavaluefield
                     ///tanto del dropdownlist como del listbox
-
+                    ///yyyy/mm/dd
                     DateTime FechaNacimiento = Convert.ToDateTime(this.txtfechanacimiento.Text);
 
            
