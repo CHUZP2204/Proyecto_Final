@@ -33,7 +33,37 @@ namespace Proyecto_Final.BL
 
             return resultado;
         }
-        
+
+        public bool InsertaUsuario( string pCedula, string pGenero, DateTime pFecha, string pnombre, string pprimerApellido, string psegundoApellido,
+           string pDireccion, string ptelefono1, string ptelefono2, string pCorreo, string pTipoUsuario)
+        {
+            ///variable que posee la cantidad de registros afectados
+            ///al realizar insert / update/ delete la cantidad de 
+            ///registros afectados debe ser mayor a 0
+
+            int registrosAfectados = 0;
+
+            /// invocar al procedimiento almacenado
+            registrosAfectados =
+                this.modeloBD.sp_InsertaUsuario(
+                    pCedula,
+                    pGenero,
+                    pFecha,
+                    pnombre,
+                    pprimerApellido,
+                    psegundoApellido,
+                    pDireccion,
+                    ptelefono1,
+                    ptelefono2,
+                    pCorreo,
+                    pTipoUsuario
+                    );
+
+            if (registrosAfectados > 0)
+                return true;
+            else
+                return false;
+        }
 
         /// <summary>
         /// Metodod Booleano Que Modifica Un Usuario
@@ -52,7 +82,7 @@ namespace Proyecto_Final.BL
         /// <param name="pCorreo"></param>
         /// <param name="pTipoUsuario"></param>
         /// <returns></returns>
-       public bool ModificaUsuario
+        public bool ModificaUsuario
             (int pIdUsuario,
              string pCedula,
              string pGenero,

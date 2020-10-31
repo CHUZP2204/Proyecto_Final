@@ -24,7 +24,7 @@ namespace Proyecto_Final.Formularios
             ///Nota La Contraseña es el campo telefono1 
             ///Porque No existe el campo Para Ese Dato
             ///se debe crear
-            string passObtenida = this.txtPasswor.Text;
+            string passObtenida = this.txtPassword.Text;
             string emailObtenido = this.txtUserName.Text;
 
             bool resultado = verificaUsuario(emailObtenido,passObtenida); 

@@ -47,7 +47,7 @@
                             <!--Contraseña-->
                             <div class="form-group">
                                 <label ><span class="fas fa-eye"></span>Password</label>
-                                <asp:TextBox ID="txtPasswor" runat="server"  TextMode="Password" placeholder="Enter password" required="required"  Width="500px" ></asp:TextBox>
+                                <asp:TextBox ID="txtPassword" runat="server"  TextMode="Password" placeholder="Enter password" required="required"  Width="500px" ></asp:TextBox>
                             </div>
                            
                             <!---->
@@ -58,7 +58,7 @@
                                     <input type="checkbox" value="" checked>Remember me</label>
                             </div>
                             <asp:Button ID="btnLogin" runat="server" Text="Login"  CssClass="btn-success btn-block" BorderStyle="Groove" OnClick="btnLogin_Click" weight="100px" />
-                            
+                             <asp:HyperLink ID="hpRegistrar" runat="server"  ForeColor="#FFCC00" NavigateUrl="~/Formularios/frmInsertUsuario.aspx " >Registrar</asp:HyperLink>
                         </form>
                     </div>
                     <div class="modal-footer">
