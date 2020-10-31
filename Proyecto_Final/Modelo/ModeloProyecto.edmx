@@ -82,10 +82,10 @@
           <Property Name="SegundoApellido" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Direccion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="TelefonoPrincipal" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="TelefonoSecundario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TelefonoSecundario" Type="varchar" MaxLength="50" />
           <Property Name="Correo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="TipoUsuario" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Contraseña" Type="varchar" MaxLength="50" />
+          <Property Name="Contraseña" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Vehiculo">
           <Key>
@@ -384,12 +384,12 @@
           <Property Name="SegundoApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TelefonoPrincipal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TelefonoSecundario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TelefonoSecundario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TipoUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="AdiccionesXUsu" Relationship="Self.FK_AdiccionesXUsu_Usuarios" FromRole="Usuarios" ToRole="AdiccionesXUsu" />
           <NavigationProperty Name="RegistroPoliza" Relationship="Self.FK_RegistroPoliza_Usuarios" FromRole="Usuarios" ToRole="RegistroPoliza" />
-          <Property Name="Contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="Vehiculo">
           <Key>
