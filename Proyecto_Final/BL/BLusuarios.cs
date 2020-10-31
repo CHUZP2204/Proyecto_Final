@@ -34,7 +34,7 @@ namespace Proyecto_Final.BL
             return resultado;
         }
 
-        public bool InsertaUsuario( string pCedula, string pGenero, DateTime pFecha, string pnombre, string pprimerApellido, string psegundoApellido,
+        public bool InsertaUsuario(  string pCedula, string pGenero, DateTime pFecha, string pnombre, string pprimerApellido, string psegundoApellido,
            string pDireccion, string ptelefono1, string ptelefono2, string pCorreo, string pTipoUsuario)
         {
             ///variable que posee la cantidad de registros afectados
@@ -42,11 +42,10 @@ namespace Proyecto_Final.BL
             ///registros afectados debe ser mayor a 0
 
             int registrosAfectados = 0;
-            
+
             /// invocar al procedimiento almacenado
             registrosAfectados =
-                this.modeloBD.sp_InsertaUsuario(
-                    
+                this.modeloBD.sp_InsertaUsuario( 
                     pCedula,
                     pGenero,
                     pFecha,
