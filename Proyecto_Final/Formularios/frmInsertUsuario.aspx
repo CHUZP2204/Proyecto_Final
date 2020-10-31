@@ -78,6 +78,9 @@
 
           <%-- <asp:HyperLink ID="hpRegresarLista" runat="server" CssClass="text-info" NavigateUrl="~/FORMULARIO.BASE.DATOS/frmClientesLista.aspx">Regresar Lista</asp:HyperLink>--%>
 
+           &nbsp;
+           <asp:HyperLink ID="hpListaUsuario" runat="server" NavigateUrl="~/Formulario Base Datos/frmUsuarioLista.aspx">Lista Usuarios</asp:HyperLink>
+
            </div>      
 
       <br />

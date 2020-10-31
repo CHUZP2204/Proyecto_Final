@@ -1758,6 +1758,7 @@
     <Content Include="Estilos\Fonts\fontawesome-free-5.14.0-web\webfonts\fa-solid-900.svg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Formulario Base Datos\frmUsuarioLista.aspx" />
     <Content Include="Formularios\frmInicioSesion.aspx" />
     <Content Include="Formularios\frmInsertUsuario.aspx" />
     <Content Include="Formularios\frmUsuarios.aspx" />
@@ -1907,6 +1908,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario Base Datos\frmUsuarioLista.aspx.cs">
+      <DependentUpon>frmUsuarioLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formulario Base Datos\frmUsuarioLista.aspx.designer.cs">
+      <DependentUpon>frmUsuarioLista.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmInicioSesion.aspx.cs">
       <DependentUpon>frmInicioSesion.aspx</DependentUpon>
