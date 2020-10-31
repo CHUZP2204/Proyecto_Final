@@ -85,6 +85,7 @@
           <Property Name="TelefonoSecundario" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Correo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="TipoUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contraseña" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Vehiculo">
           <Key>
@@ -388,6 +389,7 @@
           <Property Name="TipoUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="AdiccionesXUsu" Relationship="Self.FK_AdiccionesXUsu_Usuarios" FromRole="Usuarios" ToRole="AdiccionesXUsu" />
           <NavigationProperty Name="RegistroPoliza" Relationship="Self.FK_RegistroPoliza_Usuarios" FromRole="Usuarios" ToRole="RegistroPoliza" />
+          <Property Name="Contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Vehiculo">
           <Key>
@@ -698,6 +700,7 @@
           <EntitySetMapping Name="Usuarios">
             <EntityTypeMapping TypeName="SegurosModel.Usuarios">
               <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
                 <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
                 <ScalarProperty Name="Cedula" ColumnName="Cedula" />
                 <ScalarProperty Name="Genero" ColumnName="Genero" />
