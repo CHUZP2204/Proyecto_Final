@@ -32,6 +32,7 @@ namespace Proyecto_Final.Modelo
         public string TelefonoSecundario { get; set; }
         public string Correo { get; set; }
         public string TipoUsuario { get; set; }
+        public string Contraseña { get; set; }
     
         public virtual ICollection<AdiccionesXUsu> AdiccionesXUsu { get; set; }
         public virtual ICollection<RegistroPoliza> RegistroPoliza { get; set; }
