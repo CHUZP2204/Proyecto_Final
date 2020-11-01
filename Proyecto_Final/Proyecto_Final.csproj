@@ -1771,6 +1771,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Images\Logo.PNG" />
     <Content Include="MASTER_PAGES\MaterPages.Master" />
     <EntityDeploy Include="Modelo\ModeloProyecto.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

@@ -72,6 +72,9 @@ namespace Proyecto_Final.Formularios
 
         }
 
-
+        protected void btnRegistrarse_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmInsertUsuario.aspx");
+        }
     }
 }
