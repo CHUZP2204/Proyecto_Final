@@ -72,6 +72,11 @@
            <asp:RequiredFieldValidator ID="rqvTipoUsuario" runat="server" ErrorMessage="Debe seleccionar el Tipo de Usuario" Display="None" 
                ControlToValidate="LstTipoUsuario"></asp:RequiredFieldValidator>
        </div>
+              <div class="form-group">
+          <asp:Label ID="Label11" runat="server" Text="Contraseña"></asp:Label>      
+          <asp:TextBox ID="txtcontraseña" runat="server" CssClass="form-control"></asp:TextBox>
+          <asp:RequiredFieldValidator ID="rqvtxtcontraseña" runat="server"   ControlToValidate="txtcontraseña" ErrorMessage="Debe ingresar una contraseña" ForeColor="Red" Display="None"></asp:RequiredFieldValidator>
+       </div>
 
        <div class="form-group">
            <asp:Button ID="btAceptar" runat="server"  Text="Guardar" CssClass="btn-success" OnClick="btAceptar_Click" BackColor="White" BorderColor="Black" BorderStyle="Double" ForeColor="Black" Height="42px" Width="162px" />           

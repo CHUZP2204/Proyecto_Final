@@ -51,8 +51,8 @@ namespace Proyecto_Final.Formularios
                        txtTelefonoprincipal.Text,
                        txtTelefonosecundario.Text,
                        txtcorreo.Text,
-                       LstTipoUsuario.SelectedValue
-                       
+                       LstTipoUsuario.SelectedValue,
+                       txtcontraseña.Text
                         );
                 }
                 ///  CATCH: se ejecuta en el caso de que haya una excepcion

@@ -35,7 +35,7 @@ namespace Proyecto_Final.BL
         }
 
         public bool InsertaUsuario(  string pCedula, string pGenero, DateTime pFecha, string pnombre, string pprimerApellido, string psegundoApellido,
-           string pDireccion, string ptelefono1, string ptelefono2, string pCorreo, string pTipoUsuario)
+           string pDireccion, string ptelefono1, string ptelefono2, string pCorreo, string pTipoUsuario ,string pContraseña)
         {
             ///variable que posee la cantidad de registros afectados
             ///al realizar insert / update/ delete la cantidad de 
@@ -56,7 +56,8 @@ namespace Proyecto_Final.BL
                     ptelefono1,
                     ptelefono2,
                     pCorreo,
-                    pTipoUsuario
+                    pTipoUsuario,
+                    pContraseña
                     );
 
             if (registrosAfectados > 0)

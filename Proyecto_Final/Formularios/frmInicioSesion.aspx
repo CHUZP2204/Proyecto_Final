@@ -85,7 +85,7 @@
                                 <input type="checkbox" value="" checked>Remember me</label>
                         </div>
                         <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn-success btn-block" BorderStyle="Groove" OnClick="btnLogin_Click" weight="100px" />
-                        <asp:HyperLink ID="hpRegistrar" runat="server" ForeColor="#FFCC00" NavigateUrl="~/Formularios/frmInsertUsuario.aspx ">Registrar</asp:HyperLink>
+                      <%--  <asp:HyperLink ID="hpRegistrar" runat="server" ForeColor="#FFCC00" NavigateUrl="~/Formularios/frmInsertUsuario.aspx ">Registrar</asp:HyperLink>--%>
 
                     </div>
                     <div class="modal-footer">

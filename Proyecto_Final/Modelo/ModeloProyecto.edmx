@@ -210,6 +210,7 @@
           <Parameter Name="TelefonoSecundario" Type="varchar" Mode="In" />
           <Parameter Name="Correo" Type="varchar" Mode="In" />
           <Parameter Name="TipoUsuario" Type="varchar" Mode="In" />
+          <Parameter Name="Contraseña" Type="varchar" Mode="In" />
         </Function>
         <Function Name="sp_RetornaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="primerApellido" Type="varchar" Mode="In" />
@@ -577,6 +578,10 @@
             <Parameter Name="IdVehiculo" Mode="In" Type="Int32" />
             <Parameter Name="Placa" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="sp_RetornaUsuario" ReturnType="Collection(SegurosModel.sp_RetornaUsuario_Result)">
+            <Parameter Name="primerApellido" Mode="In" Type="String" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="sp_InsertaUsuario">
             <Parameter Name="Cedula" Mode="In" Type="String" />
             <Parameter Name="Genero" Mode="In" Type="String" />
@@ -589,10 +594,7 @@
             <Parameter Name="TelefonoSecundario" Mode="In" Type="String" />
             <Parameter Name="Correo" Mode="In" Type="String" />
             <Parameter Name="TipoUsuario" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_RetornaUsuario" ReturnType="Collection(SegurosModel.sp_RetornaUsuario_Result)">
-            <Parameter Name="primerApellido" Mode="In" Type="String" />
-            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="Contraseña" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_CoberturaSeguros_Result">
@@ -752,7 +754,6 @@
           <FunctionImportMapping FunctionImportName="spInsertaTipoSeguro" FunctionName="SegurosModel.Store.spInsertaTipoSeguro" />
           <FunctionImportMapping FunctionImportName="spModificaUsuario" FunctionName="SegurosModel.Store.spModificaUsuario" />
           <FunctionImportMapping FunctionImportName="spModificaVehiculo" FunctionName="SegurosModel.Store.spModificaVehiculo" />
-          <FunctionImportMapping FunctionImportName="sp_InsertaUsuario" FunctionName="SegurosModel.Store.sp_InsertaUsuario" />
           <FunctionImportMapping FunctionImportName="sp_RetornaUsuario" FunctionName="SegurosModel.Store.sp_RetornaUsuario">
             <ResultMapping>
               <ComplexTypeMapping TypeName="SegurosModel.sp_RetornaUsuario_Result">
@@ -772,6 +773,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_InsertaUsuario" FunctionName="SegurosModel.Store.sp_InsertaUsuario" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
