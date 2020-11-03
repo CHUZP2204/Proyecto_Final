@@ -52,7 +52,8 @@ namespace Proyecto_Final.Formularios
                        txtTelefonosecundario.Text,
                        txtcorreo.Text,
                        LstTipoUsuario.SelectedValue,
-                       txtcontraseña.Text
+                       txtContrasenia.Text
+                       
                         );
                 }
                 ///  CATCH: se ejecuta en el caso de que haya una excepcion
@@ -75,7 +76,7 @@ namespace Proyecto_Final.Formularios
                 }
 
                 ///mostrar el mensaje
-                Response.Write("<script>alert('" + mensaje + "')</script>"); ;
+                Response.Write("<script>alert('" + mensaje + "')</script>"); 
             }
         }
 

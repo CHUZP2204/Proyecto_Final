@@ -46,10 +46,5 @@ namespace Proyecto_Final.Formulario_Base_Datos
             //cargar de nuevo el grid e inidarle que se muestre
             this.CargaDatosGrid();
         }
-
-        protected void grdListaUsuarios_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

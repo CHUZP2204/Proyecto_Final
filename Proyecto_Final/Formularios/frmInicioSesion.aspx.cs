@@ -54,7 +54,7 @@ namespace Proyecto_Final.Formularios
 
             for (int i = 0; i < nuevaLista.Count; i++)
             {
-                if (nuevaLista[i].Correo.Equals(pUsuario) && nuevaLista[i].Contraseña.Equals(pContrasenia))
+                if (nuevaLista[i].Correo.Equals(pUsuario) && nuevaLista[i].Contrasenia.Equals(pContrasenia))
                 {
                     usuarioEncontrado = 1;
                 }

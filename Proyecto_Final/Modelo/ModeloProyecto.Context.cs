@@ -100,7 +100,7 @@ namespace Proyecto_Final.Modelo
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertaTipoSeguro", idTipoSeguroParameter, nombreParameter);
         }
     
-        public virtual int spModificaUsuario(Nullable<int> idUsuario, string cedula, string genero, Nullable<System.DateTime> fecha, string nombre, string primerApellido, string segundoApellido, string direccion, string telefonoPrincipal, string telefonoSecundario, string correo, string tipoUsuario)
+        public virtual int spModificaUsuario(Nullable<int> idUsuario, string cedula, string genero, Nullable<System.DateTime> fecha, string nombre, string primerApellido, string segundoApellido, string direccion, string telefonoPrincipal, string telefonoSecundario, string correo, string tipoUsuario, string contrasenia)
         {
             var idUsuarioParameter = idUsuario.HasValue ?
                 new ObjectParameter("IdUsuario", idUsuario) :
@@ -150,7 +150,11 @@ namespace Proyecto_Final.Modelo
                 new ObjectParameter("TipoUsuario", tipoUsuario) :
                 new ObjectParameter("TipoUsuario", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spModificaUsuario", idUsuarioParameter, cedulaParameter, generoParameter, fechaParameter, nombreParameter, primerApellidoParameter, segundoApellidoParameter, direccionParameter, telefonoPrincipalParameter, telefonoSecundarioParameter, correoParameter, tipoUsuarioParameter);
+            var contraseniaParameter = contrasenia != null ?
+                new ObjectParameter("contrasenia", contrasenia) :
+                new ObjectParameter("contrasenia", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spModificaUsuario", idUsuarioParameter, cedulaParameter, generoParameter, fechaParameter, nombreParameter, primerApellidoParameter, segundoApellidoParameter, direccionParameter, telefonoPrincipalParameter, telefonoSecundarioParameter, correoParameter, tipoUsuarioParameter, contraseniaParameter);
         }
     
         public virtual int spModificaVehiculo(Nullable<int> idVehiculo, string placa)
@@ -166,20 +170,7 @@ namespace Proyecto_Final.Modelo
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spModificaVehiculo", idVehiculoParameter, placaParameter);
         }
     
-        public virtual ObjectResult<sp_RetornaUsuario_Result> sp_RetornaUsuario(string primerApellido, string nombre)
-        {
-            var primerApellidoParameter = primerApellido != null ?
-                new ObjectParameter("primerApellido", primerApellido) :
-                new ObjectParameter("primerApellido", typeof(string));
-    
-            var nombreParameter = nombre != null ?
-                new ObjectParameter("nombre", nombre) :
-                new ObjectParameter("nombre", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaUsuario_Result>("sp_RetornaUsuario", primerApellidoParameter, nombreParameter);
-        }
-    
-        public virtual int sp_InsertaUsuario(string cedula, string genero, Nullable<System.DateTime> fechaNacimiento, string nombre, string primerApellido, string segundoApellido, string direccion, string telefonoPrincipal, string telefonoSecundario, string correo, string tipoUsuario, string contraseña)
+        public virtual int sp_InsertaUsuario(string cedula, string genero, Nullable<System.DateTime> fechaNacimiento, string nombre, string primerApellido, string segundoApellido, string direccion, string telefonoPrincipal, string telefonoSecundario, string correo, string tipoUsuario, string contrasenia)
         {
             var cedulaParameter = cedula != null ?
                 new ObjectParameter("Cedula", cedula) :
@@ -225,11 +216,24 @@ namespace Proyecto_Final.Modelo
                 new ObjectParameter("TipoUsuario", tipoUsuario) :
                 new ObjectParameter("TipoUsuario", typeof(string));
     
-            var contraseñaParameter = contraseña != null ?
-                new ObjectParameter("Contraseña", contraseña) :
-                new ObjectParameter("Contraseña", typeof(string));
+            var contraseniaParameter = contrasenia != null ?
+                new ObjectParameter("Contrasenia", contrasenia) :
+                new ObjectParameter("Contrasenia", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertaUsuario", cedulaParameter, generoParameter, fechaNacimientoParameter, nombreParameter, primerApellidoParameter, segundoApellidoParameter, direccionParameter, telefonoPrincipalParameter, telefonoSecundarioParameter, correoParameter, tipoUsuarioParameter, contraseñaParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertaUsuario", cedulaParameter, generoParameter, fechaNacimientoParameter, nombreParameter, primerApellidoParameter, segundoApellidoParameter, direccionParameter, telefonoPrincipalParameter, telefonoSecundarioParameter, correoParameter, tipoUsuarioParameter, contraseniaParameter);
+        }
+    
+        public virtual ObjectResult<sp_RetornaUsuario_Result> sp_RetornaUsuario(string primerApellido, string nombre)
+        {
+            var primerApellidoParameter = primerApellido != null ?
+                new ObjectParameter("primerApellido", primerApellido) :
+                new ObjectParameter("primerApellido", typeof(string));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("nombre", nombre) :
+                new ObjectParameter("nombre", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaUsuario_Result>("sp_RetornaUsuario", primerApellidoParameter, nombreParameter);
         }
     }
 }

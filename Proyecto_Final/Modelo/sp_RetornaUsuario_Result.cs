@@ -25,6 +25,6 @@ namespace Proyecto_Final.Modelo
         public string TelefonoSecundario { get; set; }
         public string Correo { get; set; }
         public string TipoUsuario { get; set; }
-        public string Contraseña { get; set; }
+        public string Contrasenia { get; set; }
     }
 }

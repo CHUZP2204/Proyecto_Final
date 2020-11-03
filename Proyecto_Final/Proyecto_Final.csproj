@@ -1834,6 +1834,7 @@
     <Content Include="Estilos\Fonts\fontawesome-free-5.14.0-web\webfonts\fa-solid-900.ttf" />
     <Content Include="Estilos\Fonts\fontawesome-free-5.14.0-web\webfonts\fa-solid-900.woff" />
     <Content Include="Estilos\Fonts\fontawesome-free-5.14.0-web\webfonts\fa-solid-900.woff2" />
+    <Content Include="Estilos\boostra 3.4.1\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Modelo\ModeloProyecto.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
