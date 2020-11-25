@@ -42,33 +42,6 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtCedula;
 
         /// <summary>
-        /// Control label.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label;
-
-        /// <summary>
-        /// Control ddlgenero.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlgenero;
-
-        /// <summary>
-        /// Control rqvgenero.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvgenero;
-
-        /// <summary>
         /// Control label1.
         /// </summary>
         /// <remarks>
@@ -175,6 +148,33 @@ namespace Proyecto_Final.Formularios
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtSegundoApellido;
+
+        /// <summary>
+        /// Control label.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label label;
+
+        /// <summary>
+        /// Control ddlgenero.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlgenero;
+
+        /// <summary>
+        /// Control rqvgenero.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvgenero;
 
         /// <summary>
         /// Control Label9.
@@ -348,13 +348,13 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.Button btAceptar;
 
         /// <summary>
-        /// Control hpListaUsuario.
+        /// Control hplstUsers.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hpListaUsuario;
+        protected global::System.Web.UI.WebControls.HyperLink hplstUsers;
 
         /// <summary>
         /// Control vsRegistroUsuario.

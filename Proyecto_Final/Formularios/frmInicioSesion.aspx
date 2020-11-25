@@ -65,7 +65,7 @@
                         <!--Nombre Usuario-->
                         <div class="form-group">
                             <label><span class="fas fa-user"></span>Username</label>
-                            <asp:TextBox ID="txtUserName" runat="server" TextMode="Email" placeholder="Enter Email" required="required" Width="500px"></asp:TextBox>
+                            <asp:TextBox class="form-control" ID="txtUserName" runat="server" TextMode="Email" placeholder="Enter Email" required="required"></asp:TextBox>
 
 
 
@@ -74,7 +74,7 @@
                         <!--Contraseña-->
                         <div class="form-group">
                             <label><span class="fas fa-eye"></span>Password</label>
-                            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" placeholder="Enter password" required="required" Width="500px"></asp:TextBox>
+                            <asp:TextBox class="form-control" ID="txtPassword" runat="server" TextMode="Password" placeholder="Enter password" required="required"></asp:TextBox>
                         </div>
 
                         <!---->

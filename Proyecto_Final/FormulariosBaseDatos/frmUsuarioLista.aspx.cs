@@ -14,6 +14,10 @@ namespace Proyecto_Final.Formulario_Base_Datos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
+            {
+                this.Response.Redirect("~/Formularios/frmInicioSesion.aspx");
+            }
             this.CargaDatosGrid();
         }
 

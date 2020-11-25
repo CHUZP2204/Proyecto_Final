@@ -12,7 +12,12 @@ namespace Proyecto_Final.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
+            {
+                /// No Se Muestra El Hyperlink Si Se Llama el formulario desde La Pantalla Login 
+                /// Cuando Un Usuario Se Quiera Registrar
+                this.hplstUsers.Visible = false;
+            }
         }
 
         protected void btAceptar_Click(object sender, EventArgs e)
@@ -35,7 +40,7 @@ namespace Proyecto_Final.Formularios
                     ///yyyy/mm/dd
                     DateTime FechaNacimiento = Convert.ToDateTime(this.txtfechanacimiento.Text);
 
-           
+
                     ///asignar a la variable el resultado de 
                     /// invocar el procedimiento almacenado que
                     /// se encuentra en el metodo
@@ -53,7 +58,7 @@ namespace Proyecto_Final.Formularios
                        txtcorreo.Text,
                        LstTipoUsuario.SelectedValue,
                        txtContrasenia.Text
-                       
+
                         );
                 }
                 ///  CATCH: se ejecuta en el caso de que haya una excepcion
@@ -76,9 +81,10 @@ namespace Proyecto_Final.Formularios
                 }
 
                 ///mostrar el mensaje
-                Response.Write("<script>alert('" + mensaje + "')</script>"); 
+                Response.Write("<script>alert('" + mensaje + "')</script>");
             }
         }
+
 
     }
 }
