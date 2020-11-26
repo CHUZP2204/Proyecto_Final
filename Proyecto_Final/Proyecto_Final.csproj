@@ -1928,6 +1928,7 @@
     </Compile>
     <Compile Include="Formularios\frmInsertUsuario.aspx.cs">
       <DependentUpon>frmInsertUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Formularios\frmInsertUsuario.aspx.designer.cs">
       <DependentUpon>frmInsertUsuario.aspx</DependentUpon>

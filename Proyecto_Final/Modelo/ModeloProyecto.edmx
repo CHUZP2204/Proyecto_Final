@@ -198,6 +198,9 @@
         <Function Name="sp_PolizaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="sp.PolizaUsuario">
           <Parameter Name="Cedula" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="sp_EliminaAdicciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idAdicciones" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_InsertaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Cedula" Type="varchar" Mode="In" />
           <Parameter Name="Genero" Type="varchar" Mode="In" />
@@ -211,6 +214,18 @@
           <Parameter Name="Correo" Type="varchar" Mode="In" />
           <Parameter Name="TipoUsuario" Type="varchar" Mode="In" />
           <Parameter Name="Contrasenia" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_ModificaAdicciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idAdicciones" Type="int" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Codigo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_RetornaAdicciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Codigo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_RetornaAdiccionesID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idAdicciones" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_RetornaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="primerApellido" Type="varchar" Mode="In" />
@@ -598,6 +613,21 @@
             <Parameter Name="primerApellido" Mode="In" Type="String" />
             <Parameter Name="nombre" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="sp_EliminaAdicciones">
+            <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ModificaAdicciones">
+            <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_RetornaAdicciones">
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_RetornaAdiccionesID">
+            <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_CoberturaSeguros_Result">
           <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
@@ -776,6 +806,10 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_EliminaAdicciones" FunctionName="SegurosModel.Store.sp_EliminaAdicciones" />
+          <FunctionImportMapping FunctionImportName="sp_ModificaAdicciones" FunctionName="SegurosModel.Store.sp_ModificaAdicciones" />
+          <FunctionImportMapping FunctionImportName="sp_RetornaAdicciones" FunctionName="SegurosModel.Store.sp_RetornaAdicciones" />
+          <FunctionImportMapping FunctionImportName="sp_RetornaAdiccionesID" FunctionName="SegurosModel.Store.sp_RetornaAdiccionesID" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

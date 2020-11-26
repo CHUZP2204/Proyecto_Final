@@ -235,5 +235,53 @@ namespace Proyecto_Final.Modelo
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaUsuario_Result>("sp_RetornaUsuario", primerApellidoParameter, nombreParameter);
         }
+    
+        public virtual int sp_EliminaAdicciones(Nullable<int> idAdicciones)
+        {
+            var idAdiccionesParameter = idAdicciones.HasValue ?
+                new ObjectParameter("idAdicciones", idAdicciones) :
+                new ObjectParameter("idAdicciones", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_EliminaAdicciones", idAdiccionesParameter);
+        }
+    
+        public virtual int sp_ModificaAdicciones(Nullable<int> idAdicciones, string nombre, string codigo)
+        {
+            var idAdiccionesParameter = idAdicciones.HasValue ?
+                new ObjectParameter("idAdicciones", idAdicciones) :
+                new ObjectParameter("idAdicciones", typeof(int));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("Codigo", codigo) :
+                new ObjectParameter("Codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ModificaAdicciones", idAdiccionesParameter, nombreParameter, codigoParameter);
+        }
+    
+        public virtual int sp_RetornaAdicciones(string nombre, string codigo)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("Codigo", codigo) :
+                new ObjectParameter("Codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_RetornaAdicciones", nombreParameter, codigoParameter);
+        }
+    
+        public virtual int sp_RetornaAdiccionesID(Nullable<int> idAdicciones)
+        {
+            var idAdiccionesParameter = idAdicciones.HasValue ?
+                new ObjectParameter("idAdicciones", idAdicciones) :
+                new ObjectParameter("idAdicciones", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_RetornaAdiccionesID", idAdiccionesParameter);
+        }
     }
 }
