@@ -24,7 +24,7 @@ namespace Proyecto_Final.BL
         /// <param name="pNombre"></param>
         /// <param name="pPrimerApellido"></param>
         /// <returns></returns>
-        public List<sp_RetornaUsuario_Result> retornaUsuario (string pNombre = null, string pPrimerApellido = null)
+        public List<sp_RetornaUsuario_Result> retornaUsuario(string pNombre = null, string pPrimerApellido = null)
         {
             ///Se Crea La Variable Que Retorna
             List<sp_RetornaUsuario_Result> resultado = new List<sp_RetornaUsuario_Result>();
@@ -34,8 +34,11 @@ namespace Proyecto_Final.BL
             return resultado;
         }
 
-        public bool InsertaUsuario(  string pCedula, string pGenero, DateTime pFecha, string pnombre, string pprimerApellido, string psegundoApellido,
-           string pDireccion, string ptelefono1, string ptelefono2, string pCorreo, string pTipoUsuario)
+        public bool InsertaUsuario(string pCedula, string pGenero, DateTime pFecha, string pnombre, string pprimerApellido, string psegundoApellido,
+
+           string pDireccion, string ptelefono1, string ptelefono2, string pCorreo, string pTipoUsuario, string pContrasenia)
+
+
         {
             ///variable que posee la cantidad de registros afectados
             ///al realizar insert / update/ delete la cantidad de 
@@ -45,7 +48,7 @@ namespace Proyecto_Final.BL
 
             /// invocar al procedimiento almacenado
             registrosAfectados =
-                this.modeloBD.sp_InsertaUsuario( 
+                this.modeloBD.sp_InsertaUsuario(
                     pCedula,
                     pGenero,
                     pFecha,
@@ -56,7 +59,8 @@ namespace Proyecto_Final.BL
                     ptelefono1,
                     ptelefono2,
                     pCorreo,
-                    pTipoUsuario
+                    pTipoUsuario,
+                    pContrasenia
                     );
 
             if (registrosAfectados > 0)
@@ -94,13 +98,14 @@ namespace Proyecto_Final.BL
              string pTelefono1,
              string pTelefono2,
              string pCorreo,
-             string pTipoUsuario)
+             string pTipoUsuario,
+             string pContrasenia)
         {
             ///Crear La variable Que Se Retornara
             int resultado = 0;
             ///Asignar A La Variable El Resultado Del LLamado Al Procedimiento Almacenado
             resultado = this.modeloBD.spModificaUsuario(
-                pIdUsuario, 
+                pIdUsuario,
                 pCedula,
                 pGenero,
                 pFecha,
@@ -111,12 +116,13 @@ namespace Proyecto_Final.BL
                 pTelefono1,
                 pTelefono2,
                 pCorreo,
-                pTipoUsuario);
+                pTipoUsuario,
+                pContrasenia);
             ///Retornar El Valor 
             ///Si Se Ingreso Datos o No
-            if (resultado > 0) 
+            if (resultado > 0)
             {
-                return true; 
+                return true;
             }
             else
             {
@@ -124,11 +130,12 @@ namespace Proyecto_Final.BL
             }
         }
 
-     /*   public List<sp_RetornaUsuario_Result> retornaUsuarios(string pNombre,string apel)
-        {
+        /*   public List<sp_RetornaUsuario_Result> retornaUsuarios(string pNombre,string apel)
+           {
 
-        } 
-     */
-        
+           } 
+        */
+
     }
 }
+

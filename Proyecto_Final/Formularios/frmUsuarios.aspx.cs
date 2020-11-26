@@ -13,7 +13,10 @@ namespace Proyecto_Final.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
+            {
+                this.Response.Redirect("~/Formularios/frmInicioSesion.aspx");
+            }
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)
@@ -39,7 +42,7 @@ namespace Proyecto_Final.Formularios
         protected void OpenModal_Click(object sender, EventArgs e)
         {
             string msj = " Me Jesus";
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showMessage('"+msj+"')", true);
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showMessage('" + msj + "')", true);
         }
     }
 }

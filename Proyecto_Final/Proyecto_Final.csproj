@@ -1758,9 +1758,10 @@
     <Content Include="Estilos\Fonts\fontawesome-free-5.14.0-web\webfonts\fa-solid-900.svg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Formulario Base Datos\frmUsuarioLista.aspx" />
+    <Content Include="FormulariosBaseDatos\frmUsuarioLista.aspx" />
     <Content Include="Formularios\frmInicioSesion.aspx" />
     <Content Include="Formularios\frmInsertUsuario.aspx" />
+    <Content Include="Formularios\frmPaginaPrincipal.aspx" />
     <Content Include="Formularios\frmUsuarios.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1771,6 +1772,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Images\Logo.PNG" />
     <Content Include="MASTER_PAGES\MaterPages.Master" />
     <EntityDeploy Include="Modelo\ModeloProyecto.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -1833,6 +1835,7 @@
     <Content Include="Estilos\Fonts\fontawesome-free-5.14.0-web\webfonts\fa-solid-900.ttf" />
     <Content Include="Estilos\Fonts\fontawesome-free-5.14.0-web\webfonts\fa-solid-900.woff" />
     <Content Include="Estilos\Fonts\fontawesome-free-5.14.0-web\webfonts\fa-solid-900.woff2" />
+    <Content Include="Estilos\boostra 3.4.1\bootstrap.min.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Modelo\ModeloProyecto.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -1909,11 +1912,11 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Formulario Base Datos\frmUsuarioLista.aspx.cs">
+    <Compile Include="FormulariosBaseDatos\frmUsuarioLista.aspx.cs">
       <DependentUpon>frmUsuarioLista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Formulario Base Datos\frmUsuarioLista.aspx.designer.cs">
+    <Compile Include="FormulariosBaseDatos\frmUsuarioLista.aspx.designer.cs">
       <DependentUpon>frmUsuarioLista.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmInicioSesion.aspx.cs">
@@ -1928,6 +1931,13 @@
     </Compile>
     <Compile Include="Formularios\frmInsertUsuario.aspx.designer.cs">
       <DependentUpon>frmInsertUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmPaginaPrincipal.aspx.cs">
+      <DependentUpon>frmPaginaPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmPaginaPrincipal.aspx.designer.cs">
+      <DependentUpon>frmPaginaPrincipal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmUsuarios.aspx.cs">
       <DependentUpon>frmUsuarios.aspx</DependentUpon>

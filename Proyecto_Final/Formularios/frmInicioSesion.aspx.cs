@@ -32,6 +32,9 @@ namespace Proyecto_Final.Formularios
             if(resultado == true)
             {
                 Response.Write("<script>alert('Inicio De Sesion Correcto')</script>");
+    
+                ///redirecionar a la Pagina Inicial
+                this.Response.Redirect("~/FormulariosBaseDatos/frmPaginaPrincipal.aspx");
             }
             else
             {
@@ -41,7 +44,7 @@ namespace Proyecto_Final.Formularios
 
         }
 
-        public bool verificaUsuario(string pUsuario, string pContrasenia)
+        private bool verificaUsuario(string pUsuario, string pContrasenia)
         {
             BLusuarios usuariosObtenido = new BLusuarios();
 
@@ -54,9 +57,29 @@ namespace Proyecto_Final.Formularios
 
             for (int i = 0; i < nuevaLista.Count; i++)
             {
-                if (nuevaLista[i].Correo.Equals(pUsuario) && nuevaLista[i].TelefonoPrincipal.Equals(pContrasenia))
+                if (nuevaLista[i].Correo.Equals(pUsuario) && nuevaLista[i].Contrasenia.Equals(pContrasenia))
                 {
                     usuarioEncontrado = 1;
+                    ///Variables De Sesion, permite tener en memoria varibales con sus respectivos 
+                    ///valores De Cualquier tipo de dato
+                    ///************ Es case-sensitive
+                    ///         nombre Variable,valor De La Variable
+
+                    this.Session.Add("correo", nuevaLista[i].Correo);
+                    this.Session.Add("idusuario", nuevaLista[i].IdUsuario);
+                    this.Session.Add("tipousuario", nuevaLista[i].TipoUsuario);
+                    this.Session.Add("usuariologueado", true);
+
+                    ///redirecionar a la Pagina Inicial
+                    this.Response.Redirect("~/Formularios/frmPaginaPrincipal.aspx");
+                }
+                else
+                {
+                   
+                    this.Session.Add("correo", null);
+                    this.Session.Add("idusuario", null);
+                    this.Session.Add("tipousuario", null);
+                    this.Session.Add("usuariologueado", null);
                 }
            
             }
@@ -72,6 +95,9 @@ namespace Proyecto_Final.Formularios
 
         }
 
-
+        protected void btnRegistrarse_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmInsertUsuario.aspx");
+        }
     }
 }

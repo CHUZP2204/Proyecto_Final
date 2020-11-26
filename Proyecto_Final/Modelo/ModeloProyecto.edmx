@@ -85,7 +85,7 @@
           <Property Name="TelefonoSecundario" Type="varchar" MaxLength="50" />
           <Property Name="Correo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="TipoUsuario" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Contraseña" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contrasenia" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Vehiculo">
           <Key>
@@ -210,6 +210,7 @@
           <Parameter Name="TelefonoSecundario" Type="varchar" Mode="In" />
           <Parameter Name="Correo" Type="varchar" Mode="In" />
           <Parameter Name="TipoUsuario" Type="varchar" Mode="In" />
+          <Parameter Name="Contrasenia" Type="varchar" Mode="In" />
         </Function>
         <Function Name="sp_RetornaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="primerApellido" Type="varchar" Mode="In" />
@@ -242,6 +243,7 @@
           <Parameter Name="TelefonoSecundario" Type="varchar" Mode="In" />
           <Parameter Name="Correo" Type="varchar" Mode="In" />
           <Parameter Name="TipoUsuario" Type="varchar" Mode="In" />
+          <Parameter Name="contrasenia" Type="varchar" Mode="In" />
         </Function>
         <Function Name="spModificaVehiculo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdVehiculo" Type="int" Mode="In" />
@@ -389,7 +391,7 @@
           <Property Name="TipoUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="AdiccionesXUsu" Relationship="Self.FK_AdiccionesXUsu_Usuarios" FromRole="Usuarios" ToRole="AdiccionesXUsu" />
           <NavigationProperty Name="RegistroPoliza" Relationship="Self.FK_RegistroPoliza_Usuarios" FromRole="Usuarios" ToRole="RegistroPoliza" />
-          <Property Name="Contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Contrasenia" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Vehiculo">
           <Key>
@@ -572,6 +574,7 @@
             <Parameter Name="TelefonoSecundario" Mode="In" Type="String" />
             <Parameter Name="Correo" Mode="In" Type="String" />
             <Parameter Name="TipoUsuario" Mode="In" Type="String" />
+            <Parameter Name="contrasenia" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="spModificaVehiculo">
             <Parameter Name="IdVehiculo" Mode="In" Type="Int32" />
@@ -589,6 +592,7 @@
             <Parameter Name="TelefonoSecundario" Mode="In" Type="String" />
             <Parameter Name="Correo" Mode="In" Type="String" />
             <Parameter Name="TipoUsuario" Mode="In" Type="String" />
+            <Parameter Name="Contrasenia" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_RetornaUsuario" ReturnType="Collection(SegurosModel.sp_RetornaUsuario_Result)">
             <Parameter Name="primerApellido" Mode="In" Type="String" />
@@ -616,9 +620,10 @@
           <Property Type="String" Name="SegundoApellido" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="Direccion" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="TelefonoPrincipal" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="TelefonoSecundario" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TelefonoSecundario" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="Correo" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="TipoUsuario" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Contrasenia" Nullable="false" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -700,7 +705,7 @@
           <EntitySetMapping Name="Usuarios">
             <EntityTypeMapping TypeName="SegurosModel.Usuarios">
               <MappingFragment StoreEntitySet="Usuarios">
-                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
                 <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
                 <ScalarProperty Name="Cedula" ColumnName="Cedula" />
                 <ScalarProperty Name="Genero" ColumnName="Genero" />
@@ -767,6 +772,7 @@
                 <ScalarProperty Name="TelefonoSecundario" ColumnName="TelefonoSecundario" />
                 <ScalarProperty Name="Correo" ColumnName="Correo" />
                 <ScalarProperty Name="TipoUsuario" ColumnName="TipoUsuario" />
+                <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

@@ -5,6 +5,7 @@
 <html>
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <%--Definiciones de hojas de estilos para todas las paginas--%>
     <script src="../Estilos/jquey-3.5.1/jquery.min.js"></script>
@@ -13,13 +14,15 @@
     <link href="../Estilos/Fonts/fontawesome-free-5.14.0-web/css/all.css" rel="stylesheet" />
     <%--Content folder holper para que las paginas que usen la
       plantilla incluyan hojas de estilos propios--%>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
+<body style="background-color:#15A95B"">
     <header>Este es el encabezado de todas las paginas</header>
     <%--Content folder holper para que las paginas que usen la
                       plantilla incluyan el formulario--%>
+    <style></style>
     <asp:ContentPlaceHolder ID="ContenidoPrincipal" runat="server">
     </asp:ContentPlaceHolder>
 
@@ -30,7 +33,15 @@
 
     <asp:ContentPlaceHolder ID="scriptspersonalizados" runat="server">
     </asp:ContentPlaceHolder>
-    <footer>Todos los derechos resevados<%:DateTime.Now.Year %></footer>
+    <footer style="text-align:center">
+        <div class="container-fluid">
+            <br />
+            <p class="fa fa-map-marker">Direccion: Puriscal,San Jose</p>
+            <br />
+            <p class="fa fa-copyright">Todos los derechos resevados<%:DateTime.Now.Year %>  ©</p>
+        </div>
+
+    </footer>
 
 </body>
 </html>
