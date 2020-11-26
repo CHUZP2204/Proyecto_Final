@@ -20,7 +20,7 @@
         }
     </style>
     <form id="form1" runat="server">
-        <div style="background-color: #4EBD9B;filter: drop-shadow(5px 5px 10px #444)">
+        <div style="background-color: #699186;filter: drop-shadow(5px 5px 10px #444)">
             <div class="container-fluid" style="width: 450px">
                 <h2 class="auto-style1" style="color:blue;text-align:center"><strong>Bienvenidos</strong></h2>
                 <!-- Trigger the modal with a button -->
@@ -60,15 +60,12 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4><span class="fas fa-lock"></span>Login</h4>
                     </div>
-                    <div class="modal-body" style="padding: 40px 50px;">
 
+                    <div class="modal-body" style="padding: 40px 50px">
                         <!--Nombre Usuario-->
                         <div class="form-group">
                             <label><span class="fas fa-user"></span>Username</label>
                             <asp:TextBox class="form-control" ID="txtUserName" runat="server" TextMode="Email" placeholder="Enter Email" required="required"></asp:TextBox>
-
-
-
                         </div>
                         <!---->
                         <!--Contraseña-->

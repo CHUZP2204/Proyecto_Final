@@ -12,11 +12,17 @@ namespace Proyecto_Final.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            /// No Se Muestra El Hyperlink Si Se Llama el formulario desde La Pantalla Login 
+            /// Cuando Un Usuario Se Quiera Ver La Lista De Usuarios
             if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
             {
-                /// No Se Muestra El Hyperlink Si Se Llama el formulario desde La Pantalla Login 
-                /// Cuando Un Usuario Se Quiera Registrar
                 this.hplstUsers.Visible = false;
+            }
+            /// No Se Mostrara El HyperLink Si ya Hay Un Usuario Logueado
+            /// Porque Este Re-Direcciona a La Pantalla Login
+            if (Convert.ToBoolean(this.Session["usuariologueado"]) == true)
+            {
+                this.hplAtrasInicio.Visible = false;
             }
         }
 
