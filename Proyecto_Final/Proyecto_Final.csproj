@@ -1760,7 +1760,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="FormulariosBaseDatos\frmUsuarioLista.aspx" />
     <Content Include="Formularios\frmInicioSesion.aspx" />
+    <Content Include="Formularios\frmInsertaAdicciones.aspx" />
     <Content Include="Formularios\frmInsertUsuario.aspx" />
+    <Content Include="Formularios\frmListaAdicciones.aspx" />
     <Content Include="Formularios\frmPaginaPrincipal.aspx" />
     <Content Include="Formularios\frmUsuarios.aspx" />
     <Content Include="Global.asax" />
@@ -1894,6 +1896,7 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BL\BLAdiccion.cs" />
     <Compile Include="BL\BLusuarios.cs" />
     <Compile Include="Clases\PRUEBA.cs" />
     <Compile Include="CLASES\Prueba2.cs" />
@@ -1926,12 +1929,26 @@
     <Compile Include="Formularios\frmInicioSesion.aspx.designer.cs">
       <DependentUpon>frmInicioSesion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmInsertaAdicciones.aspx.cs">
+      <DependentUpon>frmInsertaAdicciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmInsertaAdicciones.aspx.designer.cs">
+      <DependentUpon>frmInsertaAdicciones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmInsertUsuario.aspx.cs">
       <DependentUpon>frmInsertUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Formularios\frmInsertUsuario.aspx.designer.cs">
       <DependentUpon>frmInsertUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmListaAdicciones.aspx.cs">
+      <DependentUpon>frmListaAdicciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmListaAdicciones.aspx.designer.cs">
+      <DependentUpon>frmListaAdicciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmPaginaPrincipal.aspx.cs">
       <DependentUpon>frmPaginaPrincipal.aspx</DependentUpon>

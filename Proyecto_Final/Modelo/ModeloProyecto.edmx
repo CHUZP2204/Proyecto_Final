@@ -614,7 +614,7 @@
             <Parameter Name="nombre" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_EliminaAdicciones">
-            <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
+          <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_ModificaAdicciones">
             <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
@@ -626,7 +626,7 @@
             <Parameter Name="Codigo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_RetornaAdiccionesID">
-            <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
+          <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_CoberturaSeguros_Result">

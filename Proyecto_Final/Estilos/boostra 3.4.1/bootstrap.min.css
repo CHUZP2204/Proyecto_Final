@@ -131,7 +131,7 @@ button, html input[type=button], input[type=reset], input[type=submit] {
     -webkit-appearance: button;
     cursor: pointer;
     font-weight: 700;
-    font-size: x-large;
+    font-size: small;
 }
 
     button[disabled], html input[disabled] {
@@ -1374,7 +1374,7 @@ button, input, select, textarea {
 a {
     color: #337ab7;
     text-decoration: none;
-    font-size: x-large;
+    font-size: medium;
 }
 
     a:focus, a:hover {
