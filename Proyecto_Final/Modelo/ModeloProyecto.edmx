@@ -201,7 +201,7 @@
         <Function Name="sp_Elimina_UsuarioID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idUsuario" Type="int" Mode="In" />
         </Function>
-        <Function Name="sp_EliminaAdicciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="sp_EliminaAdiccionesID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idAdicciones" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_InsertaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -615,20 +615,20 @@
           <FunctionImport Name="sp_RetornaUsuarioID" ReturnType="Collection(SegurosModel.sp_RetornaUsuarioID_Result)">
           <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_EliminaAdicciones">
-          <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
+          <FunctionImport Name="sp_EliminaAdiccionesID">
+            <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_ModificaAdicciones">
             <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
             <Parameter Name="Nombre" Mode="In" Type="String" />
             <Parameter Name="Codigo" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="sp_RetornaAdicciones">
+          <FunctionImport Name="sp_RetornaAdicciones" ReturnType="Collection(SegurosModel.sp_RetornaAdicciones_Result)">
             <Parameter Name="Nombre" Mode="In" Type="String" />
             <Parameter Name="Codigo" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="sp_RetornaAdiccionesID">
-          <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
+          <FunctionImport Name="sp_RetornaAdiccionesID" ReturnType="Collection(SegurosModel.sp_RetornaAdiccionesID_Result)">
+            <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spInsertaAdicciones">
             <Parameter Name="Nombre" Mode="In" Type="String" />
@@ -675,6 +675,16 @@
           <Property Type="String" Name="Correo" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="TipoUsuario" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="Contrasenia" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_RetornaAdicciones_Result">
+          <Property Type="Int32" Name="IdAdicciones" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Codigo" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_RetornaAdiccionesID_Result">
+          <Property Type="Int32" Name="IdAdicciones" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Codigo" Nullable="false" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -845,10 +855,26 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_EliminaAdicciones" FunctionName="SegurosModel.Store.sp_EliminaAdicciones" />
+          <FunctionImportMapping FunctionImportName="sp_EliminaAdiccionesID" FunctionName="SegurosModel.Store.sp_EliminaAdiccionesID" />
           <FunctionImportMapping FunctionImportName="sp_ModificaAdicciones" FunctionName="SegurosModel.Store.sp_ModificaAdicciones" />
-          <FunctionImportMapping FunctionImportName="sp_RetornaAdicciones" FunctionName="SegurosModel.Store.sp_RetornaAdicciones" />
-          <FunctionImportMapping FunctionImportName="sp_RetornaAdiccionesID" FunctionName="SegurosModel.Store.sp_RetornaAdiccionesID" />
+          <FunctionImportMapping FunctionImportName="sp_RetornaAdicciones" FunctionName="SegurosModel.Store.sp_RetornaAdicciones">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SegurosModel.sp_RetornaAdicciones_Result">
+                <ScalarProperty Name="IdAdicciones" ColumnName="IdAdicciones" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_RetornaAdiccionesID" FunctionName="SegurosModel.Store.sp_RetornaAdiccionesID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SegurosModel.sp_RetornaAdiccionesID_Result">
+                <ScalarProperty Name="IdAdicciones" ColumnName="IdAdicciones" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="spInsertaAdicciones" FunctionName="SegurosModel.Store.spInsertaAdicciones" />
         </EntityContainerMapping>
       </Mapping>

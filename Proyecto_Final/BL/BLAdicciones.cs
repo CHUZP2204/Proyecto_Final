@@ -17,6 +17,12 @@ namespace Proyecto_Final
         /// </summary>
         segurosEntities1 modeloBD = new segurosEntities1();
 
+        public List<sp_RetornaAdicciones_Result> RetornaAdicciones(string pNombre,string pCodigo)
+        {
+            List<sp_RetornaAdicciones_Result> resultado = this.modeloBD.sp_RetornaAdicciones(pNombre,pCodigo).ToList();
+
+            return resultado;
+        }
     }
     
 }

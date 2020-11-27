@@ -2053,6 +2053,12 @@
     <Compile Include="Modelo\sp_PolizaUsuario_Result.cs">
       <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\sp_RetornaAdiccionesID_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sp_RetornaAdicciones_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\sp_RetornaUsuarioID_Result.cs">
       <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
