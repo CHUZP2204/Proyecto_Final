@@ -66,6 +66,9 @@ namespace Proyecto_Final.Formularios
                     ///         nombre Variable,valor De La Variable
 
                     this.Session.Add("correo", nuevaLista[i].Correo);
+                    this.Session.Add("nombre",nuevaLista[i].Nombre);
+                    this.Session.Add("pApellido", nuevaLista[i].PrimerApellido);
+                    this.Session.Add("sApellido", nuevaLista[i].SegundoApellido);
                     this.Session.Add("idusuario", nuevaLista[i].IdUsuario);
                     this.Session.Add("tipousuario", nuevaLista[i].TipoUsuario);
                     this.Session.Add("usuariologueado", true);

@@ -1,18 +1,20 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmPaginaPrincipal.aspx.cs" Inherits="Proyecto_Final.Formularios.frmPaginaPrincipal" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MASTER_PAGES/MaterPages.Master" AutoEventWireup="true" CodeBehind="frmPaginaPrincipal.aspx.cs" Inherits="Proyecto_Final.Formularios.frmPaginaPrincipal" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
+    <form id="frmpaginaPrincipal" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <p>HELLO WORL</p>
-            <h1>AQUI DEBE IR PAGINA PRINCIPAL</h1>
-        </div>
+        <p>HELLO WORLD</p>
+        <h2>AQUI ES LA PAGINA PRINCIPAL</h2>
+        <h1>
+            <asp:Label ID="lblUSuarioConectado" runat="server" Text="Label" ForeColor="Red"></asp:Label>
+
+        </h1>
+
+        <asp:HyperLink ID="hplUserList" class="btn btn-primary" role="button" BorderColor="Black"
+            runat="server" NavigateUrl="~/FormulariosBaseDatos/frmUsuarioLista.aspx ">Ver Lista</asp:HyperLink>
     </form>
-</body>
-</html>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="scriptspersonalizados" runat="server">
+</asp:Content>

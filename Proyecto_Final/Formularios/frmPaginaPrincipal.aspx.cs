@@ -11,10 +11,20 @@ namespace Proyecto_Final.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
-            {
-                this.Response.Redirect("~/Formularios/frmInicioSesion.aspx");
-            }
+            cargaNombre();
         }
+
+        void cargaNombre()
+        {
+            string nombreActual = Convert.ToString(this.Session["nombre"]);
+            string pApellidoActual = Convert.ToString(this.Session["pApellido"]);
+            string sApellidoActual = Convert.ToString(this.Session["sApellido"]);
+
+            string mjs = $"Bienvenido Al Sistema {nombreActual} {pApellidoActual} {sApellidoActual}";
+
+            this.lblUSuarioConectado.Text = mjs;
+        }
+
+
     }
 }
