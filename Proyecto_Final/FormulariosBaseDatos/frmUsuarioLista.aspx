@@ -19,7 +19,6 @@
         <br />
         <br />
         <br />
-        <br />
         <asp:GridView ID="grdListaUsuarios" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" OnPageIndexChanging="grdListaUsuarios_PageIndexChanging" PageSize="3">
             <AlternatingRowStyle BackColor="#CCCCCC" />
             <Columns>
@@ -27,6 +26,8 @@
                 <asp:BoundField DataField="PrimerApellido" HeaderText="Apellido 1" />
                 <asp:BoundField DataField="TipoUsuario" HeaderText="Tipo" />
                 <asp:BoundField DataField="Correo" HeaderText="Correo Usuario" />
+                <asp:HyperLinkField DataNavigateUrlFields="IdUsuario" DataNavigateUrlFormatString="frmModificarUsuario.aspx?IdUsuario={0}" Text="Modificar" />
+                <asp:HyperLinkField DataNavigateUrlFields="IdUsuario" DataNavigateUrlFormatString="frmEliminarUsuario.aspx?IdUsuario={0}" Text="Eliminar" />
             </Columns>
             <FooterStyle BackColor="#CCCCCC" />
             <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />

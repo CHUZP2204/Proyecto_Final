@@ -1759,9 +1759,12 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="FormulariosBaseDatos\frmUsuarioLista.aspx" />
+    <Content Include="Formularios\frmEliminarUsuario.aspx" />
     <Content Include="Formularios\frmInicioSesion.aspx" />
     <Content Include="Formularios\frmInsertUsuario.aspx" />
+    <Content Include="Formularios\frmModificarUsuario.aspx" />
     <Content Include="Formularios\frmPaginaPrincipal.aspx" />
+    <Content Include="Formularios\frmReporteUsuarios.aspx" />
     <Content Include="Formularios\frmUsuarios.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -1919,6 +1922,13 @@
     <Compile Include="FormulariosBaseDatos\frmUsuarioLista.aspx.designer.cs">
       <DependentUpon>frmUsuarioLista.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmEliminarUsuario.aspx.cs">
+      <DependentUpon>frmEliminarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmEliminarUsuario.aspx.designer.cs">
+      <DependentUpon>frmEliminarUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmInicioSesion.aspx.cs">
       <DependentUpon>frmInicioSesion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1933,12 +1943,26 @@
     <Compile Include="Formularios\frmInsertUsuario.aspx.designer.cs">
       <DependentUpon>frmInsertUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmModificarUsuario.aspx.cs">
+      <DependentUpon>frmModificarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmModificarUsuario.aspx.designer.cs">
+      <DependentUpon>frmModificarUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmPaginaPrincipal.aspx.cs">
       <DependentUpon>frmPaginaPrincipal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Formularios\frmPaginaPrincipal.aspx.designer.cs">
       <DependentUpon>frmPaginaPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmReporteUsuarios.aspx.cs">
+      <DependentUpon>frmReporteUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmReporteUsuarios.aspx.designer.cs">
+      <DependentUpon>frmReporteUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmUsuarios.aspx.cs">
       <DependentUpon>frmUsuarios.aspx</DependentUpon>
@@ -1994,6 +2018,9 @@
       <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\sp_PolizaUsuario_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sp_RetornaUsuarioID_Result.cs">
       <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\sp_RetornaUsuario_Result.cs">
