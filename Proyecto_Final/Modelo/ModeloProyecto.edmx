@@ -201,9 +201,6 @@
         <Function Name="sp_Elimina_UsuarioID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idUsuario" Type="int" Mode="In" />
         </Function>
-        <Function Name="sp_EliminaAdicciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="idAdicciones" Type="int" Mode="In" />
-        </Function>
         <Function Name="sp_InsertaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Cedula" Type="varchar" Mode="In" />
           <Parameter Name="Genero" Type="varchar" Mode="In" />
@@ -218,18 +215,6 @@
           <Parameter Name="TipoUsuario" Type="varchar" Mode="In" />
           <Parameter Name="Contrasenia" Type="varchar" Mode="In" />
         </Function>
-        <Function Name="sp_ModificaAdicciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="idAdicciones" Type="int" Mode="In" />
-          <Parameter Name="Nombre" Type="varchar" Mode="In" />
-          <Parameter Name="Codigo" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="sp_RetornaAdicciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Nombre" Type="varchar" Mode="In" />
-          <Parameter Name="Codigo" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="sp_RetornaAdiccionesID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="idAdicciones" Type="int" Mode="In" />
-        </Function>
         <Function Name="sp_RetornaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="primerApellido" Type="varchar" Mode="In" />
           <Parameter Name="nombre" Type="varchar" Mode="In" />
@@ -237,15 +222,8 @@
         <Function Name="sp_RetornaUsuarioID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdUsuario" Type="int" Mode="In" />
         </Function>
-        <Function Name="spEliminaAdicciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="idAdicciones" Type="int" Mode="In" />
-        </Function>
         <Function Name="spEliminaTipoSeguro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idTipoSeguro" Type="int" Mode="In" />
-        </Function>
-        <Function Name="spInsertaAdicciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="Nombre" Type="varchar" Mode="In" />
-          <Parameter Name="codigo" Type="varchar" Mode="In" />
         </Function>
         <Function Name="spInsertaTipoSeguro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idTipoSeguro" Type="int" Mode="In" />
@@ -568,15 +546,8 @@
           <FunctionImport Name="sp_PolizaUsuario" ReturnType="Collection(SegurosModel.sp_PolizaUsuario_Result)">
           <Parameter Name="Cedula" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="spEliminaAdicciones">
-          <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="spEliminaTipoSeguro">
           <Parameter Name="idTipoSeguro" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="spInsertaAdicciones">
-            <Parameter Name="Nombre" Mode="In" Type="String" />
-            <Parameter Name="codigo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="spInsertaTipoSeguro">
             <Parameter Name="idTipoSeguro" Mode="In" Type="Int32" />
@@ -618,21 +589,6 @@
           <FunctionImport Name="sp_RetornaUsuario" ReturnType="Collection(SegurosModel.sp_RetornaUsuario_Result)">
             <Parameter Name="primerApellido" Mode="In" Type="String" />
             <Parameter Name="nombre" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_EliminaAdicciones">
-          <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_ModificaAdicciones">
-            <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
-            <Parameter Name="Nombre" Mode="In" Type="String" />
-            <Parameter Name="Codigo" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_RetornaAdicciones">
-            <Parameter Name="Nombre" Mode="In" Type="String" />
-            <Parameter Name="Codigo" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_RetornaAdiccionesID">
-          <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_Elimina_UsuarioID">
           <Parameter Name="idUsuario" Mode="In" Type="Int32" />
@@ -807,9 +763,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="spEliminaAdicciones" FunctionName="SegurosModel.Store.spEliminaAdicciones" />
           <FunctionImportMapping FunctionImportName="spEliminaTipoSeguro" FunctionName="SegurosModel.Store.spEliminaTipoSeguro" />
-          <FunctionImportMapping FunctionImportName="spInsertaAdicciones" FunctionName="SegurosModel.Store.spInsertaAdicciones" />
           <FunctionImportMapping FunctionImportName="spInsertaTipoSeguro" FunctionName="SegurosModel.Store.spInsertaTipoSeguro" />
           <FunctionImportMapping FunctionImportName="spModificaUsuario" FunctionName="SegurosModel.Store.spModificaUsuario" />
           <FunctionImportMapping FunctionImportName="spModificaVehiculo" FunctionName="SegurosModel.Store.spModificaVehiculo" />
@@ -833,10 +787,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_EliminaAdicciones" FunctionName="SegurosModel.Store.sp_EliminaAdicciones" />
-          <FunctionImportMapping FunctionImportName="sp_ModificaAdicciones" FunctionName="SegurosModel.Store.sp_ModificaAdicciones" />
-          <FunctionImportMapping FunctionImportName="sp_RetornaAdicciones" FunctionName="SegurosModel.Store.sp_RetornaAdicciones" />
-          <FunctionImportMapping FunctionImportName="sp_RetornaAdiccionesID" FunctionName="SegurosModel.Store.sp_RetornaAdiccionesID" />
           <FunctionImportMapping FunctionImportName="sp_Elimina_UsuarioID" FunctionName="SegurosModel.Store.sp_Elimina_UsuarioID" />
           <FunctionImportMapping FunctionImportName="sp_RetornaUsuarioID" FunctionName="SegurosModel.Store.sp_RetornaUsuarioID">
             <ResultMapping>

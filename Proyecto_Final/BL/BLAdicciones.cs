@@ -17,7 +17,6 @@ namespace Proyecto_Final
         /// </summary>
         segurosEntities1 modeloBD = new segurosEntities1();
 
-       
-
     }
+    
 }
