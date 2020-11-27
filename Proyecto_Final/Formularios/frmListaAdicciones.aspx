@@ -1,24 +1,30 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MASTER_PAGES/MaterPages.Master" AutoEventWireup="true" CodeBehind="frmListaAdicciones.aspx.cs" Inherits="Proyecto_Final.Formularios.frmListaAdicciones" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style1 {
-            font-size: medium;
-        }
-    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
-
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scriptspersonalizados" runat="server">
     <form id="form1" runat="server">
         <h1>Lista Adicciones</h1>
-        <p class="auto-style1">
-            <asp:HyperLink ID="hpNuevaAdiccion" runat="server" NavigateUrl="~/Formularios/frmInsertaAdicciones.aspx">Crear Nueva Adiccion</asp:HyperLink>
+        <p>
+            <asp:HyperLink ID="hpNuevaAdiccion" runat="server" NavigateUrl="~/Formularios/frmInsertarAdiccion.aspx">Nueva Adiccion</asp:HyperLink>
         </p>
         <p>
             &nbsp;</p>
         <p>
-            <asp:GridView ID="grdListaAdicciones" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+            Nombre:&nbsp;
+            <asp:TextBox ID="txtNombreAdiccion" runat="server"></asp:TextBox>
+&nbsp;&nbsp;&nbsp; Codigo&nbsp;&nbsp;
+            <asp:TextBox ID="txtCodigoAdiccion" runat="server"></asp:TextBox>
+&nbsp;&nbsp;
+            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
+&nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            <asp:GridView ID="grdListaAdiccion" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
                 <AlternatingRowStyle BackColor="#CCCCCC" />
                 <FooterStyle BackColor="#CCCCCC" />
                 <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />

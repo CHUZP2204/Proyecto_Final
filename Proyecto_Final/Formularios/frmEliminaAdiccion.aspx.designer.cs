@@ -11,7 +11,7 @@ namespace Proyecto_Final.Formularios
 {
 
 
-    public partial class frmListaAdicciones
+    public partial class frmEliminaAdiccion
     {
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control hpNuevaAdiccion.
+        /// Control HyperLink1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hpNuevaAdiccion;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
 
         /// <summary>
         /// Control txtNombreAdiccion.
@@ -51,21 +51,12 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.TextBox txtCodigoAdiccion;
 
         /// <summary>
-        /// Control btnBuscar.
+        /// Control btnEliminar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscar;
-
-        /// <summary>
-        /// Control grdListaAdiccion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdListaAdiccion;
+        protected global::System.Web.UI.WebControls.Button btnEliminar;
     }
 }

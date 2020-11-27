@@ -1760,9 +1760,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="FormulariosBaseDatos\frmUsuarioLista.aspx" />
     <Content Include="FormulariosBaseDatos\frmEliminarUsuario.aspx" />
+    <Content Include="Formularios\frmEliminaAdiccion.aspx" />
     <Content Include="Formularios\frmInicioSesion.aspx" />
+    <Content Include="Formularios\frmInsertarAdiccion.aspx" />
     <Content Include="Formularios\frmInsertUsuario.aspx" />
     <Content Include="FormulariosBaseDatos\frmModificarUsuario.aspx" />
+    <Content Include="Formularios\frmListaAdicciones.aspx" />
+    <Content Include="Formularios\frmModificaAdiccion.aspx" />
     <Content Include="Formularios\frmPaginaPrincipal.aspx" />
     <Content Include="Formularios\frmReporteUsuarios.aspx" />
     <Content Include="Formularios\frmUsuarios.aspx" />
@@ -1930,12 +1934,26 @@
     <Compile Include="FormulariosBaseDatos\frmEliminarUsuario.aspx.designer.cs">
       <DependentUpon>frmEliminarUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmEliminaAdiccion.aspx.cs">
+      <DependentUpon>frmEliminaAdiccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmEliminaAdiccion.aspx.designer.cs">
+      <DependentUpon>frmEliminaAdiccion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmInicioSesion.aspx.cs">
       <DependentUpon>frmInicioSesion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Formularios\frmInicioSesion.aspx.designer.cs">
       <DependentUpon>frmInicioSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmInsertarAdiccion.aspx.cs">
+      <DependentUpon>frmInsertarAdiccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmInsertarAdiccion.aspx.designer.cs">
+      <DependentUpon>frmInsertarAdiccion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmInsertUsuario.aspx.cs">
       <DependentUpon>frmInsertUsuario.aspx</DependentUpon>
@@ -1950,6 +1968,20 @@
     </Compile>
     <Compile Include="FormulariosBaseDatos\frmModificarUsuario.aspx.designer.cs">
       <DependentUpon>frmModificarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmListaAdicciones.aspx.cs">
+      <DependentUpon>frmListaAdicciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmListaAdicciones.aspx.designer.cs">
+      <DependentUpon>frmListaAdicciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmModificaAdiccion.aspx.cs">
+      <DependentUpon>frmModificaAdiccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmModificaAdiccion.aspx.designer.cs">
+      <DependentUpon>frmModificaAdiccion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmPaginaPrincipal.aspx.cs">
       <DependentUpon>frmPaginaPrincipal.aspx</DependentUpon>

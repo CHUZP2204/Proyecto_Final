@@ -1510,7 +1510,8 @@ hr {
 }
 
 p {
-    margin: 0 0 10px
+    margin: 0 0 10px;
+    font-size: large;
 }
 
 .lead {
