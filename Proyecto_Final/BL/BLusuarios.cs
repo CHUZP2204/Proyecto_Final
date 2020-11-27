@@ -130,6 +130,32 @@ namespace Proyecto_Final.BL
             }
         }
 
+
+        /// <summary>
+        /// Retorna El Registro De Un Cliente Por Medio Del Procedemiento Almacenado
+        /// sp_RetronaClienteID
+        /// </summary>
+        /// <param name="pIUsuario"></param>
+        /// <returns></returns>
+        public sp_RetornaUsuarioID_Result RetornaUsuarioID(int pIdUsuario)
+        {
+            ///Crear La Variable QUe Va Retornar
+            sp_RetornaUsuarioID_Result resultado = new sp_RetornaUsuarioID_Result();
+
+            /*
+             * asignarle a la variable el resultado del llamado del procedemiento almacenado
+             * es necesario incluir la instruccion FirstOrDefault
+             * para que retorne un unico registro, ya que EF asume que siempre se retornan
+             * "n" registros en los procedimientos almacenados que ejecutan las sentenecia
+             * select
+             
+             */
+            resultado =
+                this.modeloBD.sp_RetornaUsuarioID(pIdUsuario).FirstOrDefault();
+            ///Se Indica Que Retorne El Primero O Efecto Nulo
+
+            return resultado;
+        }
         /*   public List<sp_RetornaUsuario_Result> retornaUsuarios(string pNombre,string apel)
            {
 

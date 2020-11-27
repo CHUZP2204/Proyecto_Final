@@ -283,5 +283,23 @@ namespace Proyecto_Final.Modelo
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_RetornaAdiccionesID", idAdiccionesParameter);
         }
+    
+        public virtual int sp_Elimina_UsuarioID(Nullable<int> idUsuario)
+        {
+            var idUsuarioParameter = idUsuario.HasValue ?
+                new ObjectParameter("idUsuario", idUsuario) :
+                new ObjectParameter("idUsuario", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Elimina_UsuarioID", idUsuarioParameter);
+        }
+    
+        public virtual ObjectResult<sp_RetornaUsuarioID_Result> sp_RetornaUsuarioID(Nullable<int> idUsuario)
+        {
+            var idUsuarioParameter = idUsuario.HasValue ?
+                new ObjectParameter("IdUsuario", idUsuario) :
+                new ObjectParameter("IdUsuario", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaUsuarioID_Result>("sp_RetornaUsuarioID", idUsuarioParameter);
+        }
     }
 }

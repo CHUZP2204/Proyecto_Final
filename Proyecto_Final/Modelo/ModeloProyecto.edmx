@@ -198,6 +198,9 @@
         <Function Name="sp_PolizaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="sp.PolizaUsuario">
           <Parameter Name="Cedula" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="sp_Elimina_UsuarioID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idUsuario" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_EliminaAdicciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idAdicciones" Type="int" Mode="In" />
         </Function>
@@ -230,6 +233,9 @@
         <Function Name="sp_RetornaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="primerApellido" Type="varchar" Mode="In" />
           <Parameter Name="nombre" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_RetornaUsuarioID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdUsuario" Type="int" Mode="In" />
         </Function>
         <Function Name="spEliminaAdicciones" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idAdicciones" Type="int" Mode="In" />
@@ -628,6 +634,12 @@
           <FunctionImport Name="sp_RetornaAdiccionesID">
           <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="sp_Elimina_UsuarioID">
+          <Parameter Name="idUsuario" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_RetornaUsuarioID" ReturnType="Collection(SegurosModel.sp_RetornaUsuarioID_Result)">
+            <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_CoberturaSeguros_Result">
           <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
@@ -641,6 +653,21 @@
           <Property Type="String" Name="MontoAsegurado" Nullable="false" MaxLength="50" />
         </ComplexType>
         <ComplexType Name="sp_RetornaUsuario_Result">
+          <Property Type="Int32" Name="IdUsuario" Nullable="false" />
+          <Property Type="String" Name="Cedula" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Genero" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="FechaNacimiento" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PrimerApellido" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="SegundoApellido" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Direccion" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TelefonoPrincipal" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TelefonoSecundario" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Correo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TipoUsuario" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Contrasenia" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_RetornaUsuarioID_Result">
           <Property Type="Int32" Name="IdUsuario" Nullable="false" />
           <Property Type="String" Name="Cedula" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="Genero" Nullable="false" MaxLength="50" />
@@ -810,6 +837,26 @@
           <FunctionImportMapping FunctionImportName="sp_ModificaAdicciones" FunctionName="SegurosModel.Store.sp_ModificaAdicciones" />
           <FunctionImportMapping FunctionImportName="sp_RetornaAdicciones" FunctionName="SegurosModel.Store.sp_RetornaAdicciones" />
           <FunctionImportMapping FunctionImportName="sp_RetornaAdiccionesID" FunctionName="SegurosModel.Store.sp_RetornaAdiccionesID" />
+          <FunctionImportMapping FunctionImportName="sp_Elimina_UsuarioID" FunctionName="SegurosModel.Store.sp_Elimina_UsuarioID" />
+          <FunctionImportMapping FunctionImportName="sp_RetornaUsuarioID" FunctionName="SegurosModel.Store.sp_RetornaUsuarioID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SegurosModel.sp_RetornaUsuarioID_Result">
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Genero" ColumnName="Genero" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="TelefonoPrincipal" ColumnName="TelefonoPrincipal" />
+                <ScalarProperty Name="TelefonoSecundario" ColumnName="TelefonoSecundario" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="TipoUsuario" ColumnName="TipoUsuario" />
+                <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
