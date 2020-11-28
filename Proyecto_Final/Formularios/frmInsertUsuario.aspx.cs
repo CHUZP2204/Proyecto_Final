@@ -82,7 +82,7 @@ namespace Proyecto_Final.Formularios
 
                     if (resultado)
                     {
-                        mensaje += "El registro fue insetado";
+                        mensaje += "El registro fue insertado";
                     }
                 }
 

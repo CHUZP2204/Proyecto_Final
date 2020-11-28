@@ -13,9 +13,10 @@ namespace Proyecto_Final.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CargarUsuario();
-        }
+            CargarUsuario();            
+       
 
+        }
         void CargarUsuario()
         {
 
@@ -27,7 +28,7 @@ namespace Proyecto_Final.Formularios
             }
             else
             {
-                int IdUsuario = Convert.ToInt16(parametro);
+                int IdUsuario = Convert.ToInt32(parametro);
                 BLusuarios usuarioObtenido = new BLusuarios();
                 sp_RetornaUsuarioID_Result resultUsuario = new sp_RetornaUsuarioID_Result();
                 ///invocar al procedimiento
@@ -38,7 +39,6 @@ namespace Proyecto_Final.Formularios
                 }
                 else
                 {
-                    //this.txtIdUsuario.Text = resultUsuario.IdUsuario.ToString();
                     this.txtNombre.Text = resultUsuario.Nombre;
                     this.txtPrimerApellido.Text = resultUsuario.PrimerApellido;
                     this.txtSegundoApellido.Text = resultUsuario.SegundoApellido;
@@ -51,6 +51,10 @@ namespace Proyecto_Final.Formularios
                     this.txtContrasenia.Text = resultUsuario.Contrasenia;
                     this.ddlgenero.SelectedValue = resultUsuario.Genero;
                     this.LstTipoUsuario.SelectedValue = resultUsuario.TipoUsuario;
+
+                    /////asignar al hidden field
+                    /////el valor de la llave primaria
+                    hdidUsuario.Value = resultUsuario.IdUsuario.ToString();
                 }
 
             }
@@ -60,7 +64,61 @@ namespace Proyecto_Final.Formularios
 
         protected void btAceptar_Click(object sender, EventArgs e)
         {
+            AlmacenarDatos();
+        }
+        void AlmacenarDatos()
+        {
+            if (this.IsValid)
+            {
+                BLusuarios oUsuario = new BLusuarios();
+                bool resultado = false;
+                string mensaje = "";
+                try
+                {
+                   
+                    //convertir la  fecha
+                    DateTime FechaNacimiento = Convert.ToDateTime(this.txtfechanacimiento.Text);
 
+                    //obtener el valor del hidden field 
+                    int idUsuario = Convert.ToInt32(hdidUsuario.Value);
+
+                    ///asignar a la variable el resultado de 
+                    ///invocar el procedimiento almacenado
+                    resultado = oUsuario.ModificaUsuario(
+                        idUsuario,
+                        this.txtCedula.Text,
+                         ddlgenero.SelectedValue,
+                        FechaNacimiento,
+                        this.txtNombre.Text,
+                        this.txtPrimerApellido.Text,
+                        this.txtSegundoApellido.Text,
+                        this.txtdireccion.Text,
+                        this.txtTelefonoprincipal.Text,
+                        this.txtTelefonosecundario.Text,
+                        this.txtcorreo.Text,
+                         LstTipoUsuario.SelectedValue,
+                        this.txtContrasenia.Text);
+
+                }
+                ///catch: se ejecuta en el caso de que haya una excepcion
+                ///excepcionCapturada: posee los datos de la excepción
+                catch (Exception excepcionCapturada)
+                {
+                    mensaje += $"Ocurrió un error: {excepcionCapturada.Message}";
+                }
+                ///finally: siempre se ejecuta (se atrape o no la excepción)
+                finally
+                {
+                    ///si el resultado de la variable es verdadera implica que
+                    ///el procedimiento no retornó errores
+                    if (resultado)
+                    {
+                        mensaje += "El registro fue modificado";
+                    }
+                }
+                ///mostrar el mensaje
+                Response.Write("<script>alert('" + mensaje + "')</script>"); ;
+            }
         }
     }
 }

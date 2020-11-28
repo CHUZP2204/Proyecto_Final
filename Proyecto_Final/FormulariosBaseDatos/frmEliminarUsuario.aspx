@@ -25,7 +25,6 @@
                                 <h3 class="auto-style1">Eliminar Usuario</h3>
                             </div>
 
-
                         </div>
 
                     </div>
@@ -36,6 +35,8 @@
                             <div class="column" style="flex: 50%; padding: 10px;">
                                 <div class="form-group">
                                     <asp:Label ID="lblNombre" runat="server" Text="Nombre:"></asp:Label>
+                                 <asp:HiddenField ID="hdUsuario" runat="server" />
+
                                     <br />
                                     <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                                 </div>
@@ -71,7 +72,9 @@
                         <div class="container-fluid" style="text-align: center">
                             <div class="form-group" style="text-align: center">
                                 <br />
-                                <asp:Button ID="btnEliminar" runat="server" CssClass="btn btn-danger" OnClick="btnEliminar_Click" Text="Eliminar" />
+                               <%-- <asp:Button ID="btnEliminar" runat="server" CssClass="btn btn-danger" OnClick="btnEliminar_Click" Text="Eliminar" />--%>
+                                <button type="button" class="btn btn-default btn-lg" id="myBtn" style="height: 45px; width: 200px"><strong>Eliminar</strong></button>
+                                
                                 <br />
                                 <br />
                                 <asp:HyperLink ID="hplstUsers" class="btn btn-primary" role="button" BorderColor="Black"
@@ -86,13 +89,34 @@
                     <!--Fin Cuerpo Panel-->
                 </div>
                 <!--Fin Panel-->
-
-
-
             </div>
             <!---->
         </div>
+           <!-- Modal -->
+        <div class="modal fade" data-backdrop='static' id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header" style="padding: 35px 50px;">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4><span class="fas fa-lock" style="margin-left: 20%"></span>Estas seguro que desea Eliminarlo</h4>
+                        </div>
+                        <asp:Button ID="btnsi" runat="server" Text="Si" CssClass="btn-success btn-block" BorderStyle="Groove" OnClick="btnsi_Click" weight="100px" />
+                       <br />
+                      <asp:Button ID="btnno" runat="server" Text="No" CssClass="btn-success btn-block" BorderStyle="Groove" OnClick="btnno_Click" weight="100px" />
+                    <br />
+                </div>
+                </div>
+            </div>
+        <script>
+            $(document).ready(function () {
+                $("#myBtn").click(function () {
+                    $("#myModal").modal();
+                });
+            });
+        </script>
     </form>
+  
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scriptspersonalizados" runat="server">
 </asp:Content>

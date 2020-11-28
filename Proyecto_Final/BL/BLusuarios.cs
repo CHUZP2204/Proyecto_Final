@@ -85,6 +85,7 @@ namespace Proyecto_Final.BL
         /// <param name="pTelefono2"></param>
         /// <param name="pCorreo"></param>
         /// <param name="pTipoUsuario"></param>
+        /// /// <param name="pContrasenia"></param>
         /// <returns></returns>
         public bool ModificaUsuario
             (int pIdUsuario,
@@ -132,14 +133,14 @@ namespace Proyecto_Final.BL
 
 
         /// <summary>
-        /// Retorna El Registro De Un Cliente Por Medio Del Procedemiento Almacenado
-        /// sp_RetronaClienteID
+        /// Retorna El Registro De Un Usuario Por Medio Del Procedemiento Almacenado
+        /// 
         /// </summary>
         /// <param name="pIUsuario"></param>
         /// <returns></returns>
         public sp_RetornaUsuarioID_Result RetornaUsuarioID(int pIdUsuario)
         {
-            ///Crear La Variable QUe Va Retornar
+            ///Crear La Variable Que Va Retornar
             sp_RetornaUsuarioID_Result resultado = new sp_RetornaUsuarioID_Result();
 
             /*
@@ -156,11 +157,19 @@ namespace Proyecto_Final.BL
 
             return resultado;
         }
-        /*   public List<sp_RetornaUsuario_Result> retornaUsuarios(string pNombre,string apel)
-           {
+        public bool EliminaCliente(int pIdUsuario)
+        {
+            ///variable que posee la cantidad de registros afectados
+            ///al realizar insert/update/delete la cantidad de 
+            ///registros afectados debe ser mayor a 0
+            int registrosAfectados = 0;
+            ///invocar al procedimiento almacenado
+            registrosAfectados =
+                this.modeloBD.sp_Elimina_UsuarioID(pIdUsuario);
 
-           } 
-        */
+            return registrosAfectados > 0;
+
+        }
 
     }
 }
