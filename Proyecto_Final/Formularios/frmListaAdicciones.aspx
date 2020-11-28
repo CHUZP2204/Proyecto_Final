@@ -24,12 +24,14 @@
         <p>
             &nbsp;</p>
         <p>
-            <asp:GridView ID="grdListaAdiccion" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False" Height="429px" OnPageIndexChanging="grdListaAdiccion_PageIndexChanging" PageSize="4" Width="704px">
+            <asp:GridView ID="grdListaAdiccion" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False" Height="288px" OnPageIndexChanging="grdListaAdiccion_PageIndexChanging" PageSize="4" Width="661px">
                 <AlternatingRowStyle BackColor="#CCCCCC" />
                 <Columns>
                     <asp:BoundField DataField="idAdicciones" HeaderText="Identificador" />
                     <asp:BoundField DataField="Nombre" HeaderText="Nombre Adiccion" />
                     <asp:BoundField DataField="Codigo" HeaderText="Codigo Adiccion" />
+                    <asp:HyperLinkField DataNavigateUrlFields="idAdicciones" DataNavigateUrlFormatString="frmModificaAdiccion.aspx?idAdicciones={0}" Text="Modificar" />
+                    <asp:HyperLinkField DataNavigateUrlFields="idAdicciones" DataNavigateUrlFormatString="frmEliminaAdiccion.aspx?idAdicciones={0}" Text="Eliminar" />
                 </Columns>
                 <FooterStyle BackColor="#CCCCCC" />
                 <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
