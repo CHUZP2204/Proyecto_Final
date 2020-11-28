@@ -33,6 +33,15 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
 
         /// <summary>
+        /// Control Label1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
         /// Control txtNombreAdiccion.
         /// </summary>
         /// <remarks>
@@ -42,6 +51,24 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.TextBox txtNombreAdiccion;
 
         /// <summary>
+        /// Control rqvtxtNombreAdiccion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtNombreAdiccion;
+
+        /// <summary>
+        /// Control Label2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+
+        /// <summary>
         /// Control txtCodigoAdiccion.
         /// </summary>
         /// <remarks>
@@ -49,6 +76,15 @@ namespace Proyecto_Final.Formularios
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCodigoAdiccion;
+
+        /// <summary>
+        /// Control rqvtxtCodigoAdiccion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtCodigoAdiccion;
 
         /// <summary>
         /// Control btnAceptar.

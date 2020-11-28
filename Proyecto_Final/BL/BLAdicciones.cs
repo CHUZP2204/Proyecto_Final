@@ -23,6 +23,28 @@ namespace Proyecto_Final
 
             return resultado;
         }
+
+        public bool InsertaAdiccion(string pNombre, string pCodigo)
+
+        {
+            ///variable que posee la cantidad de registros afectados
+            ///al realizar insert / update/ delete la cantidad de 
+            ///registros afectados debe ser mayor a 0
+
+            int registrosAfectados = 0;
+
+            /// invocar al procedimiento almacenado
+            registrosAfectados =
+                this.modeloBD.spInsertaAdicciones(
+                    pNombre,
+                    pCodigo
+                    );
+
+            if (registrosAfectados > 0)
+                return true;
+            else
+                return false;
+        }
     }
     
 }
