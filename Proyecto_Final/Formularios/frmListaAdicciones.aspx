@@ -17,15 +17,20 @@
 &nbsp;&nbsp;&nbsp; Codigo&nbsp;&nbsp;
             <asp:TextBox ID="txtCodigoAdiccion" runat="server"></asp:TextBox>
 &nbsp;&nbsp;
-            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
-&nbsp;</p>
+            &nbsp;<asp:Button ID="btnMostrar" runat="server" OnClick="btnMostrar_Click" Text="Mostrar" />
+        </p>
         <p>
             &nbsp;</p>
         <p>
             &nbsp;</p>
         <p>
-            <asp:GridView ID="grdListaAdiccion" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+            <asp:GridView ID="grdListaAdiccion" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False" Height="429px" OnPageIndexChanging="grdListaAdiccion_PageIndexChanging" PageSize="4" Width="704px">
                 <AlternatingRowStyle BackColor="#CCCCCC" />
+                <Columns>
+                    <asp:BoundField DataField="idAdicciones" HeaderText="Identificador" />
+                    <asp:BoundField DataField="Nombre" HeaderText="Nombre Adiccion" />
+                    <asp:BoundField DataField="Codigo" HeaderText="Codigo Adiccion" />
+                </Columns>
                 <FooterStyle BackColor="#CCCCCC" />
                 <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
                 <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />

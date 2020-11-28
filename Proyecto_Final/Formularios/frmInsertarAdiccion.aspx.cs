@@ -13,5 +13,43 @@ namespace Proyecto_Final.Formularios
         {
 
         }
+
+        protected void btnAceptar_Click(object sender, EventArgs e)
+        {
+            this.AlmacenaDatos();
+        }
+        void AlmacenaDatos()
+        {
+            if (this.IsValid)
+            {
+                string mensaje = " ";
+                BLAdicciones bLAdicciones = new BLAdicciones();
+                bool resultado = false;
+
+                try
+                {
+
+                    resultado = bLAdicciones.InsertaAdiccion(
+                        this.txtNombreAdiccion.Text,
+                        this.txtNombreAdiccion.Text) ;
+                }
+                catch (Exception exepcionCapturada)
+                {
+                    mensaje += $"Ocurrio un error: { exepcionCapturada.Message}";
+
+                }
+                finally
+                {
+                    if (resultado)
+                    {
+                        mensaje += $"El registro fue Insertado ";
+                    }
+                }
+
+
+                //mostrar el mensaje 
+                Response.Write("<script>alert('" + mensaje + "')</script>"); ;
+            }
+        }
     }
 }

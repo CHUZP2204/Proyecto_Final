@@ -12,18 +12,23 @@
         <p>
             &nbsp;</p>
         <p>
-            Nombre:&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txtNombreAdiccion" runat="server"></asp:TextBox>
+            <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>&nbsp;&nbsp;  <asp:TextBox ID="txtNombreAdiccion" runat="server"></asp:TextBox>
+        &nbsp;<asp:RequiredFieldValidator ID="rqvtxtNombreAdiccion" runat="server" ControlToValidate="txtNombreAdiccion" ErrorMessage="Debe Ingresar un Nombre"  ForeColor="Red"
+                    Display="Dynamic"></asp:RequiredFieldValidator>
         </p>
+      
         <p>
             &nbsp;</p>
         <p>
-            Codigo:&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label2" runat="server" Text="Codigo"></asp:Label>&nbsp;&nbsp;
             <asp:TextBox ID="txtCodigoAdiccion" runat="server"></asp:TextBox>
+        &nbsp;<asp:RequiredFieldValidator ID="rqvtxtCodigoAdiccion" runat="server" ControlToValidate="txtCodigoAdiccion" ErrorMessage="Debe Ingresar un Codigo"  ForeColor="Red"
+                    Display="Dynamic" ></asp:RequiredFieldValidator>
         </p>
         <p>
             &nbsp;</p>
         <p>
-            <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" />
+            <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" />
         </p>
     </form>
 </asp:Content>
