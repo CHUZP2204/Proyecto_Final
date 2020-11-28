@@ -13,8 +13,11 @@ namespace Proyecto_Final.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CargarUsuario();            
-       
+            if (!this.IsPostBack)
+            {
+                CargarUsuario();
+            }
+
 
         }
         void CargarUsuario()
@@ -75,7 +78,7 @@ namespace Proyecto_Final.Formularios
                 string mensaje = "";
                 try
                 {
-                   
+
                     //convertir la  fecha
                     DateTime FechaNacimiento = Convert.ToDateTime(this.txtfechanacimiento.Text);
 
@@ -84,10 +87,10 @@ namespace Proyecto_Final.Formularios
 
                     ///asignar a la variable el resultado de 
                     ///invocar el procedimiento almacenado
-                    resultado = oUsuario.ModificaUsuario(
+                    resultado = oUsuario.ModificaUsuarioID(
                         idUsuario,
                         this.txtCedula.Text,
-                         ddlgenero.SelectedValue,
+                        this.ddlgenero.SelectedValue,
                         FechaNacimiento,
                         this.txtNombre.Text,
                         this.txtPrimerApellido.Text,

@@ -78,63 +78,6 @@ namespace Proyecto_Final.Modelo
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertaTipoSeguro", idTipoSeguroParameter, nombreParameter);
         }
     
-        public virtual int spModificaUsuario(Nullable<int> idUsuario, string cedula, string genero, Nullable<System.DateTime> fecha, string nombre, string primerApellido, string segundoApellido, string direccion, string telefonoPrincipal, string telefonoSecundario, string correo, string tipoUsuario, string contrasenia)
-        {
-            var idUsuarioParameter = idUsuario.HasValue ?
-                new ObjectParameter("IdUsuario", idUsuario) :
-                new ObjectParameter("IdUsuario", typeof(int));
-    
-            var cedulaParameter = cedula != null ?
-                new ObjectParameter("Cedula", cedula) :
-                new ObjectParameter("Cedula", typeof(string));
-    
-            var generoParameter = genero != null ?
-                new ObjectParameter("Genero", genero) :
-                new ObjectParameter("Genero", typeof(string));
-    
-            var fechaParameter = fecha.HasValue ?
-                new ObjectParameter("Fecha", fecha) :
-                new ObjectParameter("Fecha", typeof(System.DateTime));
-    
-            var nombreParameter = nombre != null ?
-                new ObjectParameter("Nombre", nombre) :
-                new ObjectParameter("Nombre", typeof(string));
-    
-            var primerApellidoParameter = primerApellido != null ?
-                new ObjectParameter("PrimerApellido", primerApellido) :
-                new ObjectParameter("PrimerApellido", typeof(string));
-    
-            var segundoApellidoParameter = segundoApellido != null ?
-                new ObjectParameter("SegundoApellido", segundoApellido) :
-                new ObjectParameter("SegundoApellido", typeof(string));
-    
-            var direccionParameter = direccion != null ?
-                new ObjectParameter("Direccion", direccion) :
-                new ObjectParameter("Direccion", typeof(string));
-    
-            var telefonoPrincipalParameter = telefonoPrincipal != null ?
-                new ObjectParameter("TelefonoPrincipal", telefonoPrincipal) :
-                new ObjectParameter("TelefonoPrincipal", typeof(string));
-    
-            var telefonoSecundarioParameter = telefonoSecundario != null ?
-                new ObjectParameter("TelefonoSecundario", telefonoSecundario) :
-                new ObjectParameter("TelefonoSecundario", typeof(string));
-    
-            var correoParameter = correo != null ?
-                new ObjectParameter("Correo", correo) :
-                new ObjectParameter("Correo", typeof(string));
-    
-            var tipoUsuarioParameter = tipoUsuario != null ?
-                new ObjectParameter("TipoUsuario", tipoUsuario) :
-                new ObjectParameter("TipoUsuario", typeof(string));
-    
-            var contraseniaParameter = contrasenia != null ?
-                new ObjectParameter("contrasenia", contrasenia) :
-                new ObjectParameter("contrasenia", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spModificaUsuario", idUsuarioParameter, cedulaParameter, generoParameter, fechaParameter, nombreParameter, primerApellidoParameter, segundoApellidoParameter, direccionParameter, telefonoPrincipalParameter, telefonoSecundarioParameter, correoParameter, tipoUsuarioParameter, contraseniaParameter);
-        }
-    
         public virtual int spModificaVehiculo(Nullable<int> idVehiculo, string placa)
         {
             var idVehiculoParameter = idVehiculo.HasValue ?
@@ -291,6 +234,63 @@ namespace Proyecto_Final.Modelo
                 new ObjectParameter("codigo", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertaAdicciones", nombreParameter, codigoParameter);
+        }
+    
+        public virtual int spModificaUsuarioID(Nullable<int> idUsuario, string cedula, string genero, Nullable<System.DateTime> fecha, string nombre, string primerApellido, string segundoApellido, string direccion, string telefonoPrincipal, string telefonoSecundario, string correo, string tipoUsuario, string contrasenia)
+        {
+            var idUsuarioParameter = idUsuario.HasValue ?
+                new ObjectParameter("IdUsuario", idUsuario) :
+                new ObjectParameter("IdUsuario", typeof(int));
+    
+            var cedulaParameter = cedula != null ?
+                new ObjectParameter("Cedula", cedula) :
+                new ObjectParameter("Cedula", typeof(string));
+    
+            var generoParameter = genero != null ?
+                new ObjectParameter("Genero", genero) :
+                new ObjectParameter("Genero", typeof(string));
+    
+            var fechaParameter = fecha.HasValue ?
+                new ObjectParameter("Fecha", fecha) :
+                new ObjectParameter("Fecha", typeof(System.DateTime));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var primerApellidoParameter = primerApellido != null ?
+                new ObjectParameter("PrimerApellido", primerApellido) :
+                new ObjectParameter("PrimerApellido", typeof(string));
+    
+            var segundoApellidoParameter = segundoApellido != null ?
+                new ObjectParameter("SegundoApellido", segundoApellido) :
+                new ObjectParameter("SegundoApellido", typeof(string));
+    
+            var direccionParameter = direccion != null ?
+                new ObjectParameter("Direccion", direccion) :
+                new ObjectParameter("Direccion", typeof(string));
+    
+            var telefonoPrincipalParameter = telefonoPrincipal != null ?
+                new ObjectParameter("TelefonoPrincipal", telefonoPrincipal) :
+                new ObjectParameter("TelefonoPrincipal", typeof(string));
+    
+            var telefonoSecundarioParameter = telefonoSecundario != null ?
+                new ObjectParameter("TelefonoSecundario", telefonoSecundario) :
+                new ObjectParameter("TelefonoSecundario", typeof(string));
+    
+            var correoParameter = correo != null ?
+                new ObjectParameter("Correo", correo) :
+                new ObjectParameter("Correo", typeof(string));
+    
+            var tipoUsuarioParameter = tipoUsuario != null ?
+                new ObjectParameter("TipoUsuario", tipoUsuario) :
+                new ObjectParameter("TipoUsuario", typeof(string));
+    
+            var contraseniaParameter = contrasenia != null ?
+                new ObjectParameter("contrasenia", contrasenia) :
+                new ObjectParameter("contrasenia", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spModificaUsuarioID", idUsuarioParameter, cedulaParameter, generoParameter, fechaParameter, nombreParameter, primerApellidoParameter, segundoApellidoParameter, direccionParameter, telefonoPrincipalParameter, telefonoSecundarioParameter, correoParameter, tipoUsuarioParameter, contraseniaParameter);
         }
     }
 }

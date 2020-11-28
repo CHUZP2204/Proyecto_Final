@@ -87,11 +87,7 @@ namespace Proyecto_Final.BL
         /// <param name="pTipoUsuario"></param>
         /// /// <param name="pContrasenia"></param>
         /// <returns></returns>
-        public bool ModificaUsuario
-            (int pIdUsuario,
-             string pCedula,
-             string pGenero,
-             DateTime pFecha,
+        public bool ModificaUsuarioID(int pIdUsuario,string pCedula,string pGenero,DateTime pFecha,
              string pNombre,
              string pPrimerApellido,
              string pSegundoApellido,
@@ -105,7 +101,7 @@ namespace Proyecto_Final.BL
             ///Crear La variable Que Se Retornara
             int resultado = 0;
             ///Asignar A La Variable El Resultado Del LLamado Al Procedimiento Almacenado
-            resultado = this.modeloBD.spModificaUsuario(
+            resultado = this.modeloBD.spModificaUsuarioID(
                 pIdUsuario,
                 pCedula,
                 pGenero,
@@ -118,17 +114,11 @@ namespace Proyecto_Final.BL
                 pTelefono2,
                 pCorreo,
                 pTipoUsuario,
-                pContrasenia);
+                pContrasenia
+                );
             ///Retornar El Valor 
             ///Si Se Ingreso Datos o No
-            if (resultado > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return resultado > 0;
         }
 
 

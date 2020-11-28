@@ -29,8 +29,9 @@
                     </div>
                     <!--Fin Encabezado Del Panel-->
                     <!--Cuerpo Del Panel-->
-                    <div class="panel-body" style="background-color: aquamarine">
 
+                    <div class="panel-body" style="background-color: aquamarine">
+                        <asp:HiddenField ID="hdidUsuario" runat="server" />
                         <!-- Columnnas Del Panel-->
                         <div class="row" style="display: flex">
                             <!-- Primera Columnna Del Panel-->
@@ -38,7 +39,7 @@
                                 <!--Campo Cedula-->
                                 <div class="form-group">
                                     <asp:Label ID="Label3" runat="server" Text="Cedula"></asp:Label>
-                                     <asp:HiddenField ID="hdidUsuario" runat="server" />
+
                                     <br />
                                     <asp:TextBox class="form-control" ID="txtCedula" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rqvtxtCedula" runat="server"

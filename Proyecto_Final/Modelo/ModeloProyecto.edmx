@@ -248,7 +248,7 @@
           <Parameter Name="idTipoSeguro" Type="int" Mode="In" />
           <Parameter Name="Nombre" Type="varchar" Mode="In" />
         </Function>
-        <Function Name="spModificaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="spModificaUsuarioID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdUsuario" Type="int" Mode="In" />
           <Parameter Name="Cedula" Type="varchar" Mode="In" />
           <Parameter Name="Genero" Type="varchar" Mode="In" />
@@ -572,21 +572,6 @@
             <Parameter Name="idTipoSeguro" Mode="In" Type="Int32" />
             <Parameter Name="Nombre" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="spModificaUsuario">
-            <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
-            <Parameter Name="Cedula" Mode="In" Type="String" />
-            <Parameter Name="Genero" Mode="In" Type="String" />
-            <Parameter Name="Fecha" Mode="In" Type="DateTime" />
-            <Parameter Name="Nombre" Mode="In" Type="String" />
-            <Parameter Name="PrimerApellido" Mode="In" Type="String" />
-            <Parameter Name="SegundoApellido" Mode="In" Type="String" />
-            <Parameter Name="Direccion" Mode="In" Type="String" />
-            <Parameter Name="TelefonoPrincipal" Mode="In" Type="String" />
-            <Parameter Name="TelefonoSecundario" Mode="In" Type="String" />
-            <Parameter Name="Correo" Mode="In" Type="String" />
-            <Parameter Name="TipoUsuario" Mode="In" Type="String" />
-            <Parameter Name="contrasenia" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="spModificaVehiculo">
             <Parameter Name="IdVehiculo" Mode="In" Type="Int32" />
             <Parameter Name="Placa" Mode="In" Type="String" />
@@ -616,7 +601,7 @@
           <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_EliminaAdiccionesID">
-            <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
+          <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_ModificaAdicciones">
             <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
@@ -628,11 +613,26 @@
             <Parameter Name="Codigo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_RetornaAdiccionesID" ReturnType="Collection(SegurosModel.sp_RetornaAdiccionesID_Result)">
-            <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
+          <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="spInsertaAdicciones">
             <Parameter Name="Nombre" Mode="In" Type="String" />
             <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spModificaUsuarioID">
+            <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
+            <Parameter Name="Cedula" Mode="In" Type="String" />
+            <Parameter Name="Genero" Mode="In" Type="String" />
+            <Parameter Name="Fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="PrimerApellido" Mode="In" Type="String" />
+            <Parameter Name="SegundoApellido" Mode="In" Type="String" />
+            <Parameter Name="Direccion" Mode="In" Type="String" />
+            <Parameter Name="TelefonoPrincipal" Mode="In" Type="String" />
+            <Parameter Name="TelefonoSecundario" Mode="In" Type="String" />
+            <Parameter Name="Correo" Mode="In" Type="String" />
+            <Parameter Name="TipoUsuario" Mode="In" Type="String" />
+            <Parameter Name="contrasenia" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_CoberturaSeguros_Result">
@@ -813,7 +813,6 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="spEliminaTipoSeguro" FunctionName="SegurosModel.Store.spEliminaTipoSeguro" />
           <FunctionImportMapping FunctionImportName="spInsertaTipoSeguro" FunctionName="SegurosModel.Store.spInsertaTipoSeguro" />
-          <FunctionImportMapping FunctionImportName="spModificaUsuario" FunctionName="SegurosModel.Store.spModificaUsuario" />
           <FunctionImportMapping FunctionImportName="spModificaVehiculo" FunctionName="SegurosModel.Store.spModificaVehiculo" />
           <FunctionImportMapping FunctionImportName="sp_InsertaUsuario" FunctionName="SegurosModel.Store.sp_InsertaUsuario" />
           <FunctionImportMapping FunctionImportName="sp_RetornaUsuario" FunctionName="SegurosModel.Store.sp_RetornaUsuario">
@@ -876,6 +875,7 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="spInsertaAdicciones" FunctionName="SegurosModel.Store.spInsertaAdicciones" />
+          <FunctionImportMapping FunctionImportName="spModificaUsuarioID" FunctionName="SegurosModel.Store.spModificaUsuarioID" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
