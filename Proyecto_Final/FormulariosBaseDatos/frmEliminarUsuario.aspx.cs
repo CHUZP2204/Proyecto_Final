@@ -54,7 +54,7 @@ namespace Proyecto_Final.Formularios
                     this.txtPrimerApellido.Text = resultUsuario.PrimerApellido;
                     this.txtSegundoApellido.Text = resultUsuario.SegundoApellido;
                     this.txtCedula.Text = resultUsuario.Cedula;
-           
+                    this.hdUsuario.Value = resultUsuario.IdUsuario.ToString();
                 }
             }
             
@@ -63,9 +63,51 @@ namespace Proyecto_Final.Formularios
         /// <summary>
         /// Evento Que Eliminara Un Registro
         /// </summary>
-        protected void btnEliminar_Click(object sender, EventArgs e)
+        /// 
+        protected void btnsi_Click(object sender, EventArgs e)
         {
-
+            EliminarDatos();
         }
-    }
+        protected void btnno_Click(object sender, EventArgs e)
+        {
+            CargarUsuario();
+        }
+    
+        void EliminarDatos()
+        {
+            if (this.IsValid)
+            {
+                BLusuarios oUsuario = new BLusuarios();
+                bool resultado = false;
+                string mensaje = "";
+                try
+                {
+                    // obtener el id del registro eliminar
+                    int idUsuario = Convert.ToInt16(this.hdUsuario.Value);
+                    // asignar a la variable resultado de 
+                    // invocar el procedimiento almacenado
+                    resultado = oUsuario.EliminaCliente(idUsuario);
+
+                }
+                ///catch: se ejecuta en el caso de que haya una excepcion
+                ///excepcionCapturada: posee los datos de la excepción
+                catch (Exception excepcionCapturada)
+                {
+                    mensaje += $"Ocurrió un error: {excepcionCapturada.Message}";
+                }
+                ///finally: siempre se ejecuta (se atrape o no la excepción)
+                finally
+                {
+                    ///si el resultado de la variable es verdadera implica que
+                    ///el procedimiento no retornó errores
+                    if (resultado)
+                    {
+                        mensaje += "El registro fue eliminado correctamente";
+                    }
+                }
+                ///mostrar el mensaje
+                Response.Write("<script>alert('" + mensaje + "')</script>"); ;
+            }
+        }
+        }
 }

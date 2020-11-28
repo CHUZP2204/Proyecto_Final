@@ -2723,7 +2723,8 @@ pre {
 }
 
 table {
-    background-color: transparent
+    background-color: transparent;
+    margin-top: 4px;
 }
 
     table col[class*=col-] {
