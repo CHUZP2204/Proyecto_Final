@@ -24,6 +24,16 @@ namespace Proyecto_Final
             return resultado;
         }
 
+       
+
+        public sp_RetornaAdiccionesID_Result sp_RetornaAdiccionesID(int pidAdicciones )
+        {
+            sp_RetornaAdiccionesID_Result resultado = new sp_RetornaAdiccionesID_Result();
+            resultado = this.modeloBD.sp_RetornaAdiccionesID(pidAdicciones).FirstOrDefault();
+            return resultado;
+        }
+
+
         public bool InsertaAdiccion(string pNombre, string pCodigo)
 
         {
@@ -45,6 +55,33 @@ namespace Proyecto_Final
             else
                 return false;
         }
+
+        public bool ModificaAdiccion(int pidAdicciones, string pNombre, string pCodigo)
+        {
+            int registrosAfectados = 0;
+
+            registrosAfectados =
+                this.modeloBD.sp_ModificaAdicciones(
+                    pidAdicciones,
+                    pNombre,
+                    pCodigo);
+
+            return registrosAfectados > 0;
+        }
+
+        public bool EliminaAdiccion(int pidAdicciones)
+        {   
+            ///variable que posee la cantidad de registros afectados
+            /////registros debe ser mayor a 0
+            int registrosAfectados = 0;
+            // invocar al sp 
+            registrosAfectados =
+                this.modeloBD.sp_EliminaAdiccionesID(
+                    pidAdicciones);
+
+            return registrosAfectados > 0;
+        }
+
     }
     
 }

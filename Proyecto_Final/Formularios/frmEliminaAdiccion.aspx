@@ -14,18 +14,19 @@
             &nbsp;</p>
         <p>
             Nombre:&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtNombreAdiccion" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtNombreAdiccion" runat="server" Enabled="False"></asp:TextBox>
+            <asp:HiddenField ID="hdidAdicciones" runat="server" />
         </p>
         <p>
             &nbsp;</p>
         <p>
             Codigo:&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtCodigoAdiccion" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtCodigoAdiccion" runat="server" Enabled="False"></asp:TextBox>
         </p>
         <p>
             &nbsp;</p>
         <p>
-            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" />
+            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
         </p>
     </form>
 </asp:Content>

@@ -15,6 +15,7 @@
         <p>
             Nombre:&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtNombreAdiccion" runat="server"></asp:TextBox>
+            <asp:HiddenField ID="hdidAdicciones" runat="server" />
         </p>
         <p>
             &nbsp;</p>
@@ -25,7 +26,7 @@
         <p>
             &nbsp;</p>
         <p>
-            <asp:Button ID="btnModificar" runat="server" Text="Modificar" />
+            <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClick="btnModificar_Click" />
         </p>
     </form>
 </asp:Content>
