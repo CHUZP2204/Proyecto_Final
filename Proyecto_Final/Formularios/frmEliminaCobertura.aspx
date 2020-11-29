@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MASTER_PAGES/MaterPages.Master" AutoEventWireup="true" CodeBehind="frmEliminaCobertura.aspx.cs" Inherits="Proyecto_Final.Formularios.frmEliminaCobertura" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
-      <form id="frmEliminaCobertura" runat="server" class="form-inline">
+    <div id="frmEliminaCobertura" class="form-inline">
 
         <asp:HiddenField ID="hdIdUsuario" runat="server" />
         <div style="background-color: #699186; filter: drop-shadow(5px 5px 10px #444)">
@@ -34,7 +35,7 @@
                             <div class="column" style="flex: 50%; padding: 10px;">
                                 <div class="form-group">
                                     <asp:Label ID="lblNombre" runat="server" Text="Nombre:"></asp:Label>
-                                 <asp:HiddenField ID="hdCobertura" runat="server" />
+                                    <asp:HiddenField ID="hdCobertura" runat="server" />
                                     <br />
                                     <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                                 </div>
@@ -50,8 +51,8 @@
                                     <br />
                                     <asp:TextBox ID="txtPorcentaje" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                                 </div>
-                               </div>
                             </div>
+                        </div>
 
                         <div class="container-fluid" style="text-align: center">
                             <div class="form-group" style="text-align: center">
@@ -74,7 +75,7 @@
             </div>
             <!---->
         </div>
-           <!-- Modal -->
+        <!-- Modal -->
         <div class="modal fade" data-backdrop='static' id="myModal" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
@@ -82,14 +83,14 @@
                     <div class="modal-header" style="padding: 35px 50px;">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4><span class="fas fa-lock" style="margin-left: 20%"></span>Estas seguro que desea Eliminarlo</h4>
-                        </div>
-                        <asp:Button ID="btnsi" runat="server" Text="Si" CssClass="btn-success btn-block" BorderStyle="Groove" OnClick="btnsi_Click" weight="100px" />
-                       <br />
-                      <asp:Button ID="btnno" runat="server" Text="No" CssClass="btn-success btn-block" BorderStyle="Groove" OnClick="btnno_Click" weight="100px" />
+                    </div>
+                    <asp:Button ID="btnsi" runat="server" Text="Si" CssClass="btn-success btn-block" BorderStyle="Groove" OnClick="btnsi_Click" weight="100px" />
+                    <br />
+                    <asp:Button ID="btnno" runat="server" Text="No" CssClass="btn-success btn-block" BorderStyle="Groove" OnClick="btnno_Click" weight="100px" />
                     <br />
                 </div>
-                </div>
             </div>
+        </div>
         <script>
             $(document).ready(function () {
                 $("#myBtn").click(function () {
@@ -97,7 +98,7 @@
                 });
             });
         </script>
-    </form>
+    </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scriptspersonalizados" runat="server">
 </asp:Content>

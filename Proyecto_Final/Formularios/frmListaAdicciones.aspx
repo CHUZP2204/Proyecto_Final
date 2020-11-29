@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scriptspersonalizados" runat="server">
-    <form id="form1" runat="server">
+    <div id="form1" >
         <h1>Lista Adicciones</h1>
         <p>
             <asp:HyperLink ID="hpNuevaAdiccion" runat="server" NavigateUrl="~/Formularios/frmInsertarAdiccion.aspx">Nueva Adiccion</asp:HyperLink>
@@ -43,5 +43,5 @@
                 <SortedDescendingHeaderStyle BackColor="#383838" />
             </asp:GridView>
         </p>
-    </form>
+    </div>
 </asp:Content>

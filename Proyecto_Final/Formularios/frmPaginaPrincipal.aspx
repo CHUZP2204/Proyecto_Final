@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
-    <form id="frmpaginaPrincipal" runat="server">
+    <!--FORM PAGINA PRINCIPAL -->
 
         <p>HELLO WORLD</p>
         <h2>AQUI ES LA PAGINA PRINCIPAL</h2>
@@ -14,7 +14,7 @@
 
         <asp:HyperLink ID="hplUserList" class="btn btn-primary" role="button" BorderColor="Black"
             runat="server" NavigateUrl="~/FormulariosBaseDatos/frmUsuarioLista.aspx ">Ver Lista</asp:HyperLink>
-    </form>
+    <!--FIN FOR PAGINA PRINCIPAL-->
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scriptspersonalizados" runat="server">
 </asp:Content>
