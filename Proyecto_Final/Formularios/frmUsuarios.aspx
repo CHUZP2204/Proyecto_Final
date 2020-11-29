@@ -4,8 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
 
-    <form id="form1" runat="server">
-        <asp:Label ID="Label1" runat="server" Text="Mostrar Usuarios" style="font-size: xx-large"></asp:Label>
+    <div id="frmUsuarios">
+        <asp:Label ID="Label1" runat="server" Text="Mostrar Usuarios" Style="font-size: xx-large"></asp:Label>
         <br />
         <br />
         <asp:Label ID="Label2" runat="server" Text="Nombre:"></asp:Label>
@@ -43,7 +43,7 @@
         </asp:GridView>
         <br />
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:HyperLink ID="hpRegistrar" runat="server"  ForeColor="#FFCC00" NavigateUrl="~/Formularios/frmInsertUsuario.aspx " >Registrar</asp:HyperLink>
+        <asp:HyperLink ID="hpRegistrar" runat="server" ForeColor="#FFCC00" NavigateUrl="~/Formularios/frmInsertUsuario.aspx ">Registrar</asp:HyperLink>
         <br />
         <br />
         <br />
@@ -90,7 +90,7 @@
             }
 
         </script>
-    </form>
+    </div>
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scriptspersonalizados" runat="server">

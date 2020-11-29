@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
-     <form id="frmInsertCobertura" runat="server" class="form-inline">
+     <div id="frmInsertCobertura"  class="form-inline">
         <div style="background-color: #699186; filter: drop-shadow(5px 5px 10px #444)">
             <!---->
             <div class="container-fluid" style="width: 500px">
@@ -99,7 +99,7 @@
         </div>
         <asp:ValidationSummary ID="vsRegistroCobertura" runat="server" ShowMessageBox="True" ShowSummary="False" />
 
-    </form>
+    </div>
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scriptspersonalizados" runat="server">

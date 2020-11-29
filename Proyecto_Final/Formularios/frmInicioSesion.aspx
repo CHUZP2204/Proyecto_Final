@@ -19,10 +19,10 @@
             color: #0066FF;
         }
     </style>
-    <form id="form1" runat="server">
-        <div style="background-color: #699186;filter: drop-shadow(5px 5px 10px #444)">
+   <!--FORM INICIAR SESSION-->
+        <div style="background-color: #699186; filter: drop-shadow(5px 5px 10px #444)">
             <div class="container-fluid" style="width: 450px">
-                <h2 class="auto-style1" style="color:blue;text-align:center"><strong>Bienvenidos</strong></h2>
+                <h2 class="auto-style1" style="color: blue; text-align: center"><strong>Bienvenidos</strong></h2>
                 <!-- Trigger the modal with a button -->
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
            <br />
@@ -102,7 +102,7 @@
                 });
             });
         </script>
-    </form>
+   <!--FIN FORM CERRAR SESSION-->
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scriptspersonalizados" runat="server">
 </asp:Content>

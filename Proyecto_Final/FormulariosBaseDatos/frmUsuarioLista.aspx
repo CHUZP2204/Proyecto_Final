@@ -3,7 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
-    <form runat="server" class="form-inline">
+    <!--FORM LISTA USUARIOS-->
+    <div id="frmUsuarioLista" class="form-inline">
         <h1>Lista de Usuarios</h1>
         <div class="form-group">
             <asp:Label ID="Label1" runat="server" Text="Primer Apellido:"></asp:Label>
@@ -14,7 +15,7 @@
             <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
         <asp:Button ID="btnMostrarDatos" runat="server" Text="Mostrar datos" CssClass="btn-success" OnClick="btnMostrarDatos_Click" />
-    &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;
         <asp:HyperLink ID="hpAgregarUsario" runat="server" NavigateUrl="~/Formularios/frmInsertUsuario.aspx">Agregar Usuario</asp:HyperLink>
         <br />
         <br />
@@ -38,7 +39,8 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
-    </form>
+    </div>
+    <!--FIN FORM LISTA USUARIOS-->
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scriptspersonalizados" runat="server">

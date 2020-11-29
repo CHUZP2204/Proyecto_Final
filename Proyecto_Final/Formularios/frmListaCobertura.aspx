@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
 
-      <form runat="server" class="form-inline">
+      <div id="frmListaCobertura" class="form-inline">
         <h1>Lista de Coberturas</h1>
         <div class="form-group">
             <asp:Label ID="Label1" runat="server" Text="Nombre:"></asp:Label>
@@ -37,7 +37,7 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
-    </form>
+    </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scriptspersonalizados" runat="server">
 </asp:Content>
