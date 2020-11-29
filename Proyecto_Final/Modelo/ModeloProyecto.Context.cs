@@ -292,5 +292,74 @@ namespace Proyecto_Final.Modelo
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spModificaUsuarioID", idUsuarioParameter, cedulaParameter, generoParameter, fechaParameter, nombreParameter, primerApellidoParameter, segundoApellidoParameter, direccionParameter, telefonoPrincipalParameter, telefonoSecundarioParameter, correoParameter, tipoUsuarioParameter, contraseniaParameter);
         }
+    
+        public virtual int sp_EliminaCoberturas(Nullable<int> idCobertura)
+        {
+            var idCoberturaParameter = idCobertura.HasValue ?
+                new ObjectParameter("idCobertura", idCobertura) :
+                new ObjectParameter("idCobertura", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_EliminaCoberturas", idCoberturaParameter);
+        }
+    
+        public virtual int sp_InsertaCoberturas(string nombre, string descripcion, string porcentaje)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var descripcionParameter = descripcion != null ?
+                new ObjectParameter("Descripcion", descripcion) :
+                new ObjectParameter("Descripcion", typeof(string));
+    
+            var porcentajeParameter = porcentaje != null ?
+                new ObjectParameter("Porcentaje", porcentaje) :
+                new ObjectParameter("Porcentaje", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertaCoberturas", nombreParameter, descripcionParameter, porcentajeParameter);
+        }
+    
+        public virtual ObjectResult<sp_RetornaCobertura_Result> sp_RetornaCobertura(string nombre, string porcentaje)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("nombre", nombre) :
+                new ObjectParameter("nombre", typeof(string));
+    
+            var porcentajeParameter = porcentaje != null ?
+                new ObjectParameter("porcentaje", porcentaje) :
+                new ObjectParameter("porcentaje", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaCobertura_Result>("sp_RetornaCobertura", nombreParameter, porcentajeParameter);
+        }
+    
+        public virtual ObjectResult<sp_RetornaCoberturaID_Result> sp_RetornaCoberturaID(Nullable<int> idCobertura)
+        {
+            var idCoberturaParameter = idCobertura.HasValue ?
+                new ObjectParameter("idCobertura", idCobertura) :
+                new ObjectParameter("idCobertura", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaCoberturaID_Result>("sp_RetornaCoberturaID", idCoberturaParameter);
+        }
+    
+        public virtual int spModificaCoberturas(Nullable<int> idCobertura, string nombre, string descripcion, string porcentaje)
+        {
+            var idCoberturaParameter = idCobertura.HasValue ?
+                new ObjectParameter("IdCobertura", idCobertura) :
+                new ObjectParameter("IdCobertura", typeof(int));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var descripcionParameter = descripcion != null ?
+                new ObjectParameter("Descripcion", descripcion) :
+                new ObjectParameter("Descripcion", typeof(string));
+    
+            var porcentajeParameter = porcentaje != null ?
+                new ObjectParameter("Porcentaje", porcentaje) :
+                new ObjectParameter("Porcentaje", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spModificaCoberturas", idCoberturaParameter, nombreParameter, descripcionParameter, porcentajeParameter);
+        }
     }
 }

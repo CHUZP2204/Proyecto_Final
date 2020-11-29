@@ -1761,12 +1761,16 @@
     <Content Include="FormulariosBaseDatos\frmUsuarioLista.aspx" />
     <Content Include="FormulariosBaseDatos\frmEliminarUsuario.aspx" />
     <Content Include="Formularios\frmEliminaAdiccion.aspx" />
+    <Content Include="Formularios\frmEliminaCobertura.aspx" />
     <Content Include="Formularios\frmInicioSesion.aspx" />
     <Content Include="Formularios\frmInsertarAdiccion.aspx" />
+    <Content Include="Formularios\frmInsertCobertura.aspx" />
     <Content Include="Formularios\frmInsertUsuario.aspx" />
     <Content Include="FormulariosBaseDatos\frmModificarUsuario.aspx" />
     <Content Include="Formularios\frmListaAdicciones.aspx" />
+    <Content Include="Formularios\frmListaCobertura.aspx" />
     <Content Include="Formularios\frmModificaAdiccion.aspx" />
+    <Content Include="Formularios\frmModificaCobertura.aspx" />
     <Content Include="Formularios\frmPaginaPrincipal.aspx" />
     <Content Include="Formularios\frmReporteUsuarios.aspx" />
     <Content Include="Formularios\frmUsuarios.aspx" />
@@ -1902,6 +1906,7 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BL\BLAdicciones.cs" />
+    <Compile Include="BL\BLCobertura.cs" />
     <Compile Include="BL\BLusuarios.cs" />
     <Compile Include="Clases\PRUEBA.cs" />
     <Compile Include="CLASES\Prueba2.cs" />
@@ -1941,6 +1946,13 @@
     <Compile Include="Formularios\frmEliminaAdiccion.aspx.designer.cs">
       <DependentUpon>frmEliminaAdiccion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmEliminaCobertura.aspx.cs">
+      <DependentUpon>frmEliminaCobertura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmEliminaCobertura.aspx.designer.cs">
+      <DependentUpon>frmEliminaCobertura.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmInicioSesion.aspx.cs">
       <DependentUpon>frmInicioSesion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1954,6 +1966,13 @@
     </Compile>
     <Compile Include="Formularios\frmInsertarAdiccion.aspx.designer.cs">
       <DependentUpon>frmInsertarAdiccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmInsertCobertura.aspx.cs">
+      <DependentUpon>frmInsertCobertura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmInsertCobertura.aspx.designer.cs">
+      <DependentUpon>frmInsertCobertura.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmInsertUsuario.aspx.cs">
       <DependentUpon>frmInsertUsuario.aspx</DependentUpon>
@@ -1976,12 +1995,26 @@
     <Compile Include="Formularios\frmListaAdicciones.aspx.designer.cs">
       <DependentUpon>frmListaAdicciones.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmListaCobertura.aspx.cs">
+      <DependentUpon>frmListaCobertura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmListaCobertura.aspx.designer.cs">
+      <DependentUpon>frmListaCobertura.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmModificaAdiccion.aspx.cs">
       <DependentUpon>frmModificaAdiccion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Formularios\frmModificaAdiccion.aspx.designer.cs">
       <DependentUpon>frmModificaAdiccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmModificaCobertura.aspx.cs">
+      <DependentUpon>frmModificaCobertura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmModificaCobertura.aspx.designer.cs">
+      <DependentUpon>frmModificaCobertura.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmPaginaPrincipal.aspx.cs">
       <DependentUpon>frmPaginaPrincipal.aspx</DependentUpon>
@@ -2057,6 +2090,12 @@
       <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\sp_RetornaAdicciones_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sp_RetornaCoberturaID_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sp_RetornaCobertura_Result.cs">
       <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\sp_RetornaUsuarioID_Result.cs">

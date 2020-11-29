@@ -204,6 +204,14 @@
         <Function Name="sp_EliminaAdiccionesID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idAdicciones" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_EliminaCoberturas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idCobertura" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_InsertaCoberturas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="Porcentaje" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_InsertaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Cedula" Type="varchar" Mode="In" />
           <Parameter Name="Genero" Type="varchar" Mode="In" />
@@ -230,6 +238,13 @@
         <Function Name="sp_RetornaAdiccionesID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idAdicciones" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_RetornaCobertura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="porcentaje" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_RetornaCoberturaID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idCobertura" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_RetornaUsuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="primerApellido" Type="varchar" Mode="In" />
           <Parameter Name="nombre" Type="varchar" Mode="In" />
@@ -247,6 +262,12 @@
         <Function Name="spInsertaTipoSeguro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idTipoSeguro" Type="int" Mode="In" />
           <Parameter Name="Nombre" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spModificaCoberturas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdCobertura" Type="int" Mode="In" />
+          <Parameter Name="Nombre" Type="varchar" Mode="In" />
+          <Parameter Name="Descripcion" Type="varchar" Mode="In" />
+          <Parameter Name="Porcentaje" Type="varchar" Mode="In" />
         </Function>
         <Function Name="spModificaUsuarioID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="IdUsuario" Type="int" Mode="In" />
@@ -634,6 +655,27 @@
             <Parameter Name="TipoUsuario" Mode="In" Type="String" />
             <Parameter Name="contrasenia" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="sp_EliminaCoberturas">
+            <Parameter Name="idCobertura" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_InsertaCoberturas">
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Descripcion" Mode="In" Type="String" />
+            <Parameter Name="Porcentaje" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_RetornaCobertura" ReturnType="Collection(SegurosModel.sp_RetornaCobertura_Result)">
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="porcentaje" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_RetornaCoberturaID" ReturnType="Collection(SegurosModel.sp_RetornaCoberturaID_Result)">
+            <Parameter Name="idCobertura" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spModificaCoberturas">
+            <Parameter Name="IdCobertura" Mode="In" Type="Int32" />
+            <Parameter Name="Nombre" Mode="In" Type="String" />
+            <Parameter Name="Descripcion" Mode="In" Type="String" />
+            <Parameter Name="Porcentaje" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_CoberturaSeguros_Result">
           <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
@@ -685,6 +727,18 @@
           <Property Type="Int32" Name="IdAdicciones" Nullable="false" />
           <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="Codigo" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_RetornaCobertura_Result">
+          <Property Type="Int32" Name="IdCobertura" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Procentaje" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_RetornaCoberturaID_Result">
+          <Property Type="Int32" Name="IdCobertura" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Procentaje" Nullable="false" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -876,6 +930,29 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="spInsertaAdicciones" FunctionName="SegurosModel.Store.spInsertaAdicciones" />
           <FunctionImportMapping FunctionImportName="spModificaUsuarioID" FunctionName="SegurosModel.Store.spModificaUsuarioID" />
+          <FunctionImportMapping FunctionImportName="sp_EliminaCoberturas" FunctionName="SegurosModel.Store.sp_EliminaCoberturas" />
+          <FunctionImportMapping FunctionImportName="sp_InsertaCoberturas" FunctionName="SegurosModel.Store.sp_InsertaCoberturas" />
+          <FunctionImportMapping FunctionImportName="sp_RetornaCobertura" FunctionName="SegurosModel.Store.sp_RetornaCobertura">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SegurosModel.sp_RetornaCobertura_Result">
+                <ScalarProperty Name="IdCobertura" ColumnName="IdCobertura" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Procentaje" ColumnName="Procentaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_RetornaCoberturaID" FunctionName="SegurosModel.Store.sp_RetornaCoberturaID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SegurosModel.sp_RetornaCoberturaID_Result">
+                <ScalarProperty Name="IdCobertura" ColumnName="IdCobertura" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Procentaje" ColumnName="Procentaje" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spModificaCoberturas" FunctionName="SegurosModel.Store.spModificaCoberturas" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
