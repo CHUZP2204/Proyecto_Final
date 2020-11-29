@@ -6,8 +6,8 @@
         Modifcar Adiccion</p>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scriptspersonalizados" runat="server">
-    <form id="form1" runat="server">
-        <p>
+    <div id="frmModificaAdiccion">
+  <p>
             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Formularios/frmListaAdicciones.aspx">Lista Adicciones</asp:HyperLink>
         </p>
         <p>
@@ -28,5 +28,6 @@
         <p>
             <asp:Button ID="btnModificar" runat="server" Text="Modificar" OnClick="btnModificar_Click" />
         </p>
-    </form>
+    </div>
+   
 </asp:Content>
