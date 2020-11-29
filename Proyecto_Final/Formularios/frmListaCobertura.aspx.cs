@@ -4,20 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Proyecto_Final.Formularios;
 using Proyecto_Final.BL;
-using Proyecto_Final.Formulario_Base_Datos;
 using Proyecto_Final.Modelo;
 
-namespace Proyecto_Final.Formulario_Base_Datos
+
+namespace Proyecto_Final.Formularios
 {
-    public partial class frmUsuarioLista : System.Web.UI.Page
+    public partial class frmListaCobertura : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
-            //{
-            //    this.Response.Redirect("~/Formularios/frmInicioSesion.aspx");
-            //}
             this.CargaDatosGrid();
         }
 
@@ -29,22 +26,22 @@ namespace Proyecto_Final.Formulario_Base_Datos
         {
             //Crear la instancia de la clase que retorna los datos
 
-            BLusuarios bLusuarios = new BLusuarios();
+            BLCobertura blcobertura = new BLCobertura();
             ///crear la variable que contiene los datos 
-            List<sp_RetornaUsuario_Result> fuenteDatos =
-            bLusuarios.retornaUsuario(this.txtNombre.Text,this.txtPrimerApellido.Text);
+            List<sp_RetornaCobertura_Result> fuenteDatos =
+            blcobertura.RetornaCobertura(this.txtnombre.Text, this.txtporcentaje.Text);
 
             ///agregar feunte de datos
-            this.grdListaUsuarios.DataSource = fuenteDatos;
+            this.grdListaCobertura.DataSource = fuenteDatos;
 
             //se muestra el grid
-            this.grdListaUsuarios.DataBind();
+            this.grdListaCobertura.DataBind();
         }
 
-        protected void grdListaUsuarios_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void grdListaCobertura_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             //inidar a grid la nueva pagina utilizando el parametro e
-            this.grdListaUsuarios.PageIndex = e.NewPageIndex;
+            this.grdListaCobertura.PageIndex = e.NewPageIndex;
 
             //cargar de nuevo el grid e inidarle que se muestre
             this.CargaDatosGrid();
