@@ -13,10 +13,7 @@ namespace Proyecto_Final.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!this.IsPostBack)
-            {
-                CargaRegistro();
-            }
+            CargaRegistro();
         }
         protected void btnModificar_Click(object sender, EventArgs e)
         {
@@ -37,7 +34,7 @@ namespace Proyecto_Final.Formularios
             }
             else
             {
-                int idAdicciones = Convert.ToInt32(parametro);
+                int idAdicciones = Convert.ToInt16(parametro);
                 BLAdicciones bLAdicciones = new BLAdicciones();
                 sp_RetornaAdiccionesID_Result datosAdicciones = new sp_RetornaAdiccionesID_Result();
 
@@ -45,7 +42,7 @@ namespace Proyecto_Final.Formularios
                 datosAdicciones = bLAdicciones.sp_RetornaAdiccionesID(idAdicciones);
 
                 //verificar que el objeto retornado no sea nulo
-                if (datosAdicciones == null)
+                if (datosAdicciones ==null)
                 {
                     Response.Redirect("frmListaAdicciones.aspx");
                 }
@@ -54,8 +51,8 @@ namespace Proyecto_Final.Formularios
                     ///asignar a cada una de las etiquetas los valores
                     ///obtenidos en la invocacion del sp por medio del metodo
 
-                    this.txtNombreAdiccion.Text = datosAdicciones.Nombre;
-                    this.txtCodigoAdiccion.Text = datosAdicciones.Codigo;
+                    this.txtNombreAdiccion.Text = datosAdicciones.Nombre.ToString();
+                    this.txtCodigoAdiccion.Text = datosAdicciones.Codigo.ToString();
                     //asignar al hiden field
                     //el valor de llave primaria
                     this.hdidAdicciones.Value = datosAdicciones.IdAdicciones.ToString();
@@ -66,7 +63,6 @@ namespace Proyecto_Final.Formularios
         {
             if (this.IsValid)
             {
-
                 string mensaje = " ";
                 BLAdicciones bLAdicciones = new BLAdicciones();
                 bool resultado = false;
@@ -74,14 +70,19 @@ namespace Proyecto_Final.Formularios
                 try
                 {
                     //obtener el valor de hidden field
-                    int idAdicciones = Convert.ToInt32(this.hdidAdicciones.Value);
-    
+                    int idAdicciones = Convert.ToInt16(this.hdidAdicciones.Value);
+                    ///obtener los valores seleccionados por el usuario
+                    ///se toman de la propiedad datavaluefield
+                    int Nombre = Convert.ToInt16(this.txtNombreAdiccion.Text);
+                    int Codigo = Convert.ToInt16(this.txtCodigoAdiccion.Text);
+                   
+
                     //asignar a la variable el resultado
                     // de invocar el sp
                     resultado = bLAdicciones.ModificaAdiccion(
                         idAdicciones,
-                        this.txtNombreAdiccion.Text,
-                        this.txtCodigoAdiccion.Text
+                        Nombre.ToString(),
+                        Codigo.ToString()
                         );
 
                 }
@@ -97,6 +98,8 @@ namespace Proyecto_Final.Formularios
                         mensaje += $"El registro fue Modificado ";
                     }
                 }
+
+
                 //mostrar el mensaje 
                 Response.Write("<script>alert('" + mensaje + "')</script>"); ;
             }

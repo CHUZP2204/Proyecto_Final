@@ -15,12 +15,28 @@
     <%--Content folder holper para que las paginas que usen la
       plantilla incluyan hojas de estilos propios--%>
 
+<!--Metodo Del Lado Del Cliente Que Cierra Session-->
+    <script runat="server">
+        void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Session.Add("correo", null);
+            this.Session.Add("nombre", null);
+            this.Session.Add("pApellido", null);
+            this.Session.Add("sApellido", null);
+            this.Session.Add("idusuario", null);
+            this.Session.Add("tipousuario", null);
+            this.Session.Add("usuariologueado", null);
+            this.Response.Redirect("frmInicioSesion.aspx");
+        }
+    </script>
+<!--FIN Metodo Del Lado Del Cliente Que Cierra Session-->
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 
 <body style="background-color: #15A95B">
     <form id="form1" runat="server">
+        <!--Navbar O Barra De Navegacion-->
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -29,7 +45,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Seguros SIGLO XXI</a>
+                    <a class="navbar-brand" href="frmPaginaPrincipal.aspx">Seguros SIGLO XXI</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
@@ -47,13 +63,16 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <asp:HyperLink ID="hplSalir" runat="server" ForeColor="#FFCC00" NavigateUrl="~/Formularios/frmInsertUsuario.aspx"><span class="fas fa-user"></span>Registrarse</asp:HyperLink></li>
+                            <asp:HyperLink ID="hplIniciarSesion" runat="server" ForeColor="#FFCC00" NavigateUrl="~/Formularios/frmInsertUsuario.aspx"><span class="fas fa-user"></span>Registrarse</asp:HyperLink></li>
                         <li>
-                            <asp:HyperLink ID="hplIniciarSesion" runat="server" ForeColor="#FFCC00" class="page-scroll" data-toggle="modal" data-target="#myModal1"><span class="fas fa-sign-in-alt"></span>Salir</asp:HyperLink></li>
+                            <asp:HyperLink ID="hplSalir" runat="server" ForeColor="#FFCC00" class="page-scroll" data-toggle="modal" data-target="#myModal1"><span class="fas fa-sign-in-alt"></span>Salir</asp:HyperLink></li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <!--FIN Navbar O Barra De Navegacion-->
+
+        <!--Modal Pequeño De Cerrar Session-->
         <div class="modal fade" id="myModal1" role="dialog">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
@@ -65,22 +84,27 @@
                         <p>SEGURO QUE DESEAS SALIR?</p>
                     </div>
                     <div class="modal-footer">
-                        <asp:Button ID="btnSalir" CssClass="btn btn-danger" runat="server" Text="SI" />
+                        <asp:Button ID="btnSalir" UseSubmitBehavior="true" CssClass="btn btn-danger" OnClientClick="btnSalir()" OnClick="btnSalir_Click"
+                            runat="server" Text="SI" />
+
                         <button type="button" class="btn btn-success" data-dismiss="modal">NO</button>
                     </div>
                 </div>
             </div>
         </div>
+        <!--FIN Modal Pequeño De Cerrar Session-->
 
+        <!--Metodo Que Llama Un Modal De Confirmacion De Cierre De Session-->
         <script>  
             $(document).ready(function () {
                 $('#myModal1').on('shown.bs.modal', function () {
                 });
             });
         </script>
+        <!--FIN Metodo Que Llama Un Modal De Confirmacion De Cierre De Session-->
         <header>Este es el encabezado de todas las paginas</header>
-        <%--Content folder holper para que las paginas que usen la
-                      plantilla incluyan el formulario--%>
+        <%--Content folder holper para que las paginas que usen la plantilla incluyan el formulario--%>
+
         <style></style>
         <asp:ContentPlaceHolder ID="ContenidoPrincipal" runat="server">
         </asp:ContentPlaceHolder>
@@ -92,6 +116,7 @@
 
         <asp:ContentPlaceHolder ID="scriptspersonalizados" runat="server">
         </asp:ContentPlaceHolder>
+        <!--Pie De Pagina-->
         <footer style="text-align: center">
             <div class="container-fluid">
                 <br />
@@ -99,8 +124,10 @@
                 <br />
                 <p class="fa fa-copyright">Todos los derechos resevados<%:DateTime.Now.Year %>  ©</p>
             </div>
-
         </footer>
+        <!--Fin Pie De Pagina-->
     </form>
+
+
 </body>
 </html>

@@ -14,15 +14,18 @@ namespace Proyecto_Final.Formulario_Base_Datos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
-            //{
-            //    this.Response.Redirect("~/Formularios/frmInicioSesion.aspx");
-            //}
+            /// Esto Verifica Si Hay Un Usuario Conectado
+            if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
+            {
+                this.Response.Redirect("~/Formularios/frmInicioSesion.aspx");
+            }
+            /// Cargar Datos Del Grid Inicialmente Todos
             this.CargaDatosGrid();
         }
 
         protected void btnMostrarDatos_Click(object sender, EventArgs e)
         {
+            /// Cragar Datos Del GRID Con Los Parametros Indicados por El Usuario 
             this.CargaDatosGrid();
         }
         void CargaDatosGrid()

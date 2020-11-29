@@ -11,6 +11,12 @@ namespace Proyecto_Final.MASTER_PAGES
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ///Si No Hay Usuario Logueado, no se debe mostrar El HyperLink Salir
+            ///Esto Especialmente Para El Formulario Iniciar Session
+            if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
+            {
+                this.hplSalir.Visible = false;
+            }
 
         }
     }

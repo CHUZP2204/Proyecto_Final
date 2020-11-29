@@ -33,15 +33,6 @@ namespace Proyecto_Final.MASTER_PAGES
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control hplSalir.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplSalir;
-
-        /// <summary>
         /// Control hplIniciarSesion.
         /// </summary>
         /// <remarks>
@@ -49,6 +40,15 @@ namespace Proyecto_Final.MASTER_PAGES
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink hplIniciarSesion;
+
+        /// <summary>
+        /// Control hplSalir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hplSalir;
 
         /// <summary>
         /// Control btnSalir.

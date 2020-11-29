@@ -215,7 +215,7 @@
                                 <br />
                                 <br />
                                 <asp:HyperLink ID="hplstUsers" class="btn btn-primary" role="button" BorderColor="Black"
-                                    runat="server" NavigateUrl="~/FormulariosBaseDatos/frmUsuarioLista.aspx ">Ver Lista</asp:HyperLink>
+                                    runat="server" NavigateUrl="~/Formularios/frmUsuarioLista.aspx ">Ver Lista</asp:HyperLink>
                                 <br />
 
                             </div>

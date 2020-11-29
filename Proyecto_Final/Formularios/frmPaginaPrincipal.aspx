@@ -13,7 +13,7 @@
         </h1>
 
         <asp:HyperLink ID="hplUserList" class="btn btn-primary" role="button" BorderColor="Black"
-            runat="server" NavigateUrl="~/FormulariosBaseDatos/frmUsuarioLista.aspx ">Ver Lista</asp:HyperLink>
+            runat="server" NavigateUrl="~/Formularios/frmUsuarioLista.aspx">Ver Lista</asp:HyperLink>
     <!--FIN FOR PAGINA PRINCIPAL-->
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scriptspersonalizados" runat="server">

@@ -11,9 +11,19 @@ namespace Proyecto_Final.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            /// Esto Verifica Si Hay Un Usuario Conectado
+            if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
+            {
+                this.Response.Redirect("~/Formularios/frmInicioSesion.aspx");
+            }
+            /// Cargar Nombre Del Usuario Que Se Logueo
             cargaNombre();
         }
 
+        /// <summary>
+        /// Metodo Que Obtiene y asigna A Un Label Los Datos Del Usuario Actual
+        /// Desde LAs Variables De Session
+        /// </summary>
         void cargaNombre()
         {
             string nombreActual = Convert.ToString(this.Session["nombre"]);

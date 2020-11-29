@@ -107,6 +107,7 @@ namespace Proyecto_Final.Formularios
                 }
                 ///mostrar el mensaje
                 Response.Write("<script>alert('" + mensaje + "')</script>"); ;
+                this.Response.Redirect("frmUsuarioLista.aspx");
             }
         }
         }
