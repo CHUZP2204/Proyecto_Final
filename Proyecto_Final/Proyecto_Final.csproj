@@ -1758,6 +1758,7 @@
     <Content Include="Estilos\Fonts\fontawesome-free-5.14.0-web\webfonts\fa-solid-900.svg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Formularios\frmListaAdiccionesUsuario.aspx" />
     <Content Include="Formularios\frmUsuarioLista.aspx" />
     <Content Include="Formularios\frmEliminarUsuario.aspx" />
     <Content Include="Formularios\frmEliminaAdiccion.aspx" />
@@ -1925,6 +1926,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmListaAdiccionesUsuario.aspx.cs">
+      <DependentUpon>frmListaAdiccionesUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmListaAdiccionesUsuario.aspx.designer.cs">
+      <DependentUpon>frmListaAdiccionesUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmUsuarioLista.aspx.cs">
       <DependentUpon>frmUsuarioLista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2090,6 +2098,12 @@
       <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\sp_RetornaAdicciones_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sp_RetornaAdiccionUsuarioID_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sp_RetornaAdiccionUsuario_Result.cs">
       <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\sp_RetornaCoberturaID_Result.cs">
