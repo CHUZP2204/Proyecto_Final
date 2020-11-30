@@ -3,22 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
-    <style>
-        .modal-header, h4, .close {
-            background-color: #5cb85c;
-            color: white !important;
-            text-align: center;
-            font-size: 30px;
-        }
 
-        .modal-footer {
-            background-color: #f9f9f9;
-        }
-
-        .auto-style1 {
-            color: #0066FF;
-        }
-    </style>
    <!--FORM INICIAR SESSION-->
         <div style="background-color: #699186; filter: drop-shadow(5px 5px 10px #444)">
             <div class="container-fluid" style="width: 450px">

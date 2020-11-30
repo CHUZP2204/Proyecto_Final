@@ -37,7 +37,7 @@
                                     <asp:Label ID="Label12" runat="server" Text="Nombre"></asp:Label>
                                     <br />
                                     <asp:TextBox class="form-control" ID="txtnombre" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="rqvtxtnombre" runat="server"
+                                    <asp:RequiredFieldValidator ID="rqvTxtNombre" runat="server"
                                         ControlToValidate="txtnombre"
                                         ErrorMessage="Debe ingresar un nombre no repetido"
                                         ForeColor="Red"
@@ -50,7 +50,7 @@
                                     <asp:Label ID="label13" runat="server" Text="Descripcion"></asp:Label>
                                     <br />
                                     <asp:TextBox ID="txtdescripcion" runat="server" Class="form-control"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="rqvtxtdescripcion" runat="server"
+                                    <asp:RequiredFieldValidator ID="rqvTxtdescripcion" runat="server"
                                         ControlToValidate="txtdescripcion"
                                         ErrorMessage="Debe ingresar una descripcion"
                                         ForeColor="Red"
@@ -63,7 +63,7 @@
                                     <asp:Label ID="Label14" runat="server" Text="Porcentaje"></asp:Label>
                                     <br />
                                     <asp:TextBox ID="txtporcentaje" runat="server" Class="form-control"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="rqvtxtporcentaje" runat="server"
+                                    <asp:RequiredFieldValidator ID="rqvTxtporcentaje" runat="server"
                                         ControlToValidate="txtporcentaje"
                                         ErrorMessage="Debe ingresar un porcentaje mayor a '0' o igual o menor a '100'"
                                         ForeColor="Red"

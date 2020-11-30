@@ -4,8 +4,9 @@
 
 <html>
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta  charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--http-equiv="Content-Type" content="text/html;-->
     <title></title>
     <%--Definiciones de hojas de estilos para todas las paginas--%>
     <script src="../Estilos/jquey-3.5.1/jquery.min.js"></script>
@@ -15,7 +16,7 @@
     <%--Content folder holper para que las paginas que usen la
       plantilla incluyan hojas de estilos propios--%>
 
-<!--Metodo Del Lado Del Cliente Que Cierra Session-->
+    <!--Metodo Del Lado Del Cliente Que Cierra Session-->
     <script runat="server">
         void btnSalir_Click(object sender, EventArgs e)
         {
@@ -29,7 +30,7 @@
             this.Response.Redirect("frmInicioSesion.aspx");
         }
     </script>
-<!--FIN Metodo Del Lado Del Cliente Que Cierra Session-->
+    <!--FIN Metodo Del Lado Del Cliente Que Cierra Session-->
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -78,12 +79,12 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
+                        <h4 class="modal-title">ALERTA!</h4>
                     </div>
                     <div class="modal-body">
                         <p>SEGURO QUE DESEAS SALIR?</p>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer" style="text-align: center">
                         <asp:Button ID="btnSalir" UseSubmitBehavior="true" CssClass="btn btn-danger" OnClientClick="btnSalir()" OnClick="btnSalir_Click"
                             runat="server" Text="SI" />
 
@@ -105,7 +106,18 @@
         <header>Este es el encabezado de todas las paginas</header>
         <%--Content folder holper para que las paginas que usen la plantilla incluyan el formulario--%>
 
-        <style></style>
+        <style>
+            .modal-header, h4, .close {
+                background-color: #5cb85c;
+                color: white !important;
+                text-align: center;
+                font-size: 30px;
+            }
+
+            .modal-footer {
+                background-color: #f9f9f9;
+            }
+        </style>
         <asp:ContentPlaceHolder ID="ContenidoPrincipal" runat="server">
         </asp:ContentPlaceHolder>
 

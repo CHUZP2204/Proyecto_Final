@@ -6,16 +6,34 @@
     <!--FORM PAGINA PRINCIPAL -->
     <div>
         <div style="background-color: #699186; filter: drop-shadow(5px 5px 10px #444)">
-            <div class="container-fluid" style="width: 450px">
-                <p>HELLO WORLD</p>
-                <h2>AQUI ES LA PAGINA PRINCIPAL</h2>
-                <h1>
-                    <asp:Label ID="lblUSuarioConectado" runat="server" Text="Label" ForeColor="Red"></asp:Label>
 
-                </h1>
+            <div class="container-fluid" style="">
+                <!--Panel-->
+                <div class="panel panel-primary"
+                    style="text-align: center; border: solid 5px black; border-radius: 1em; filter: drop-shadow(15px 15px 20px #444); margin-left: 10px; margin-right: 10px; margin-top: 20px; margin-bottom: 20px">
+                    <!--Encabezado Del Panel-->
+                    <div class="panel-heading">
+                        <div class="row" >
+                            <div >
+                                <h3 class="auto-style1">Principal</h3>
+                            </div>
+                        </div>
 
-                <asp:HyperLink ID="hplUserList" class="btn btn-primary" role="button" BorderColor="Black"
-                    runat="server" NavigateUrl="~/Formularios/frmUsuarioLista.aspx">Ver Lista</asp:HyperLink>
+                    </div>
+                    <!--Fin Encabezado Del Panel-->
+                    <!--Cuerpo Del Panel-->
+                    <div class="panel-body" style="background-color: aquamarine">
+                        <p>HELLO WORLD</p>
+                        <h2>AQUI ES LA PAGINA PRINCIPAL</h2>
+                        <h1>
+                            <asp:Label ID="lblUSuarioConectado" runat="server" Text="Label" ForeColor="Red"></asp:Label>
+
+                        </h1>
+
+                        <asp:HyperLink ID="hplUserList" class="btn btn-primary" role="button" BorderColor="Black"
+                            runat="server" NavigateUrl="~/Formularios/frmUsuarioLista.aspx">Ver Lista</asp:HyperLink>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

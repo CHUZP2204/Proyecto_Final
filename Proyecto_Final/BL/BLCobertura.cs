@@ -27,7 +27,7 @@ namespace Proyecto_Final.BL
             ///Se Crea La Variable Que Retorna
             List<sp_RetornaCobertura_Result> resultado = new List<sp_RetornaCobertura_Result>();
             /// Se Invoca El Store Procedure y Se Le Pasan Los Parametros
-            resultado = this.modeloBD.sp_RetornaCobertura(pPorcentaje, pNombre).ToList();
+            resultado = this.modeloBD.sp_RetornaCobertura(pNombre,pPorcentaje).ToList();
 
             return resultado;
         }

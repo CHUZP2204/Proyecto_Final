@@ -51,13 +51,13 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.TextBox txtnombre;
 
         /// <summary>
-        /// Control rqvtxtnombre.
+        /// Control rqvTxtNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtnombre;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtNombre;
 
         /// <summary>
         /// Control label13.
@@ -78,13 +78,13 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.TextBox txtdescripcion;
 
         /// <summary>
-        /// Control rqvtxtdescripcion.
+        /// Control rqvTxtdescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtdescripcion;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtdescripcion;
 
         /// <summary>
         /// Control Label14.
@@ -105,13 +105,13 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.TextBox txtporcentaje;
 
         /// <summary>
-        /// Control rqvtxtporcentaje.
+        /// Control rqvTxtporcentaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtporcentaje;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtporcentaje;
 
         /// <summary>
         /// Control btAceptar.
