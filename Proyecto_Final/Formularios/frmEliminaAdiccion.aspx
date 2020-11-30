@@ -3,34 +3,56 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
-    <p>
-        Eliminar Adiciones
-    </p>
     <div id="form1">
-        <p>
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Formularios/frmListaAdicciones.aspx">Lista Adicciones</asp:HyperLink>
-        </p>
-        <p>
-            &nbsp;
-        </p>
-        <p>
-            Nombre:&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtNombreAdiccion" runat="server" Enabled="False"></asp:TextBox>
-            <asp:HiddenField ID="hdidAdicciones" runat="server" />
-        </p>
-        <p>
-            &nbsp;
-        </p>
-        <p>
-            Codigo:&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtCodigoAdiccion" runat="server" Enabled="False"></asp:TextBox>
-        </p>
-        <p>
-            &nbsp;
-        </p>
-        <p>
-            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
-        </p>
+        <div style="background-color: #699186; filter: drop-shadow(5px 5px 10px #444)">
+            <!---->
+            <div class="container-fluid" style="width: 500px">
+                <!--Panel-->
+                <div class="panel panel-primary"
+                    style="text-align: center; border: solid 5px black; border-radius: 1em; filter: drop-shadow(15px 15px 20px #444); margin-left: 10px; margin-right: 10px; margin-top: 20px; margin-bottom: 20px">
+                    <!--Encabezado Del Panel-->
+                    <div class="panel-heading">
+                        <div class="row" style="display: flex">
+                            <div style="margin-left: 10px; margin-top: 15px">
+                                <asp:HyperLink ID="hplAtras" NavigateUrl="~/Formularios/frmListaAdicciones.aspx"
+                                    class="btn btn-danger" runat="server">
+                                    <i class="fas fa-backspace"></i>
+                                </asp:HyperLink>
+                            </div>
+                            <div style="margin-bottom: 10px; padding-left: 40px; padding-right: 40px">
+                                <h3 class="auto-style1">Elimina Adiccion</h3>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <!--Fin Encabezado Del Panel-->
+                    <!--Cuerpo Del Panel-->
+                    <div class="panel-body" style="background-color: aquamarine">
+                        <asp:HiddenField ID="hdidAdicciones" runat="server" />
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <asp:TextBox ID="txtNombreAdiccion" runat="server" Enabled="False"></asp:TextBox> 
+                        </div>
+                        <div class="form-group">
+                           <label>Codigo</label>
+                           <asp:TextBox ID="txtCodigoAdiccion" runat="server" Enabled="False"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:Button ID="btnEliminar" CssClass="btn btn-danger" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />
+                            <br />
+                            <br />
+                            <asp:HyperLink ID="hplstUsers" class="btn btn-primary" role="button" BorderColor="Black"
+                                    runat="server" NavigateUrl="~/Formularios/frmListaAdicciones.aspx">Ver Lista</asp:HyperLink>
+                        </div>
+                    </div>
+                    <!--FIN DEL CUERPO DEL PANEL>
+                </div>
+                <!--FIN PANEL-->
+                </div>
+            </div>
+        </div>
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scriptspersonalizados" runat="server">
