@@ -13,7 +13,10 @@ namespace Proyecto_Final.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CargaRegistro();
+            if (!this.IsPostBack)
+            {
+                CargaRegistro();
+            }
         }
         protected void btnModificar_Click(object sender, EventArgs e)
         {
@@ -42,7 +45,7 @@ namespace Proyecto_Final.Formularios
                 datosAdicciones = bLAdicciones.sp_RetornaAdiccionesID(idAdicciones);
 
                 //verificar que el objeto retornado no sea nulo
-                if (datosAdicciones ==null)
+                if (datosAdicciones == null)
                 {
                     Response.Redirect("frmListaAdicciones.aspx");
                 }
@@ -73,17 +76,14 @@ namespace Proyecto_Final.Formularios
                     int idAdicciones = Convert.ToInt16(this.hdidAdicciones.Value);
                     ///obtener los valores seleccionados por el usuario
                     ///se toman de la propiedad datavaluefield
-                    int Nombre = Convert.ToInt16(this.txtNombreAdiccion.Text);
-                    int Codigo = Convert.ToInt16(this.txtCodigoAdiccion.Text);
                    
 
                     //asignar a la variable el resultado
                     // de invocar el sp
                     resultado = bLAdicciones.ModificaAdiccion(
                         idAdicciones,
-                        Nombre.ToString(),
-                        Codigo.ToString()
-                        );
+                       this.txtNombreAdiccion.Text,
+                       this.txtCodigoAdiccion.Text);
 
                 }
                 catch (Exception exepcionCapturada)
