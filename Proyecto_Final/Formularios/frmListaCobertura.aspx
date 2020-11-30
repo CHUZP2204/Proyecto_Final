@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
+
     <!--Contenido FRM Cobertura-->
     <div id="frmListaCobertura" class="form-inline">
         <div style="background-color: #699186; filter: drop-shadow(5px 5px 10px #444)">
@@ -32,7 +33,7 @@
 
                         <!--Nombre-->
                         <div class="form-group">
-                            <asp:Label ID="Label1" runat="server" Text="Nombre:"></asp:Label> 
+                            <asp:Label ID="Label1" runat="server" Text="Nombre:"></asp:Label>
                             &nbsp;&nbsp;&nbsp;
                             <asp:TextBox ID="txtnombre" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
@@ -41,13 +42,13 @@
                         <br />
                         <!--Porcentaje-->
                         <div class="form-group">
-                            <asp:Label ID="Label2" runat="server" Text="Porcentaje:"></asp:Label> 
+                            <asp:Label ID="Label2" runat="server" Text="Porcentaje:"></asp:Label>
                             <asp:TextBox ID="txtporcentaje" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                         <br />
                         <!--FIN Porcentaje-->
                         <br />
-                        
+
                         <!--Botones-->
                         <div class="form-group">
                             <asp:Button ID="btnMostrarDatos" runat="server" Text="Mostrar datos" CssClass="btn btn-success" OnClick="btnMostrarDatos_Click" />
@@ -55,7 +56,7 @@
                             <br />
                             <asp:HyperLink ID="hpAgregarcobertura" class="btn btn-primary" role="button" BorderColor="Black" runat="server"
                                 NavigateUrl="~/Formularios/frmInsertCobertura.aspx">Agregar Cobertura</asp:HyperLink>
-                            <br/>
+                            <br />
                             <br />
                         </div>
                         <!--Fin Botones-->

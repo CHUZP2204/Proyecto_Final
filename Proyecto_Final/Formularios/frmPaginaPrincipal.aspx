@@ -13,8 +13,8 @@
                     style="text-align: center; border: solid 5px black; border-radius: 1em; filter: drop-shadow(15px 15px 20px #444); margin-left: 10px; margin-right: 10px; margin-top: 20px; margin-bottom: 20px">
                     <!--Encabezado Del Panel-->
                     <div class="panel-heading">
-                        <div class="row" >
-                            <div >
+                        <div class="row">
+                            <div>
                                 <h3 class="auto-style1">Principal</h3>
                             </div>
                         </div>

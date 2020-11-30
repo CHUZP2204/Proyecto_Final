@@ -31,7 +31,7 @@ namespace Proyecto_Final.Formularios
 
                     resultado = bLAdicciones.InsertaAdiccion(
                         this.txtNombreAdiccion.Text,
-                        this.txtCodigoAdiccion.Text) ;
+                        this.txtNombreAdiccion.Text) ;
                 }
                 catch (Exception exepcionCapturada)
                 {

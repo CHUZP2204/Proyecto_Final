@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
-    <!--FORM LISTA USUARIOS-->
+   <!--FORM LISTA USUARIOS-->
     <div id="frmUsuarioLista" class="form-inline">
         <!--Contenido-->
         <div style="background-color: #699186; filter: drop-shadow(5px 5px 10px #444)">

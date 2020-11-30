@@ -24,23 +24,37 @@ namespace Proyecto_Final.Formularios
         void CargaDatosGrid()
         {
             //crear la instancia de la clase que retorna datos
-            BLAdiccionesUsuario bLAdicionUsuario = new BLAdiccionesUsuario();
+            BLAdiccionesUsuario ObLAdicionUsuario = new BLAdiccionesUsuario();
             // variable contiene datos
+            int IdAdicciones;
+            int IdUsuario;
+            if ( String.IsNullOrEmpty(this.txtIdentificacionAdiccion.Text) && String.IsNullOrEmpty(this.txtIdentificacionUsuario.Text))
+            {
 
-            int IdAdicciones = Convert.ToInt32(this.txtIdentificacionAdiccion.Text);
-            int IdUsuario = Convert.ToInt32(this.txtIdentificacionUsuario.Text);
+                List<sp_RetornaAdiccionUsuario_Result> fuenteDatos =
+                ObLAdicionUsuario.RetornaAdiccionesUsuario(0, 0).ToList();
+            }
+            else
+            {
+                ///Las Variables Tienen Que Tener Un valor De Tipo INT
+                ///Hay Error Si En EL TextBox No Se Pone Un Valor 
+                ///Manda Un Vacio Y Vacio No Existe
+                ///CORREGIR
+                IdAdicciones = Convert.ToInt32(this.txtIdentificacionAdiccion.Text);
+                IdUsuario = Convert.ToInt32(this.txtIdentificacionUsuario.Text);
 
-            List<sp_RetornaAdiccionUsuario_Result> fuenteDatos =
-                BLAdiccionesUsuario.RetornaAdiccionesUsuario(
-                IdAdicciones,
-                IdUsuario
-                );
+                List<sp_RetornaAdiccionUsuario_Result> fuenteDatos =
+                ObLAdicionUsuario.RetornaAdiccionesUsuario(IdAdicciones, IdUsuario).ToList();
 
-            //fuente datos
-            this.grdListaAdiccionUsuario.DataSource = fuenteDatos;
+                //fuente datos
+                this.grdListaAdiccionUsuario.DataSource = fuenteDatos;
 
-            //muestra grid
-            this.grdListaAdiccionUsuario.DataBind();
+                //muestra grid
+                this.grdListaAdiccionUsuario.DataBind();
+            }
+
+
+
 
         }
 
