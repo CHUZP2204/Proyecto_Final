@@ -5,40 +5,45 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
     <!--FORM LISTA USUARIOS-->
     <div id="frmUsuarioLista" class="form-inline">
-        <h1>Lista de Usuarios</h1>
-        <div class="form-group">
-            <asp:Label ID="Label1" runat="server" Text="Primer Apellido:"></asp:Label>
-            <asp:TextBox ID="txtPrimerApellido" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <asp:Label ID="Label2" runat="server" Text="Nombre:"></asp:Label>
-            <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
-        <asp:Button ID="btnMostrarDatos" runat="server" Text="Mostrar datos" CssClass="btn-success" OnClick="btnMostrarDatos_Click" />
-        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div style="background-color: #699186; filter: drop-shadow(5px 5px 10px #444)">
+            <div class="container-fluid" style="width: 450px">
+                <h1>Lista de Usuarios</h1>
+                <div class="form-group">
+                    <asp:Label ID="Label1" runat="server" Text="Primer Apellido:"></asp:Label>
+                    <asp:TextBox ID="txtPrimerApellido" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <asp:Label ID="Label2" runat="server" Text="Nombre:"></asp:Label>
+                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+                <asp:Button ID="btnMostrarDatos" runat="server" Text="Mostrar datos" CssClass="btn-success" OnClick="btnMostrarDatos_Click" />
+                &nbsp;&nbsp;&nbsp;&nbsp;
         <asp:HyperLink ID="hpAgregarUsario" runat="server" NavigateUrl="~/Formularios/frmInsertUsuario.aspx">Agregar Usuario</asp:HyperLink>
-        <br />
-        <br />
-        <br />
-        <asp:GridView ID="grdListaUsuarios" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" OnPageIndexChanging="grdListaUsuarios_PageIndexChanging" PageSize="3">
-            <AlternatingRowStyle BackColor="#CCCCCC" />
-            <Columns>
-                <asp:BoundField DataField="Nombre" HeaderText="Nombre Usuario" />
-                <asp:BoundField DataField="PrimerApellido" HeaderText="Apellido 1" />
-                <asp:BoundField DataField="TipoUsuario" HeaderText="Tipo" />
-                <asp:BoundField DataField="Correo" HeaderText="Correo Usuario" />
-                <asp:HyperLinkField DataNavigateUrlFields="IdUsuario" DataNavigateUrlFormatString="frmModificarUsuario.aspx?IdUsuario={0}" Text="Modificar" />
-                <asp:HyperLinkField DataNavigateUrlFields="IdUsuario" DataNavigateUrlFormatString="frmEliminarUsuario.aspx?IdUsuario={0}" Text="Eliminar" />
-            </Columns>
-            <FooterStyle BackColor="#CCCCCC" />
-            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-            <SortedAscendingCellStyle BackColor="#F1F1F1" />
-            <SortedAscendingHeaderStyle BackColor="#808080" />
-            <SortedDescendingCellStyle BackColor="#CAC9C9" />
-            <SortedDescendingHeaderStyle BackColor="#383838" />
-        </asp:GridView>
+                <br />
+                <br />
+                <br />
+                <asp:GridView ID="grdListaUsuarios" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" OnPageIndexChanging="grdListaUsuarios_PageIndexChanging" PageSize="3">
+                    <AlternatingRowStyle BackColor="#CCCCCC" />
+                    <Columns>
+                        <asp:BoundField DataField="Nombre" HeaderText="Nombre Usuario" />
+                        <asp:BoundField DataField="PrimerApellido" HeaderText="Apellido 1" />
+                        <asp:BoundField DataField="TipoUsuario" HeaderText="Tipo" />
+                        <asp:BoundField DataField="Correo" HeaderText="Correo Usuario" />
+                        <asp:HyperLinkField DataNavigateUrlFields="IdUsuario" DataNavigateUrlFormatString="frmModificarUsuario.aspx?IdUsuario={0}" Text="Modificar" />
+                        <asp:HyperLinkField DataNavigateUrlFields="IdUsuario" DataNavigateUrlFormatString="frmEliminarUsuario.aspx?IdUsuario={0}" Text="Eliminar" />
+                    </Columns>
+                    <FooterStyle BackColor="#CCCCCC" />
+                    <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+                    <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#808080" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#383838" />
+                </asp:GridView>
+            </div>
+        </div>
+
     </div>
     <!--FIN FORM LISTA USUARIOS-->
 
