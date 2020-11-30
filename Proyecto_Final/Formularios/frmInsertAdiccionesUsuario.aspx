@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MASTER_PAGES/MaterPages.Master" AutoEventWireup="true" CodeBehind="frmInsertAdiccionesUsuario.aspx.cs" Inherits="Proyecto_Final.Formularios.frmInsertAdiccionesUsuario" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
@@ -29,7 +30,7 @@
                     <!--Cuerpo Del Panel-->
                     <div class="panel-body" style="background-color: aquamarine">
                         <div class="form-group">
-                            <asp:Label ID="Label1" runat="server" Text="Identificador Adiccion:" style="font-weight: 700"></asp:Label>&nbsp;&nbsp; 
+                            <asp:Label ID="Label1" runat="server" Text="Identificador Adiccion:" Style="font-weight: 700"></asp:Label>&nbsp;&nbsp; 
                             <asp:TextBox ID="txtIdentificacionAdiccion" runat="server"></asp:TextBox>
                             <br />
                             <asp:RequiredFieldValidator ID="rqvtxtIdentificacionAdiccion" runat="server"
@@ -40,7 +41,7 @@
                         </div>
 
                         <div class="form-group">
-                            <asp:Label ID="Label2" runat="server" Text="Identificador Usuario:" style="font-weight: 700"></asp:Label>&nbsp;&nbsp;
+                            <asp:Label ID="Label2" runat="server" Text="Identificador Usuario:" Style="font-weight: 700"></asp:Label>&nbsp;&nbsp;
                             <asp:TextBox ID="txtIdentificacionUsuario" runat="server"></asp:TextBox>
                             <br />
                             <asp:RequiredFieldValidator ID="rqvtxtIdentificacionUsuario" runat="server"

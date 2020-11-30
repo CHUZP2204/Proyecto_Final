@@ -702,9 +702,6 @@
             <Parameter Name="IdAdicciones" Mode="In" Type="Int32" />
             <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_RetornaAdiccionUsuarioID" ReturnType="Collection(SegurosModel.sp_RetornaAdiccionUsuarioID_Result)">
-          <Parameter Name="idIdentificador" Mode="In" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="spModificaAdiccionUsuario">
             <Parameter Name="IdIdentificador" Mode="In" Type="Int32" />
             <Parameter Name="IdAdicciones" Mode="In" Type="Int32" />
@@ -713,6 +710,9 @@
           <FunctionImport Name="sp_RetornaAdiccionUsuario" ReturnType="Collection(SegurosModel.sp_RetornaAdiccionUsuario_Result)">
             <Parameter Name="idAdicciones" Mode="In" Type="Int32" />
             <Parameter Name="idUsuario" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_RetornaAdiccionUsuarioID" ReturnType="Collection(SegurosModel.sp_RetornaAdiccionUsuarioID_Result)">
+            <Parameter Name="idIdentificador" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_CoberturaSeguros_Result">
@@ -778,12 +778,12 @@
           <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="Procentaje" Nullable="false" MaxLength="50" />
         </ComplexType>
-        <ComplexType Name="sp_RetornaAdiccionUsuarioID_Result">
+        <ComplexType Name="sp_RetornaAdiccionUsuario_Result">
           <Property Type="Int32" Name="IdIdentificador" Nullable="false" />
           <Property Type="Int32" Name="IdAdicciones" Nullable="false" />
           <Property Type="Int32" Name="IdUsuario" Nullable="false" />
         </ComplexType>
-        <ComplexType Name="sp_RetornaAdiccionUsuario_Result">
+        <ComplexType Name="sp_RetornaAdiccionUsuarioID_Result">
           <Property Type="Int32" Name="IdIdentificador" Nullable="false" />
           <Property Type="Int32" Name="IdAdicciones" Nullable="false" />
           <Property Type="Int32" Name="IdUsuario" Nullable="false" />
@@ -1003,19 +1003,19 @@
           <FunctionImportMapping FunctionImportName="spModificaCoberturas" FunctionName="SegurosModel.Store.spModificaCoberturas" />
           <FunctionImportMapping FunctionImportName="sp_EliminaAdiccionUsuario" FunctionName="SegurosModel.Store.sp_EliminaAdiccionUsuario" />
           <FunctionImportMapping FunctionImportName="sp_InsertAdiccionUsuario" FunctionName="SegurosModel.Store.sp_InsertAdiccionUsuario" />
-          <FunctionImportMapping FunctionImportName="sp_RetornaAdiccionUsuarioID" FunctionName="SegurosModel.Store.sp_RetornaAdiccionUsuarioID">
+          <FunctionImportMapping FunctionImportName="spModificaAdiccionUsuario" FunctionName="SegurosModel.Store.spModificaAdiccionUsuario" />
+          <FunctionImportMapping FunctionImportName="sp_RetornaAdiccionUsuario" FunctionName="SegurosModel.Store.sp_RetornaAdiccionUsuario">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="SegurosModel.sp_RetornaAdiccionUsuarioID_Result">
+              <ComplexTypeMapping TypeName="SegurosModel.sp_RetornaAdiccionUsuario_Result">
                 <ScalarProperty Name="IdIdentificador" ColumnName="IdIdentificador" />
                 <ScalarProperty Name="IdAdicciones" ColumnName="IdAdicciones" />
                 <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="spModificaAdiccionUsuario" FunctionName="SegurosModel.Store.spModificaAdiccionUsuario" />
-          <FunctionImportMapping FunctionImportName="sp_RetornaAdiccionUsuario" FunctionName="SegurosModel.Store.sp_RetornaAdiccionUsuario">
+          <FunctionImportMapping FunctionImportName="sp_RetornaAdiccionUsuarioID" FunctionName="SegurosModel.Store.sp_RetornaAdiccionUsuarioID">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="SegurosModel.sp_RetornaAdiccionUsuario_Result">
+              <ComplexTypeMapping TypeName="SegurosModel.sp_RetornaAdiccionUsuarioID_Result">
                 <ScalarProperty Name="IdIdentificador" ColumnName="IdIdentificador" />
                 <ScalarProperty Name="IdAdicciones" ColumnName="IdAdicciones" />
                 <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />

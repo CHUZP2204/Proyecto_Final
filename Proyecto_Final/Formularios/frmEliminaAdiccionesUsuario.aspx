@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MASTER_PAGES/MaterPages.Master" AutoEventWireup="true" CodeBehind="frmEliminaAdiccionesUsuario.aspx.cs" Inherits="Proyecto_Final.Formularios.frmEliminaAdiccionesUsuario" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
-      <div id="frmEliminaCobertura" class="form-inline">
+    <div id="frmEliminaCobertura" class="form-inline">
 
         <asp:HiddenField ID="hdIdUsuario" runat="server" />
         <div style="background-color: #699186; filter: drop-shadow(5px 5px 10px #444)">
@@ -33,14 +34,14 @@
                         <div class="row" style="display: flex">
                             <div class="column" style="flex: 50%; padding: 10px;">
                                 <div class="form-group">
-                                    <asp:Label ID="lblIdentificadorAdiccion" runat="server" Text="Identificador Adiccion:" style="font-weight: 700"></asp:Label>
+                                    <asp:Label ID="lblIdentificadorAdiccion" runat="server" Text="Identificador Adiccion:" Style="font-weight: 700"></asp:Label>
                                     <asp:HiddenField ID="hdAdiccionesUsuario" runat="server" />
                                     <br />
                                     <asp:TextBox ID="txtIdentificadorAdiccion" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                                 </div>
 
                                 <div class="form-group">
-                                    <asp:Label ID="lblIdentificadorUsuario" runat="server" Text="Identificador Usuario:" style="font-weight: 700"></asp:Label>
+                                    <asp:Label ID="lblIdentificadorUsuario" runat="server" Text="Identificador Usuario:" Style="font-weight: 700"></asp:Label>
                                     <br />
                                     <asp:TextBox ID="txtIdentificadorUsuario" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                                 </div>

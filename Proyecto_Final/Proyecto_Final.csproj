@@ -1758,6 +1758,10 @@
     <Content Include="Estilos\Fonts\fontawesome-free-5.14.0-web\webfonts\fa-solid-900.svg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Formularios\frmEliminaAdiccionesUsuario.aspx" />
+    <Content Include="Formularios\frmInsertAdiccionesUsuario.aspx" />
+    <Content Include="Formularios\frmListaAdiccionesUsuario.aspx" />
+    <Content Include="Formularios\frmModificarAdiccionesUsuario.aspx" />
     <Content Include="Formularios\frmUsuarioLista.aspx" />
     <Content Include="Formularios\frmEliminarUsuario.aspx" />
     <Content Include="Formularios\frmEliminaAdiccion.aspx" />
@@ -1906,6 +1910,7 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BL\BLAdicciones.cs" />
+    <Compile Include="BL\BLAdiccionesUsuario.cs" />
     <Compile Include="BL\BLCobertura.cs" />
     <Compile Include="BL\BLusuarios.cs" />
     <Compile Include="Clases\PRUEBA.cs" />
@@ -1924,6 +1929,34 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmEliminaAdiccionesUsuario.aspx.cs">
+      <DependentUpon>frmEliminaAdiccionesUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmEliminaAdiccionesUsuario.aspx.designer.cs">
+      <DependentUpon>frmEliminaAdiccionesUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmInsertAdiccionesUsuario.aspx.cs">
+      <DependentUpon>frmInsertAdiccionesUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmInsertAdiccionesUsuario.aspx.designer.cs">
+      <DependentUpon>frmInsertAdiccionesUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmListaAdiccionesUsuario.aspx.cs">
+      <DependentUpon>frmListaAdiccionesUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmListaAdiccionesUsuario.aspx.designer.cs">
+      <DependentUpon>frmListaAdiccionesUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmModificarAdiccionesUsuario.aspx.cs">
+      <DependentUpon>frmModificarAdiccionesUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmModificarAdiccionesUsuario.aspx.designer.cs">
+      <DependentUpon>frmModificarAdiccionesUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmUsuarioLista.aspx.cs">
       <DependentUpon>frmUsuarioLista.aspx</DependentUpon>
@@ -2090,6 +2123,12 @@
       <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\sp_RetornaAdicciones_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sp_RetornaAdiccionUsuarioID_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sp_RetornaAdiccionUsuario_Result.cs">
       <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\sp_RetornaCoberturaID_Result.cs">

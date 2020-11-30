@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MASTER_PAGES/MaterPages.Master" AutoEventWireup="true" CodeBehind="frmModificarAdiccionesUsuario.aspx.cs" Inherits="Proyecto_Final.Formularios.frmModificarAdiccionesUsuario" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
@@ -25,30 +26,30 @@
                     <div class="panel-body" style="background-color: aquamarine">
                         <asp:HiddenField ID="hdAdiccionesUsuario" runat="server" />
                         <p>
-                                <div class="form-group">
-                                    <asp:Label ID="Label12" runat="server" Text="Identificador Adiccion:" style="font-weight: 700"></asp:Label>
-                                    <br />
-                                    <asp:TextBox class="form-control" ID="txtIdentificacionAdiccion" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="rqvtxtIdentificacionAdiccion" runat="server"
-                                        ControlToValidate="txtIdentificacionAdiccion"
-                                        ErrorMessage="Debe Ingresar un Numero de Identificador de Adicciones"
-                                        ForeColor="Red"
-                                        Display="Dynamic"></asp:RequiredFieldValidator>
-                                </div>
-                         
+                            <div class="form-group">
+                                <asp:Label ID="Label12" runat="server" Text="Identificador Adiccion:" Style="font-weight: 700"></asp:Label>
                                 <br />
-                                <div class="form-group">
-                                    <asp:Label ID="label13" runat="server" Text="Identificador Usuario:" style="font-weight: 700"></asp:Label>
-                                    <br />
-                                    <asp:TextBox ID="txtIdentificacionUsuario" runat="server" Class="form-control"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="rqvtxtIdentificacionUsuario" runat="server"
-                                        ControlToValidate="txtIdentificacionUsuario"
-                                        ErrorMessage="Debe Ingresar un Numero de Identificador de Usuario"
-                                        ForeColor="Red"
-                                        Display="Dynamic"></asp:RequiredFieldValidator>
-                                </div>
-                            
+                                <asp:TextBox class="form-control" ID="txtIdentificacionAdiccion" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rqvtxtIdentificacionAdiccion" runat="server"
+                                    ControlToValidate="txtIdentificacionAdiccion"
+                                    ErrorMessage="Debe Ingresar un Numero de Identificador de Adicciones"
+                                    ForeColor="Red"
+                                    Display="Dynamic"></asp:RequiredFieldValidator>
+                            </div>
+
+                            <br />
+                            <div class="form-group">
+                                <asp:Label ID="label13" runat="server" Text="Identificador Usuario:" Style="font-weight: 700"></asp:Label>
                                 <br />
+                                <asp:TextBox ID="txtIdentificacionUsuario" runat="server" Class="form-control"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rqvtxtIdentificacionUsuario" runat="server"
+                                    ControlToValidate="txtIdentificacionUsuario"
+                                    ErrorMessage="Debe Ingresar un Numero de Identificador de Usuario"
+                                    ForeColor="Red"
+                                    Display="Dynamic"></asp:RequiredFieldValidator>
+                            </div>
+
+                            <br />
                             <asp:Button ID="btnModificar" class="btn btn-primary" runat="server" Text="Modificar" OnClick="btnModificar_Click" />
                             <br />
                             <br />
@@ -63,7 +64,6 @@
         </div>
         <!--FIN CONTENIDO-->
     </div>
-
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scriptspersonalizados" runat="server">
 </asp:Content>

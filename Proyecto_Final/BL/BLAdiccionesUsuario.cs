@@ -15,9 +15,9 @@ namespace Proyecto_Final.BL
         /// </summary>
         segurosEntities1 modeloBD = new segurosEntities1();
 
-        public List<sp_RetornaAdiccionUsuario_Result> RetornaAdiccionesUsuario( int pIdAdicciones  , int pIdUsuario)
+        public List<sp_RetornaAdiccionUsuario_Result> RetornaAdiccionesUsuario(int pIdAdicciones, int pIdUsuario)
         {
-            List<sp_RetornaAdiccionUsuario_Result> resultado = this.modeloBD.sp_RetornaAdiccionUsuario(pIdAdicciones , pIdUsuario).ToList();
+            List<sp_RetornaAdiccionUsuario_Result> resultado = this.modeloBD.sp_RetornaAdiccionUsuario(pIdAdicciones, pIdUsuario).ToList();
 
             return resultado;
         }

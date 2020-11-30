@@ -384,15 +384,6 @@ namespace Proyecto_Final.Modelo
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertAdiccionUsuario", idAdiccionesParameter, idUsuarioParameter);
         }
     
-        public virtual ObjectResult<sp_RetornaAdiccionUsuarioID_Result> sp_RetornaAdiccionUsuarioID(Nullable<int> idIdentificador)
-        {
-            var idIdentificadorParameter = idIdentificador.HasValue ?
-                new ObjectParameter("idIdentificador", idIdentificador) :
-                new ObjectParameter("idIdentificador", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaAdiccionUsuarioID_Result>("sp_RetornaAdiccionUsuarioID", idIdentificadorParameter);
-        }
-    
         public virtual int spModificaAdiccionUsuario(Nullable<int> idIdentificador, Nullable<int> idAdicciones, Nullable<int> idUsuario)
         {
             var idIdentificadorParameter = idIdentificador.HasValue ?
@@ -421,6 +412,15 @@ namespace Proyecto_Final.Modelo
                 new ObjectParameter("idUsuario", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaAdiccionUsuario_Result>("sp_RetornaAdiccionUsuario", idAdiccionesParameter, idUsuarioParameter);
+        }
+    
+        public virtual ObjectResult<sp_RetornaAdiccionUsuarioID_Result> sp_RetornaAdiccionUsuarioID(Nullable<int> idIdentificador)
+        {
+            var idIdentificadorParameter = idIdentificador.HasValue ?
+                new ObjectParameter("idIdentificador", idIdentificador) :
+                new ObjectParameter("idIdentificador", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaAdiccionUsuarioID_Result>("sp_RetornaAdiccionUsuarioID", idIdentificadorParameter);
         }
     }
 }
