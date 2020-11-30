@@ -11,8 +11,17 @@ namespace Proyecto_Final.Formularios
 {
 
 
-    public partial class frmModificaCobertura
+    public partial class frmEliminaAdiccionesUsuario
     {
+
+        /// <summary>
+        /// Control hdIdUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdIdUsuario;
 
         /// <summary>
         /// Control hplAtras.
@@ -24,103 +33,49 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.HyperLink hplAtras;
 
         /// <summary>
-        /// Control hdidCobertura.
+        /// Control lblIdentificadorAdiccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdidCobertura;
+        protected global::System.Web.UI.WebControls.Label lblIdentificadorAdiccion;
 
         /// <summary>
-        /// Control Label12.
+        /// Control hdAdiccionesUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label12;
+        protected global::System.Web.UI.WebControls.HiddenField hdAdiccionesUsuario;
 
         /// <summary>
-        /// Control txtnombre.
+        /// Control txtIdentificadorAdiccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtnombre;
+        protected global::System.Web.UI.WebControls.TextBox txtIdentificadorAdiccion;
 
         /// <summary>
-        /// Control rqvtxtnombre.
+        /// Control lblIdentificadorUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtnombre;
+        protected global::System.Web.UI.WebControls.Label lblIdentificadorUsuario;
 
         /// <summary>
-        /// Control label13.
+        /// Control txtIdentificadorUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label13;
-
-        /// <summary>
-        /// Control txtdescripcion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtdescripcion;
-
-        /// <summary>
-        /// Control rqvtxtdescripcion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtdescripcion;
-
-        /// <summary>
-        /// Control Label14.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label14;
-
-        /// <summary>
-        /// Control txtporcentaje.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtporcentaje;
-
-        /// <summary>
-        /// Control rqvtxtporcentaje.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtporcentaje;
-
-        /// <summary>
-        /// Control btAceptar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btAceptar;
+        protected global::System.Web.UI.WebControls.TextBox txtIdentificadorUsuario;
 
         /// <summary>
         /// Control hplstUsers.
@@ -132,12 +87,21 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.HyperLink hplstUsers;
 
         /// <summary>
-        /// Control vsRegistroCobertura.
+        /// Control btnsi.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary vsRegistroCobertura;
+        protected global::System.Web.UI.WebControls.Button btnsi;
+
+        /// <summary>
+        /// Control btnno.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnno;
     }
 }

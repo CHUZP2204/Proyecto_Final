@@ -37,7 +37,7 @@
                                     <asp:Label ID="Label12" runat="server" Text="Nombre"></asp:Label>
                                     <br />
                                     <asp:TextBox class="form-control" ID="txtnombre" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                                    <asp:RequiredFieldValidator ID="rqvtxtnombre" runat="server"
                                         ControlToValidate="txtnombre"
                                         ErrorMessage="Debe ingresar un nombre no repetido"
                                         ForeColor="Red"

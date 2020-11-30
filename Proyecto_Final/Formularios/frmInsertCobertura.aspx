@@ -41,7 +41,7 @@
                                         ControlToValidate="txtnombre"
                                         ErrorMessage="Debe ingresar un nombre no repetido"
                                         ForeColor="Red"
-                                        Display="None"></asp:RequiredFieldValidator>
+                                        Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                                 <br />
                                 <!--FIN Campo nombre-->
@@ -54,7 +54,7 @@
                                         ControlToValidate="txtdescripcion"
                                         ErrorMessage="Debe ingresar una descripcion"
                                         ForeColor="Red"
-                                        Display="None"></asp:RequiredFieldValidator>
+                                        Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                                 <br />
                                 <!--Fin Campo descripcion-->
@@ -67,7 +67,7 @@
                                         ControlToValidate="txtporcentaje"
                                         ErrorMessage="Debe ingresar un porcentaje mayor a '0' o igual o menor a '100'"
                                         ForeColor="Red"
-                                        Display="None"></asp:RequiredFieldValidator>
+                                        Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                                 <br />
                                 <!--Fin Campo Porcentaje-->

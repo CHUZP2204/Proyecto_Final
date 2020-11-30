@@ -11,7 +11,7 @@ namespace Proyecto_Final.Formularios
 {
 
 
-    public partial class frmListaAdiccionesUsuario
+    public partial class frmInsertAdiccionesUsuario
     {
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.HyperLink hplAtras;
 
         /// <summary>
-        /// Control hpAdiccionUsuario.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hpAdiccionUsuario;
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
         /// Control txtIdentificacionAdiccion.
@@ -42,6 +42,24 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.TextBox txtIdentificacionAdiccion;
 
         /// <summary>
+        /// Control rqvtxtIdentificacionAdiccion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtIdentificacionAdiccion;
+
+        /// <summary>
+        /// Control Label2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+
+        /// <summary>
         /// Control txtIdentificacionUsuario.
         /// </summary>
         /// <remarks>
@@ -51,21 +69,30 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.TextBox txtIdentificacionUsuario;
 
         /// <summary>
-        /// Control btnMostrar.
+        /// Control rqvtxtIdentificacionUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMostrar;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtIdentificacionUsuario;
 
         /// <summary>
-        /// Control grdListaAdiccionUsuario.
+        /// Control btnAceptar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdListaAdiccionUsuario;
+        protected global::System.Web.UI.WebControls.Button btnAceptar;
+
+        /// <summary>
+        /// Control hplstUsers.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hplstUsers;
     }
 }
