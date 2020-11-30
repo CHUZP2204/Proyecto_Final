@@ -29,7 +29,6 @@
                     </div>
                     <!--Fin Encabezado Del Panel-->
                     <!--Cuerpo Del Panel-->
-
                     <div class="panel-body" style="background-color: aquamarine">
                         <asp:HiddenField ID="hdidUsuario" runat="server" />
                         <!-- Columnnas Del Panel-->
