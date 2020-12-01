@@ -39,7 +39,8 @@
                                     <br />
                                     <asp:TextBox ID="txtIdentificadorAdiccion" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                                 </div>
-
+                                <br>
+                                 <br />
                                 <div class="form-group">
                                     <asp:Label ID="lblIdentificadorUsuario" runat="server" Text="Identificador Usuario:" Style="font-weight: 700"></asp:Label>
                                     <br />
@@ -78,6 +79,7 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4><span class="fas fa-lock" style="margin-left: 20%"></span>Estas seguro que desea Eliminarlo</h4>
                     </div>
+                    <br />
                     <asp:Button ID="btnsi" runat="server" Text="Si" CssClass="btn-success btn-block" BorderStyle="Groove" OnClick="btnsi_Click" weight="100px" />
                     <br />
                     <asp:Button ID="btnno" runat="server" Text="No" CssClass="btn-success btn-block" BorderStyle="Groove" OnClick="btnno_Click" weight="100px" />
