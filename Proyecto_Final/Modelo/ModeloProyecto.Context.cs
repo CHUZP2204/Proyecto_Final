@@ -422,5 +422,130 @@ namespace Proyecto_Final.Modelo
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaAdiccionUsuarioID_Result>("sp_RetornaAdiccionUsuarioID", idIdentificadorParameter);
         }
+    
+        public virtual int sp_Elimina_RegistroPolizaID(Nullable<int> idRegistro)
+        {
+            var idRegistroParameter = idRegistro.HasValue ?
+                new ObjectParameter("idRegistro", idRegistro) :
+                new ObjectParameter("idRegistro", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_Elimina_RegistroPolizaID", idRegistroParameter);
+        }
+    
+        public virtual int sp_InsertaRegistroPoliza(string montoAsegurado, string porcentajeCobertura, Nullable<int> numeroAdicciones, string montoAdicciones, string primaAntesImpu, string impuestos, string primaFinal, Nullable<int> idSeguro, Nullable<int> idUsuario, Nullable<int> idCobertura)
+        {
+            var montoAseguradoParameter = montoAsegurado != null ?
+                new ObjectParameter("montoAsegurado", montoAsegurado) :
+                new ObjectParameter("montoAsegurado", typeof(string));
+    
+            var porcentajeCoberturaParameter = porcentajeCobertura != null ?
+                new ObjectParameter("PorcentajeCobertura", porcentajeCobertura) :
+                new ObjectParameter("PorcentajeCobertura", typeof(string));
+    
+            var numeroAdiccionesParameter = numeroAdicciones.HasValue ?
+                new ObjectParameter("NumeroAdicciones", numeroAdicciones) :
+                new ObjectParameter("NumeroAdicciones", typeof(int));
+    
+            var montoAdiccionesParameter = montoAdicciones != null ?
+                new ObjectParameter("MontoAdicciones", montoAdicciones) :
+                new ObjectParameter("MontoAdicciones", typeof(string));
+    
+            var primaAntesImpuParameter = primaAntesImpu != null ?
+                new ObjectParameter("PrimaAntesImpu", primaAntesImpu) :
+                new ObjectParameter("PrimaAntesImpu", typeof(string));
+    
+            var impuestosParameter = impuestos != null ?
+                new ObjectParameter("Impuestos", impuestos) :
+                new ObjectParameter("Impuestos", typeof(string));
+    
+            var primaFinalParameter = primaFinal != null ?
+                new ObjectParameter("PrimaFinal", primaFinal) :
+                new ObjectParameter("PrimaFinal", typeof(string));
+    
+            var idSeguroParameter = idSeguro.HasValue ?
+                new ObjectParameter("IdSeguro", idSeguro) :
+                new ObjectParameter("IdSeguro", typeof(int));
+    
+            var idUsuarioParameter = idUsuario.HasValue ?
+                new ObjectParameter("IdUsuario", idUsuario) :
+                new ObjectParameter("IdUsuario", typeof(int));
+    
+            var idCoberturaParameter = idCobertura.HasValue ?
+                new ObjectParameter("IdCobertura", idCobertura) :
+                new ObjectParameter("IdCobertura", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_InsertaRegistroPoliza", montoAseguradoParameter, porcentajeCoberturaParameter, numeroAdiccionesParameter, montoAdiccionesParameter, primaAntesImpuParameter, impuestosParameter, primaFinalParameter, idSeguroParameter, idUsuarioParameter, idCoberturaParameter);
+        }
+    
+        public virtual int sp_ModificaRegistroPolizaID(Nullable<int> idRegistro, string montoAsegurado, string porcentajeCobertura, Nullable<int> numeroAdicciones, string montoAdicciones, string primaAntesImpu, string impuestos, string primaFinal, Nullable<int> idSeguro, Nullable<int> idUsuario, Nullable<int> idCobertura)
+        {
+            var idRegistroParameter = idRegistro.HasValue ?
+                new ObjectParameter("idRegistro", idRegistro) :
+                new ObjectParameter("idRegistro", typeof(int));
+    
+            var montoAseguradoParameter = montoAsegurado != null ?
+                new ObjectParameter("montoAsegurado", montoAsegurado) :
+                new ObjectParameter("montoAsegurado", typeof(string));
+    
+            var porcentajeCoberturaParameter = porcentajeCobertura != null ?
+                new ObjectParameter("PorcentajeCobertura", porcentajeCobertura) :
+                new ObjectParameter("PorcentajeCobertura", typeof(string));
+    
+            var numeroAdiccionesParameter = numeroAdicciones.HasValue ?
+                new ObjectParameter("NumeroAdicciones", numeroAdicciones) :
+                new ObjectParameter("NumeroAdicciones", typeof(int));
+    
+            var montoAdiccionesParameter = montoAdicciones != null ?
+                new ObjectParameter("MontoAdicciones", montoAdicciones) :
+                new ObjectParameter("MontoAdicciones", typeof(string));
+    
+            var primaAntesImpuParameter = primaAntesImpu != null ?
+                new ObjectParameter("PrimaAntesImpu", primaAntesImpu) :
+                new ObjectParameter("PrimaAntesImpu", typeof(string));
+    
+            var impuestosParameter = impuestos != null ?
+                new ObjectParameter("Impuestos", impuestos) :
+                new ObjectParameter("Impuestos", typeof(string));
+    
+            var primaFinalParameter = primaFinal != null ?
+                new ObjectParameter("PrimaFinal", primaFinal) :
+                new ObjectParameter("PrimaFinal", typeof(string));
+    
+            var idSeguroParameter = idSeguro.HasValue ?
+                new ObjectParameter("IdSeguro", idSeguro) :
+                new ObjectParameter("IdSeguro", typeof(int));
+    
+            var idUsuarioParameter = idUsuario.HasValue ?
+                new ObjectParameter("IdUsuario", idUsuario) :
+                new ObjectParameter("IdUsuario", typeof(int));
+    
+            var idCoberturaParameter = idCobertura.HasValue ?
+                new ObjectParameter("IdCobertura", idCobertura) :
+                new ObjectParameter("IdCobertura", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ModificaRegistroPolizaID", idRegistroParameter, montoAseguradoParameter, porcentajeCoberturaParameter, numeroAdiccionesParameter, montoAdiccionesParameter, primaAntesImpuParameter, impuestosParameter, primaFinalParameter, idSeguroParameter, idUsuarioParameter, idCoberturaParameter);
+        }
+    
+        public virtual ObjectResult<sp_retornaRegistroPoliza_Result> sp_retornaRegistroPoliza(string montoAsegurado, string porcentaje)
+        {
+            var montoAseguradoParameter = montoAsegurado != null ?
+                new ObjectParameter("montoAsegurado", montoAsegurado) :
+                new ObjectParameter("montoAsegurado", typeof(string));
+    
+            var porcentajeParameter = porcentaje != null ?
+                new ObjectParameter("porcentaje", porcentaje) :
+                new ObjectParameter("porcentaje", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_retornaRegistroPoliza_Result>("sp_retornaRegistroPoliza", montoAseguradoParameter, porcentajeParameter);
+        }
+    
+        public virtual ObjectResult<sp_RetornaRegistroPolizaID_Result> sp_RetornaRegistroPolizaID(Nullable<int> idRegistro)
+        {
+            var idRegistroParameter = idRegistro.HasValue ?
+                new ObjectParameter("idRegistro", idRegistro) :
+                new ObjectParameter("idRegistro", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaRegistroPolizaID_Result>("sp_RetornaRegistroPolizaID", idRegistroParameter);
+        }
     }
 }
