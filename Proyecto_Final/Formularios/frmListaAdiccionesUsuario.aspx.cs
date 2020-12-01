@@ -25,8 +25,8 @@ namespace Proyecto_Final.Formularios
             BLAdiccionesUsuario bLAdicionUsuario = new BLAdiccionesUsuario();
             // variable contiene datos
 
-            int IdAdicciones = Convert.ToInt32(this.txtIdentificacionAdiccion.Text);
-            int IdUsuario = Convert.ToInt32(this.txtIdentificacionUsuario.Text);
+            int IdAdicciones = Convert.ToInt32(this.txtIdentificacionAdiccion.Text.ToString());
+            int IdUsuario = Convert.ToInt32(this.txtIdentificacionUsuario.Text.ToString());
 
             List<sp_RetornaAdiccionUsuario_Result> fuenteDatos =
                 bLAdicionUsuario.RetornaAdiccionesUsuario(
