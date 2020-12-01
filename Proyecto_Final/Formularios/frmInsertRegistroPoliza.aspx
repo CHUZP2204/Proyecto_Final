@@ -36,173 +36,132 @@
                         <div class="row" style="display: flex">
                             <!-- Primera Columnna Del Panel-->
                             <div class="column" style="flex: 50%; padding: 10px;">
-                                <!--Campo Cedula-->
+                             
                                 <div class="form-group">
-                                    <asp:Label ID="Label3" runat="server" Text="Cedula"></asp:Label>
+                                    <asp:Label ID="Label3" runat="server" Text="Monto Asegurado"></asp:Label>
                                     <br />
-                                    <asp:TextBox class="form-control" ID="txtCedula" runat="server"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="rqvtxtCedula" runat="server"
-                                        ControlToValidate="txtCedula"
-                                        ErrorMessage="Debe ingresar el numero de cedula"
+                                    <asp:TextBox class="form-control" ID="txtMontoAsegurado" runat="server"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rqvtxtMontoAsegurado" runat="server"
+                                        ControlToValidate="txtMontoAsegurado"
+                                        ErrorMessage="Debe ingresar un monto asegurado de la poliza"
                                         ForeColor="Red"
-                                        Display="None"></asp:RequiredFieldValidator>
+                                        Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                                 <br />
-                                <!--FIN Campo Cedula-->
-                                <!--Campo Fecha Nacimiento-->
+                             
                                 <div class="form-group">
-                                    <asp:Label ID="label1" runat="server" Text="Fecha Nacimiento"></asp:Label>
+                                    <asp:Label ID="label1" runat="server" Text="Porcentaje Cobertura"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="txtfechanacimiento" runat="server" Class="form-control"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="rqvtxtfechanacimiento" runat="server"
-                                        ControlToValidate="txtfechanacimiento"
-                                        ErrorMessage="Debe ingresar la Fecha de Nacimiento"
+                                    <asp:TextBox ID="txtPorcentajeCobertura" runat="server" Class="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rqvtxtPorcentajeCobertura" runat="server"
+                                        ControlToValidate="txtPorcentajeCobertura"
+                                        ErrorMessage="Debe ingresar un porcentaje de la cobertura"
                                         ForeColor="Red"
-                                        Display="None"></asp:RequiredFieldValidator>
+                                        Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                                 <br />
-                                <!--Fin Campo Fecha Nacimiento-->
-                                <!--Campo Nombre-->
+                              
                                 <div class="form-group">
-                                    <asp:Label ID="Label5" runat="server" Text="Nombre"></asp:Label>
+                                    <asp:Label ID="Label5" runat="server" Text="Numero Adicciones"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="rqvTxtNombre" runat="server"
-                                        ControlToValidate="txtNombre"
-                                        ErrorMessage="Debe ingresar el nombre"
+                                    <asp:TextBox ID="txtNumeroAdicciones" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rqvtxtNumeroAdicciones" runat="server"
+                                        ControlToValidate="txtNumeroAdicciones"
+                                        ErrorMessage="Debe ingresar un numero de total de Adicciones"
                                         ForeColor="Red"
-                                        Display="None"></asp:RequiredFieldValidator>
+                                        Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                                 <br />
-                                <!--Fin Campo Nombre-->
-                                <!--Campo Primer Apellido-->
+                             
                                 <div class="form-group">
-                                    <asp:Label ID="Label4" runat="server" Text="Primer Apellido"></asp:Label>
+                                    <asp:Label ID="Label4" runat="server" Text="Monto Adicciones"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="txtPrimerApellido" runat="server" Class="form-control"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="rqvPrimerApellido" runat="server"
-                                        ControlToValidate="txtPrimerApellido"
-                                        ErrorMessage="Debe ingresar el primer apellido"
+                                    <asp:TextBox ID="txtMontoAdicciones" runat="server" Class="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rqvtxtMontoAdicciones" runat="server"
+                                        ControlToValidate="txtMontoAdicciones"
+                                        ErrorMessage="Debe ingresar un monto de las Adicciones"
                                         ForeColor="Red"
-                                        Display="None"></asp:RequiredFieldValidator>
+                                        Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                                 <br />
-                                <!--Fin Campo Primer Apellido-->
-                                <!--Campo Segundo Apellido-->
+                            
                                 <div class="form-group">
-                                    <asp:Label ID="Label8" runat="server" Text="Segundo Apellido"></asp:Label>
+                                    <asp:Label ID="Label8" runat="server" Text="Prima Antes Impuesto"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="txtSegundoApellido" runat="server" class="form-control"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="rqvTxtSegundoApellido" runat="server"
-                                        ControlToValidate="txtSegundoApellido"
-                                        ErrorMessage="Debe ingresar el segundo apellido"
+                                    <asp:TextBox ID="txtPrimaAntesImpu" runat="server" class="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rqvtxtPrimaAntesImpu" runat="server"
+                                        ControlToValidate="txtPrimaAntesImpu"
+                                        ErrorMessage="Debe ingresar la prima antes del Impuesto"
                                         ForeColor="Red"
-                                        Display="None"></asp:RequiredFieldValidator>
+                                        Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                                 <br />
-                                <!--Fin Campo Segundo Apellido-->
-                                <!--Campo Genero-->
-                                <div class="form-group">
-                                    <asp:Label ID="label" runat="server" Text="Genero"></asp:Label>
+                             
+                              <div class="form-group">
+                                    <asp:Label ID="Label12" runat="server" Text="Impuestos"></asp:Label>
                                     <br />
-                                    <asp:DropDownList class="form-control" ID="ddlgenero" runat="server" DataTextField="nombre" DataValueField="Genero" Height="35px" Width="115px">
-                                        <asp:ListItem>Masculino</asp:ListItem>
-                                        <asp:ListItem>Femenino</asp:ListItem>
-
-                                    </asp:DropDownList>
-                                    <asp:RequiredFieldValidator ID="rqvgenero" runat="server"
-                                        ControlToValidate="ddlgenero"
-                                        ErrorMessage="Debe seleccionar el genero"
+                                    <asp:TextBox ID="txtImpuestos" runat="server" class="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rqvtxtImpuestos" runat="server"
+                                        ControlToValidate="txtImpuestos"
+                                        ErrorMessage="Debe ingresar el monto del impuesto que se va aplicar"
                                         ForeColor="Red"
-                                        Display="None"></asp:RequiredFieldValidator>
+                                        Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                                 <br />
-                                <!--Fin Campo Genero-->
+                               
                             </div>
                             <!--Fin Primera Columna-->
                             <!-- Segunda Columnna Del Panel-->
                             <div class="column" style="flex: 50%; padding: 10px;">
-                                <!--Campo Direccion-->
+                               
                                 <div class="form-group">
-                                    <asp:Label ID="Label9" runat="server" Text="Direccion"></asp:Label>
+                                    <asp:Label ID="Label9" runat="server" Text="Prima Final"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="txtdireccion" runat="server" Class="form-control"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="rqvtxtdireccion" runat="server"
-                                        ControlToValidate="txtdireccion"
-                                        ErrorMessage="Debe ingresar la direccion"
+                                    <asp:TextBox ID="txtPrimaFinal" runat="server" Class="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rqvtxtPrimaFinal" runat="server"
+                                        ControlToValidate="txtPrimaFinal"
+                                        ErrorMessage="Debe ingresar la prima final de la poliza"
                                         ForeColor="Red"
-                                        Display="None"></asp:RequiredFieldValidator>
+                                        Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                                 <br />
-                                <!--Fin Campo Direccion-->
-                                <!--Campo Telefono 1-->
+                                
                                 <div class="form-group">
-                                    <asp:Label ID="Label6" runat="server" Text="Teléfono Principal"></asp:Label>
+                                    <asp:Label ID="Label6" runat="server" Text="Id Seguro"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="txtTelefonoprincipal" runat="server" Class="form-control"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="rqvtxtTelefonoprincipal" runat="server"
-                                        ControlToValidate="txtTelefonoprincipal"
-                                        ErrorMessage="Debe ingresar el teléfono principal"
+                                    <asp:TextBox ID="txtIdSeguro" runat="server" Class="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rqvtxtIdSeguro" runat="server"
+                                        ControlToValidate="txtIdSeguro"
+                                        ErrorMessage="Debe ingresar el ID del Seguro"
                                         ForeColor="Red"
-                                        Display="None"></asp:RequiredFieldValidator>
+                                        Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                                 <br />
-                                <!--Fin Campo Telefono 1-->
-                                <!--Campo Telefono 2-->
+                             
                                 <div class="form-group">
-                                    <asp:Label ID="Label7" runat="server" Text="Teléfono Secundario"></asp:Label>
+                                    <asp:Label ID="Label7" runat="server" Text=" Id Usuario"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="txtTelefonosecundario" runat="server" Class="form-control"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="rqvtxtTelefonosecundario" runat="server"
-                                        ControlToValidate="txtTelefonosecundario"
-                                        ErrorMessage="Debe ingresar el teléfono secundario"
+                                    <asp:TextBox ID="txtIdUsuario" runat="server" Class="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rqvttxtIdUsuario" runat="server"
+                                        ControlToValidate="txtIdUsuario"
+                                        ErrorMessage="Debe ingresar el ID del Usuario"
                                         ForeColor="Red"
-                                        Display="None"></asp:RequiredFieldValidator>
+                                        Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                                 <br />
-                                <!--Fin Campo Telefono 2-->
-                                <!--Campo Correo-->
+                            
                                 <div class="form-group">
-                                    <asp:Label ID="Label10" runat="server" Text="Correo"></asp:Label>
+                                    <asp:Label ID="Label10" runat="server" Text="Id Cobertura"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="txtcorreo" runat="server" Class="form-control"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="rqvtxtcorreo" runat="server"
-                                        ControlToValidate="txtcorreo"
-                                        ErrorMessage="Debe ingresar su correo"
+                                    <asp:TextBox ID="txtIdCobertura" runat="server" Class="form-control"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="rqvtxtIdCobertura" runat="server"
+                                        ControlToValidate="txtIdCobertura"
+                                        ErrorMessage="Debe ingresar el ID de la Cobertura"
                                         ForeColor="Red"
-                                        Display="None"></asp:RequiredFieldValidator>
+                                        Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                                 <br />
-                                <!--Fin Campo Correo-->
-                                <!--Campo Contraseña-->
-                                <div class="form-group">
-                                    <asp:Label ID="Label11" runat="server" Text="Contraseña"></asp:Label>
-                                    <br />
-                                    <asp:TextBox ID="txtContrasenia" runat="server" TextMode="Password" Class="form-control"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="rqvtxtContrasenia" runat="server"
-                                        ControlToValidate="txtContrasenia"
-                                        ErrorMessage="Debe Ingresar Una Contraseña"
-                                        ForeColor="Red"
-                                        Display="None"></asp:RequiredFieldValidator>
-                                </div>
-                                <br />
-                                <!--Fin Campo Contrasenia-->
-                                <!--Campo Tipo Usuario-->
-                                <div class="form-group">
-                                    <asp:Label ID="Label2" runat="server" Text="Tipo Usuario"></asp:Label>
-                                    <br />
-                                    <asp:ListBox ID="LstTipoUsuario" runat="server" Class="form-control" DataTextField="nombre" DataValueField="tipousuario" Height="42px" Width="126px">
-                                        <asp:ListItem>Cliente</asp:ListItem>
-                                        <asp:ListItem>Empleado</asp:ListItem>
-                                        <asp:ListItem>Administrador</asp:ListItem>
-                                    </asp:ListBox>
-                                    <asp:RequiredFieldValidator ID="rqvTipoUsuario" runat="server"
-                                        ErrorMessage="Debe seleccionar el Tipo de Usuario"
-                                        Display="None"
-                                        ControlToValidate="LstTipoUsuario"></asp:RequiredFieldValidator>
-                                </div>
-                                <!--Fin Campo Tipo Usuario-->
-                            </div>
+                             </div>
                             <!--Fin Segunda Columna-->
                         </div>
                         <!--Fin Div Columnas-->
@@ -216,7 +175,7 @@
                                 <br />
                                 <br />
                                 <asp:HyperLink ID="hplstUsers" class="btn btn-primary" role="button" BorderColor="Black"
-                                    runat="server" NavigateUrl="~/Formularios/frmUsuarioLista.aspx ">Ver Lista</asp:HyperLink>
+                                    runat="server" NavigateUrl="~/Formularios/frmListaPolizas.aspx ">Ver Lista</asp:HyperLink>
                                 <br />
 
                             </div>

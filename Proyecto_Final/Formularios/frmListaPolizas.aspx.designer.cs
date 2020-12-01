@@ -33,13 +33,13 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control txtNombre.
+        /// Control txtmontoasegurado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
+        protected global::System.Web.UI.WebControls.TextBox txtmontoasegurado;
 
         /// <summary>
         /// Control Label1.
@@ -51,13 +51,13 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control txtPrimerApellido.
+        /// Control txtporcentajecobertura.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrimerApellido;
+        protected global::System.Web.UI.WebControls.TextBox txtporcentajecobertura;
 
         /// <summary>
         /// Control btnMostrarDatos.
@@ -69,21 +69,21 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.Button btnMostrarDatos;
 
         /// <summary>
-        /// Control hpAgregarUsario.
+        /// Control hpAgregarPoliza.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hpAgregarUsario;
+        protected global::System.Web.UI.WebControls.HyperLink hpAgregarPoliza;
 
         /// <summary>
-        /// Control grdListaUsuarios.
+        /// Control grdListaPoliza.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdListaUsuarios;
+        protected global::System.Web.UI.WebControls.GridView grdListaPoliza;
     }
 }

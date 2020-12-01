@@ -17,9 +17,7 @@
                         <div class="row" style="display: flex">
                             <div style="margin-left: 10px; margin-top: 15px">
                                 <asp:HyperLink ID="hplAtras" NavigateUrl="~/Formularios/frmPaginaPrincipal.aspx"
-                                    class="btn btn-danger" runat="server">
-                                    <i class="fas fa-backspace"></i>
-                                </asp:HyperLink>
+                                    class="btn btn-danger" runat="server"> <i class="fas fa-backspace"></i></asp:HyperLink>
                             </div>
                             <div style="margin-bottom: 10px; padding-left: 150px; padding-right: 150px">
                                 <h3 class="auto-style1">Lista Polizas</h3>
@@ -32,17 +30,17 @@
                     <div class="panel-body" style="background-color: aquamarine">
                         <!--Nombre-->
                         <div class="form-group">
-                            <asp:Label ID="Label2" runat="server" Text="Nombre:"></asp:Label>
+                            <asp:Label ID="Label2" runat="server" Text="MontoAsegurado:" style="font-weight: 700"></asp:Label>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtmontoasegurado" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                         <br />
                         <br />
                         <!--FIN Nombre-->
                         <!--Primer Apellido-->
                         <div class="form-group">
-                            <asp:Label ID="Label1" runat="server" Text="Primer Apellido:"></asp:Label>
-                            <asp:TextBox ID="txtPrimerApellido" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:Label ID="Label1" runat="server" Text="PorcentajeCobertura:" style="font-weight: 700"></asp:Label>
+                            <asp:TextBox ID="txtporcentajecobertura" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                         <!--FIN Primer Apellido-->
                         <!--Botones-->
@@ -52,8 +50,8 @@
                             <asp:Button ID="btnMostrarDatos" runat="server" Text="Mostrar datos" CssClass="btn btn-success" OnClick="btnMostrarDatos_Click" />
                             <br />
                             <br />
-                            <asp:HyperLink ID="hpAgregarUsario" class="btn btn-primary" role="button" BorderColor="Black"
-                                runat="server" NavigateUrl="~/Formularios/frmInsertUsuario.aspx">Agregar Usuario</asp:HyperLink>
+                            <asp:HyperLink ID="hpAgregarPoliza" class="btn btn-primary" role="button" BorderColor="Black"
+                                runat="server" NavigateUrl="~/Formularios/frmInsertRegistroPoliza.aspx">Agregar Poliza</asp:HyperLink>
                             <br />
                         </div>
                         <!--FIN Botones-->
@@ -61,15 +59,15 @@
                         <br />
                         <!--GRID-->
                         <div>
-                            <asp:GridView ID="grdListaUsuarios" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" OnPageIndexChanging="grdListaUsuarios_PageIndexChanging" PageSize="3">
+                            <asp:GridView ID="grdListaPoliza" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" OnPageIndexChanging="grdListaPoliza_PageIndexChanging" PageSize="3">
                                 <AlternatingRowStyle BackColor="#CCCCCC" />
                                 <Columns>
-                                    <asp:BoundField DataField="Nombre" HeaderText="Nombre Usuario" />
-                                    <asp:BoundField DataField="PrimerApellido" HeaderText="Apellido 1" />
-                                    <asp:BoundField DataField="TipoUsuario" HeaderText="Tipo" />
-                                    <asp:BoundField DataField="Correo" HeaderText="Correo Usuario" />
-                                    <asp:HyperLinkField DataNavigateUrlFields="IdUsuario" DataNavigateUrlFormatString="frmModificarUsuario.aspx?IdUsuario={0}" Text="Modificar" />
-                                    <asp:HyperLinkField DataNavigateUrlFields="IdUsuario" DataNavigateUrlFormatString="frmEliminarUsuario.aspx?IdUsuario={0}" Text="Eliminar" />
+                                    <asp:BoundField DataField="MontoAsegurado" HeaderText="Monto Asegurado" />
+                                    <asp:BoundField DataField="PorcentajeCobertura" HeaderText="Porcentaje Cobertura" />
+                                    <asp:BoundField DataField="Impuestos" HeaderText="Impuesto" />
+                                    <asp:BoundField DataField="PrimaFinal" HeaderText="Prima Final" />
+                                    <asp:HyperLinkField DataNavigateUrlFields="IdRegistro" DataNavigateUrlFormatString="frmModificaRegistroPoliza.aspx?IdRegistro={0}" Text="Modificar" />
+                                    <asp:HyperLinkField DataNavigateUrlFields="IdRegistro" DataNavigateUrlFormatString="frmEliminaRegistroPoliza.aspx?IdRegistro={0}" Text="Eliminar" />
                                 </Columns>
                                 <FooterStyle BackColor="#CCCCCC" />
                                 <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
