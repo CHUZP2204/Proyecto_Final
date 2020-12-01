@@ -38,7 +38,7 @@
                             <div class="column" style="flex: 50%; padding: 10px;">
                              
                                 <div class="form-group">
-                                    <asp:Label ID="Label3" runat="server" Text="Monto Asegurado"></asp:Label>
+                                    <asp:Label ID="Label3" runat="server" Text="Monto Asegurado" style="font-weight: 700"></asp:Label>
                                     <br />
                                     <asp:TextBox class="form-control" ID="txtMontoAsegurado" runat="server"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rqvtxtMontoAsegurado" runat="server"
@@ -50,7 +50,7 @@
                                 <br />
                              
                                 <div class="form-group">
-                                    <asp:Label ID="label1" runat="server" Text="Porcentaje Cobertura"></asp:Label>
+                                    <asp:Label ID="label1" runat="server" Text="Porcentaje Cobertura" style="font-weight: 700"></asp:Label>
                                     <br />
                                     <asp:TextBox ID="txtPorcentajeCobertura" runat="server" Class="form-control"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rqvtxtPorcentajeCobertura" runat="server"
@@ -62,7 +62,7 @@
                                 <br />
                               
                                 <div class="form-group">
-                                    <asp:Label ID="Label5" runat="server" Text="Numero Adicciones"></asp:Label>
+                                    <asp:Label ID="Label5" runat="server" Text="Numero Adicciones" style="font-weight: 700"></asp:Label>
                                     <br />
                                     <asp:TextBox ID="txtNumeroAdicciones" runat="server" CssClass="form-control"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rqvtxtNumeroAdicciones" runat="server"
@@ -74,7 +74,7 @@
                                 <br />
                              
                                 <div class="form-group">
-                                    <asp:Label ID="Label4" runat="server" Text="Monto Adicciones"></asp:Label>
+                                    <asp:Label ID="Label4" runat="server" Text="Monto Adicciones" style="font-weight: 700"></asp:Label>
                                     <br />
                                     <asp:TextBox ID="txtMontoAdicciones" runat="server" Class="form-control"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rqvtxtMontoAdicciones" runat="server"
@@ -86,7 +86,7 @@
                                 <br />
                             
                                 <div class="form-group">
-                                    <asp:Label ID="Label8" runat="server" Text="Prima Antes Impuesto"></asp:Label>
+                                    <asp:Label ID="Label8" runat="server" Text="Prima Antes Impuesto" style="font-weight: 700"></asp:Label>
                                     <br />
                                     <asp:TextBox ID="txtPrimaAntesImpu" runat="server" class="form-control"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rqvtxtPrimaAntesImpu" runat="server"
@@ -96,9 +96,14 @@
                                         Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
                                 <br />
-                             
-                              <div class="form-group">
-                                    <asp:Label ID="Label12" runat="server" Text="Impuestos"></asp:Label>
+                                <br />
+                               
+                            </div>
+                            <!--Fin Primera Columna-->
+                            <!-- Segunda Columnna Del Panel-->
+                            <div class="column" style="flex: 50%; padding: 10px;">
+                                 <div class="form-group">
+                                    <asp:Label ID="Label12" runat="server" Text="Impuestos" style="font-weight: 700"></asp:Label>
                                     <br />
                                     <asp:TextBox ID="txtImpuestos" runat="server" class="form-control"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rqvtxtImpuestos" runat="server"
@@ -107,15 +112,10 @@
                                         ForeColor="Red"
                                         Display="Dynamic"></asp:RequiredFieldValidator>
                                 </div>
-                                <br />
-                               
-                            </div>
-                            <!--Fin Primera Columna-->
-                            <!-- Segunda Columnna Del Panel-->
-                            <div class="column" style="flex: 50%; padding: 10px;">
-                               
+                               <br />
+
                                 <div class="form-group">
-                                    <asp:Label ID="Label9" runat="server" Text="Prima Final"></asp:Label>
+                                    <asp:Label ID="Label9" runat="server" Text="Prima Final" style="font-weight: 700"></asp:Label>
                                     <br />
                                     <asp:TextBox ID="txtPrimaFinal" runat="server" Class="form-control"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rqvtxtPrimaFinal" runat="server"
@@ -127,7 +127,7 @@
                                 <br />
                                 
                                 <div class="form-group">
-                                    <asp:Label ID="Label6" runat="server" Text="Id Seguro"></asp:Label>
+                                    <asp:Label ID="Label6" runat="server" Text="Id Seguro" style="font-weight: 700"></asp:Label>
                                     <br />
                                     <asp:TextBox ID="txtIdSeguro" runat="server" Class="form-control"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rqvtxtIdSeguro" runat="server"
@@ -139,7 +139,7 @@
                                 <br />
                              
                                 <div class="form-group">
-                                    <asp:Label ID="Label7" runat="server" Text=" Id Usuario"></asp:Label>
+                                    <asp:Label ID="Label7" runat="server" Text=" Id Usuario" style="font-weight: 700"></asp:Label>
                                     <br />
                                     <asp:TextBox ID="txtIdUsuario" runat="server" Class="form-control"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rqvttxtIdUsuario" runat="server"
@@ -151,7 +151,7 @@
                                 <br />
                             
                                 <div class="form-group">
-                                    <asp:Label ID="Label10" runat="server" Text="Id Cobertura"></asp:Label>
+                                    <asp:Label ID="Label10" runat="server" Text="Id Cobertura" style="font-weight: 700"></asp:Label>
                                     <br />
                                     <asp:TextBox ID="txtIdCobertura" runat="server" Class="form-control"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rqvtxtIdCobertura" runat="server"
@@ -170,8 +170,6 @@
                             <div class="form-group" style="text-align: center">
 
                                 <asp:Button ID="btAceptar" runat="server" Text="Guardar" CssClass="btn btn-success" OnClick="btAceptar_Click" BorderColor="Black" BorderStyle="Double" ForeColor="Black" Height="42px" Width="162px" />
-
-                                <%-- <asp:HyperLink ID="hpRegresarLista" runat="server" CssClass="text-info" NavigateUrl="~/FORMULARIO.BASE.DATOS/frmClientesLista.aspx">Regresar Lista</asp:HyperLink>--%>
                                 <br />
                                 <br />
                                 <asp:HyperLink ID="hplstUsers" class="btn btn-primary" role="button" BorderColor="Black"
