@@ -1759,9 +1759,13 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Formularios\frmEliminaAdiccionesUsuario.aspx" />
+    <Content Include="Formularios\frmEliminaRegistroPoliza.aspx" />
     <Content Include="Formularios\frmInsertAdiccionesUsuario.aspx" />
+    <Content Include="Formularios\frmInsertRegistroPoliza.aspx" />
     <Content Include="Formularios\frmListaAdiccionesUsuario.aspx" />
+    <Content Include="Formularios\frmListaPolizas.aspx" />
     <Content Include="Formularios\frmModificarAdiccionesUsuario.aspx" />
+    <Content Include="Formularios\frmModificaRegistroPoliza.aspx" />
     <Content Include="Formularios\frmUsuarioLista.aspx" />
     <Content Include="Formularios\frmEliminarUsuario.aspx" />
     <Content Include="Formularios\frmEliminaAdiccion.aspx" />
@@ -1937,12 +1941,26 @@
     <Compile Include="Formularios\frmEliminaAdiccionesUsuario.aspx.designer.cs">
       <DependentUpon>frmEliminaAdiccionesUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmEliminaRegistroPoliza.aspx.cs">
+      <DependentUpon>frmEliminaRegistroPoliza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmEliminaRegistroPoliza.aspx.designer.cs">
+      <DependentUpon>frmEliminaRegistroPoliza.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmInsertAdiccionesUsuario.aspx.cs">
       <DependentUpon>frmInsertAdiccionesUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Formularios\frmInsertAdiccionesUsuario.aspx.designer.cs">
       <DependentUpon>frmInsertAdiccionesUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmInsertRegistroPoliza.aspx.cs">
+      <DependentUpon>frmInsertRegistroPoliza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmInsertRegistroPoliza.aspx.designer.cs">
+      <DependentUpon>frmInsertRegistroPoliza.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmListaAdiccionesUsuario.aspx.cs">
       <DependentUpon>frmListaAdiccionesUsuario.aspx</DependentUpon>
@@ -1951,12 +1969,26 @@
     <Compile Include="Formularios\frmListaAdiccionesUsuario.aspx.designer.cs">
       <DependentUpon>frmListaAdiccionesUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmListaPolizas.aspx.cs">
+      <DependentUpon>frmListaPolizas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmListaPolizas.aspx.designer.cs">
+      <DependentUpon>frmListaPolizas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmModificarAdiccionesUsuario.aspx.cs">
       <DependentUpon>frmModificarAdiccionesUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Formularios\frmModificarAdiccionesUsuario.aspx.designer.cs">
       <DependentUpon>frmModificarAdiccionesUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmModificaRegistroPoliza.aspx.cs">
+      <DependentUpon>frmModificaRegistroPoliza.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmModificaRegistroPoliza.aspx.designer.cs">
+      <DependentUpon>frmModificaRegistroPoliza.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmUsuarioLista.aspx.cs">
       <DependentUpon>frmUsuarioLista.aspx</DependentUpon>
@@ -2135,6 +2167,12 @@
       <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\sp_RetornaCobertura_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sp_RetornaRegistroPolizaID_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sp_retornaRegistroPoliza_Result.cs">
       <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\sp_RetornaUsuarioID_Result.cs">
