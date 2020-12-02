@@ -57,40 +57,102 @@ namespace Proyecto_Final.BL
 
             return resultado;
         }
-        //public bool InsertaPoliza(string pCedula, string pGenero, DateTime pFecha, string pnombre, string pprimerApellido, string psegundoApellido,
+        /// <summary>
+        /// Metodo Booleano Que Modifica Una Poliza
+        /// </summary>
+        public bool InsertaPoliza(
+         string pMontoAsegurado,
+       string pPorcentajeCobertura,
+       int pNumeroAdicciones,
+      string pMontoAdicciones,
+       string pPrimaAntesImpu,
+       string pImpuestos,
+      string pPrimaFinal,
+        int pIdSeguro,
+        int pIdUsuario,
+       int  pIdCobertura)
 
-        //  string pDireccion, string ptelefono1, string ptelefono2, string pCorreo, string pTipoUsuario, string pContrasenia)
+        {
+            ///variable que posee la cantidad de registros afectados
+            ///al realizar insert / update/ delete la cantidad de 
+            ///registros afectados debe ser mayor a 0
 
+            int registrosAfectados = 0;
 
-        //{
-        //    ///variable que posee la cantidad de registros afectados
-        //    ///al realizar insert / update/ delete la cantidad de 
-        //    ///registros afectados debe ser mayor a 0
+            /// invocar al procedimiento almacenado
+            registrosAfectados =
+                this.modeloBD.sp_InsertaRegistroPoliza(
+                    pMontoAsegurado,
+                    pPorcentajeCobertura,
+                    pNumeroAdicciones,
+                    pMontoAdicciones,
+                    pPrimaAntesImpu,
+                    pImpuestos,
+                    pPrimaFinal,
+                    pIdSeguro,
+                    pIdUsuario,
+                    pIdCobertura
+                    );
 
-        //    int registrosAfectados = 0;
+            if (registrosAfectados > 0)
+                return true;
+            else
+                return false;
+        }
 
-        //    /// invocar al procedimiento almacenado
-        //    registrosAfectados =
-        //        this.modeloBD.sp_InsertaUsuario(
-        //            pCedula,
-        //            pGenero,
-        //            pFecha,
-        //            pnombre,
-        //            pprimerApellido,
-        //            psegundoApellido,
-        //            pDireccion,
-        //            ptelefono1,
-        //            ptelefono2,
-        //            pCorreo,
-        //            pTipoUsuario,
-        //            pContrasenia
-        //            );
+        /// <summary>
+        /// Metodo Booleano Que Modifica Una poliza
+        public bool ModificaPoliza(int pIdRegistro, 
+          string pMontoAsegurado,
+       string pPorcentajeCobertura,
+       int pNumeroAdicciones,
+      string pMontoAdicciones,
+       string pPrimaAntesImpu,
+       string pImpuestos,
+      string pPrimaFinal,
+        int pIdSeguro,
+        int pIdUsuario,
+       int pIdCobertura)
+        {
+            ///Crear La variable Que Se Retornara
+            int resultado = 0;
+            ///Asignar A La Variable El Resultado Del LLamado Al Procedimiento Almacenado
+            resultado = this.modeloBD.sp_ModificaRegistroPolizaID(
+                    pIdRegistro,
+                    pMontoAsegurado,
+                    pPorcentajeCobertura,
+                    pNumeroAdicciones,
+                    pMontoAdicciones,
+                    pPrimaAntesImpu,
+                    pImpuestos,
+                    pPrimaFinal,
+                    pIdSeguro,
+                    pIdUsuario,
+                    pIdCobertura
+                );
+            ///Retornar El Valor 
+            ///Si Se Ingreso Datos o No
+            return resultado > 0;
+        } 
+            
+        /// <summary>
+        /// Metodo que elimina una poliza
+        /// </summary>
+        /// <param name="pIdRegistro"></param>
+        /// <returns></returns>
+         
+        public bool EliminaPoliza(int pIdRegistro)
+        {
+            ///variable que posee la cantidad de registros afectados
+            ///al realizar insert/update/delete la cantidad de 
+            ///registros afectados debe ser mayor a 0
+            int registrosAfectados = 0;
+            ///invocar al procedimiento almacenado
+            registrosAfectados =
+                this.modeloBD.sp_Elimina_RegistroPolizaID(pIdRegistro);
 
-        //    if (registrosAfectados > 0)
-        //        return true;
-        //    else
-        //        return false;
-        //}
+            return registrosAfectados > 0;
 
+        }
     }
 }

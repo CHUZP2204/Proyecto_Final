@@ -24,13 +24,13 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.HyperLink hplAtras;
 
         /// <summary>
-        /// Control hdidUsuario.
+        /// Control hdidRegistro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdidUsuario;
+        protected global::System.Web.UI.WebControls.HiddenField hdidRegistro;
 
         /// <summary>
         /// Control Label3.
@@ -42,22 +42,22 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control txtCedula.
+        /// Control txtMontoAsegurado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCedula;
+        protected global::System.Web.UI.WebControls.TextBox txtMontoAsegurado;
 
         /// <summary>
-        /// Control rqvtxtCedula.
+        /// Control rqvtxtMontoAsegurado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtCedula;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtMontoAsegurado;
 
         /// <summary>
         /// Control label1.
@@ -69,22 +69,22 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.Label label1;
 
         /// <summary>
-        /// Control txtfechanacimiento.
+        /// Control txtPorcentajeCobertura.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfechanacimiento;
+        protected global::System.Web.UI.WebControls.TextBox txtPorcentajeCobertura;
 
         /// <summary>
-        /// Control rqvtxtfechanacimiento.
+        /// Control rqvtxtPorcentajeCobertura.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtfechanacimiento;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtPorcentajeCobertura;
 
         /// <summary>
         /// Control Label5.
@@ -96,22 +96,22 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// Control txtNombre.
+        /// Control txtNumeroAdicciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
+        protected global::System.Web.UI.WebControls.TextBox txtNumeroAdicciones;
 
         /// <summary>
-        /// Control rqvTxtNombre.
+        /// Control rqvtxtNumeroAdicciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtNombre;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtNumeroAdicciones;
 
         /// <summary>
         /// Control Label4.
@@ -123,22 +123,22 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Control txtPrimerApellido.
+        /// Control txtMontoAdicciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrimerApellido;
+        protected global::System.Web.UI.WebControls.TextBox txtMontoAdicciones;
 
         /// <summary>
-        /// Control rqvPrimerApellido.
+        /// Control rqvtxtMontoAdicciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvPrimerApellido;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtMontoAdicciones;
 
         /// <summary>
         /// Control Label8.
@@ -150,49 +150,49 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.Label Label8;
 
         /// <summary>
-        /// Control txtSegundoApellido.
+        /// Control txtPrimaAntesImpu.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSegundoApellido;
+        protected global::System.Web.UI.WebControls.TextBox txtPrimaAntesImpu;
 
         /// <summary>
-        /// Control rqvTxtSegundoApellido.
+        /// Control rqvtxtPrimaAntesImpu.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTxtSegundoApellido;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtPrimaAntesImpu;
 
         /// <summary>
-        /// Control label.
+        /// Control Label12.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label;
+        protected global::System.Web.UI.WebControls.Label Label12;
 
         /// <summary>
-        /// Control ddlgenero.
+        /// Control txtImpuestos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlgenero;
+        protected global::System.Web.UI.WebControls.TextBox txtImpuestos;
 
         /// <summary>
-        /// Control rqvgenero.
+        /// Control rqvtxtImpuestos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvgenero;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtImpuestos;
 
         /// <summary>
         /// Control Label9.
@@ -204,22 +204,22 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.Label Label9;
 
         /// <summary>
-        /// Control txtdireccion.
+        /// Control txtPrimaFinal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtdireccion;
+        protected global::System.Web.UI.WebControls.TextBox txtPrimaFinal;
 
         /// <summary>
-        /// Control rqvtxtdireccion.
+        /// Control rqvtxtPrimaFinal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtdireccion;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtPrimaFinal;
 
         /// <summary>
         /// Control Label6.
@@ -231,22 +231,22 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
-        /// Control txtTelefonoprincipal.
+        /// Control txtIdSeguro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefonoprincipal;
+        protected global::System.Web.UI.WebControls.TextBox txtIdSeguro;
 
         /// <summary>
-        /// Control rqvtxtTelefonoprincipal.
+        /// Control rqvtxtIdSeguro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtTelefonoprincipal;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtIdSeguro;
 
         /// <summary>
         /// Control Label7.
@@ -258,22 +258,22 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.Label Label7;
 
         /// <summary>
-        /// Control txtTelefonosecundario.
+        /// Control txtIdUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefonosecundario;
+        protected global::System.Web.UI.WebControls.TextBox txtIdUsuario;
 
         /// <summary>
-        /// Control rqvtxtTelefonosecundario.
+        /// Control rqvttxtIdUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtTelefonosecundario;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvttxtIdUsuario;
 
         /// <summary>
         /// Control Label10.
@@ -285,76 +285,22 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.Label Label10;
 
         /// <summary>
-        /// Control txtcorreo.
+        /// Control txtIdCobertura.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcorreo;
+        protected global::System.Web.UI.WebControls.TextBox txtIdCobertura;
 
         /// <summary>
-        /// Control rqvtxtcorreo.
+        /// Control rqvtxtIdCobertura.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtcorreo;
-
-        /// <summary>
-        /// Control Label11.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label11;
-
-        /// <summary>
-        /// Control txtContrasenia.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContrasenia;
-
-        /// <summary>
-        /// Control rqvtxtContrasenia.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtContrasenia;
-
-        /// <summary>
-        /// Control Label2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-
-        /// <summary>
-        /// Control LstTipoUsuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox LstTipoUsuario;
-
-        /// <summary>
-        /// Control rqvTipoUsuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvTipoUsuario;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqvtxtIdCobertura;
 
         /// <summary>
         /// Control btAceptar.

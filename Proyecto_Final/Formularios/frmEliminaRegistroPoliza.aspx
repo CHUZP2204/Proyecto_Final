@@ -5,7 +5,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
     <!---->
     <div id="frmEliminaRegistroPoliza">
-        <asp:HiddenField ID="hdIdUsuario" runat="server" />
         <div style="background-color: #699186; filter: drop-shadow(5px 5px 10px #444)">
             <!---->
             <div class="container-fluid" style="width: 500px">
@@ -31,54 +30,59 @@
                     <!--Fin Encabezado Del Panel-->
                     <!--Cuerpo Del Panel-->
                     <div class="panel-body" style="background-color: aquamarine;">
-                        <div class="row" style="display: flex">
+                      <asp:HiddenField ID="hdRegistro" runat="server" />
+                                <!-- Columnnas Del Panel-->
+                                 <div class="row" style="display: flex">
+                            <!-- Primera Columnna Del Panel-->
                             <div class="column" style="flex: 50%; padding: 10px;">
+                               
                                 <div class="form-group">
-                                    <asp:Label ID="lblNombre" runat="server" Text="Nombre:"></asp:Label>
-                                    <asp:HiddenField ID="hdUsuario" runat="server" />
-
+                                    <asp:Label ID="lblMontoAsegurado" runat="server" Text="Monto Asegurado:" style="font-weight: 700"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
+                                    <asp:TextBox ID="txtMontoAsegurado" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                                 </div>
 
                                 <div class="form-group">
-                                    <asp:Label ID="lblPrimerApellido" runat="server" Text="Primer Apellido:"></asp:Label>
+                                    <asp:Label ID="lblPorcentajeCobertura" runat="server" Text="Porcentaje Cobertura :" style="font-weight: 700"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="txtPrimerApellido" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
+                                    <asp:TextBox ID="txtPorcentajeCobertura" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                                 </div>
 
                                 <div class="form-group">
-                                    <asp:Label ID="lblSegundoApellido" runat="server" Text="Segundo Apellido:"></asp:Label>
+                                    <asp:Label ID="lblMontoAdicciones" runat="server" Text="Monto Adicciones:" style="font-weight: 700"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="txtSegundoApellido" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
+                                    <asp:TextBox ID="txtMontoAdicciones" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                                 </div>
-
+                                
                                 <div class="form-group">
-                                    <asp:Label ID="lblCedula" runat="server" Text="Cedula:"></asp:Label>
+                                    <asp:Label ID="lblPrimaAntesImpu" runat="server" Text="Prima Antes Impuesto:" style="font-weight: 700"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="txtCedula" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
-                                    <br />
+                                    <asp:TextBox ID="txtPrimaAntesImpu" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                                 </div>
+                
+                                 <div class="form-group">
+                                    <asp:Label ID="lblImpuesto" runat="server" Text="Impuesto:" style="font-weight: 700"></asp:Label>
+                                    <br />
+                                    <asp:TextBox ID="txtImpuesto" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
+                                     </div>
+                                  
                                 <div class="form-group">
-                                    <asp:Label ID="lblIdUsuario" runat="server" Text="Tipo Empleado:"></asp:Label>
+                                    <asp:Label ID="lblPrimaFinal" runat="server" Text="PrimaFinal:" style="font-weight: 700"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="txtTipoEmpleado" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
-                                </div>
-
+                                    <asp:TextBox ID="txtPrimaFinal" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
+                                     </div>
                             </div>
-                        </div>
-
-
+                            <!--Fin Primera Columna-->
+                             </div>
+                        <!--Fin Div Columnas-->
                         <div class="container-fluid" style="text-align: center">
                             <div class="form-group" style="text-align: center">
                                 <br />
-                                <%-- <asp:Button ID="btnEliminar" runat="server" CssClass="btn btn-danger" OnClick="btnEliminar_Click" Text="Eliminar" />--%>
                                 <button type="button" class="btn btn-default btn-lg" id="myBtn" style="height: 45px; width: 200px"><strong>Eliminar</strong></button>
-
                                 <br />
                                 <br />
                                 <asp:HyperLink ID="hplstUsers" class="btn btn-primary" role="button" BorderColor="Black"
-                                    runat="server" NavigateUrl="~/Formularios/frmUsuarioLista.aspx ">Ir A Lista</asp:HyperLink>
+                                    runat="server" NavigateUrl="~/Formularios/frmListaPolizas.aspx ">Ir A Lista</asp:HyperLink>
                                 <br />
 
                             </div>
@@ -101,6 +105,7 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4><span class="fas fa-lock" style="margin-left: 20%"></span>Estas seguro que desea Eliminarlo</h4>
                     </div>
+                    <br />
                     <asp:Button ID="btnsi" runat="server" Text="Si" CssClass="btn-success btn-block" BorderStyle="Groove" OnClick="btnsi_Click" weight="100px" />
                     <br />
                     <asp:Button ID="btnno" runat="server" Text="No" CssClass="btn-success btn-block" BorderStyle="Groove" OnClick="btnno_Click" weight="100px" />

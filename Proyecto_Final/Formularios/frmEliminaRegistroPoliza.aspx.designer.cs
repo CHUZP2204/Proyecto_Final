@@ -15,15 +15,6 @@ namespace Proyecto_Final.Formularios
     {
 
         /// <summary>
-        /// Control hdIdUsuario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdIdUsuario;
-
-        /// <summary>
         /// Control hplAtras.
         /// </summary>
         /// <remarks>
@@ -33,103 +24,121 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.HyperLink hplAtras;
 
         /// <summary>
-        /// Control lblNombre.
+        /// Control hdRegistro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombre;
+        protected global::System.Web.UI.WebControls.HiddenField hdRegistro;
 
         /// <summary>
-        /// Control hdUsuario.
+        /// Control lblMontoAsegurado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdUsuario;
+        protected global::System.Web.UI.WebControls.Label lblMontoAsegurado;
 
         /// <summary>
-        /// Control txtNombre.
+        /// Control txtMontoAsegurado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
+        protected global::System.Web.UI.WebControls.TextBox txtMontoAsegurado;
 
         /// <summary>
-        /// Control lblPrimerApellido.
+        /// Control lblPorcentajeCobertura.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPrimerApellido;
+        protected global::System.Web.UI.WebControls.Label lblPorcentajeCobertura;
 
         /// <summary>
-        /// Control txtPrimerApellido.
+        /// Control txtPorcentajeCobertura.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrimerApellido;
+        protected global::System.Web.UI.WebControls.TextBox txtPorcentajeCobertura;
 
         /// <summary>
-        /// Control lblSegundoApellido.
+        /// Control lblMontoAdicciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSegundoApellido;
+        protected global::System.Web.UI.WebControls.Label lblMontoAdicciones;
 
         /// <summary>
-        /// Control txtSegundoApellido.
+        /// Control txtMontoAdicciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSegundoApellido;
+        protected global::System.Web.UI.WebControls.TextBox txtMontoAdicciones;
 
         /// <summary>
-        /// Control lblCedula.
+        /// Control lblPrimaAntesImpu.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCedula;
+        protected global::System.Web.UI.WebControls.Label lblPrimaAntesImpu;
 
         /// <summary>
-        /// Control txtCedula.
+        /// Control txtPrimaAntesImpu.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCedula;
+        protected global::System.Web.UI.WebControls.TextBox txtPrimaAntesImpu;
 
         /// <summary>
-        /// Control lblIdUsuario.
+        /// Control lblImpuesto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIdUsuario;
+        protected global::System.Web.UI.WebControls.Label lblImpuesto;
 
         /// <summary>
-        /// Control txtTipoEmpleado.
+        /// Control txtImpuesto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTipoEmpleado;
+        protected global::System.Web.UI.WebControls.TextBox txtImpuesto;
+
+        /// <summary>
+        /// Control lblPrimaFinal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPrimaFinal;
+
+        /// <summary>
+        /// Control txtPrimaFinal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPrimaFinal;
 
         /// <summary>
         /// Control hplstUsers.
