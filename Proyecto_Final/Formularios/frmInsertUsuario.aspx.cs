@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net;
+using System.Net.Mail;
 
 namespace Proyecto_Final.Formularios
 {
@@ -30,6 +32,7 @@ namespace Proyecto_Final.Formularios
         {
             this.AlmacenarDatos();
         }
+
         void AlmacenarDatos()
         {
             if (this.IsValid)
@@ -64,8 +67,34 @@ namespace Proyecto_Final.Formularios
                        txtcorreo.Text,
                        LstTipoUsuario.SelectedValue,
                        txtContrasenia.Text
-
                         );
+
+                    ///Enviar Un Correo  Al Nuevo Usuario Registrado
+                    MailMessage email = new MailMessage();
+                    MailAddress de = new MailAddress("segurossigloxxi44@gmail.com");
+
+                    email.To.Add(this.txtcorreo.Text);
+
+
+                    email.From = de;
+                    email.Priority = MailPriority.Normal;
+                    email.IsBodyHtml = false;
+                    email.Subject = "ASUNTO: " + "Su Cuenta En Seguros El Equipo Del Siglo XXI";
+                    email.Body = $"Estimado Cliente: { this.txtPrimerApellido.Text} { this.txtSegundoApellido.Text}" +
+                                 $" {this.txtNombre.Text} Gracias Por Confiar En Seguros El Equipo Del Siglo XXI" +
+                                 $" Para Nosotros Es Un  Placer Servirle";
+
+                    ///segurossigloxxi44@gmail.com
+                    ///a2b3c4d05
+                    SmtpClient enviar = new SmtpClient();
+
+                    enviar.Host = "smtp.gmail.com";
+                    enviar.Credentials = new NetworkCredential("segurossigloxxi44@gmail.com", "a2b3c4d05");
+                    enviar.EnableSsl = true;
+                    enviar.Send(email);
+                    email.Dispose();
+
+
                 }
                 ///  CATCH: se ejecuta en el caso de que haya una excepcion
                 ///excepcionCapturada: Posee los datos de la excepcion
@@ -88,6 +117,18 @@ namespace Proyecto_Final.Formularios
 
                 ///mostrar el mensaje
                 Response.Write("<script>alert('" + mensaje + "')</script>");
+
+                ///VErificar Si Esta Registrando Desde Pantalla Inicial O Ya Usuario Logueado
+                /*
+                if(Convert.ToBoolean(this.Session["usuariologueado"]) != true)
+                {
+                    this.Response.Redirect("frmInicioSesion.aspx");
+                }
+                else
+                {
+                    this.Response.Redirect("frmUsuarioLista.aspx");
+                }
+                */
             }
         }
 
