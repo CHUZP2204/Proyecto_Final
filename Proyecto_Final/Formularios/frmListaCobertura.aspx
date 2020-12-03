@@ -33,7 +33,7 @@
 
                         <!--Nombre-->
                         <div class="form-group">
-                            <asp:Label ID="Label1" runat="server" Text="Nombre:"></asp:Label>
+                            <asp:Label ID="Label1" runat="server" Text="Nombre:" style="font-weight: 700"></asp:Label>
                             &nbsp;&nbsp;&nbsp;
                             <asp:TextBox ID="txtnombre" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
@@ -42,7 +42,7 @@
                         <br />
                         <!--Porcentaje-->
                         <div class="form-group">
-                            <asp:Label ID="Label2" runat="server" Text="Porcentaje:"></asp:Label>
+                            <asp:Label ID="Label2" runat="server" Text="Porcentaje:" style="font-weight: 700"></asp:Label>
                             <asp:TextBox ID="txtporcentaje" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                         <br />
@@ -63,7 +63,8 @@
                         <br />
                         <!--GRID-->
                         <div class="form-group">
-                            <asp:GridView ID="grdListaCobertura" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" OnPageIndexChanging="grdListaCobertura_PageIndexChanging" PageSize="5">
+                            <asp:GridView ID="grdListaCobertura" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" 
+                                BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" OnPageIndexChanging="grdListaCobertura_PageIndexChanging" PageSize="5">
                                 <AlternatingRowStyle BackColor="#CCCCCC" />
                                 <Columns>
                                     <asp:BoundField DataField="Nombre" HeaderText="Nombre Cobertura" />

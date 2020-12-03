@@ -8,7 +8,7 @@
         <!--Contenido-->
         <div style="background-color: #699186; filter: drop-shadow(5px 5px 10px #444)">
             <!--Contenido 1-->
-            <div class="container-fluid" style="">
+            <div class="container-fluid" style="width: 700px">
                 <!--Panel-->
                 <div class="panel panel-primary"
                     style="text-align: center; border: solid 5px black; border-radius: 1em; filter: drop-shadow(15px 15px 20px #444); margin-left: 10px; margin-right: 10px; margin-top: 20px; margin-bottom: 20px">
@@ -21,7 +21,7 @@
                                     <i class="fas fa-backspace"></i>
                                 </asp:HyperLink>
                             </div>
-                            <div style="margin-bottom: 10px; padding-left: 150px; padding-right: 150px">
+                            <div style="margin-bottom: 10px; padding-left: 120px; padding-right: 150px">
                                 <h3 class="auto-style1">Lista Usuarios</h3>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                     <div class="panel-body" style="background-color: aquamarine">
                         <!--Nombre-->
                         <div class="form-group">
-                            <asp:Label ID="Label2" runat="server" Text="Nombre:"></asp:Label>
+                            <asp:Label ID="Label2" runat="server" Text="Nombre:" style="font-weight: 700"></asp:Label>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
@@ -41,7 +41,7 @@
                         <!--FIN Nombre-->
                         <!--Primer Apellido-->
                         <div class="form-group">
-                            <asp:Label ID="Label1" runat="server" Text="Primer Apellido:"></asp:Label>
+                            <asp:Label ID="Label1" runat="server" Text="Primer Apellido:" style="font-weight: 700"></asp:Label>
                             <asp:TextBox ID="txtPrimerApellido" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                         <!--FIN Primer Apellido-->
@@ -61,7 +61,8 @@
                         <br />
                         <!--GRID-->
                         <div>
-                            <asp:GridView ID="grdListaUsuarios" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" OnPageIndexChanging="grdListaUsuarios_PageIndexChanging" PageSize="3">
+                            <asp:GridView ID="grdListaUsuarios" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" 
+                                BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" OnPageIndexChanging="grdListaUsuarios_PageIndexChanging" PageSize="5">
                                 <AlternatingRowStyle BackColor="#CCCCCC" />
                                 <Columns>
                                     <asp:BoundField DataField="Nombre" HeaderText="Nombre Usuario" />

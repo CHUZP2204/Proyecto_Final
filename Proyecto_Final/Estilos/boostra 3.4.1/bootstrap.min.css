@@ -1494,7 +1494,8 @@ hr {
 }
 
 .h3, h3 {
-    font-size: 24px
+    font-size: xx-large;
+    font-weight: 700;
 }
 
 .h4, h4 {

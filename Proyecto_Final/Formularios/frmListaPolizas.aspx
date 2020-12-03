@@ -8,7 +8,7 @@
         <!--Contenido-->
         <div style="background-color: #699186; filter: drop-shadow(5px 5px 10px #444)">
             <!--Contenido 1-->
-            <div class="container-fluid" style="">
+              <div class="container-fluid" style="width: 500px">
                 <!--Panel-->
                 <div class="panel panel-primary"
                     style="text-align: center; border: solid 5px black; border-radius: 1em; filter: drop-shadow(15px 15px 20px #444); margin-left: 10px; margin-right: 10px; margin-top: 20px; margin-bottom: 20px">
@@ -19,7 +19,7 @@
                                 <asp:HyperLink ID="hplAtras" NavigateUrl="~/Formularios/frmPaginaPrincipal.aspx"
                                     class="btn btn-danger" runat="server"> <i class="fas fa-backspace"></i></asp:HyperLink>
                             </div>
-                            <div style="margin-bottom: 10px; padding-left: 150px; padding-right: 150px">
+                            <div style="margin-bottom: 10px; padding-left: 120px; padding-right: 150px">
                                 <h3 class="auto-style1">Lista Polizas</h3>
                             </div>
                         </div>

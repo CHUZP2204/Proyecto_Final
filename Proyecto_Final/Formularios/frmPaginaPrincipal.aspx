@@ -31,7 +31,25 @@
                         </h1>
 
                         <asp:HyperLink ID="hplUserList" class="btn btn-primary" role="button" BorderColor="Black"
-                            runat="server" NavigateUrl="~/Formularios/frmUsuarioLista.aspx">Ver Lista</asp:HyperLink>
+                            runat="server" NavigateUrl="~/Formularios/frmUsuarioLista.aspx">Ver Lista Usuarios</asp:HyperLink> 
+                        <br/>
+                         <br/>
+                    <asp:HyperLink ID="hpPolizaList" class="btn btn-primary" role="button" BorderColor="Black"
+                            runat="server" NavigateUrl="~/Formularios/frmListaPolizas.aspx">Ver Lista Polizas</asp:HyperLink> 
+                        <br/>
+                        <br/>
+                        <asp:HyperLink ID="hpAdicList" class="btn btn-primary" role="button" BorderColor="Black"
+                            runat="server" NavigateUrl="~/Formularios/frmListaAdicciones.aspx">Ver Lista Adicciones</asp:HyperLink> 
+                        <br/>
+                        <br/>
+                        <asp:HyperLink ID="hpCoberList" class="btn btn-primary" role="button" BorderColor="Black"
+                            runat="server" NavigateUrl="~/Formularios/frmListaCobertura.aspx">Ver Lista Coberturas</asp:HyperLink> 
+                        <br/>
+                        <br/>
+                         <asp:HyperLink ID="hpAdicUsuList" class="btn btn-primary" role="button" BorderColor="Black"
+                            runat="server" NavigateUrl="~/Formularios/frmListaAdiccionesUsuario.aspx">Ver Lista Adicciones de Usuarios</asp:HyperLink> 
+                        <br/>
+                        <br/>
                     </div>
                 </div>
             </div>

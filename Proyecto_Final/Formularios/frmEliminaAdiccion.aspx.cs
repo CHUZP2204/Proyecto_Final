@@ -53,6 +53,18 @@ namespace Proyecto_Final.Formularios
                 }
             }
         }
+        /// <summary>
+        /// Evento Que Eliminara Un Registro
+        /// </summary>
+        /// 
+        protected void btnsi_Click(object sender, EventArgs e)
+        {
+            AlmacenaDatos();
+        }
+        protected void btnno_Click(object sender, EventArgs e)
+        {
+            CargaRegistro();
+        }
         void AlmacenaDatos()
         {
             if (this.IsValid)

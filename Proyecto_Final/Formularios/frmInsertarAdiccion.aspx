@@ -52,6 +52,7 @@
                                 ForeColor="Red"
                                 Display="Dynamic"></asp:RequiredFieldValidator>
                             <div class="form-group">
+                                <br />
                                 <asp:Button ID="btnAceptar" CssClass="btn btn-success" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" />
                                 <br />
                                 <br />
