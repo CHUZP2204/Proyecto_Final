@@ -1855,6 +1855,17 @@
     <Content Include="Estilos\Fonts\fontawesome-free-5.14.0-web\webfonts\fa-solid-900.woff" />
     <Content Include="Estilos\Fonts\fontawesome-free-5.14.0-web\webfonts\fa-solid-900.woff2" />
     <Content Include="Estilos\boostra 3.4.1\bootstrap.min.css.map" />
+    <Content Include="proyectoprograDataSet.xsc">
+      <DependentUpon>proyectoprograDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="proyectoprograDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>proyectoprograDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="proyectoprograDataSet.xss">
+      <DependentUpon>proyectoprograDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Modelo\ModeloProyecto.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -2192,6 +2203,11 @@
       <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="proyectoprograDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>proyectoprograDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
