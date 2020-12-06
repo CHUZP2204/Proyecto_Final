@@ -49,10 +49,11 @@ namespace Proyecto_Final.Formularios
             if (Convert.ToString(Session["tipousuario"]) == "Cliente")
             {
                 this.hplUserList.Visible = true;
-                this.hpAdicUsuList.Visible = true;
+                this.hpAdicUsuList.Visible = false;
                 this.hpPolizaList.Visible = false;
                 this.hpAdicList.Visible = false;
                 this.hpCoberList.Visible = false;
+
             }
         }
 
