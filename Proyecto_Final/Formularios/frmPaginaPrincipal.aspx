@@ -26,7 +26,7 @@
                         <p>HELLO WORLD</p>
                         <h2>AQUI ES LA PAGINA PRINCIPAL</h2>
                         <h1>
-                            <asp:Label ID="lblUSuarioConectado" runat="server" Text="Label" ForeColor="Red"></asp:Label>
+                            <asp:Label ID="lblUSuarioConectado" runat="server" Text="Informacion Confidente" ForeColor="Red"></asp:Label>
 
                         </h1>
 

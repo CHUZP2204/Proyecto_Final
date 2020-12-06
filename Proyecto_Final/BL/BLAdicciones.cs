@@ -34,6 +34,12 @@ namespace Proyecto_Final
         }
 
 
+        /// <summary>
+        /// metodo booleano que  inserta un adiccion
+        /// </summary>
+        /// <param name="pNombre"></param>
+        /// <param name="pCodigo"></param>
+        /// <returns></returns>
         public bool InsertaAdiccion(string pNombre, string pCodigo)
 
         {

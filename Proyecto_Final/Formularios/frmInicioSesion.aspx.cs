@@ -34,7 +34,7 @@ namespace Proyecto_Final.Formularios
                 Response.Write("<script>alert('Inicio De Sesion Correcto')</script>");
 
                 ///redirecionar a la Pagina Inicial
-                this.Response.Redirect("~/FormulariosBaseDatos/frmPaginaPrincipal.aspx");
+                this.Response.Redirect("~/Formularios/frmPaginaPrincipal.aspx");
             }
             else
             {
@@ -84,6 +84,7 @@ namespace Proyecto_Final.Formularios
 
                     ///redirecionar a la Pagina Inicial
                     this.Response.Redirect("~/Formularios/frmPaginaPrincipal.aspx");
+
                 }
                 else
                 {
@@ -105,6 +106,7 @@ namespace Proyecto_Final.Formularios
             else
             {
                 return false;
+
             }
 
 
