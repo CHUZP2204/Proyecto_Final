@@ -2193,6 +2193,18 @@
     <Compile Include="Modelo\sp_RetornaUsuario_Result.cs">
       <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\sp_Retorna_AdiccionesClientes_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sp_Retorna_AdiccionesCliente_ID_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sp_Retorna_PolizasClientes_ID_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sp_Retorna_PolizasClientes_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\TipoSeguro.cs">
       <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
@@ -2250,7 +2262,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Reportes\RptAdiccionesXClientes.rdlc" />
+    <EmbeddedResource Include="Reportes\RptAdiccionesXCliente.rdlc" />
     <EmbeddedResource Include="Reportes\RptPolizasXCliente.rdlc" />
   </ItemGroup>
   <PropertyGroup>
