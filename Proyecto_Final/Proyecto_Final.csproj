@@ -2193,6 +2193,18 @@
     <Compile Include="Modelo\sp_RetornaUsuario_Result.cs">
       <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\sp_Retorna_AdiccionesClientes_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sp_Retorna_AdiccionesCliente_ID_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sp_Retorna_PolizasClientes_ID_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sp_Retorna_PolizasClientes_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\TipoSeguro.cs">
       <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
