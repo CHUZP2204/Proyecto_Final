@@ -538,36 +538,6 @@
       <rd:DataSourceID>ee352886-03fd-4690-b022-322928d90e80</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DsAdiccionesClientes">
-      <Query>
-        <DataSourceName>proyectoprograDataSet</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="IdIdentificador">
-          <DataField>IdIdentificador</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="IdAdicciones">
-          <DataField>IdAdicciones</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="IdUsuario">
-          <DataField>IdUsuario</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>proyectoprograDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\User\Source\Repos\Proyecto_Final\Proyecto_Final\proyectoprograDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>sp_RetornaAdiccionUsuario</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>sp_RetornaAdiccionUsuarioTableAdapter</rd:TableAdapterName>
-      </rd:DataSetInfo>
-    </DataSet>
-  </DataSets>
   <EmbeddedImages>
     <EmbeddedImage Name="logotipo2">
       <MIMEType>image/jpeg</MIMEType>

@@ -802,7 +802,7 @@
           <Parameter Name="idRegistro" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_Retorna_AdiccionesCliente_ID" ReturnType="Collection(SegurosModel.sp_Retorna_AdiccionesCliente_ID_Result)">
-            <Parameter Name="idUsuario" Mode="In" Type="String" />
+          <Parameter Name="idUsuario" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_Retorna_AdiccionesClientes" ReturnType="Collection(SegurosModel.sp_Retorna_AdiccionesClientes_Result)">
             <Parameter Name="nombre" Mode="In" Type="String" />
@@ -816,7 +816,7 @@
             <Parameter Name="PorcentajeCobertura" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_Retorna_PolizasClientes_ID" ReturnType="Collection(SegurosModel.sp_Retorna_PolizasClientes_ID_Result)">
-            <Parameter Name="idUsuario" Mode="In" Type="String" />
+          <Parameter Name="idUsuario" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_CoberturaSeguros_Result">
