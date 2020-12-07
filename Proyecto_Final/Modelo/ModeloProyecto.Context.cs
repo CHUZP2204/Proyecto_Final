@@ -547,5 +547,61 @@ namespace Proyecto_Final.Modelo
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaRegistroPolizaID_Result>("sp_RetornaRegistroPolizaID", idRegistroParameter);
         }
+    
+        public virtual ObjectResult<sp_Retorna_AdiccionesCliente_ID_Result> sp_Retorna_AdiccionesCliente_ID(string idUsuario)
+        {
+            var idUsuarioParameter = idUsuario != null ?
+                new ObjectParameter("idUsuario", idUsuario) :
+                new ObjectParameter("idUsuario", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Retorna_AdiccionesCliente_ID_Result>("sp_Retorna_AdiccionesCliente_ID", idUsuarioParameter);
+        }
+    
+        public virtual ObjectResult<sp_Retorna_AdiccionesClientes_Result> sp_Retorna_AdiccionesClientes(string nombre, string primerApellido, string nombreAdiccion)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("nombre", nombre) :
+                new ObjectParameter("nombre", typeof(string));
+    
+            var primerApellidoParameter = primerApellido != null ?
+                new ObjectParameter("primerApellido", primerApellido) :
+                new ObjectParameter("primerApellido", typeof(string));
+    
+            var nombreAdiccionParameter = nombreAdiccion != null ?
+                new ObjectParameter("nombreAdiccion", nombreAdiccion) :
+                new ObjectParameter("nombreAdiccion", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Retorna_AdiccionesClientes_Result>("sp_Retorna_AdiccionesClientes", nombreParameter, primerApellidoParameter, nombreAdiccionParameter);
+        }
+    
+        public virtual ObjectResult<sp_Retorna_PolizasClientes_Result> sp_Retorna_PolizasClientes(string nombreUsuario, string primerApellido, string nombrePoliza, string porcentajeCobertura)
+        {
+            var nombreUsuarioParameter = nombreUsuario != null ?
+                new ObjectParameter("nombreUsuario", nombreUsuario) :
+                new ObjectParameter("nombreUsuario", typeof(string));
+    
+            var primerApellidoParameter = primerApellido != null ?
+                new ObjectParameter("primerApellido", primerApellido) :
+                new ObjectParameter("primerApellido", typeof(string));
+    
+            var nombrePolizaParameter = nombrePoliza != null ?
+                new ObjectParameter("nombrePoliza", nombrePoliza) :
+                new ObjectParameter("nombrePoliza", typeof(string));
+    
+            var porcentajeCoberturaParameter = porcentajeCobertura != null ?
+                new ObjectParameter("PorcentajeCobertura", porcentajeCobertura) :
+                new ObjectParameter("PorcentajeCobertura", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Retorna_PolizasClientes_Result>("sp_Retorna_PolizasClientes", nombreUsuarioParameter, primerApellidoParameter, nombrePolizaParameter, porcentajeCoberturaParameter);
+        }
+    
+        public virtual ObjectResult<sp_Retorna_PolizasClientes_ID_Result> sp_Retorna_PolizasClientes_ID(string idUsuario)
+        {
+            var idUsuarioParameter = idUsuario != null ?
+                new ObjectParameter("idUsuario", idUsuario) :
+                new ObjectParameter("idUsuario", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Retorna_PolizasClientes_ID_Result>("sp_Retorna_PolizasClientes_ID", idUsuarioParameter);
+        }
     }
 }
