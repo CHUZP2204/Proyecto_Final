@@ -20,7 +20,7 @@ namespace Proyecto_Final.Modelo
         }
     
         public int IdAdicciones { get; set; }
-        public string Nombre { get; set; }
+        public string NombreAdiccion { get; set; }
         public string Codigo { get; set; }
     
         public virtual ICollection<AdiccionesXUsu> AdiccionesXUsu { get; set; }

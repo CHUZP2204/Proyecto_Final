@@ -358,21 +358,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Nombre1">
+                    <Textbox Name="NombreAdiccion">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Nombre1.Value</Value>
+                              <Value>=Fields!NombreAdiccion.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Nombre1</rd:DefaultName>
+                      <rd:DefaultName>NombreAdiccion</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -444,7 +444,7 @@
         <Top>1.02236cm</Top>
         <Left>0.44661cm</Left>
         <Height>1.2cm</Height>
-        <Width>16.91098cm</Width>
+        <Width>16.91099cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -765,8 +765,8 @@
           <DataField>Cedula</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Nombre1">
-          <DataField>Nombre1</DataField>
+        <Field Name="NombreAdiccion">
+          <DataField>NombreAdiccion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="NumeroAdicciones">
@@ -775,8 +775,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>AdiccionesClientesDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Principal\source\repos\Proyecto_Final\Proyecto_Final\AdiccionesClientesDataSet.xsd</rd:SchemaPath>
+        <rd:DataSetName>DsPolizas</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Principal\source\repos\Proyecto_Final\Proyecto_Final\DsPolizas.xsd</rd:SchemaPath>
         <rd:TableName>sp_Retorna_AdiccionesClientes</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

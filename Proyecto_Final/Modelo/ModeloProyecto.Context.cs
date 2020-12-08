@@ -28,7 +28,6 @@ namespace Proyecto_Final.Modelo
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Adicciones> Adicciones { get; set; }
         public DbSet<AdiccionesXUsu> AdiccionesXUsu { get; set; }
         public DbSet<BienesInmuebles> BienesInmuebles { get; set; }
         public DbSet<CoberturaPolizas> CoberturaPolizas { get; set; }
@@ -37,6 +36,8 @@ namespace Proyecto_Final.Modelo
         public DbSet<TipoSeguro> TipoSeguro { get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Vehiculo> Vehiculo { get; set; }
+        public DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public DbSet<Adicciones> Adicciones { get; set; }
     
         public virtual ObjectResult<sp_CoberturaSeguros_Result> sp_CoberturaSeguros(Nullable<int> idSeguro)
         {
@@ -557,23 +558,6 @@ namespace Proyecto_Final.Modelo
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Retorna_AdiccionesCliente_ID_Result>("sp_Retorna_AdiccionesCliente_ID", idUsuarioParameter);
         }
     
-        public virtual ObjectResult<sp_Retorna_AdiccionesClientes_Result> sp_Retorna_AdiccionesClientes(string nombre, string primerApellido, string nombreAdiccion)
-        {
-            var nombreParameter = nombre != null ?
-                new ObjectParameter("nombre", nombre) :
-                new ObjectParameter("nombre", typeof(string));
-    
-            var primerApellidoParameter = primerApellido != null ?
-                new ObjectParameter("primerApellido", primerApellido) :
-                new ObjectParameter("primerApellido", typeof(string));
-    
-            var nombreAdiccionParameter = nombreAdiccion != null ?
-                new ObjectParameter("nombreAdiccion", nombreAdiccion) :
-                new ObjectParameter("nombreAdiccion", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Retorna_AdiccionesClientes_Result>("sp_Retorna_AdiccionesClientes", nombreParameter, primerApellidoParameter, nombreAdiccionParameter);
-        }
-    
         public virtual ObjectResult<sp_Retorna_PolizasClientes_Result> sp_Retorna_PolizasClientes(string nombreUsuario, string primerApellido, string nombrePoliza, string porcentajeCobertura)
         {
             var nombreUsuarioParameter = nombreUsuario != null ?
@@ -602,6 +586,23 @@ namespace Proyecto_Final.Modelo
                 new ObjectParameter("idUsuario", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Retorna_PolizasClientes_ID_Result>("sp_Retorna_PolizasClientes_ID", idUsuarioParameter);
+        }
+    
+        public virtual ObjectResult<sp_Retorna_AdiccionesClientes_Result> sp_Retorna_AdiccionesClientes(string nombre, string primerApellido, string nombreAdiccion)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("nombre", nombre) :
+                new ObjectParameter("nombre", typeof(string));
+    
+            var primerApellidoParameter = primerApellido != null ?
+                new ObjectParameter("primerApellido", primerApellido) :
+                new ObjectParameter("primerApellido", typeof(string));
+    
+            var nombreAdiccionParameter = nombreAdiccion != null ?
+                new ObjectParameter("nombreAdiccion", nombreAdiccion) :
+                new ObjectParameter("nombreAdiccion", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Retorna_AdiccionesClientes_Result>("sp_Retorna_AdiccionesClientes", nombreParameter, primerApellidoParameter, nombreAdiccionParameter);
         }
     }
 }

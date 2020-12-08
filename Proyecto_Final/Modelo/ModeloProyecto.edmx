@@ -10,7 +10,7 @@
             <PropertyRef Name="IdAdicciones" />
           </Key>
           <Property Name="IdAdicciones" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NombreAdiccion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Codigo" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="AdiccionesXUsu">
@@ -61,6 +61,16 @@
           </Key>
           <Property Name="IdSeguroVida" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdSeguro" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="TipoSeguro">
           <Key>
@@ -366,6 +376,7 @@
           <EntitySet Name="CoberturaPolizas" EntityType="Self.CoberturaPolizas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RegistroPoliza" EntityType="Self.RegistroPoliza" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SegurosDeVida" EntityType="Self.SegurosDeVida" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoSeguro" EntityType="Self.TipoSeguro" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" Schema="dbo" store:Type="Tables" />
@@ -406,15 +417,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SegurosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Adicciones">
-          <Key>
-            <PropertyRef Name="IdAdicciones" />
-          </Key>
-          <Property Name="IdAdicciones" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="AdiccionesXUsu" Relationship="Self.FK_AdiccionesXUsu_Adicciones" FromRole="Adicciones" ToRole="AdiccionesXUsu" />
-        </EntityType>
         <EntityType Name="AdiccionesXUsu">
           <Key>
             <PropertyRef Name="IdIdentificador" />
@@ -422,8 +424,8 @@
           <Property Name="IdIdentificador" Type="Int32" Nullable="false" />
           <Property Name="IdAdicciones" Type="Int32" Nullable="false" />
           <Property Name="IdUsuario" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Adicciones" Relationship="Self.FK_AdiccionesXUsu_Adicciones" FromRole="AdiccionesXUsu" ToRole="Adicciones" />
           <NavigationProperty Name="Usuarios" Relationship="Self.FK_AdiccionesXUsu_Usuarios" FromRole="AdiccionesXUsu" ToRole="Usuarios" />
+          <NavigationProperty Name="Adicciones" Relationship="SegurosModel.FK_AdiccionesXUsu_Adicciones" FromRole="AdiccionesXUsu" ToRole="Adicciones" />
         </EntityType>
         <EntityType Name="BienesInmuebles">
           <Key>
@@ -513,18 +515,6 @@
           <Property Name="IdSeguro" Type="Int32" Nullable="false" />
           <NavigationProperty Name="TipoSeguro" Relationship="Self.FK_Vehiculo_TipoSeguro" FromRole="Vehiculo" ToRole="TipoSeguro" />
         </EntityType>
-        <Association Name="FK_AdiccionesXUsu_Adicciones">
-          <End Role="Adicciones" Type="Self.Adicciones" Multiplicity="1" />
-          <End Role="AdiccionesXUsu" Type="Self.AdiccionesXUsu" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Adicciones">
-              <PropertyRef Name="IdAdicciones" />
-            </Principal>
-            <Dependent Role="AdiccionesXUsu">
-              <PropertyRef Name="IdAdicciones" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_AdiccionesXUsu_Usuarios">
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
           <End Role="AdiccionesXUsu" Type="Self.AdiccionesXUsu" Multiplicity="*" />
@@ -610,7 +600,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="segurosEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Adicciones" EntityType="Self.Adicciones" />
           <EntitySet Name="AdiccionesXUsu" EntityType="Self.AdiccionesXUsu" />
           <EntitySet Name="BienesInmuebles" EntityType="Self.BienesInmuebles" />
           <EntitySet Name="CoberturaPolizas" EntityType="Self.CoberturaPolizas" />
@@ -619,10 +608,6 @@
           <EntitySet Name="TipoSeguro" EntityType="Self.TipoSeguro" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
           <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" />
-          <AssociationSet Name="FK_AdiccionesXUsu_Adicciones" Association="Self.FK_AdiccionesXUsu_Adicciones">
-            <End Role="Adicciones" EntitySet="Adicciones" />
-            <End Role="AdiccionesXUsu" EntitySet="AdiccionesXUsu" />
-          </AssociationSet>
           <AssociationSet Name="FK_AdiccionesXUsu_Usuarios" Association="Self.FK_AdiccionesXUsu_Usuarios">
             <End Role="Usuarios" EntitySet="Usuarios" />
             <End Role="AdiccionesXUsu" EntitySet="AdiccionesXUsu" />
@@ -802,12 +787,7 @@
           <Parameter Name="idRegistro" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_Retorna_AdiccionesCliente_ID" ReturnType="Collection(SegurosModel.sp_Retorna_AdiccionesCliente_ID_Result)">
-            <Parameter Name="idUsuario" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_Retorna_AdiccionesClientes" ReturnType="Collection(SegurosModel.sp_Retorna_AdiccionesClientes_Result)">
-            <Parameter Name="nombre" Mode="In" Type="String" />
-            <Parameter Name="primerApellido" Mode="In" Type="String" />
-            <Parameter Name="nombreAdiccion" Mode="In" Type="String" />
+          <Parameter Name="idUsuario" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_Retorna_PolizasClientes" ReturnType="Collection(SegurosModel.sp_Retorna_PolizasClientes_Result)">
             <Parameter Name="nombreUsuario" Mode="In" Type="String" />
@@ -816,8 +796,19 @@
             <Parameter Name="PorcentajeCobertura" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_Retorna_PolizasClientes_ID" ReturnType="Collection(SegurosModel.sp_Retorna_PolizasClientes_ID_Result)">
-            <Parameter Name="idUsuario" Mode="In" Type="String" />
+          <Parameter Name="idUsuario" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="sp_Retorna_AdiccionesClientes" ReturnType="Collection(SegurosModel.sp_Retorna_AdiccionesClientes_Result)">
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="primerApellido" Mode="In" Type="String" />
+            <Parameter Name="nombreAdiccion" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="sysdiagrams" EntityType="SegurosModel.sysdiagrams" />
+          <EntitySet Name="Adicciones" EntityType="SegurosModel.Adicciones" />
+          <AssociationSet Name="FK_AdiccionesXUsu_Adicciones" Association="SegurosModel.FK_AdiccionesXUsu_Adicciones">
+            <End Role="Adicciones" EntitySet="Adicciones" />
+            <End Role="AdiccionesXUsu" EntitySet="AdiccionesXUsu" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_CoberturaSeguros_Result">
           <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
@@ -926,15 +917,6 @@
           <Property Type="String" Name="Cedula" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="Nombre1" Nullable="false" MaxLength="50" />
         </ComplexType>
-        <ComplexType Name="sp_Retorna_AdiccionesClientes_Result">
-          <Property Type="Int32" Name="IdUsuario" Nullable="false" />
-          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="PrimerApellido" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="SegundoApellido" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="Cedula" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="Nombre1" Nullable="false" MaxLength="50" />
-          <Property Type="Int32" Name="NumeroAdicciones" Nullable="false" />
-        </ComplexType>
         <ComplexType Name="sp_Retorna_PolizasClientes_Result">
           <Property Type="Int32" Name="IdUsuario" Nullable="false" />
           <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
@@ -957,21 +939,52 @@
           <Property Type="String" Name="PrimaFinal" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="Impuestos" Nullable="false" MaxLength="50" />
         </ComplexType>
+        <ComplexType Name="sp_Retorna_AdiccionesClientes_Result">
+          <Property Type="Int32" Name="IdUsuario" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PrimerApellido" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="SegundoApellido" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Cedula" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NombreAdiccion" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="NumeroAdicciones" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Adicciones">
+          <Key>
+            <PropertyRef Name="IdAdicciones" />
+          </Key>
+          <Property Name="IdAdicciones" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreAdiccion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AdiccionesXUsu" Relationship="SegurosModel.FK_AdiccionesXUsu_Adicciones" FromRole="Adicciones" ToRole="AdiccionesXUsu" />
+        </EntityType>
+        <Association Name="FK_AdiccionesXUsu_Adicciones">
+          <End Type="SegurosModel.Adicciones" Role="Adicciones" Multiplicity="1" />
+          <End Type="SegurosModel.AdiccionesXUsu" Role="AdiccionesXUsu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adicciones">
+              <PropertyRef Name="IdAdicciones" />
+            </Principal>
+            <Dependent Role="AdiccionesXUsu">
+              <PropertyRef Name="IdAdicciones" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SegurosModelStoreContainer" CdmEntityContainer="segurosEntities1">
-          <EntitySetMapping Name="Adicciones">
-            <EntityTypeMapping TypeName="SegurosModel.Adicciones">
-              <MappingFragment StoreEntitySet="Adicciones">
-                <ScalarProperty Name="IdAdicciones" ColumnName="IdAdicciones" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="AdiccionesXUsu">
             <EntityTypeMapping TypeName="SegurosModel.AdiccionesXUsu">
               <MappingFragment StoreEntitySet="AdiccionesXUsu">
@@ -1240,19 +1253,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_Retorna_AdiccionesClientes" FunctionName="SegurosModel.Store.sp_Retorna_AdiccionesClientes">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SegurosModel.sp_Retorna_AdiccionesClientes_Result">
-                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
-                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
-                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
-                <ScalarProperty Name="Nombre1" ColumnName="Nombre1" />
-                <ScalarProperty Name="NumeroAdicciones" ColumnName="NumeroAdicciones" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_Retorna_PolizasClientes" FunctionName="SegurosModel.Store.sp_Retorna_PolizasClientes">
             <ResultMapping>
               <ComplexTypeMapping TypeName="SegurosModel.sp_Retorna_PolizasClientes_Result">
@@ -1283,6 +1283,39 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Retorna_AdiccionesClientes" FunctionName="SegurosModel.Store.sp_Retorna_AdiccionesClientes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SegurosModel.sp_Retorna_AdiccionesClientes_Result">
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="NombreAdiccion" ColumnName="NombreAdiccion" />
+                <ScalarProperty Name="NumeroAdicciones" ColumnName="NumeroAdicciones" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SegurosModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Adicciones">
+            <EntityTypeMapping TypeName="SegurosModel.Adicciones">
+              <MappingFragment StoreEntitySet="Adicciones">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="NombreAdiccion" ColumnName="NombreAdiccion" />
+                <ScalarProperty Name="IdAdicciones" ColumnName="IdAdicciones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
