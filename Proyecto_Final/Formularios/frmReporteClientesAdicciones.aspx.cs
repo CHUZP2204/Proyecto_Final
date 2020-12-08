@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using Microsoft.Reporting.WebForms;
 using Proyecto_Final.Modelo;
 
+
 namespace Proyecto_Final.Formularios
 {
     public partial class frmReporteClientesAdicciones : System.Web.UI.Page
@@ -22,7 +23,6 @@ namespace Proyecto_Final.Formularios
             this.contruirReporte();
         }
        
-
         void contruirReporte()
         {
 
