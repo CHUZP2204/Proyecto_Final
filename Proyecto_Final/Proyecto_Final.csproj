@@ -70,7 +70,7 @@
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -1897,6 +1897,17 @@
     <Content Include="AdiccionesClientesDataSet.xss">
       <DependentUpon>AdiccionesClientesDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="DsPolizas.xsc">
+      <DependentUpon>DsPolizas.xsd</DependentUpon>
+    </Content>
+    <None Include="DsPolizas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsPolizas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="DsPolizas.xss">
+      <DependentUpon>DsPolizas.xsd</DependentUpon>
+    </Content>
     <None Include="PolizasDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>PolizasDataSet.Designer.cs</LastGenOutput>
@@ -2010,6 +2021,11 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DsPolizas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsPolizas.xsd</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmEliminaAdiccionesUsuario.aspx.cs">
       <DependentUpon>frmEliminaAdiccionesUsuario.aspx</DependentUpon>
@@ -2275,6 +2291,9 @@
       <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\sp_Retorna_PolizasClientes_Result.cs">
+      <DependentUpon>ModeloProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\sysdiagrams.cs">
       <DependentUpon>ModeloProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\TipoSeguro.cs">

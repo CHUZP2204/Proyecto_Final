@@ -18,7 +18,7 @@ namespace Proyecto_Final.Modelo
         public int IdAdicciones { get; set; }
         public int IdUsuario { get; set; }
     
-        public virtual Adicciones Adicciones { get; set; }
         public virtual Usuarios Usuarios { get; set; }
+        public virtual Adicciones Adicciones { get; set; }
     }
 }

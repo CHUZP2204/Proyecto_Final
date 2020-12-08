@@ -27,7 +27,7 @@ namespace Proyecto_Final.Formularios
         {
 
             ///indicar la ruta del reporte
-            string rutaReporte = "~Reportes/RptAdiccionesXCliente.rdlc";
+            string rutaReporte = "~/Reportes/RptAdiccionesXCliente.rdlc";
             ///construir la ruta física
             string rutaServidor = Server.MapPath(rutaReporte);
             ///Validar que la ruta física exista
@@ -64,7 +64,7 @@ namespace Proyecto_Final.Formularios
         /// <param name="pNombre"></param>
         /// <returns></returns>
         List<sp_Retorna_AdiccionesClientes_Result> retornaDatosReporte(
-            string pNombreCliente,string pPrimerApellido,string pNombreAdiccion )
+            string pNombreCliente,string pPrimerApellido=null,string pNombreAdiccion = null)
         {
             return
                  this.modeloBD.sp_Retorna_AdiccionesClientes(pNombreCliente, pPrimerApellido, pNombreAdiccion).ToList();

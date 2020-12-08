@@ -34,12 +34,15 @@
         <br />
         <br />
         <br />
-        <rsweb:ReportViewer ID="rpvClientes" runat="server" Width="100%" Height="113px" style="margin-top: 0px"></rsweb:ReportViewer>
+
 
         <br />
 
     </div>
-
+    <rsweb:ReportViewer ID="rpvClientes" runat="server" Width="100%" Height="113px" Style="margin-top: 0px" BackColor="" ClientIDMode="AutoID" HighlightBackgroundColor="" InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="1px" LinkActiveColor="" LinkActiveHoverColor="" LinkDisabledColor="" PrimaryButtonBackgroundColor="" PrimaryButtonForegroundColor="" PrimaryButtonHoverBackgroundColor="" PrimaryButtonHoverForegroundColor="" SecondaryButtonBackgroundColor="" SecondaryButtonForegroundColor="" SecondaryButtonHoverBackgroundColor="" SecondaryButtonHoverForegroundColor="" SplitterBackColor="" ToolbarDividerColor="" ToolbarForegroundColor="" ToolbarForegroundDisabledColor="" ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px" ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px" ToolBarItemPressedHoverBackColor="153, 187, 226">
+        <LocalReport ReportPath="Reportes\RptPolizasXCliente.rdlc">
+        </LocalReport>
+    </rsweb:ReportViewer>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scriptspersonalizados" runat="server">
     <p>
