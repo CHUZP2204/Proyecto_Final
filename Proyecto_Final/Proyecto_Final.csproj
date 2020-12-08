@@ -1791,6 +1791,7 @@
     <Content Include="Formularios\frmModificarAdiccionesUsuario.aspx" />
     <Content Include="Formularios\frmModificaRegistroPoliza.aspx" />
     <Content Include="Formularios\frmReporteClientesAdicciones.aspx" />
+    <Content Include="Formularios\frmReporteClientesPolizas.aspx" />
     <Content Include="Formularios\frmUsuarioLista.aspx" />
     <Content Include="Formularios\frmEliminarUsuario.aspx" />
     <Content Include="Formularios\frmEliminaAdiccion.aspx" />
@@ -2089,6 +2090,13 @@
     </Compile>
     <Compile Include="Formularios\frmReporteClientesAdicciones.aspx.designer.cs">
       <DependentUpon>frmReporteClientesAdicciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmReporteClientesPolizas.aspx.cs">
+      <DependentUpon>frmReporteClientesPolizas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmReporteClientesPolizas.aspx.designer.cs">
+      <DependentUpon>frmReporteClientesPolizas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmUsuarioLista.aspx.cs">
       <DependentUpon>frmUsuarioLista.aspx</DependentUpon>
