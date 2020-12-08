@@ -7,7 +7,6 @@
       <Diagram DiagramId="b93b117c44a8458fa99afeb598f8fef3" Name="Diagram1">
         <EntityTypeShape EntityType="SegurosModel.AdiccionesXUsu" Width="1.5" PointX="6" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SegurosModel.BienesInmuebles" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SegurosModel.CoberturaPolizas" Width="1.5" PointX="3.75" PointY="9" IsExpanded="true" />
         <EntityTypeShape EntityType="SegurosModel.RegistroPoliza" Width="1.5" PointX="6" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SegurosModel.SegurosDeVida" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
         <EntityTypeShape EntityType="SegurosModel.TipoSeguro" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
@@ -15,7 +14,6 @@
         <EntityTypeShape EntityType="SegurosModel.Vehiculo" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
         <AssociationConnector Association="SegurosModel.FK_AdiccionesXUsu_Usuarios" ManuallyRouted="false" />
         <AssociationConnector Association="SegurosModel.FK_BienesInmuebles_TipoSeguro" ManuallyRouted="false" />
-        <AssociationConnector Association="SegurosModel.FK_RegistroPoliza_CoberturaPolizas" ManuallyRouted="false" />
         <AssociationConnector Association="SegurosModel.FK_RegistroPoliza_TipoSeguro" ManuallyRouted="false" />
         <AssociationConnector Association="SegurosModel.FK_RegistroPoliza_Usuarios" ManuallyRouted="false" />
         <AssociationConnector Association="SegurosModel.FK_SegurosDeVida_TipoSeguro" ManuallyRouted="false" />
@@ -23,6 +21,8 @@
         <EntityTypeShape EntityType="SegurosModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="SegurosModel.Adicciones" Width="1.5" PointX="8.375" PointY="0.875" />
         <AssociationConnector Association="SegurosModel.FK_AdiccionesXUsu_Adicciones" />
+        <EntityTypeShape EntityType="SegurosModel.CoberturaPolizas" Width="1.5" PointX="8.375" PointY="3.875" />
+        <AssociationConnector Association="SegurosModel.FK_RegistroPoliza_CoberturaPolizas" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

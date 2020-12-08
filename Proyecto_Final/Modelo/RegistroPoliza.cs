@@ -26,8 +26,8 @@ namespace Proyecto_Final.Modelo
         public int IdUsuario { get; set; }
         public int IdCobertura { get; set; }
     
-        public virtual CoberturaPolizas CoberturaPolizas { get; set; }
         public virtual TipoSeguro TipoSeguro { get; set; }
         public virtual Usuarios Usuarios { get; set; }
+        public virtual CoberturaPolizas CoberturaPolizas { get; set; }
     }
 }

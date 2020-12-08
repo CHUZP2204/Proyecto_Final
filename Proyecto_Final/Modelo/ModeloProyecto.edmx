@@ -35,7 +35,7 @@
             <PropertyRef Name="IdCobertura" />
           </Key>
           <Property Name="IdCobertura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NombreCobertura" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Procentaje" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -287,7 +287,7 @@
         <Function Name="sp_Retorna_PolizasClientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nombreUsuario" Type="varchar" Mode="In" />
           <Parameter Name="primerApellido" Type="varchar" Mode="In" />
-          <Parameter Name="nombrePoliza" Type="varchar" Mode="In" />
+          <Parameter Name="nombreCobertura" Type="varchar" Mode="In" />
           <Parameter Name="PorcentajeCobertura" Type="varchar" Mode="In" />
         </Function>
         <Function Name="sp_Retorna_PolizasClientes_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -437,16 +437,6 @@
           <Property Name="IdSeguro" Type="Int32" Nullable="false" />
           <NavigationProperty Name="TipoSeguro" Relationship="Self.FK_BienesInmuebles_TipoSeguro" FromRole="BienesInmuebles" ToRole="TipoSeguro" />
         </EntityType>
-        <EntityType Name="CoberturaPolizas">
-          <Key>
-            <PropertyRef Name="IdCobertura" />
-          </Key>
-          <Property Name="IdCobertura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Procentaje" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="RegistroPoliza" Relationship="Self.FK_RegistroPoliza_CoberturaPolizas" FromRole="CoberturaPolizas" ToRole="RegistroPoliza" />
-        </EntityType>
         <EntityType Name="RegistroPoliza">
           <Key>
             <PropertyRef Name="IdRegistro" />
@@ -462,9 +452,9 @@
           <Property Name="IdSeguro" Type="Int32" Nullable="false" />
           <Property Name="IdUsuario" Type="Int32" Nullable="false" />
           <Property Name="IdCobertura" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="CoberturaPolizas" Relationship="Self.FK_RegistroPoliza_CoberturaPolizas" FromRole="RegistroPoliza" ToRole="CoberturaPolizas" />
           <NavigationProperty Name="TipoSeguro" Relationship="Self.FK_RegistroPoliza_TipoSeguro" FromRole="RegistroPoliza" ToRole="TipoSeguro" />
           <NavigationProperty Name="Usuarios" Relationship="Self.FK_RegistroPoliza_Usuarios" FromRole="RegistroPoliza" ToRole="Usuarios" />
+          <NavigationProperty Name="CoberturaPolizas" Relationship="SegurosModel.FK_RegistroPoliza_CoberturaPolizas" FromRole="RegistroPoliza" ToRole="CoberturaPolizas" />
         </EntityType>
         <EntityType Name="SegurosDeVida">
           <Key>
@@ -539,18 +529,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_RegistroPoliza_CoberturaPolizas">
-          <End Role="CoberturaPolizas" Type="Self.CoberturaPolizas" Multiplicity="1" />
-          <End Role="RegistroPoliza" Type="Self.RegistroPoliza" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CoberturaPolizas">
-              <PropertyRef Name="IdCobertura" />
-            </Principal>
-            <Dependent Role="RegistroPoliza">
-              <PropertyRef Name="IdCobertura" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_RegistroPoliza_TipoSeguro">
           <End Role="TipoSeguro" Type="Self.TipoSeguro" Multiplicity="1" />
           <End Role="RegistroPoliza" Type="Self.RegistroPoliza" Multiplicity="*" />
@@ -602,7 +580,6 @@
         <EntityContainer Name="segurosEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AdiccionesXUsu" EntityType="Self.AdiccionesXUsu" />
           <EntitySet Name="BienesInmuebles" EntityType="Self.BienesInmuebles" />
-          <EntitySet Name="CoberturaPolizas" EntityType="Self.CoberturaPolizas" />
           <EntitySet Name="RegistroPoliza" EntityType="Self.RegistroPoliza" />
           <EntitySet Name="SegurosDeVida" EntityType="Self.SegurosDeVida" />
           <EntitySet Name="TipoSeguro" EntityType="Self.TipoSeguro" />
@@ -615,10 +592,6 @@
           <AssociationSet Name="FK_BienesInmuebles_TipoSeguro" Association="Self.FK_BienesInmuebles_TipoSeguro">
             <End Role="TipoSeguro" EntitySet="TipoSeguro" />
             <End Role="BienesInmuebles" EntitySet="BienesInmuebles" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RegistroPoliza_CoberturaPolizas" Association="Self.FK_RegistroPoliza_CoberturaPolizas">
-            <End Role="CoberturaPolizas" EntitySet="CoberturaPolizas" />
-            <End Role="RegistroPoliza" EntitySet="RegistroPoliza" />
           </AssociationSet>
           <AssociationSet Name="FK_RegistroPoliza_TipoSeguro" Association="Self.FK_RegistroPoliza_TipoSeguro">
             <End Role="TipoSeguro" EntitySet="TipoSeguro" />
@@ -789,15 +762,6 @@
           <FunctionImport Name="sp_Retorna_AdiccionesCliente_ID" ReturnType="Collection(SegurosModel.sp_Retorna_AdiccionesCliente_ID_Result)">
           <Parameter Name="idUsuario" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="sp_Retorna_PolizasClientes" ReturnType="Collection(SegurosModel.sp_Retorna_PolizasClientes_Result)">
-            <Parameter Name="nombreUsuario" Mode="In" Type="String" />
-            <Parameter Name="primerApellido" Mode="In" Type="String" />
-            <Parameter Name="nombrePoliza" Mode="In" Type="String" />
-            <Parameter Name="PorcentajeCobertura" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_Retorna_PolizasClientes_ID" ReturnType="Collection(SegurosModel.sp_Retorna_PolizasClientes_ID_Result)">
-          <Parameter Name="idUsuario" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="sp_Retorna_AdiccionesClientes" ReturnType="Collection(SegurosModel.sp_Retorna_AdiccionesClientes_Result)">
             <Parameter Name="nombre" Mode="In" Type="String" />
             <Parameter Name="primerApellido" Mode="In" Type="String" />
@@ -809,6 +773,20 @@
             <End Role="Adicciones" EntitySet="Adicciones" />
             <End Role="AdiccionesXUsu" EntitySet="AdiccionesXUsu" />
           </AssociationSet>
+          <EntitySet Name="CoberturaPolizas" EntityType="SegurosModel.CoberturaPolizas" />
+          <AssociationSet Name="FK_RegistroPoliza_CoberturaPolizas" Association="SegurosModel.FK_RegistroPoliza_CoberturaPolizas">
+            <End Role="CoberturaPolizas" EntitySet="CoberturaPolizas" />
+            <End Role="RegistroPoliza" EntitySet="RegistroPoliza" />
+          </AssociationSet>
+          <FunctionImport Name="sp_Retorna_PolizasClientes" ReturnType="Collection(SegurosModel.sp_Retorna_PolizasClientes_Result)">
+            <Parameter Name="nombreUsuario" Mode="In" Type="String" />
+            <Parameter Name="primerApellido" Mode="In" Type="String" />
+            <Parameter Name="nombreCobertura" Mode="In" Type="String" />
+            <Parameter Name="PorcentajeCobertura" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Retorna_PolizasClientes_ID" ReturnType="Collection(SegurosModel.sp_Retorna_PolizasClientes_ID_Result)">
+            <Parameter Name="idUsuario" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_CoberturaSeguros_Result">
           <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
@@ -917,28 +895,6 @@
           <Property Type="String" Name="Cedula" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="Nombre1" Nullable="false" MaxLength="50" />
         </ComplexType>
-        <ComplexType Name="sp_Retorna_PolizasClientes_Result">
-          <Property Type="Int32" Name="IdUsuario" Nullable="false" />
-          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="PrimerApellido" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="Cedula" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="NombreAdiccion" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="MontoAsegurado" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="PorcentajeCobertura" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="PrimaFinal" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="Impuestos" Nullable="false" MaxLength="50" />
-        </ComplexType>
-        <ComplexType Name="sp_Retorna_PolizasClientes_ID_Result">
-          <Property Type="Int32" Name="IdUsuario" Nullable="false" />
-          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="PrimerApellido" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="Cedula" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="NombreAdiccion" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="MontoAsegurado" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="PorcentajeCobertura" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="PrimaFinal" Nullable="false" MaxLength="50" />
-          <Property Type="String" Name="Impuestos" Nullable="false" MaxLength="50" />
-        </ComplexType>
         <ComplexType Name="sp_Retorna_AdiccionesClientes_Result">
           <Property Type="Int32" Name="IdUsuario" Nullable="false" />
           <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
@@ -979,6 +935,52 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="CoberturaPolizas">
+          <Key>
+            <PropertyRef Name="IdCobertura" />
+          </Key>
+          <Property Name="IdCobertura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreCobertura" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Procentaje" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RegistroPoliza" Relationship="SegurosModel.FK_RegistroPoliza_CoberturaPolizas" FromRole="CoberturaPolizas" ToRole="RegistroPoliza" />
+        </EntityType>
+        <Association Name="FK_RegistroPoliza_CoberturaPolizas">
+          <End Type="SegurosModel.CoberturaPolizas" Role="CoberturaPolizas" Multiplicity="1" />
+          <End Type="SegurosModel.RegistroPoliza" Role="RegistroPoliza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoberturaPolizas">
+              <PropertyRef Name="IdCobertura" />
+            </Principal>
+            <Dependent Role="RegistroPoliza">
+              <PropertyRef Name="IdCobertura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="sp_Retorna_PolizasClientes_Result">
+          <Property Type="Int32" Name="IdUsuario" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PrimerApellido" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Cedula" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NombreCobertura" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NombreAdiccion" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MontoAsegurado" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PorcentajeCobertura" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PrimaFinal" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Impuestos" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_Retorna_PolizasClientes_ID_Result">
+          <Property Type="Int32" Name="IdUsuario" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PrimerApellido" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Cedula" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NombreAdiccion" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="NombreCobertura" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="MontoAsegurado" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PorcentajeCobertura" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PrimaFinal" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Impuestos" Nullable="false" MaxLength="50" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1001,16 +1003,6 @@
                 <ScalarProperty Name="NumeroCasa" ColumnName="NumeroCasa" />
                 <ScalarProperty Name="Provincia" ColumnName="Provincia" />
                 <ScalarProperty Name="IdSeguro" ColumnName="IdSeguro" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CoberturaPolizas">
-            <EntityTypeMapping TypeName="SegurosModel.CoberturaPolizas">
-              <MappingFragment StoreEntitySet="CoberturaPolizas">
-                <ScalarProperty Name="IdCobertura" ColumnName="IdCobertura" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Procentaje" ColumnName="Procentaje" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1253,36 +1245,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_Retorna_PolizasClientes" FunctionName="SegurosModel.Store.sp_Retorna_PolizasClientes">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SegurosModel.sp_Retorna_PolizasClientes_Result">
-                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
-                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
-                <ScalarProperty Name="NombreAdiccion" ColumnName="NombreAdiccion" />
-                <ScalarProperty Name="MontoAsegurado" ColumnName="MontoAsegurado" />
-                <ScalarProperty Name="PorcentajeCobertura" ColumnName="PorcentajeCobertura" />
-                <ScalarProperty Name="PrimaFinal" ColumnName="PrimaFinal" />
-                <ScalarProperty Name="Impuestos" ColumnName="Impuestos" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_Retorna_PolizasClientes_ID" FunctionName="SegurosModel.Store.sp_Retorna_PolizasClientes_ID">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="SegurosModel.sp_Retorna_PolizasClientes_ID_Result">
-                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
-                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
-                <ScalarProperty Name="NombreAdiccion" ColumnName="NombreAdiccion" />
-                <ScalarProperty Name="MontoAsegurado" ColumnName="MontoAsegurado" />
-                <ScalarProperty Name="PorcentajeCobertura" ColumnName="PorcentajeCobertura" />
-                <ScalarProperty Name="PrimaFinal" ColumnName="PrimaFinal" />
-                <ScalarProperty Name="Impuestos" ColumnName="Impuestos" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_Retorna_AdiccionesClientes" FunctionName="SegurosModel.Store.sp_Retorna_AdiccionesClientes">
             <ResultMapping>
               <ComplexTypeMapping TypeName="SegurosModel.sp_Retorna_AdiccionesClientes_Result">
@@ -1316,6 +1278,48 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="CoberturaPolizas">
+            <EntityTypeMapping TypeName="SegurosModel.CoberturaPolizas">
+              <MappingFragment StoreEntitySet="CoberturaPolizas">
+                <ScalarProperty Name="Procentaje" ColumnName="Procentaje" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="NombreCobertura" ColumnName="NombreCobertura" />
+                <ScalarProperty Name="IdCobertura" ColumnName="IdCobertura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_Retorna_PolizasClientes" FunctionName="SegurosModel.Store.sp_Retorna_PolizasClientes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SegurosModel.sp_Retorna_PolizasClientes_Result">
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="NombreCobertura" ColumnName="NombreCobertura" />
+                <ScalarProperty Name="NombreAdiccion" ColumnName="NombreAdiccion" />
+                <ScalarProperty Name="MontoAsegurado" ColumnName="MontoAsegurado" />
+                <ScalarProperty Name="PorcentajeCobertura" ColumnName="PorcentajeCobertura" />
+                <ScalarProperty Name="PrimaFinal" ColumnName="PrimaFinal" />
+                <ScalarProperty Name="Impuestos" ColumnName="Impuestos" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Retorna_PolizasClientes_ID" FunctionName="SegurosModel.Store.sp_Retorna_PolizasClientes_ID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SegurosModel.sp_Retorna_PolizasClientes_ID_Result">
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="NombreAdiccion" ColumnName="NombreAdiccion" />
+                <ScalarProperty Name="NombreCobertura" ColumnName="NombreCobertura" />
+                <ScalarProperty Name="MontoAsegurado" ColumnName="MontoAsegurado" />
+                <ScalarProperty Name="PorcentajeCobertura" ColumnName="PorcentajeCobertura" />
+                <ScalarProperty Name="PrimaFinal" ColumnName="PrimaFinal" />
+                <ScalarProperty Name="Impuestos" ColumnName="Impuestos" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
