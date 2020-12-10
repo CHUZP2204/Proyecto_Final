@@ -14,7 +14,7 @@ namespace Proyecto_Final.Modelo
     public partial class sp_RetornaCoberturaID_Result
     {
         public int IdCobertura { get; set; }
-        public string Nombre { get; set; }
+        public string NombreCobertura { get; set; }
         public string Descripcion { get; set; }
         public string Procentaje { get; set; }
     }
