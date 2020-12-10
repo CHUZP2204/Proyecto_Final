@@ -48,7 +48,7 @@ namespace Proyecto_Final.Formularios
                 else
                 {
                     ///Se Asignan A Los TextBox Los Datos Del  la cobertura
-                    this.txtNombre.Text = resultado.Nombre;
+                    this.txtNombre.Text = resultado.NombreCobertura;
                     this.txtDescripcion.Text = resultado.Descripcion;
                     this.txtPorcentaje.Text = resultado.Procentaje;
                     this.hdCobertura.Value = resultado.IdCobertura.ToString();

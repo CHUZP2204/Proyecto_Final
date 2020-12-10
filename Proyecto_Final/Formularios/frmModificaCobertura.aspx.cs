@@ -39,7 +39,7 @@ namespace Proyecto_Final.Formularios
                     }
                     else
                     {
-                        this.txtnombre.Text = resultado.Nombre;
+                        this.txtnombre.Text = resultado.NombreCobertura;
                         this.txtdescripcion.Text = resultado.Descripcion;
                         this.txtporcentaje.Text = resultado.Procentaje;
                     
