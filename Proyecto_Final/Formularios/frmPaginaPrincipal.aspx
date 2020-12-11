@@ -15,7 +15,7 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div>
-                                <h3 class="auto-style1">Principal</h3>
+                                <h3 class="auto-style1">Principal</h3> <h4><asp:Label ID="lblTipoUsuarioActual" runat="server" Text=""></asp:Label></h4>
                             </div>
                         </div>
 
@@ -23,33 +23,61 @@
                     <!--Fin Encabezado Del Panel-->
                     <!--Cuerpo Del Panel-->
                     <div class="panel-body" style="background-color: aquamarine">
-                        <p>HELLO WORLD</p>
                         <h2>AQUI ES LA PAGINA PRINCIPAL</h2>
                         <h1>
-                            <asp:Label ID="lblUSuarioConectado" runat="server" Text="Informacion Confidente" ForeColor="Red"></asp:Label>
+                            <asp:Label ID="lblUSuarioConectado" runat="server" ForeColor="Red"></asp:Label>
 
                         </h1>
+                        <!--Div Con Columnas-->
 
-                        <asp:HyperLink ID="hplUserList" class="btn btn-primary" role="button" BorderColor="Black"
-                            runat="server" NavigateUrl="~/Formularios/frmUsuarioLista.aspx">Ver Lista Usuarios</asp:HyperLink> 
-                        <br/>
-                         <br/>
-                    <asp:HyperLink ID="hpPolizaList" class="btn btn-primary" role="button" BorderColor="Black"
-                            runat="server" NavigateUrl="~/Formularios/frmListaPolizas.aspx">Ver Lista Polizas</asp:HyperLink> 
-                        <br/>
-                        <br/>
-                        <asp:HyperLink ID="hpAdicList" class="btn btn-primary" role="button" BorderColor="Black"
-                            runat="server" NavigateUrl="~/Formularios/frmListaAdicciones.aspx">Ver Lista Adicciones</asp:HyperLink> 
-                        <br/>
-                        <br/>
-                        <asp:HyperLink ID="hpCoberList" class="btn btn-primary" role="button" BorderColor="Black"
-                            runat="server" NavigateUrl="~/Formularios/frmListaCobertura.aspx">Ver Lista Coberturas</asp:HyperLink> 
-                        <br/>
-                        <br/>
-                         <asp:HyperLink ID="hpAdicUsuList" class="btn btn-primary" role="button" BorderColor="Black"
-                            runat="server" NavigateUrl="~/Formularios/frmListaAdiccionesUsuario.aspx">Ver Lista Adicciones de Usuarios</asp:HyperLink> 
-                        <br/>
-                        <br/>
+                        <div class="row" style="display: flex">
+                            <!--PRIMERA COLUMNA-->
+                            <div class="column" style="flex: 50%; padding: 10px;">
+                                <div class="form-group">
+                                    <asp:HyperLink ID="hplModificarUser" class="btn btn-success" role="button" BorderColor="Black" runat="server">Modificar Mi Informacion</asp:HyperLink>
+                                    <br />
+                                    <br />
+                                    <asp:HyperLink ID="hplEliminarUser" class="btn btn-danger" role="button" BorderColor="Black" runat="server">Eliminar Mi Informacion</asp:HyperLink>
+                                    <br />
+                                    <br />
+                                    <asp:HyperLink ID="hplDatos" class="btn btn-primary" role="button" BorderColor="Black" runat="server">Ver Mis Polizas</asp:HyperLink>
+                                </div>
+                            </div>
+                            <!--SEGUNDA COLUMNA-->
+                            <div class="column" style="flex: 50%; padding: 10px;">
+
+                                <div class="form-group">
+                                    <asp:HyperLink ID="hplUserList" class="btn btn-primary" role="button" BorderColor="Black"
+                                        runat="server" NavigateUrl="~/Formularios/frmUsuarioLista.aspx">Ver Lista Usuarios</asp:HyperLink>
+                                    <br />
+                                    <br />
+                                    <asp:HyperLink ID="hpPolizaList" class="btn btn-primary" role="button" BorderColor="Black"
+                                        runat="server" NavigateUrl="~/Formularios/frmListaPolizas.aspx">Ver Lista Polizas</asp:HyperLink>
+                                    <br />
+                                    <br />
+                                    <asp:HyperLink ID="hpAdicList" class="btn btn-primary" role="button" BorderColor="Black"
+                                        runat="server" NavigateUrl="~/Formularios/frmListaAdicciones.aspx">Ver Lista Adicciones</asp:HyperLink>
+                                    <br />
+                                    <br />
+                                    <asp:HyperLink ID="hpCoberList" class="btn btn-primary" role="button" BorderColor="Black"
+                                        runat="server" NavigateUrl="~/Formularios/frmListaCobertura.aspx">Ver Lista Coberturas</asp:HyperLink>
+                                    <br />
+                                    <br />
+                                    <asp:HyperLink ID="hpAdicUsuList" class="btn btn-primary" role="button" BorderColor="Black"
+                                        runat="server" NavigateUrl="~/Formularios/frmListaAdiccionesUsuario.aspx">Ver Lista Adicciones de Usuarios</asp:HyperLink>
+                                    <br />
+                                    <br />
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        <!---->
+
+
+
+
                     </div>
                 </div>
             </div>

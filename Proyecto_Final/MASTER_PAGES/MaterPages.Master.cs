@@ -17,6 +17,10 @@ namespace Proyecto_Final.MASTER_PAGES
             {
                 this.hplSalir.Visible = false;
             }
+            else
+            {
+                this.hplIniciarSesion.Visible = false;
+            }
 
         }
     }

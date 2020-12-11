@@ -16,16 +16,17 @@ namespace Proyecto_Final.Formularios
             if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
             {
                 this.Response.Redirect("~/Formularios/frmInicioSesion.aspx");
-
-              
             }
+
+            ///Obtener El Id Del Usuario Conectado
+            string idUserConnected = this.Session["idusuario"].ToString();
+            ///Asignar A Hypelinks Para Modifcar Datos Personales De Usuario
+            this.hplModificarUser.NavigateUrl = "~/Formularios/frmModificarUsuario.aspx?IdUsuario=" + idUserConnected;
+            this.hplEliminarUser.NavigateUrl = "~/Formularios/frmEliminarUsuario.aspx?IdUsuario=" + idUserConnected;
+            ///Verificar El Tipo De Usuario Conectado
+            VerificaPermisoTipoUsuario();
             /// Cargar Nombre Del Usuario Que Se Logueo
             cargaNombre();
-
-            VerificaPermisoTipoUsuario();
-
-            VerificaPermisoTipoUsuarioCliente();
-
         }
 
         /// <summary>
@@ -34,7 +35,8 @@ namespace Proyecto_Final.Formularios
         /// </summary>
         void VerificaPermisoTipoUsuario()
         {
-            if (Convert.ToString(Session["tipousuario"]) == "Administrador && Empleado")
+            string tipoUsuarioCOnectado = Convert.ToString(Session["tipousuario"]);
+            if (tipoUsuarioCOnectado.Equals("Administrador") || tipoUsuarioCOnectado.Equals("Administrador"))
             {
                 this.hplUserList.Visible = true;
                 this.hpAdicUsuList.Visible = true;
@@ -42,19 +44,16 @@ namespace Proyecto_Final.Formularios
                 this.hpAdicList.Visible = true;
                 this.hpCoberList.Visible = true;
             }
-           }
 
-        void VerificaPermisoTipoUsuarioCliente()
-        {
-            if (Convert.ToString(Session["tipousuario"]) == "Cliente")
+            if (tipoUsuarioCOnectado.Equals("Cliente"))
             {
-                this.hplUserList.Visible = true;
+                this.hplUserList.Visible = false;
                 this.hpAdicUsuList.Visible = false;
                 this.hpPolizaList.Visible = false;
                 this.hpAdicList.Visible = false;
                 this.hpCoberList.Visible = false;
-
             }
+
         }
 
         /// <summary>
@@ -68,7 +67,10 @@ namespace Proyecto_Final.Formularios
             string sApellidoActual = Convert.ToString(this.Session["sApellido"]);
             string sTipoUsuarioActual = Convert.ToString(this.Session["tipousuario"]);
 
-            string mjs = $"Bienvenido Al Sistema {nombreActual} {pApellidoActual} {sApellidoActual} {sTipoUsuarioActual}";
+            this.lblTipoUsuarioActual.Text = sTipoUsuarioActual;
+
+            string mjs = $"Bienvenido Al Sistema {nombreActual} {pApellidoActual} {sApellidoActual}  <br/> " +
+                         $" Es Un Gusto Verlo De Vuelta";
 
             this.lblUSuarioConectado.Text = mjs;
         }
