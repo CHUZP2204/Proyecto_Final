@@ -12,7 +12,11 @@ namespace Proyecto_Final.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ///Validar Si Usuario Esta Conectado
+            if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
+            {
+                this.Response.Redirect("~/Formularios/frmInicioSesion.aspx");
+            }
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)
@@ -45,7 +49,7 @@ namespace Proyecto_Final.Formularios
                 catch (Exception excepcionCapturada)
                 {
 
-                    mensaje += $" Ocurrio un error:{excepcionCapturada.Message}";
+                    mensaje += $" Ocurrio Un Error:{excepcionCapturada.Message}";
                 }
                 ///siempre se ejecuta (se atrape o no la excepcion)
                 finally
@@ -55,7 +59,7 @@ namespace Proyecto_Final.Formularios
 
                     if (resultado)
                     {
-                        mensaje += "El registro fue insertado";
+                        mensaje += "El Registro Fue Insertado!";
                     }
                 }
 

@@ -13,6 +13,11 @@ namespace Proyecto_Final.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ///Validar Si Usuario Esta Conectado
+            if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
+            {
+                this.Response.Redirect("~/Formularios/frmInicioSesion.aspx");
+            }
             if (!this.IsPostBack)
             {
                 CargarPoliza();
@@ -50,7 +55,7 @@ namespace Proyecto_Final.Formularios
                     this.txtIdSeguro.Text = resultado.IdSeguro.ToString();
                     this.txtIdUsuario.Text = resultado.IdUsuario.ToString();
                     this.txtIdCobertura.Text = resultado.IdCobertura.ToString();
-                   
+
 
                     /////asignar al hidden field
                     /////el valor de la llave primaria

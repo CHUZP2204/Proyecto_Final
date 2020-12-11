@@ -16,13 +16,17 @@ namespace Proyecto_Final.Formularios
         segurosEntities1 modeloBD = new segurosEntities1();
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            ///Validar Si Usuario Esta Conectado
+            if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
+            {
+                this.Response.Redirect("~/Formularios/frmInicioSesion.aspx");
+            }
         }
         protected void btnVerReporte_Click(object sender, EventArgs e)
         {
             this.contruirReporte();
         }
-       
+
         void contruirReporte()
         {
 
@@ -64,12 +68,12 @@ namespace Proyecto_Final.Formularios
         /// <param name="pNombre"></param>
         /// <returns></returns>
         List<sp_Retorna_AdiccionesClientes_Result> retornaDatosReporte(
-            string pNombreCliente,string pPrimerApellido=null,string pNombreAdiccion = null)
+            string pNombreCliente, string pPrimerApellido = null, string pNombreAdiccion = null)
         {
             return
                  this.modeloBD.sp_Retorna_AdiccionesClientes(pNombreCliente, pPrimerApellido, pNombreAdiccion).ToList();
         }
 
-        
+
     }
 }

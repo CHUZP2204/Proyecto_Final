@@ -12,6 +12,11 @@ namespace Proyecto_Final.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ///Validar Si Usuario Esta Conectado
+            if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
+            {
+                this.Response.Redirect("~/Formularios/frmInicioSesion.aspx");
+            }
             CargaDatosGrid();
         }
 
@@ -19,7 +24,7 @@ namespace Proyecto_Final.Formularios
         {
             this.CargaDatosGrid();
         }
-        void CargaDatosGrid() 
+        void CargaDatosGrid()
         {
             //crear la instancia de la clase que retorna datos
             BLAdicciones bLAdicciones = new BLAdicciones();

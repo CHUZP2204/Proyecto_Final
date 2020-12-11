@@ -19,12 +19,14 @@ namespace Proyecto_Final.Formularios
             if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
             {
                 this.hplstUsers.Visible = false;
+                this.hplAtrasInicio.Visible = false;
             }
             /// No Se Mostrara El HyperLink Si ya Hay Un Usuario Logueado
             /// Porque Este Re-Direcciona a La Pantalla Login
             if (Convert.ToBoolean(this.Session["usuariologueado"]) == true)
             {
                 this.hplAtrasInicio.Visible = false;
+                this.hplAtrasInicio.Visible = true;
             }
         }
 

@@ -13,6 +13,10 @@ namespace Proyecto_Final.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
+            {
+                this.Response.Redirect("~/Formularios/frmInicioSesion.aspx");
+            }
             ///Cargar Usuario Obtenido Por ID
             CargarCobertura();
         }
@@ -88,6 +92,7 @@ namespace Proyecto_Final.Formularios
                 ///excepcionCapturada: posee los datos de la excepción
                 catch (Exception excepcionCapturada)
                 {
+                    ///Da Error Por Conflicto Entre Llaves Foraneas 
                     mensaje += $"Ocurrió un error: {excepcionCapturada.Message}";
                 }
                 ///finally: siempre se ejecuta (se atrape o no la excepción)

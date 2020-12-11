@@ -13,7 +13,13 @@ namespace Proyecto_Final.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            /// Esto Verifica Si Hay Un Usuario Conectado
+            if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
+            {
+                this.Response.Redirect("~/Formularios/frmInicioSesion.aspx");
+            }
             CargaRegistro();
+
         }
         void CargaRegistro()
         {
@@ -24,16 +30,14 @@ namespace Proyecto_Final.Formularios
             //validar si el parametro es correcto
             if (string.IsNullOrEmpty(parametro))
             {
-                Response.Write("<scrpt>alert('Parametro nulo')</script"); ;
+                Response.Write("<scrpt>alert('Parametro nulo')</script"); 
             }
             else
             {
                 int idAdicciones = Convert.ToInt16(parametro);
                 BLAdicciones bLAdicciones = new BLAdicciones();
-                sp_RetornaAdiccionesID_Result datosAdicciones = new sp_RetornaAdiccionesID_Result();
-
                 //invocar al sp por medio del metodo
-                datosAdicciones = bLAdicciones.sp_RetornaAdiccionesID(idAdicciones);
+                sp_RetornaAdiccionesID_Result datosAdicciones =  bLAdicciones.sp_RetornaAdiccionesID(idAdicciones);
 
                 //verificar que el objeto retornado no sea nulo
                 if (datosAdicciones == null)
@@ -59,13 +63,13 @@ namespace Proyecto_Final.Formularios
         /// 
         protected void btnsi_Click(object sender, EventArgs e)
         {
-            AlmacenaDatos();
+            EliminarDatos();
         }
         protected void btnno_Click(object sender, EventArgs e)
         {
             CargaRegistro();
         }
-        void AlmacenaDatos()
+        void EliminarDatos()
         {
             if (this.IsValid)
             {
@@ -80,6 +84,7 @@ namespace Proyecto_Final.Formularios
                     //asignar a la variable el resultado
                     //de invocar el sp
                     resultado = bLAdicciones.EliminaAdiccion(idAdicciones);
+                     
                 }
                 catch (Exception exepcionCapturada)
                 {
@@ -102,7 +107,7 @@ namespace Proyecto_Final.Formularios
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            AlmacenaDatos();
+            EliminarDatos();
         }
     }
 }

@@ -12,46 +12,51 @@ namespace Proyecto_Final.Formularios
     public partial class frmModificaCobertura : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {            ///Validar Si Usuario Esta Conectado
+            if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
+            {
+                this.Response.Redirect("~/Formularios/frmInicioSesion.aspx");
+            }
+
             if (!this.IsPostBack)
             {
                 CargarCobertura();
             }
-            void CargarCobertura()
-            {
 
-                string parametro = this.Request.QueryString["IdCobertura"];
-                //validar si el parametro es correcto
-                if (String.IsNullOrEmpty(parametro))
+        }
+        void CargarCobertura()
+        {
+
+            string parametro = this.Request.QueryString["IdCobertura"];
+            //validar si el parametro es correcto
+            if (String.IsNullOrEmpty(parametro))
+            {
+                Response.Write("<script>alert('Parámetro nulo')</script>");
+            }
+            else
+            {
+                int IdCobertura = Convert.ToInt32(parametro);
+                BLCobertura coberturaObtenido = new BLCobertura();
+                sp_RetornaCoberturaID_Result resultado = new sp_RetornaCoberturaID_Result();
+                ///invocar al procedimiento
+                resultado = coberturaObtenido.RetornaCoberturaID(IdCobertura);
+                if (resultado == null)
                 {
-                    Response.Write("<script>alert('Parámetro nulo')</script>");
+                    Response.Redirect("frmListaCobertura.aspx");
                 }
                 else
                 {
-                    int IdCobertura = Convert.ToInt32(parametro);
-                    BLCobertura coberturaObtenido = new BLCobertura();
-                    sp_RetornaCoberturaID_Result resultado = new sp_RetornaCoberturaID_Result();
-                    ///invocar al procedimiento
-                    resultado = coberturaObtenido.RetornaCoberturaID(IdCobertura);
-                    if (resultado == null)
-                    {
-                        Response.Redirect("frmListaCobertura.aspx");
-                    }
-                    else
-                    {
-                        this.txtnombre.Text = resultado.NombreCobertura;
-                        this.txtdescripcion.Text = resultado.Descripcion;
-                        this.txtporcentaje.Text = resultado.Procentaje;
-                    
-                        /////asignar al hidden field
-                        /////el valor de la llave primaria
-                        hdidCobertura.Value = resultado.IdCobertura.ToString();
-                    }
+                    this.txtnombre.Text = resultado.NombreCobertura;
+                    this.txtdescripcion.Text = resultado.Descripcion;
+                    this.txtporcentaje.Text = resultado.Procentaje;
 
+                    /////asignar al hidden field
+                    /////el valor de la llave primaria
+                    hdidCobertura.Value = resultado.IdCobertura.ToString();
                 }
+
             }
         }
-
         protected void btAceptar_Click(object sender, EventArgs e)
         {
             AlmacenarDatos();

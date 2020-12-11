@@ -132,9 +132,9 @@
         <footer style="text-align: center">
             <div class="container-fluid">
                 <br />
-                <p class="fa fa-map-marker">Direccion: Puriscal,San Jose</p>
+                <p class="fa fa-map-marker" style="height:20px">Direccion: Puriscal,San Jose</p>
                 <br />
-                <p class="fa fa-copyright">Todos los derechos resevados<%:DateTime.Now.Year %>  ©</p>
+                <p class="fa fa-copyright" style="height:20px">Todos los derechos resevados<%:DateTime.Now.Year %>  ©</p>
             </div>
         </footer>
         <!--Fin Pie De Pagina-->

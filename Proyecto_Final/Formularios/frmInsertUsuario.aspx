@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContenidoPrincipal" runat="server">
-    <div id="frmInsertUsuario"  class="form-inline">
+    <div id="frmInsertUsuario" class="form-inline">
         <div style="background-color: #699186; filter: drop-shadow(5px 5px 10px #444)">
             <!---->
             <div class="container-fluid" style="width: 500px">
@@ -18,17 +18,24 @@
                                     class="btn btn-danger" runat="server">
                                     <i class="fas fa-backspace"></i>
                                 </asp:HyperLink>
-                            </div>
-                            <div style="margin-bottom: 10px; padding-left: 40px; padding-right: 40px">
-                                <h3 class="auto-style1">Registro De Un Usuario</h3>
-                            </div>
 
-
+                                <!---->
+                                <asp:HyperLink ID="hplAtrasListaUsuario" NavigateUrl="~/Formularios/frmUsuarioLista.aspx"
+                                    class="btn btn-danger" runat="server">
+                                    <i class="fas fa-backspace"></i>
+                                </asp:HyperLink>
+                                <!---->
+                            </div>
+                        <div style="margin-bottom: 10px; padding-left: 40px; padding-right: 40px">
+                            <h3 class="auto-style1">Registro De Un Usuario</h3>
                         </div>
 
+
                     </div>
-                    <!--Fin Encabezado Del Panel-->
-                    <!--Cuerpo Del Panel-->
+
+                </div>
+                <!--Fin Encabezado Del Panel-->
+                <!--Cuerpo Del Panel-->
                     <div class="panel-body" style="background-color: aquamarine">
 
                         <!-- Columnnas Del Panel-->

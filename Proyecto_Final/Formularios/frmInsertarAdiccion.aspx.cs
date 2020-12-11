@@ -11,6 +11,12 @@ namespace Proyecto_Final.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ///Validar Si Usuario Esta Conectado 
+            ///Obligando A Iniciar Sesion
+            if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
+            {
+                this.Response.Redirect("~/Formularios/frmInicioSesion.aspx");
+            }
 
         }
 
@@ -42,7 +48,7 @@ namespace Proyecto_Final.Formularios
                 {
                     if (resultado)
                     {
-                        mensaje += $"El registro fue Insertado ";
+                        mensaje += $"El Registro Fue Insertado ";
                     }
                 }
 

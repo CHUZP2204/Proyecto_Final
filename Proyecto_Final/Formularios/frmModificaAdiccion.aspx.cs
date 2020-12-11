@@ -13,6 +13,11 @@ namespace Proyecto_Final.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ///Validar Si Usuario Esta Conectado
+            if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
+            {
+                this.Response.Redirect("~/Formularios/frmInicioSesion.aspx");
+            }
             if (!this.IsPostBack)
             {
                 CargaRegistro();
@@ -76,7 +81,7 @@ namespace Proyecto_Final.Formularios
                     int idAdicciones = Convert.ToInt16(this.hdidAdicciones.Value);
                     ///obtener los valores seleccionados por el usuario
                     ///se toman de la propiedad datavaluefield
-                   
+
 
                     //asignar a la variable el resultado
                     // de invocar el sp
@@ -105,6 +110,6 @@ namespace Proyecto_Final.Formularios
             }
         }
 
-       
+
     }
 }

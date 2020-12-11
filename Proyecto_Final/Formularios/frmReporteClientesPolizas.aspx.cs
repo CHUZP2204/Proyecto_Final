@@ -16,7 +16,11 @@ namespace Proyecto_Final.Formularios
         segurosEntities1 modeloBD = new segurosEntities1();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ///Validar Si Usuario Esta Conectado
+            if (Convert.ToBoolean(this.Session["usuariologueado"]) != true)
+            {
+                this.Response.Redirect("~/Formularios/frmInicioSesion.aspx");
+            }
         }
         protected void btnVerReporte_Click(object sender, EventArgs e)
         {
@@ -45,7 +49,7 @@ namespace Proyecto_Final.Formularios
                 rpvClientes.LocalReport.DataSources.Clear();
                 ///obtener los datos del reporte
                 List<sp_Retorna_PolizasClientes_Result> datosReporte =
-                   this.retornaDatosReporte(this.txtNombre.Text, this.txtPrimerApellido.Text, this.txtNombrePoliza.Text,this.txtNombrePoliza.Text);
+                   this.retornaDatosReporte(this.txtNombre.Text, this.txtPrimerApellido.Text, this.txtNombrePoliza.Text, this.txtNombrePoliza.Text);
                 ///crear la fuente de datos
                 ReportDataSource fuenteDatos = new ReportDataSource();
                 fuenteDatos.Name = infoFuenteDatos[0];

@@ -67,7 +67,7 @@
                                 BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" OnPageIndexChanging="grdListaCobertura_PageIndexChanging" PageSize="5">
                                 <AlternatingRowStyle BackColor="#CCCCCC" />
                                 <Columns>
-                                    <asp:BoundField DataField="Nombre" HeaderText="Nombre Cobertura" />
+                                    <asp:BoundField DataField="NombreCobertura" HeaderText="Nombre Cobertura" />
                                     <asp:BoundField DataField="Descripcion" HeaderText="Descripcion Cobertura" />
                                     <asp:BoundField DataField="Procentaje" HeaderText="Procentaje Cobertura " />
                                     <asp:HyperLinkField DataNavigateUrlFields="IdCobertura" DataNavigateUrlFormatString="frmModificaCobertura.aspx?IdCobertura={0}" Text="Modificar" />

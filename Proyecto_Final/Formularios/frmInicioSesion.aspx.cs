@@ -38,7 +38,7 @@ namespace Proyecto_Final.Formularios
             }
             else
             {
-                Response.Write("<script>alert('No Se Pudo Iniciar Sesion Intente De Nuevo')</script>");
+                Response.Write("<script>alert('NO SE PUDO INICIAR SESION <br/> INTENTE DE NUEVO!')</script>");
             }
 
 
