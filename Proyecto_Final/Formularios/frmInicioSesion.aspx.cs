@@ -13,7 +13,10 @@ namespace Proyecto_Final.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Convert.ToBoolean(this.Session["usuariologueado"]) == true)
+            {
+                this.Response.Redirect("~/Formularios/frmPaginaPrincipal.aspx");
+            }
         }
         protected void btnLogin_Click(object sender, EventArgs e)
         {

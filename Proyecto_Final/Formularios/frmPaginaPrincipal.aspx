@@ -15,7 +15,9 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div>
-                                <h3 class="auto-style1">Principal</h3> <h4><asp:Label ID="lblTipoUsuarioActual" runat="server" Text=""></asp:Label></h4>
+                                <h3 class="auto-style1">Principal</h3>
+                                <h4>
+                                    <asp:Label ID="lblTipoUsuarioActual" runat="server" Text=""></asp:Label></h4>
                             </div>
                         </div>
 
@@ -67,13 +69,15 @@
                                         runat="server" NavigateUrl="~/Formularios/frmListaAdiccionesUsuario.aspx">Ver Lista Adicciones de Usuarios</asp:HyperLink>
                                     <br />
                                     <br />
-                                     <asp:HyperLink ID="hpReporteCA" class="btn btn-primary" role="button" BorderColor="Black"
-                                        runat="server" NavigateUrl="~/Formularios/frmReporteClientesAdicciones.aspx">Ver Los Reportes de las Adiciones de los Clienetes</asp:HyperLink>
-                                 <br />
+                                    <asp:HyperLink ID="hplReporte1" class="btn btn-primary" role="button" BorderColor="Black"
+                                        runat="server" NavigateUrl="~/Formularios/frmReporteClientesAdicciones.aspx">Reporte Add.Cliente</asp:HyperLink>
                                     <br />
-                                     <asp:HyperLink ID="hpReporteCP" class="btn btn-primary" role="button" BorderColor="Black"
-                                        runat="server" NavigateUrl="~/Formularios/frmReporteClientesPolizas.aspx">Ver Los Reportes de las Polizas de los Clienetes</asp:HyperLink>
-                            
+                                    <br />
+                                    <asp:HyperLink ID="hplReporte2" class="btn btn-info" role="button" BorderColor="Black"
+                                        runat="server" NavigateUrl="~/Formularios/frmReporteClientesPolizas.aspx">Reporte Polizas</asp:HyperLink>
+                                    <br />
+                                    <br />
+                                 
                                 </div>
 
 

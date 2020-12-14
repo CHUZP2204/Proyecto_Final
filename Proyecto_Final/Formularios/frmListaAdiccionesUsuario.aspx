@@ -29,7 +29,8 @@
                         <!--PANEL CUERPO-->
                         <div class="panel-body" style="background-color: aquamarine">
                             <div class="form-group">
-                                <asp:HyperLink ID="hpAdiccionUsuario" runat="server" NavigateUrl="~/Formularios/frmInsertAdiccionesUsuario.aspx">Nueva Adiccion Del Usuario</asp:HyperLink>
+                                <asp:HyperLink ID="hpAdiccionUsuario" runat="server" class="btn btn-primary" role="button" BorderColor="Black" 
+                                    NavigateUrl="~/Formularios/frmInsertAdiccionesUsuario.aspx">Nueva Adiccion Del Usuario</asp:HyperLink>
                             </div>
                             <div class="form-group">
                                 <label>Identificador Adiccion:</label>

@@ -105,21 +105,21 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.WebControls.HyperLink hpAdicUsuList;
 
         /// <summary>
-        /// Control hpReporteCA.
+        /// Control hplReporte1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hpReporteCA;
+        protected global::System.Web.UI.WebControls.HyperLink hplReporte1;
 
         /// <summary>
-        /// Control hpReporteCP.
+        /// Control hplReporte2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hpReporteCP;
+        protected global::System.Web.UI.WebControls.HyperLink hplReporte2;
     }
 }

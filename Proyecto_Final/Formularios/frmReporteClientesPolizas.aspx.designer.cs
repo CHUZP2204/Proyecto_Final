@@ -24,6 +24,15 @@ namespace Proyecto_Final.Formularios
         protected global::System.Web.UI.ScriptManager scmReporteClientes;
 
         /// <summary>
+        /// Control hplAtras.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hplAtras;
+
+        /// <summary>
         /// Control Label1.
         /// </summary>
         /// <remarks>
@@ -121,14 +130,5 @@ namespace Proyecto_Final.Formularios
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::Microsoft.Reporting.WebForms.ReportViewer rpvClientes;
-
-        /// <summary>
-        /// Control hplastCli.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hplastCli;
     }
 }

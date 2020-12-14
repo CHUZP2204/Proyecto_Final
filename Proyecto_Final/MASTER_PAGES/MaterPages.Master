@@ -4,7 +4,7 @@
 
 <html>
 <head runat="server">
-    <meta  charset="utf-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--http-equiv="Content-Type" content="text/html;-->
     <title></title>
@@ -16,7 +16,7 @@
     <%--Content folder holper para que las paginas que usen la
       plantilla incluyan hojas de estilos propios--%>
 
-<!--Metodo Del Lado Del Cliente Que Cierra Session-->
+    <!--Metodo Del Lado Del Cliente Que Cierra Session-->
     <script runat="server">
         void btnSalir_Click(object sender, EventArgs e)
         {
@@ -30,7 +30,7 @@
             this.Response.Redirect("frmInicioSesion.aspx");
         }
     </script>
-<!--FIN Metodo Del Lado Del Cliente Que Cierra Session-->
+    <!--FIN Metodo Del Lado Del Cliente Que Cierra Session-->
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -50,8 +50,8 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li class="dropdown">
+                        <li class="active"><a href="frmPaginaPrincipal.aspx">Home</a></li>
+                        <!--<li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Page 1-1</a></li>
@@ -60,7 +60,9 @@
                             </ul>
                         </li>
                         <li><a href="#">Page 2</a></li>
-                        <li><a href="#">Page 3</a></li>
+                        <li><a href="#">Page 3</a></li>-->
+                        
+                        <!---->
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
@@ -84,7 +86,7 @@
                     <div class="modal-body">
                         <p>SEGURO QUE DESEAS SALIR?</p>
                     </div>
-                    <div class="modal-footer"  style="text-align: center">
+                    <div class="modal-footer" style="text-align: center">
                         <asp:Button ID="btnSalir" UseSubmitBehavior="true" CssClass="btn btn-danger" OnClientClick="btnSalir()" OnClick="btnSalir_Click"
                             runat="server" Text="SI" />
 
@@ -103,11 +105,11 @@
             });
         </script>
         <!--FIN Metodo Que Llama Un Modal De Confirmacion De Cierre De Session-->
-        <header>Este es el encabezado de todas las paginas</header>
+        <header>PROYECTO PROGRAMACION 5</header>
         <%--Content folder holper para que las paginas que usen la plantilla incluyan el formulario--%>
 
         <style>
-             .modal-header, h4, .close {
+            .modal-header, h4, .close {
                 background-color: #5cb85c;
                 color: white !important;
                 text-align: center;
@@ -132,9 +134,18 @@
         <footer style="text-align: center">
             <div class="container-fluid">
                 <br />
-                <p class="fa fa-map-marker" style="height:20px">Direccion: Puriscal,San Jose</p>
+                <p class="fa fa-map-marker" style="height: 20px">Direccion: Puriscal,San Jose</p>
                 <br />
-                <p class="fa fa-copyright" style="height:20px">Todos los derechos resevados<%:DateTime.Now.Year %>  ©</p>
+                <p class="fa fa-copyright" style="height: 20px">Todos los derechos resevados<%:DateTime.Now.Year %>  ©</p>
+                <br />
+                <p class="fa fa-cogs" style="height: 20px">DEVELOPERS</p>
+                <br />
+                <p class="fa fa-user" style="height: 20px">Jesus Perez Saenz</p>
+                <br />
+                <p class="fa fa-user" style="height: 20px">Wagner Diaz Diaz</p>
+                <br />
+                <p class="fa fa-user"style="height: 20px">Daniel Diaz Chacon</p>
+                <br />
             </div>
         </footer>
         <!--Fin Pie De Pagina-->

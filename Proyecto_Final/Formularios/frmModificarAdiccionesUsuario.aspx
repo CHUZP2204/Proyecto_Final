@@ -25,7 +25,6 @@
                     <!--PANEL BODY-->
                     <div class="panel-body" style="background-color: aquamarine">
                         <asp:HiddenField ID="hdAdiccionesUsuario" runat="server" />
-                        <p>
                             <div class="form-group">
                                 <asp:Label ID="Label12" runat="server" Text="Identificador Adiccion:" Style="font-weight: 700"></asp:Label>
                                 <br />
@@ -55,7 +54,6 @@
                             <br />
                             <asp:HyperLink ID="hplstUsers" class="btn btn-primary" role="button" BorderColor="Black"
                                 runat="server" NavigateUrl="~/Formularios/frmListaAdiccionesUsuario.aspx">Ver Lista</asp:HyperLink>
-                        </p>
                     </div>
                     <!--FIN BODY PANEL-->
                 </div>
