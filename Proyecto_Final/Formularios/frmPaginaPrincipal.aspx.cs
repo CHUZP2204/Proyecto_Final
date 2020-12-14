@@ -43,6 +43,8 @@ namespace Proyecto_Final.Formularios
                 this.hpPolizaList.Visible = true;
                 this.hpAdicList.Visible = true;
                 this.hpCoberList.Visible = true;
+                this.hpReporteCA.Visible = true;
+                this.hpReporteCP.Visible = true;
             }
 
             if (tipoUsuarioCOnectado.Equals("Cliente"))
@@ -52,6 +54,8 @@ namespace Proyecto_Final.Formularios
                 this.hpPolizaList.Visible = false;
                 this.hpAdicList.Visible = false;
                 this.hpCoberList.Visible = false;
+                this.hpReporteCA.Visible = false;
+                this.hpReporteCP.Visible = false;
             }
 
         }

@@ -14,17 +14,10 @@
                     <div class="panel-heading">
                         <div class="row" style="display: flex">
                             <div style="margin-left: 10px; margin-top: 15px">
-                                <asp:HyperLink ID="hplAtrasInicio" NavigateUrl="~/Formularios/frmInicioSesion.aspx"
+                                <asp:HyperLink ID="hplAtrasInicio" NavigateUrl="~/Formularios/frmUsuarioLista.aspx"
                                     class="btn btn-danger" runat="server">
                                     <i class="fas fa-backspace"></i>
                                 </asp:HyperLink>
-
-                                <!---->
-                                <asp:HyperLink ID="hplAtrasListaUsuario" NavigateUrl="~/Formularios/frmUsuarioLista.aspx"
-                                    class="btn btn-danger" runat="server">
-                                    <i class="fas fa-backspace"></i>
-                                </asp:HyperLink>
-                                <!---->
                             </div>
                         <div style="margin-bottom: 10px; padding-left: 40px; padding-right: 40px">
                             <h3 class="auto-style1">Registro De Un Usuario</h3>

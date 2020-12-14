@@ -67,6 +67,13 @@
                                         runat="server" NavigateUrl="~/Formularios/frmListaAdiccionesUsuario.aspx">Ver Lista Adicciones de Usuarios</asp:HyperLink>
                                     <br />
                                     <br />
+                                     <asp:HyperLink ID="hpReporteCA" class="btn btn-primary" role="button" BorderColor="Black"
+                                        runat="server" NavigateUrl="~/Formularios/frmReporteClientesAdicciones.aspx">Ver Los Reportes de las Adiciones de los Clienetes</asp:HyperLink>
+                                 <br />
+                                    <br />
+                                     <asp:HyperLink ID="hpReporteCP" class="btn btn-primary" role="button" BorderColor="Black"
+                                        runat="server" NavigateUrl="~/Formularios/frmReporteClientesPolizas.aspx">Ver Los Reportes de las Polizas de los Clienetes</asp:HyperLink>
+                            
                                 </div>
 
 

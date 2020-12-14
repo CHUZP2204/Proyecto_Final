@@ -14,7 +14,7 @@
                     <div class="panel-heading">
                         <div class="row" style="display: flex">
                             <div style="margin-left: 10px; margin-top: 15px">
-                                <asp:HyperLink ID="hplAtras" NavigateUrl="~/Formularios/frmUsuarioLista.aspx"
+                                <asp:HyperLink ID="hplAtras" NavigateUrl="~/Formularios/frmPaginaPrincipal.aspx"
                                     class="btn btn-danger" runat="server">
                                     <i class="fas fa-backspace"></i>
                                 </asp:HyperLink>
@@ -218,7 +218,10 @@
                                 <asp:HyperLink ID="hplstUsers" class="btn btn-primary" role="button" BorderColor="Black"
                                     runat="server" NavigateUrl="~/Formularios/frmUsuarioLista.aspx ">Ver Lista</asp:HyperLink>
                                 <br />
-
+                                  <br />
+                                <asp:HyperLink ID="hplastCli" class="btn btn-primary" role="button" BorderColor="Black"
+                                    runat="server" NavigateUrl="~/Formularios/frmPaginaPrincipal.aspx ">Pagina Principal</asp:HyperLink>
+                           
                             </div>
                         </div>
                         <br />

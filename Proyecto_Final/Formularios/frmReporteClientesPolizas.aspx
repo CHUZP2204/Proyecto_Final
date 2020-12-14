@@ -40,7 +40,9 @@
         <br />
 
     </div>
-
+     <asp:HyperLink ID="hplastCli" class="btn btn-primary" role="button" BorderColor="Black"
+                                    runat="server" NavigateUrl="~/Formularios/frmPaginaPrincipal.aspx ">Pagina Principal</asp:HyperLink>
+                           
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scriptspersonalizados" runat="server">
 </asp:Content>
