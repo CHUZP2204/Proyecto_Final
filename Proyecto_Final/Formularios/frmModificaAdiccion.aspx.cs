@@ -59,7 +59,7 @@ namespace Proyecto_Final.Formularios
                     ///asignar a cada una de las etiquetas los valores
                     ///obtenidos en la invocacion del sp por medio del metodo
 
-                    this.txtNombreAdiccion.Text = datosAdicciones.Nombre.ToString();
+                    this.txtNombreAdiccion.Text = datosAdicciones.NombreAdiccion.ToString();
                     this.txtCodigoAdiccion.Text = datosAdicciones.Codigo.ToString();
                     //asignar al hiden field
                     //el valor de llave primaria

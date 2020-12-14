@@ -35,7 +35,6 @@ namespace Proyecto_Final.Modelo
         public DbSet<TipoSeguro> TipoSeguro { get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<Vehiculo> Vehiculo { get; set; }
-        public DbSet<sysdiagrams> sysdiagrams { get; set; }
         public DbSet<Adicciones> Adicciones { get; set; }
         public DbSet<CoberturaPolizas> CoberturaPolizas { get; set; }
     
@@ -200,41 +199,6 @@ namespace Proyecto_Final.Modelo
                 new ObjectParameter("Codigo", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_ModificaAdicciones", idAdiccionesParameter, nombreParameter, codigoParameter);
-        }
-    
-        public virtual ObjectResult<sp_RetornaAdicciones_Result> sp_RetornaAdicciones(string nombre, string codigo)
-        {
-            var nombreParameter = nombre != null ?
-                new ObjectParameter("Nombre", nombre) :
-                new ObjectParameter("Nombre", typeof(string));
-    
-            var codigoParameter = codigo != null ?
-                new ObjectParameter("Codigo", codigo) :
-                new ObjectParameter("Codigo", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaAdicciones_Result>("sp_RetornaAdicciones", nombreParameter, codigoParameter);
-        }
-    
-        public virtual ObjectResult<sp_RetornaAdiccionesID_Result> sp_RetornaAdiccionesID(Nullable<int> idAdicciones)
-        {
-            var idAdiccionesParameter = idAdicciones.HasValue ?
-                new ObjectParameter("idAdicciones", idAdicciones) :
-                new ObjectParameter("idAdicciones", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaAdiccionesID_Result>("sp_RetornaAdiccionesID", idAdiccionesParameter);
-        }
-    
-        public virtual int spInsertaAdicciones(string nombre, string codigo)
-        {
-            var nombreParameter = nombre != null ?
-                new ObjectParameter("Nombre", nombre) :
-                new ObjectParameter("Nombre", typeof(string));
-    
-            var codigoParameter = codigo != null ?
-                new ObjectParameter("codigo", codigo) :
-                new ObjectParameter("codigo", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertaAdicciones", nombreParameter, codigoParameter);
         }
     
         public virtual int spModificaUsuarioID(Nullable<int> idUsuario, string cedula, string genero, Nullable<System.DateTime> fecha, string nombre, string primerApellido, string segundoApellido, string direccion, string telefonoPrincipal, string telefonoSecundario, string correo, string tipoUsuario, string contrasenia)
@@ -527,6 +491,54 @@ namespace Proyecto_Final.Modelo
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaRegistroPolizaID_Result>("sp_RetornaRegistroPolizaID", idRegistroParameter);
         }
     
+        public virtual ObjectResult<sp_RetornaCobertura_Result> sp_RetornaCobertura(string nombre, string porcentaje)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("nombre", nombre) :
+                new ObjectParameter("nombre", typeof(string));
+    
+            var porcentajeParameter = porcentaje != null ?
+                new ObjectParameter("porcentaje", porcentaje) :
+                new ObjectParameter("porcentaje", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaCobertura_Result>("sp_RetornaCobertura", nombreParameter, porcentajeParameter);
+        }
+    
+        public virtual ObjectResult<sp_RetornaCoberturaID_Result> sp_RetornaCoberturaID(Nullable<int> idCobertura)
+        {
+            var idCoberturaParameter = idCobertura.HasValue ?
+                new ObjectParameter("idCobertura", idCobertura) :
+                new ObjectParameter("idCobertura", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaCoberturaID_Result>("sp_RetornaCoberturaID", idCoberturaParameter);
+        }
+    
+        public virtual ObjectResult<sp_RetornaAdicciones_Result> sp_RetornaAdicciones(string nombre, string codigo)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("Codigo", codigo) :
+                new ObjectParameter("Codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaAdicciones_Result>("sp_RetornaAdicciones", nombreParameter, codigoParameter);
+        }
+    
+        public virtual int spInsertaAdicciones(string nombre, string codigo)
+        {
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertaAdicciones", nombreParameter, codigoParameter);
+        }
+    
         public virtual ObjectResult<sp_Retorna_AdiccionesCliente_ID_Result> sp_Retorna_AdiccionesCliente_ID(string idUsuario)
         {
             var idUsuarioParameter = idUsuario != null ?
@@ -553,6 +565,15 @@ namespace Proyecto_Final.Modelo
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Retorna_AdiccionesClientes_Result>("sp_Retorna_AdiccionesClientes", nombreParameter, primerApellidoParameter, nombreAdiccionParameter);
         }
     
+        public virtual ObjectResult<sp_RetornaAdiccionesID_Result> sp_RetornaAdiccionesID(Nullable<int> idAdicciones)
+        {
+            var idAdiccionesParameter = idAdicciones.HasValue ?
+                new ObjectParameter("idAdicciones", idAdicciones) :
+                new ObjectParameter("idAdicciones", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaAdiccionesID_Result>("sp_RetornaAdiccionesID", idAdiccionesParameter);
+        }
+    
         public virtual ObjectResult<sp_Retorna_PolizasClientes_Result> sp_Retorna_PolizasClientes(string nombreUsuario, string primerApellido, string nombreCobertura, string porcentajeCobertura)
         {
             var nombreUsuarioParameter = nombreUsuario != null ?
@@ -572,37 +593,6 @@ namespace Proyecto_Final.Modelo
                 new ObjectParameter("PorcentajeCobertura", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Retorna_PolizasClientes_Result>("sp_Retorna_PolizasClientes", nombreUsuarioParameter, primerApellidoParameter, nombreCoberturaParameter, porcentajeCoberturaParameter);
-        }
-    
-        public virtual ObjectResult<sp_Retorna_PolizasClientes_ID_Result> sp_Retorna_PolizasClientes_ID(string idUsuario)
-        {
-            var idUsuarioParameter = idUsuario != null ?
-                new ObjectParameter("idUsuario", idUsuario) :
-                new ObjectParameter("idUsuario", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Retorna_PolizasClientes_ID_Result>("sp_Retorna_PolizasClientes_ID", idUsuarioParameter);
-        }
-    
-        public virtual ObjectResult<sp_RetornaCobertura_Result> sp_RetornaCobertura(string nombre, string porcentaje)
-        {
-            var nombreParameter = nombre != null ?
-                new ObjectParameter("nombre", nombre) :
-                new ObjectParameter("nombre", typeof(string));
-    
-            var porcentajeParameter = porcentaje != null ?
-                new ObjectParameter("porcentaje", porcentaje) :
-                new ObjectParameter("porcentaje", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaCobertura_Result>("sp_RetornaCobertura", nombreParameter, porcentajeParameter);
-        }
-    
-        public virtual ObjectResult<sp_RetornaCoberturaID_Result> sp_RetornaCoberturaID(Nullable<int> idCobertura)
-        {
-            var idCoberturaParameter = idCobertura.HasValue ?
-                new ObjectParameter("idCobertura", idCobertura) :
-                new ObjectParameter("idCobertura", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_RetornaCoberturaID_Result>("sp_RetornaCoberturaID", idCoberturaParameter);
         }
     }
 }

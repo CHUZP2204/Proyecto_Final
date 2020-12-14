@@ -18,7 +18,7 @@ namespace Proyecto_Final.Formularios
                 this.Response.Redirect("~/Formularios/frmInicioSesion.aspx");
             }
 
-            CargaDatosGrid();
+          
         }
 
         protected void btnMostrar_Click(object sender, EventArgs e)
@@ -31,8 +31,8 @@ namespace Proyecto_Final.Formularios
             BLAdiccionesUsuario bLAdicionUsuario = new BLAdiccionesUsuario();
             // variable contiene datos
 
-            int IdAdicciones = Convert.ToInt32(this.txtIdentificacionAdiccion.Text.ToString());
-            int IdUsuario = Convert.ToInt32(this.txtIdentificacionUsuario.Text.ToString());
+            int IdAdicciones = Convert.ToInt32(this.txtIdentificacionAdiccion.Text);
+            int IdUsuario = Convert.ToInt32(this.txtIdentificacionUsuario.Text);
 
             List<sp_RetornaAdiccionUsuario_Result> fuenteDatos =
                 bLAdicionUsuario.RetornaAdiccionesUsuario(

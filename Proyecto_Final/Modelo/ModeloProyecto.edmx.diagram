@@ -18,7 +18,6 @@
         <AssociationConnector Association="SegurosModel.FK_RegistroPoliza_Usuarios" ManuallyRouted="false" />
         <AssociationConnector Association="SegurosModel.FK_SegurosDeVida_TipoSeguro" ManuallyRouted="false" />
         <AssociationConnector Association="SegurosModel.FK_Vehiculo_TipoSeguro" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="SegurosModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="SegurosModel.Adicciones" Width="1.5" PointX="8.375" PointY="0.875" />
         <AssociationConnector Association="SegurosModel.FK_AdiccionesXUsu_Adicciones" />
         <EntityTypeShape EntityType="SegurosModel.CoberturaPolizas" Width="1.5" PointX="8.375" PointY="3.875" />

@@ -14,7 +14,7 @@ namespace Proyecto_Final.Modelo
     public partial class sp_RetornaAdicciones_Result
     {
         public int IdAdicciones { get; set; }
-        public string Nombre { get; set; }
+        public string NombreAdiccion { get; set; }
         public string Codigo { get; set; }
     }
 }

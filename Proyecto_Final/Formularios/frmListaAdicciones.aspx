@@ -50,7 +50,7 @@
                                 <AlternatingRowStyle BackColor="#CCCCCC" />
                                 <Columns>
                                     <asp:BoundField DataField="idAdicciones" HeaderText="Identificador" />
-                                    <asp:BoundField DataField="Nombre" HeaderText="Nombre Adiccion" />
+                                    <asp:BoundField DataField="NombreAdiccion" HeaderText="Nombre Adiccion" />
                                     <asp:BoundField DataField="Codigo" HeaderText="Codigo Adiccion" />
                                     <asp:HyperLinkField DataNavigateUrlFields="idAdicciones" DataNavigateUrlFormatString="frmModificaAdiccion.aspx?idAdicciones={0}" Text="Modificar" />
                                     <asp:HyperLinkField DataNavigateUrlFields="idAdicciones" DataNavigateUrlFormatString="frmEliminaAdiccion.aspx?idAdicciones={0}" Text="Eliminar" />

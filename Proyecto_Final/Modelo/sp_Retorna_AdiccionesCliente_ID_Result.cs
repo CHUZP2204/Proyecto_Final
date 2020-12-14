@@ -18,6 +18,6 @@ namespace Proyecto_Final.Modelo
         public string PrimerApellido { get; set; }
         public string SegundoApellido { get; set; }
         public string Cedula { get; set; }
-        public string Nombre1 { get; set; }
+        public string NombreAdiccion { get; set; }
     }
 }
