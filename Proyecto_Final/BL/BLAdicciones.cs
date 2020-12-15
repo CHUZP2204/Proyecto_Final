@@ -10,13 +10,23 @@ namespace Proyecto_Final
 {
     public class BLAdicciones
     {
+        #region Conexion a la base datos
         /// <summary>
         /// Modelo De Entity Framework
         ///  segurosEntities1 es el modelo Base Datos
         ///  y el Objeto modeloBD
         /// </summary>
         segurosEntities1 modeloBD = new segurosEntities1();
+        #endregion
 
+        #region Metodos de la clase Adicciones
+
+        /// <summary>
+        /// metodo que retoena una adiccion
+        /// </summary>
+        /// <param name="pNombre"></param>
+        /// <param name="pCodigo"></param>
+        /// <returns></returns>
         public List<sp_RetornaAdicciones_Result> RetornaAdicciones(string pNombre,string pCodigo)
         {
             List<sp_RetornaAdicciones_Result> resultado = this.modeloBD.sp_RetornaAdicciones(pNombre,pCodigo).ToList();
@@ -61,7 +71,13 @@ namespace Proyecto_Final
             else
                 return false;
         }
-
+        /// <summary>
+        /// metodo que modifica una adiccion
+        /// </summary>
+        /// <param name="pidAdicciones"></param>
+        /// <param name="pNombre"></param>
+        /// <param name="pCodigo"></param>
+        /// <returns></returns>
         public bool ModificaAdiccion(int pidAdicciones, string pNombre, string pCodigo)
         {
             int registrosAfectados = 0;
@@ -75,6 +91,11 @@ namespace Proyecto_Final
             return registrosAfectados > 0;
         }
 
+        /// <summary>
+        /// Metodo que elimina una adiccion
+        /// </summary>
+        /// <param name="pidAdicciones"></param>
+        /// <returns></returns>
         public bool EliminaAdiccion(int pidAdicciones)
         {   
             ///variable que posee la cantidad de registros afectados
@@ -89,5 +110,6 @@ namespace Proyecto_Final
         }
 
     }
-    
+    #endregion
+
 }

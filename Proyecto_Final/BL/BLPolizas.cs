@@ -8,12 +8,16 @@ namespace Proyecto_Final.BL
 {
     public class BLPolizas
     {
+        #region Conexion a la base datos
         /// <summary>
         /// Modelo De Entity Framework
         ///  segurosEntities1 es el modelo Base Datos
         ///  y el Objeto modeloBD
         /// </summary>
         segurosEntities1 modeloBD = new segurosEntities1();
+        #endregion
+
+        #region Metodos de la clase Polizas
 
         /// <summary>
         /// Metodo Que Invoca El Store Procedure Que Retorna Las polizas
@@ -155,4 +159,5 @@ namespace Proyecto_Final.BL
 
         }
     }
+    #endregion
 }

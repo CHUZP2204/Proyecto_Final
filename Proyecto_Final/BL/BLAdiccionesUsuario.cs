@@ -8,13 +8,17 @@ namespace Proyecto_Final.BL
 {
     public class BLAdiccionesUsuario
     {
+
+        #region Conexion a la base datos
         /// <summary>
         /// Modelo De Entity Framework
         ///  segurosEntities1 es el modelo Base Datos
         ///  y el Objeto modeloBD
         /// </summary>
         segurosEntities1 modeloBD = new segurosEntities1();
+        #endregion
 
+          #region Metodos de la clase Adicciones por Usuario
         /// <summary>
         /// Metodo Que Invoca El Store Procedure Que Retorna adicciones por usuario
         /// Pasando Dos Parametros Como Busqueda
@@ -43,7 +47,7 @@ namespace Proyecto_Final.BL
             return resultado;
         }
         /// <summary>
-        /// Metodod Booleano Que Inserta la adiccion por usuario
+        /// Metodo Booleano Que Inserta la adiccion por usuario
         /// </summary>
         public bool InsertaAdiccionesUsuario(int pIdAdicciones, int pIdUsuario)
         {
@@ -67,7 +71,7 @@ namespace Proyecto_Final.BL
         }
 
         /// <summary>
-        /// Metodod Booleano Que Modifica la  Adicciones Usuario
+        /// Metodo Booleano Que Modifica la  Adicciones Usuario
         /// </summary>
         public bool ModificaAdiccionesUsuario(int pIdIdentificador, int pIdAdicciones, int pIdUsuario)
         {
@@ -84,7 +88,7 @@ namespace Proyecto_Final.BL
             return resultado > 0;
         }
         /// <summary>
-        /// Metodod Booleano Que Elimina la adiccion por usuario
+        /// Metodo Booleano Que Elimina la adiccion por usuario
         /// </summary>
         public bool EliminaAdiccionesUsuario(int pIdIdentificador)
         {
@@ -101,4 +105,5 @@ namespace Proyecto_Final.BL
         }
 
     }
+    #endregion
 }

@@ -9,13 +9,20 @@ using Proyecto_Final.Modelo;
 namespace Proyecto_Final.BL
 {
     public class BLusuarios
+
     {
+        #region Conexion a la base datos
+
         /// <summary>
         /// Modelo De Entity Framework
         ///  segurosEntities1 es el modelo Base Datos
         ///  y el Objeto modeloBD
         /// </summary>
         segurosEntities1 modeloBD = new segurosEntities1();
+        #endregion
+
+
+        #region Metodos de la clase Usuario
 
         /// <summary>
         /// Metodo Que Invoca El Store Procedure Que Retorna Los Usuarios
@@ -33,6 +40,22 @@ namespace Proyecto_Final.BL
 
             return resultado;
         }
+        /// <summary>
+        /// Metodo que inserta los datos de un usuario
+        /// </summary>
+        /// <param name="pCedula"></param>
+        /// <param name="pGenero"></param>
+        /// <param name="pFecha"></param>
+        /// <param name="pnombre"></param>
+        /// <param name="pprimerApellido"></param>
+        /// <param name="psegundoApellido"></param>
+        /// <param name="pDireccion"></param>
+        /// <param name="ptelefono1"></param>
+        /// <param name="ptelefono2"></param>
+        /// <param name="pCorreo"></param>
+        /// <param name="pTipoUsuario"></param>
+        /// <param name="pContrasenia"></param>
+        /// <returns></returns>
 
         public bool InsertaUsuario(string pCedula, string pGenero, DateTime pFecha, string pnombre, string pprimerApellido, string psegundoApellido,
 
@@ -147,6 +170,11 @@ namespace Proyecto_Final.BL
 
             return resultado;
         }
+        /// <summary>
+        /// Metodo que elimina un Usuario
+        /// </summary>
+        /// <param name="pIdUsuario"></param>
+        /// <returns></returns>
         public bool EliminaCliente(int pIdUsuario)
         {
             ///variable que posee la cantidad de registros afectados
@@ -162,5 +190,7 @@ namespace Proyecto_Final.BL
         }
 
     }
+    #endregion
+
 }
 

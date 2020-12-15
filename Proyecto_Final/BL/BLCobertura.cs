@@ -8,12 +8,16 @@ namespace Proyecto_Final.BL
 {
     public class BLCobertura
     {
+        #region Conexion a la base datos
         /// <summary>
         /// Modelo De Entity Framework
         ///  segurosEntities1 es el modelo Base Datos
         ///  y el Objeto modeloBD
         /// </summary>
         segurosEntities1 modeloBD = new segurosEntities1();
+        #endregion
+
+        #region Metodos de la clase Cobertura
 
         /// <summary>
         /// Metodo Que Invoca El Store Procedure Que Retorna Coberturas
@@ -33,7 +37,7 @@ namespace Proyecto_Final.BL
         }
 
         /// <summary>
-        /// Metodod Booleano Que Inserta la Cobertura
+        /// Metodo Booleano Que Inserta la Cobertura
         /// </summary>
         public bool InsertaCobertura(string pNombre, string pDescripcion, string pPorcentaje)
         {
@@ -84,8 +88,9 @@ namespace Proyecto_Final.BL
         }
 
         /// <summary>
-        /// Metodod Booleano Que Modifica la Cobertura
+        /// Metodo Booleano Que Modifica la Cobertura
         /// </summary>
+        
         public bool ModificaCobertura(int pIdCobertura, string pNombre, string pDescripcion, string pPorcentaje)
         {
             ///Crear La variable Que Se Retornara
@@ -101,6 +106,11 @@ namespace Proyecto_Final.BL
             ///Si Se Ingreso Datos o No
             return resultado > 0;
         }
+        /// <summary>
+        /// metodo booleano que elimina una cobertura
+        /// </summary>
+        /// <param name="pIdCobertura"></param>
+        /// <returns></returns>
         public bool EliminaCobertura(int pIdCobertura)
         {
             ///variable que posee la cantidad de registros afectados
@@ -116,4 +126,5 @@ namespace Proyecto_Final.BL
         }
 
     }
+    #endregion
 }

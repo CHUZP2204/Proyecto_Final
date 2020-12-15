@@ -27,19 +27,24 @@
 
                 <!--Cuerpo Del Panel-->
                 <div class="panel-body" style="background-color: aquamarine">
-                    <asp:Label ID="Label1" runat="server" Text="Nombre Cliente:"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text="Nombre Cliente:" style="font-weight: 700"></asp:Label>
                     &nbsp;
                    <asp:TextBox ID="txtNombre" runat="server" Width="100px"></asp:TextBox>
                     &nbsp;&nbsp;
-                    &nbsp;<asp:Label ID="Label2" runat="server" Text="Primer Apellido:"></asp:Label>
+                    &nbsp;<asp:Label ID="Label2" runat="server" Text="Primer Apellido:" style="font-weight: 700"></asp:Label>
                     &nbsp;&nbsp;
+                   
                    <asp:TextBox ID="txtPrimerApellido" runat="server" Width="110px"></asp:TextBox>
                     &nbsp;&nbsp;
-                   <asp:Label ID="Label3" runat="server" Text="Nombre Poliza: "></asp:Label>
+                   <asp:Label ID="Label3" runat="server" Text="Nombre Poliza: " style="font-weight: 700"></asp:Label>
                     &nbsp;<asp:TextBox ID="txtNombrePoliza" runat="server"></asp:TextBox>
-                    &nbsp; &nbsp;<br />
-                    <asp:Label ID="Label4" runat="server" Text="Porcentaje:"></asp:Label>
+                    &nbsp; &nbsp;
+                    <br />
+                       <br />
+                    <asp:Label ID="Label4" runat="server" Text="Porcentaje:" style="font-weight: 700"></asp:Label>
                     &nbsp;<asp:TextBox ID="txtPorcentaje" runat="server"></asp:TextBox>
+                     <br />
+                       <br />
                      &nbsp;
                    <asp:Button ID="btnVerReporte" runat="server" Text="Ver Reporte" OnClick="btnVerReporte_Click" />
                     <br />
