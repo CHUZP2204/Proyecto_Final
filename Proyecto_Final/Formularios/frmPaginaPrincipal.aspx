@@ -42,8 +42,7 @@
                                     <asp:HyperLink ID="hplEliminarUser" class="btn btn-danger" role="button" BorderColor="Black" runat="server">Eliminar Mi Informacion</asp:HyperLink>
                                     <br />
                                     <br />
-                                    <asp:HyperLink ID="hplDatos" class="btn btn-primary" role="button" BorderColor="Black" runat="server">Ver Mis Polizas</asp:HyperLink>
-                                </div>
+                                   </div>
                             </div>
                             <!--SEGUNDA COLUMNA-->
                             <div class="column" style="flex: 50%; padding: 10px;">

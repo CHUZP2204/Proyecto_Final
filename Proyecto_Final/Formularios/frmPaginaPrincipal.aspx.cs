@@ -36,13 +36,15 @@ namespace Proyecto_Final.Formularios
         void VerificaPermisoTipoUsuario()
         {
             string tipoUsuarioCOnectado = Convert.ToString(Session["tipousuario"]);
-            if (tipoUsuarioCOnectado.Equals("Administrador") || tipoUsuarioCOnectado.Equals("Administrador"))
+            if (tipoUsuarioCOnectado.Equals("Administrador") || tipoUsuarioCOnectado.Equals("Empleado"))
             {
                 this.hplUserList.Visible = true;
                 this.hpAdicUsuList.Visible = true;
                 this.hpPolizaList.Visible = true;
                 this.hpAdicList.Visible = true;
                 this.hpCoberList.Visible = true;
+                this.hplReporte1.Visible = true;
+                this.hplReporte2.Visible = true;
             }
 
             if (tipoUsuarioCOnectado.Equals("Cliente"))
@@ -52,6 +54,8 @@ namespace Proyecto_Final.Formularios
                 this.hpPolizaList.Visible = false;
                 this.hpAdicList.Visible = false;
                 this.hpCoberList.Visible = false;
+                this.hplReporte1.Visible = false;
+                this.hplReporte2.Visible = false;
             }
 
         }
